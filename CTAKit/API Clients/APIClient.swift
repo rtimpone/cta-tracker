@@ -27,6 +27,7 @@ public enum ApiError : Error {
     case requestError
     case responseFormatInvalid(String)
     case connectionError(Error)
+    case invalidData
 }
 
 typealias ApiCompletionBlock<T: Decodable> = (ApiResult<T>) -> Void

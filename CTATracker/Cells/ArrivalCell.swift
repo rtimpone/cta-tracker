@@ -17,9 +17,11 @@ class ArrivalCell: UITableViewCell, NibBased {
     @IBOutlet weak var thirdArrivalView: ArrivalView!
     @IBOutlet weak var fourthArrivalView: ArrivalView!
     
-    func configure(for arrivals: [TrainArrival]) {
+    func configure(for arrivals: StationArrivals) {
         
-        guard arrivals.count > 0 else {
+        let etas = arrivals.etas
+        
+        guard etas.count > 0 else {
             firstArrivalView.clearTextInLabels()
             secondArrivalView.clearTextInLabels()
             thirdArrivalView.clearTextInLabels()
@@ -27,33 +29,32 @@ class ArrivalCell: UITableViewCell, NibBased {
             return
         }
         
-        let firstArrival = arrivals[0]
-        destinationLabel.text = firstArrival.stationName
-        firstArrivalView.configure(for: firstArrival)
+        destinationLabel.text = arrivals.station.name
+        firstArrivalView.configure(for: etas[0])
         
-        guard arrivals.count > 1 else {
+        guard etas.count > 1 else {
             secondArrivalView.clearTextInLabels()
             thirdArrivalView.clearTextInLabels()
             fourthArrivalView.clearTextInLabels()
             return
         }
         
-        secondArrivalView.configure(for: arrivals[1])
+        secondArrivalView.configure(for: etas[1])
         
-        guard arrivals.count > 2 else {
+        guard etas.count > 2 else {
             thirdArrivalView.clearTextInLabels()
             fourthArrivalView.clearTextInLabels()
             return
         }
         
-        thirdArrivalView.configure(for: arrivals[2])
+        thirdArrivalView.configure(for: etas[2])
         
-        guard arrivals.count > 3 else {
+        guard etas.count > 3 else {
             fourthArrivalView.clearTextInLabels()
             return
         }
         
-        fourthArrivalView.configure(for: arrivals[3])
+        fourthArrivalView.configure(for: etas[3])
     }
 }
 
@@ -62,11 +63,11 @@ class ArrivalView: UIView {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var etaLabel: UILabel!
     
-    func configure(for arrival: TrainArrival) {
-        destinationLabel.text = arrival.destination
+    func configure(for eta: ETA) {
+        destinationLabel.text = eta.destination
         
         let now = Date()
-        let secondsUntilArrival = arrival.arrivalTime.timeIntervalSince(now)
+        let secondsUntilArrival = eta.arrivalTime.timeIntervalSince(now)
         etaLabel.text = "\(secondsUntilArrival)s"
     }
     

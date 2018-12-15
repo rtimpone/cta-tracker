@@ -8,22 +8,43 @@
 
 import Foundation
 
-enum Route: String {
+public enum Route: String {
     case brown = "Brn"
     case unknown
 }
 
-public struct TrainArrival {
+public struct Station {
+    public let name: String
+    public let route: Route
+}
+
+public struct StationArrivals {
     
-    let stationId: Int
-    public let stationName: String
-    let route: Route
+    public let station: Station
+    public let etas: [ETA]
+    
+    init?(from responses: [ArrivalETAResponse]) {
+        
+        guard let anyArrival = responses.first else {
+            return nil
+        }
+            
+        let route = Route(rawValue: anyArrival.routeCode) ?? .unknown
+        station = Station(name: anyArrival.stationName, route: route)
+        
+        let unsortedArrivals = responses.compactMap { ETA(from: $0) }
+        etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
+    }
+}
+
+public struct ETA {
+    
     public let destination: String
     public let arrivalTime: Date
-    let isApproaching: Bool
-    let isScheduled: Bool
-    let isDelayed: Bool
-    let isFault: Bool
+    public let isApproaching: Bool
+    public let isScheduled: Bool
+    public let isDelayed: Bool
+    public let isFault: Bool
     
     static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -33,18 +54,11 @@ public struct TrainArrival {
     
     init?(from response: ArrivalETAResponse) {
         
-        guard let id = Int(response.stationId) else {
-            return nil
-        }
-        
         let arrivalTimeWithOffset = response.arrivalTimeString + " " + UTCOffsets.chicago
-        guard let arrivalTime = TrainArrival.dateFormatter.date(from: arrivalTimeWithOffset) else {
+        guard let arrivalTime = ETA.dateFormatter.date(from: arrivalTimeWithOffset) else {
             return nil
         }
         
-        self.stationId = id
-        self.stationName = response.stationName
-        self.route = Route(rawValue: response.routeCode) ?? .unknown
         self.destination = response.destination
         self.arrivalTime = arrivalTime
         self.isApproaching = Bool(response.isApproachingString) ?? false

@@ -36,7 +36,7 @@ class ArrivalsViewController: UIViewController {
         client.getArrivals() { result in
             switch result {
             case .success(let arrivals):
-                self.filterArrivalsAndDisplayThem(arrivals)
+                self.filterArrivalsAndDisplayThem([arrivals])
             case .failure(let error):
                 self.viewHandler.showErrorState()
                 print(error)
@@ -44,11 +44,11 @@ class ArrivalsViewController: UIViewController {
         }
     }
     
-    func filterArrivalsAndDisplayThem(_ arrivals: [TrainArrival]) {
+    func filterArrivalsAndDisplayThem(_ arrivals: [StationArrivals]) {
         
         //filter out only the stops we want
         
-        tableHandler.display(arrivalTimes: arrivals)
+        tableHandler.display(arrivals: arrivals)
         viewHandler.showDisplayState()
     }
 }
