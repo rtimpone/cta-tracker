@@ -32,6 +32,8 @@
 		FBCAA11A21C5680900681A6F /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA11921C5680800681A6F /* credentials.json */; };
 		FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11B21C5689600681A6F /* Credentials.swift */; };
 		FBCAA11E21C5746100681A6F /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11D21C5746100681A6F /* Locations.swift */; };
+		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
+		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -112,6 +114,8 @@
 		FBCAA11921C5680800681A6F /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		FBCAA11B21C5689600681A6F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FBCAA11D21C5746100681A6F /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
+		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 		FBCAA11121C5647100681A6F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */,
+				FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */,
 				FBCAA11221C5647800681A6F /* StatusCell.swift */,
 				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
 			);
@@ -509,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
+				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
 				FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
@@ -554,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
+				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */,
 				FBCAA0CD21C561B900681A6F /* ViewHandler.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,

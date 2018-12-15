@@ -16,10 +16,10 @@ enum Route: String {
 public struct TrainArrival {
     
     let stationId: Int
-    let stationName: String
+    public let stationName: String
     let route: Route
-    let destination: String
-    let arrivalTime: Date
+    public let destination: String
+    public let arrivalTime: Date
     let isApproaching: Bool
     let isScheduled: Bool
     let isDelayed: Bool

@@ -36,56 +36,19 @@ class ArrivalsViewController: UIViewController {
         client.getArrivals() { result in
             switch result {
             case .success(let arrivals):
-                for arrival in arrivals {
-                    print(arrival)
-                }
+                self.filterArrivalsAndDisplayThem(arrivals)
             case .failure(let error):
+                self.viewHandler.showErrorState()
                 print(error)
             }
         }
-        
-        //call API
-        //if success
-        filterArrivalsAndDisplayThem()
-        //else let error
-        //self.viewHandler.showErrorState()
-        //print(error)
     }
     
-    func filterArrivalsAndDisplayThem() {
+    func filterArrivalsAndDisplayThem(_ arrivals: [TrainArrival]) {
         
         //filter out only the stops we want
         
-        let arrivals = [String]()
         tableHandler.display(arrivalTimes: arrivals)
         viewHandler.showDisplayState()
-    }
-}
-
-class ArrivalsTableHandler: NSObject {
-    
-    weak var tableView: UITableView!
-    private var stops: [String] = []
-    
-    init(tableView: UITableView) {
-        self.tableView = tableView
-        super.init()
-        tableView.dataSource = self
-    }
-    
-    func display(arrivalTimes: [String]) {
-        self.stops = arrivalTimes
-        tableView.reloadData()
-    }
-}
-
-extension ArrivalsTableHandler: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stops.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
     }
 }
