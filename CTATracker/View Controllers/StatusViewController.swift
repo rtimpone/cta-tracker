@@ -33,7 +33,6 @@ class StatusViewController: UIViewController {
         tableHandler = StatusTableHandler(tableView: tableView)
         viewHandler = ViewHandler(displayView: displayView, errorView: errorView, loadingView: loadingView, loadingIndicator: loadingIndicator)
         startObservingTableViewContentSize()
-        refreshTrainLines()
     }
     
     func startObservingTableViewContentSize() {

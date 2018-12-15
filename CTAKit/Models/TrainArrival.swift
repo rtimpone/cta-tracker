@@ -13,7 +13,7 @@ enum Route: String {
     case unknown
 }
 
-public struct Arrival {
+public struct TrainArrival {
     
     let stationId: Int
     let stationName: String
@@ -25,20 +25,20 @@ public struct Arrival {
     let isDelayed: Bool
     let isFault: Bool
     
+    static let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss ZZZZ"
+        return df
+    }()
+    
     init?(from response: ArrivalETAResponse) {
         
         guard let id = Int(response.stationId) else {
             return nil
         }
         
-        let df = DateFormatter()
-        df.dateFormat = ""
-        
-        
-        //need to implement date format here !
-        //"arrT": "2018-12-14T15:39:18",
-        
-        guard let arrivalTime = df.date(from: response.arrivalTimeString) else {
+        let arrivalTimeWithOffset = response.arrivalTimeString + " " + Locations.chicago.utcOffset
+        guard let arrivalTime = TrainArrival.dateFormatter.date(from: arrivalTimeWithOffset) else {
             return nil
         }
         
