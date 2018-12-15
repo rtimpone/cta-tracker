@@ -26,9 +26,9 @@ public class CTAClient: APIClient {
         }
     }
     
-    public func getArrivals(completion: @escaping (ApiResult<[Arrival]>) -> Void) {
+    public func getArrivals(completion: @escaping (ApiResult<[TrainArrival]>) -> Void) {
 
-        let apiKey = ""
+        let apiKey = Credentials.apiKey
         let id = "40680"
         let route = "Brn"
         
@@ -37,7 +37,7 @@ public class CTAClient: APIClient {
             switch result {
             case .success(let container):
                 let arrivalResponses = container.root.etas
-                let arrivals = arrivalResponses.compactMap { Arrival(from: $0) }
+                let arrivals = arrivalResponses.compactMap { TrainArrival(from: $0) }
                 completion(.success(arrivals))
             case .failure(let error):
                 completion(.failure(error))

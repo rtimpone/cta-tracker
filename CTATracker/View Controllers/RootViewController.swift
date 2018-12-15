@@ -6,22 +6,35 @@
 //  Copyright © 2018 Rob Timpone. All rights reserved.
 //
 
+import CTAKit
 import UIKit
 
 class RootViewController: UIViewController {
+    
+    var statusController: StatusViewController!
+    var arrivalsController: ArrivalsViewController!
     
     @IBOutlet weak var statusViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //request location permission here 
+        //request location permission here
+        
+        Locations.initializeLocations {
+            self.statusController.refreshTrainLines()
+            self.arrivalsController.refreshArrivalTimes()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: self)
         if let vc = segue.destination as? StatusViewController {
+            statusController = vc
             vc.delegate = self
+        }
+        else if let vc = segue.destination as? ArrivalsViewController {
+            arrivalsController = vc
         }
     }
 }

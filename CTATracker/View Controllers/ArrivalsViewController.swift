@@ -26,7 +26,6 @@ class ArrivalsViewController: UIViewController {
         super.viewDidLoad()
         tableHandler = ArrivalsTableHandler(tableView: tableView)
         viewHandler = ViewHandler(displayView: displayView, errorView: errorView, loadingView: loadingView, loadingIndicator: loadingIndicator)
-        refreshArrivalTimes()
     }
     
     func refreshArrivalTimes() {
