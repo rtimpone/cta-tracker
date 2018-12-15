@@ -37,7 +37,7 @@ public struct TrainArrival {
             return nil
         }
         
-        let arrivalTimeWithOffset = response.arrivalTimeString + " " + Locations.chicago.utcOffset
+        let arrivalTimeWithOffset = response.arrivalTimeString + " " + UTCOffsets.chicago
         guard let arrivalTime = TrainArrival.dateFormatter.date(from: arrivalTimeWithOffset) else {
             return nil
         }

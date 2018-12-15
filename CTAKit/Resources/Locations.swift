@@ -9,13 +9,15 @@
 import CoreLocation
 import Foundation
 
-public class Locations {
+public class UTCOffsets {
     
-    static var chicago: Location!
+    static var chicago = "+0000"
     
-    public static func initializeLocations(completion: @escaping () -> Void) {
+    public static func lookupOffsets(completion: @escaping () -> Void) {
         Location.createLocation(latitude: 41.882042, longitude: -87.627819) { location in
-            chicago = location
+            if let offset = location?.utcOffset {
+                self.chicago = offset
+            }
             completion()
         }
     }
