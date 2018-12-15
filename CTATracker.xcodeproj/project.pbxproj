@@ -29,6 +29,7 @@
 		FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11221C5647800681A6F /* StatusCell.swift */; };
 		FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA11421C5647F00681A6F /* StatusCell.xib */; };
 		FBCAA11821C564C800681A6F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11721C564C800681A6F /* UIColor+Extensions.swift */; };
+		FBCAA11A21C5680900681A6F /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA11921C5680800681A6F /* credentials.json */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		FBCAA11221C5647800681A6F /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		FBCAA11421C5647F00681A6F /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
 		FBCAA11721C564C800681A6F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FBCAA11921C5680800681A6F /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		FBCAA10121C562E700681A6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FBCAA11921C5680800681A6F /* credentials.json */,
 				FBCAA0DC21C5625000681A6F /* CTAKit.h */,
 				FBCAA0DD21C5625000681A6F /* Info.plist */,
 			);
@@ -484,6 +487,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCAA11A21C5680900681A6F /* credentials.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
