@@ -21,6 +21,7 @@ public struct TrainLine {
         case minorDelays = "Minor Delays"
         case majorDelays = "Major Delays"
         case significantDelays = "Significant Delays"
+        case serviceDisruption = "Service Disruption"
         case unknown = "Unknown"
     }
     
