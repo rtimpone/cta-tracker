@@ -9,13 +9,19 @@
 import Foundation
 
 public enum Route: String {
+    case red = "Red"
+    case blue = "Blue"
     case brown = "Brn"
+    case green = "G"
+    case orange = "Org"
+    case purple = "P"
+    case pink = "Pink"
+    case yellow = "Y"
     case unknown
 }
 
 public struct Station {
     public let name: String
-    public let route: Route
 }
 
 public struct StationArrivals {
@@ -28,9 +34,7 @@ public struct StationArrivals {
         guard let anyArrival = responses.first else {
             return nil
         }
-            
-        let route = Route(rawValue: anyArrival.routeCode) ?? .unknown
-        station = Station(name: anyArrival.stationName, route: route)
+        station = Station(name: anyArrival.stationName)
         
         let unsortedArrivals = responses.compactMap { ETA(from: $0) }
         etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
@@ -38,7 +42,8 @@ public struct StationArrivals {
 }
 
 public struct ETA {
-    
+
+    public let route: Route
     public let destination: String
     public let arrivalTime: Date
     public let isApproaching: Bool
@@ -59,6 +64,7 @@ public struct ETA {
             return nil
         }
         
+        self.route = Route(rawValue: response.routeCode) ?? .unknown
         self.destination = response.destination
         self.arrivalTime = arrivalTime
         self.isApproaching = Bool(response.isApproachingString) ?? false

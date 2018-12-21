@@ -28,11 +28,14 @@ public class CTAClient: APIClient {
     
     public func getArrivals(completion: @escaping (ApiResult<StationArrivals>) -> Void) {
 
-        let apiKey = Credentials.apiKey
         let id = "40680"
-        let route = "Brn"
+        let params = ["key": Credentials.apiKey,
+                      "mapid": "\(id)",
+                      "outputType": "JSON"]
         
-        let url = URL(string: "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=\(apiKey)&mapid=\(id)&rt=\(route)&outputType=JSON")!
+        let baseURL = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx"
+        
+        let url = URL(string: baseURL, parameters: params)!
         fetchObject(ofType: ArrivalsContainerResponse.self, from: url) { result in
             switch result {
             case .success(let container):

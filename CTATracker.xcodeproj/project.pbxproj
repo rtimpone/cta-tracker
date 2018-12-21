@@ -32,6 +32,7 @@
 		FBCAA11A21C5680900681A6F /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = FBCAA11921C5680800681A6F /* credentials.json */; };
 		FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11B21C5689600681A6F /* Credentials.swift */; };
 		FBCAA11E21C5746100681A6F /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11D21C5746100681A6F /* Locations.swift */; };
+		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
@@ -114,6 +115,7 @@
 		FBCAA11921C5680800681A6F /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
 		FBCAA11B21C5689600681A6F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FBCAA11D21C5746100681A6F /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				FBCAA11721C564C800681A6F /* UIColor+Extensions.swift */,
+				FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */,
 				FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */,
 				FBCAA11821C564C800681A6F /* UIColor+Extensions.swift in Sources */,
+				FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */,
 				FBCAA10621C5635000681A6F /* APIClient.swift in Sources */,
 				FBCAA10821C5635600681A6F /* CTAClient.swift in Sources */,
 			);
