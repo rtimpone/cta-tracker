@@ -14,9 +14,9 @@ public struct TrainLine {
     public let id: String
     public let title: String
     public let displayColor: UIColor
-    public let status: Status
+    public let status: LineStatus
     
-    public enum Status: String {
+    public enum LineStatus: String {
         case normal = "Normal Service"
         case minorDelays = "Minor Delays"
         case majorDelays = "Major Delays"
@@ -36,6 +36,6 @@ public struct TrainLine {
             displayColor = .white
         }
         
-        status = Status(rawValue: response.status) ?? .unknown
+        status = LineStatus(rawValue: response.status) ?? .unknown
     }
 }

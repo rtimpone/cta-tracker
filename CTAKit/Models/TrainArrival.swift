@@ -8,6 +8,81 @@
 
 import Foundation
 
+public struct Station {
+    public let name: String
+}
+
+public struct StationArrivals {
+    
+    public let station: Station
+    public let etas: [ETA]
+    
+    init?(from responses: [ArrivalETAResponse]) {
+        
+        guard let anyArrival = responses.first else {
+            return nil
+        }
+        station = Station(name: anyArrival.stationName)
+        
+        let unsortedArrivals = responses.compactMap { ETA(from: $0) }
+        etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
+    }
+}
+
+public struct ETA {
+
+    public let route: Route
+    public let status: ArrivalStatus
+    public let destination: String
+    public let arrivalTime: Date
+    
+    private static let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss ZZZZ"
+        return df
+    }()
+    
+    init?(from response: ArrivalETAResponse) {
+        
+        self.route = Route(rawValue: response.routeCode) ?? .unknown
+        self.destination = response.destination
+        
+        let arrivalTimeWithOffset = response.arrivalTimeString + " " + UTCOffsets.chicago
+        guard let arrivalTime = ETA.dateFormatter.date(from: arrivalTimeWithOffset) else {
+            return nil
+        }
+        self.arrivalTime = arrivalTime
+        
+        let isApproaching = Bool(response.isApproachingString) ?? false
+        let isScheduled = Bool(response.isScheduledString) ?? false
+        let isDelayed = Bool(response.isDelayedString) ?? false
+        let isFault = Bool(response.isScheduleFaultString) ?? false
+        
+        if isApproaching {
+            status = ArrivalStatus.approaching
+        }
+        else if isDelayed {
+            status = ArrivalStatus.delayed
+        }
+        else if isFault {
+            status = ArrivalStatus.unavailable
+        }
+        else {
+            
+            let now = Date()
+            let exactSecondsUntilArrival = arrivalTime.timeIntervalSince(now)
+            let intSecondsUntilArrival = Int(exactSecondsUntilArrival)
+            
+            if isScheduled {
+                status = ArrivalStatus.scheduled(seconds: intSecondsUntilArrival)
+            }
+            else {
+                status = ArrivalStatus.enRoute(seconds: intSecondsUntilArrival)
+            }
+        }
+    }
+}
+
 public enum Route: String {
     
     case red = "Red"
@@ -44,56 +119,20 @@ public enum Route: String {
     }
 }
 
-public struct Station {
-    public let name: String
-}
+public enum ArrivalStatus {
 
-public struct StationArrivals {
+    /// The train is on its way as normal
+    case enRoute(seconds: Int)
     
-    public let station: Station
-    public let etas: [ETA]
+    /// A train is scheduled to arrive but has not yet left
+    case scheduled(seconds: Int)
     
-    init?(from responses: [ArrivalETAResponse]) {
-        
-        guard let anyArrival = responses.first else {
-            return nil
-        }
-        station = Station(name: anyArrival.stationName)
-        
-        let unsortedArrivals = responses.compactMap { ETA(from: $0) }
-        etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
-    }
-}
-
-public struct ETA {
-
-    public let route: Route
-    public let destination: String
-    public let arrivalTime: Date
-    public let isApproaching: Bool
-    public let isScheduled: Bool
-    public let isDelayed: Bool
-    public let isFault: Bool
+    /// The train is approaching the station and will arrive soon
+    case approaching
     
-    static let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss ZZZZ"
-        return df
-    }()
+    /// The train is delayed and no estiamte is available
+    case delayed
     
-    init?(from response: ArrivalETAResponse) {
-        
-        let arrivalTimeWithOffset = response.arrivalTimeString + " " + UTCOffsets.chicago
-        guard let arrivalTime = ETA.dateFormatter.date(from: arrivalTimeWithOffset) else {
-            return nil
-        }
-        
-        self.route = Route(rawValue: response.routeCode) ?? .unknown
-        self.destination = response.destination
-        self.arrivalTime = arrivalTime
-        self.isApproaching = Bool(response.isApproachingString) ?? false
-        self.isScheduled = Bool(response.isScheduledString) ?? false
-        self.isDelayed = Bool(response.isDelayedString) ?? false
-        self.isFault = Bool(response.isScheduleFaultString) ?? false
-    }
+    /// The train's arrival time estimate is unreliable or unavailable
+    case unavailable
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C621C5619200681A6F /* StatusViewController.swift */; };
 		FBCAA0C921C5619D00681A6F /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */; };
 		FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FBCAA0C621C5619200681A6F /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
 		FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableHandler.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				FBF17A1121C55FDB00BF232C /* CTATrackerTests.swift */,
+				FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */,
 				FBF17A1321C55FDB00BF232C /* Info.plist */,
 			);
 			path = CTATrackerTests;
@@ -583,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */,
 				FBF17A1221C55FDB00BF232C /* CTATrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

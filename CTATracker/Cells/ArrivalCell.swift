@@ -65,14 +65,9 @@ class ArrivalView: UIView {
     @IBOutlet weak var etaLabel: UILabel!
     
     func configure(for eta: ETA) {
-        
         circleView.backgroundColor = eta.route.color
-        
         destinationLabel.text = eta.destination
-        
-        let now = Date()
-        let secondsUntilArrival = eta.arrivalTime.timeIntervalSince(now)
-        etaLabel.text = "\(secondsUntilArrival)s"
+        etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status)
     }
     
     func clearTextInLabels() {
@@ -80,3 +75,42 @@ class ArrivalView: UIView {
         etaLabel.text = ""
     }
 }
+
+class ArrivalDescriptionGenerator {
+    
+    static func string(for status: ArrivalStatus) -> String {
+        switch status {
+        case .enRoute(let seconds), .scheduled(let seconds):
+            if seconds < 0 {
+                return "Overdue"
+            }
+            else if seconds < 60 {
+                return "Due"
+            }
+            else if seconds > 30 * 60 {
+                return "Over 30 min"
+            }
+            else {
+                return minutesStringForNumberOfSecondsRoundingUp(seconds)
+            }
+        case .approaching:
+            return "Approaching"
+        case .delayed:
+            return "Delayed"
+        case .unavailable:
+            return "Unavailable"
+        }
+    }
+}
+
+private extension ArrivalDescriptionGenerator {
+    
+    static func minutesStringForNumberOfSecondsRoundingUp(_ seconds: Int) -> String {
+        let minutesPassed = seconds / 60
+        let secondsRemaining = seconds % 60
+        let shouldRoundUp = secondsRemaining > 0
+        let minutes = shouldRoundUp ? (minutesPassed + 1) : minutesPassed
+        return "\(minutes) min"
+    }
+}
+
