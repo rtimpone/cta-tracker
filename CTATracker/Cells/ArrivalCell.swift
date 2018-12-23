@@ -60,10 +60,14 @@ class ArrivalCell: UITableViewCell, NibBased {
 
 class ArrivalView: UIView {
     
+    @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var etaLabel: UILabel!
     
     func configure(for eta: ETA) {
+        
+        circleView.backgroundColor = eta.route.color
+        
         destinationLabel.text = eta.destination
         
         let now = Date()

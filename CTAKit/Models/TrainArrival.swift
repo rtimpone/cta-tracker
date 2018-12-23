@@ -9,6 +9,7 @@
 import Foundation
 
 public enum Route: String {
+    
     case red = "Red"
     case blue = "Blue"
     case brown = "Brn"
@@ -18,6 +19,29 @@ public enum Route: String {
     case pink = "Pink"
     case yellow = "Y"
     case unknown
+    
+    public var color: UIColor {
+        switch self {
+        case .red:
+            return UIColor(hex: "c60c30")
+        case .blue:
+            return UIColor(hex: "00a1de")
+        case .brown:
+            return UIColor(hex: "62361b")
+        case .green:
+            return UIColor(hex: "009b3a")
+        case .orange:
+            return UIColor(hex: "f9461c")
+        case .purple:
+            return UIColor(hex: "522398")
+        case .pink:
+            return UIColor(hex: "e27ea6")
+        case .yellow:
+            return UIColor(hex: "f9e300")
+        case .unknown:
+            return .lightGray
+        }
+    }
 }
 
 public struct Station {
