@@ -222,6 +222,9 @@
                 <outlet property="fourthArrivalView" destination="tpv-2I-LIR" id="R4Y-Wi-s12"/>
                 <outlet property="secondArrivalView" destination="fTU-eg-DOD" id="Vfv-Zg-gaU"/>
                 <outlet property="thirdArrivalView" destination="gjk-ej-g67" id="GJC-1a-bpf"/>
+                <outlet property="verticalConstraintFromFirstToSecond" destination="VqC-op-TCh" id="R6Z-FU-eHp"/>
+                <outlet property="verticalConstraintFromSecondToThird" destination="ZV8-CN-TIx" id="EtU-Pc-mDW"/>
+                <outlet property="verticalConstraintFromThirdToFourth" destination="2AU-r5-wBY" id="WxN-NY-03M"/>
             </connections>
             <point key="canvasLocation" x="-82.400000000000006" y="129.98500749625188"/>
         </tableViewCell>

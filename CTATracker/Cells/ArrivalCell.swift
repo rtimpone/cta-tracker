@@ -17,15 +17,26 @@ class ArrivalCell: UITableViewCell, NibBased {
     @IBOutlet weak var thirdArrivalView: ArrivalView!
     @IBOutlet weak var fourthArrivalView: ArrivalView!
     
+    @IBOutlet weak var verticalConstraintFromFirstToSecond: NSLayoutConstraint!
+    @IBOutlet weak var verticalConstraintFromSecondToThird: NSLayoutConstraint!
+    @IBOutlet weak var verticalConstraintFromThirdToFourth: NSLayoutConstraint!
+    
     func configure(for arrivals: StationArrivals) {
         
         let etas = arrivals.etas
         
+        verticalConstraintFromFirstToSecond.constant = 8
+        verticalConstraintFromSecondToThird.constant = 8
+        verticalConstraintFromThirdToFourth.constant = 8
+        
         guard etas.count > 0 else {
-            firstArrivalView.clearTextInLabels()
-            secondArrivalView.clearTextInLabels()
-            thirdArrivalView.clearTextInLabels()
-            fourthArrivalView.clearTextInLabels()
+            firstArrivalView.configureForHidden()
+            secondArrivalView.configureForHidden()
+            thirdArrivalView.configureForHidden()
+            fourthArrivalView.configureForHidden()
+            verticalConstraintFromFirstToSecond.constant = 0
+            verticalConstraintFromSecondToThird.constant = 0
+            verticalConstraintFromThirdToFourth.constant = 0
             return
         }
         
@@ -33,24 +44,30 @@ class ArrivalCell: UITableViewCell, NibBased {
         firstArrivalView.configure(for: etas[0])
         
         guard etas.count > 1 else {
-            secondArrivalView.clearTextInLabels()
-            thirdArrivalView.clearTextInLabels()
-            fourthArrivalView.clearTextInLabels()
+            secondArrivalView.configureForHidden()
+            thirdArrivalView.configureForHidden()
+            fourthArrivalView.configureForHidden()
+            verticalConstraintFromFirstToSecond.constant = 0
+            verticalConstraintFromSecondToThird.constant = 0
+            verticalConstraintFromThirdToFourth.constant = 0
             return
         }
         
         secondArrivalView.configure(for: etas[1])
         
         guard etas.count > 2 else {
-            thirdArrivalView.clearTextInLabels()
-            fourthArrivalView.clearTextInLabels()
+            thirdArrivalView.configureForHidden()
+            fourthArrivalView.configureForHidden()
+            verticalConstraintFromSecondToThird.constant = 0
+            verticalConstraintFromThirdToFourth.constant = 0
             return
         }
         
         thirdArrivalView.configure(for: etas[2])
         
         guard etas.count > 3 else {
-            fourthArrivalView.clearTextInLabels()
+            fourthArrivalView.configureForHidden()
+            verticalConstraintFromThirdToFourth.constant = 0
             return
         }
         
@@ -66,11 +83,13 @@ class ArrivalView: UIView {
     
     func configure(for eta: ETA) {
         circleView.backgroundColor = eta.route.color
+        circleView.isHidden = false
         destinationLabel.text = eta.destination
         etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status)
     }
     
-    func clearTextInLabels() {
+    func configureForHidden() {
+        circleView.isHidden = true
         destinationLabel.text = ""
         etaLabel.text = ""
     }
