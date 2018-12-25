@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
+		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C621C5619200681A6F /* StatusViewController.swift */; };
 		FBCAA0C921C5619D00681A6F /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */; };
 		FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */; };
@@ -91,6 +92,7 @@
 
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
+		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FBCAA0C621C5619200681A6F /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
 		FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableHandler.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				FBCAA10B21C5637C00681A6F /* TrainArrival.swift */,
 				FBCAA10921C5637500681A6F /* TrainLine.swift */,
+				FB89463821D1A9450018E97B /* TrainStop.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */,
 				FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */,
 				FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */,
+				FB89463921D1A9450018E97B /* TrainStop.swift in Sources */,
 				FBCAA11821C564C800681A6F /* UIColor+Extensions.swift in Sources */,
 				FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */,
 				FBCAA10621C5635000681A6F /* APIClient.swift in Sources */,

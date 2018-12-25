@@ -11,6 +11,11 @@ import UIKit
 
 class ArrivalsViewController: UIViewController {
     
+    enum QueueResult {
+        case success
+        case error
+    }
+    
     let stopsToShow: [String] = []
     
     @IBOutlet weak var loadingView: UIView!
@@ -22,29 +27,56 @@ class ArrivalsViewController: UIViewController {
     var tableHandler: ArrivalsTableHandler!
     var viewHandler: ViewHandler!
     
+    var stopsQueue: [TrainStop] = []
+    var arrivals: [StationArrivals] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableHandler = ArrivalsTableHandler(tableView: tableView)
         viewHandler = ViewHandler(displayView: displayView, errorView: errorView, loadingView: loadingView, loadingIndicator: loadingIndicator)
+        stopsQueue = TrainStop.allStops
     }
     
     func refreshArrivalTimes() {
-        
         viewHandler.showLoadingState()
+        processNextInQueue()
+    }
+    
+    func processNextInQueue() {
         
-        let client = CTAClient()
-        client.getArrivals() { result in
+        guard stopsQueue.count > 0 else {
+            filterArrivalsAndDisplayThem()
+            return
+        }
+        
+        let nextInQueue = stopsQueue.removeFirst()
+        downloadArrivalTimes(forStop: nextInQueue) { result in
             switch result {
-            case .success(let arrivals):
-                self.filterArrivalsAndDisplayThem([arrivals])
-            case .failure(let error):
+            case .success:
+                self.processNextInQueue()
+            case .error:
                 self.viewHandler.showErrorState()
-                print(error)
             }
         }
     }
     
-    func filterArrivalsAndDisplayThem(_ arrivals: [StationArrivals]) {
+    func downloadArrivalTimes(forStop stop: TrainStop, completion: @escaping (QueueResult) -> ()) {
+        
+        let client = CTAClient()
+        client.getArrivals(forStop: stop) { result in
+            switch result {
+            case .success(let arrivals):
+                self.arrivals.append(arrivals)
+                completion(.success)
+            case .failure(let error):
+                print(error)
+                completion(.error)
+            }
+        }
+    }
+    
+    func filterArrivalsAndDisplayThem() {
         
         //filter out only the stops we want
         
