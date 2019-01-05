@@ -21,14 +21,19 @@ class CellFactory {
             return cell
             
         case .error:
-            let cell = tableView.dequeueReusableCell(ofType: GenericMessageCell.self)
-            cell.configure(withText: "Unable to get status for CTA routes")
-            return cell
+            return dequeueGenericMessageCell(in: tableView, withText: "Unable to get status for CTA routes")
             
         case .initialState:
-            let cell = tableView.dequeueReusableCell(ofType: GenericMessageCell.self)
-            cell.configure(withText: "Getting status data for CTA routes...")
-            return cell
+            return dequeueGenericMessageCell(in: tableView, withText: "Getting status data for CTA routes...")
         }
+    }
+}
+
+private extension CellFactory {
+    
+    static func dequeueGenericMessageCell(in tableView: UITableView, withText text: String) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(ofType: GenericMessageCell.self)
+        cell.configure(withText: text)
+        return cell
     }
 }
