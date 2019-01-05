@@ -9,10 +9,6 @@
 import CTAKit
 import UIKit
 
-protocol StatusViewControllerDelegate: class {
-    func tableContentHeightDidUpdate(_ newHeight: CGFloat)
-}
-
 class StatusViewController: UIViewController {
     
     let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
@@ -23,24 +19,13 @@ class StatusViewController: UIViewController {
     @IBOutlet weak var displayView: UIView!
     @IBOutlet weak var errorView: UIView!
     
-    weak var delegate: StatusViewControllerDelegate!
     var tableHandler: StatusTableHandler!
     var viewHandler: ViewHandler!
-    var observer: NSKeyValueObservation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableHandler = StatusTableHandler(tableView: tableView)
         viewHandler = ViewHandler(displayView: displayView, errorView: errorView, loadingView: loadingView, loadingIndicator: loadingIndicator)
-        startObservingTableViewContentSize()
-    }
-    
-    func startObservingTableViewContentSize() {
-        observer = tableView.observe(\UITableView.contentSize, options: [.new, .old]) { [weak self] tableView, change in
-            if let contentSize = change.newValue {
-                self?.delegate.tableContentHeightDidUpdate(contentSize.height)
-            }
-        }
     }
     
     func refreshTrainLines() {
