@@ -9,23 +9,63 @@
 import CTAKit
 import UIKit
 
+struct Sections {
+    static let statuses = 0
+    static let arrivals = 1
+}
+
+enum LineStatusDataSource {
+    case lines([TrainLine])
+    case requesting
+    case error
+}
+
 class TableViewController: UITableViewController {
     
-    private var lines: [TrainLine] = []
+    private var linesDataSource: LineStatusDataSource = .lines([])
     
     func display(lines: [TrainLine]) {
-        self.lines = lines
+        linesDataSource = LineStatusDataSource.lines(lines)
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lines.count
+        if section == Sections.statuses {
+            return numberOfRows(forLinesDataSource: linesDataSource)
+        }
+        
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let status = lines[indexPath.row]
-        let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
-        cell.configure(for: status)
-        return cell
+        if indexPath.section == Sections.statuses {
+            return statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
+        }
+        
+        return UITableViewCell()
+    }
+}
+
+private extension TableViewController {
+    
+    func numberOfRows(forLinesDataSource dataSource: LineStatusDataSource) -> Int {
+        switch linesDataSource {
+        case .lines(let lines):
+            return lines.count
+        case .requesting, .error:
+            return 1
+        }
+    }
+    
+    func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: LineStatusDataSource) -> UITableViewCell {
+        switch linesDataSource {
+        case .lines(let lines):
+            let status = lines[indexPath.row]
+            let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
+            cell.configure(for: status)
+            return cell
+        case .requesting, .error:
+            return UITableViewCell()
+        }
     }
 }
