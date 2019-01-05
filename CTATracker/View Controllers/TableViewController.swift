@@ -20,13 +20,23 @@ enum LineStatusDataSource {
     case error
 }
 
+protocol TableViewDelegate: class {
+    func refreshControlWasActivated()
+}
+
 class TableViewController: UITableViewController {
     
     private var linesDataSource: LineStatusDataSource = .lines([])
+    weak var delegate: TableViewDelegate?
     
     func display(lines: [TrainLine]) {
         linesDataSource = LineStatusDataSource.lines(lines)
+        refreshControl?.endRefreshing()
         tableView.reloadData()
+    }
+    
+    @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
+        delegate?.refreshControlWasActivated()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

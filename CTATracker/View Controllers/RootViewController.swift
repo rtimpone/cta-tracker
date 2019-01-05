@@ -21,24 +21,37 @@ class RootViewController: UIViewController {
         //request location permission here
         
         UTCOffsets.lookupOffsets {
-            //trigger API refreshes now
-            
-            CtaClient().getTrainLines() { result in
-                switch result {
-                case .success(let lines):
-                    let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
-                    self.tableViewController.display(lines: filteredLines)
-                case .failure(let error):
-//                    self.viewHandler.showErrorState()
-                    print(error)
-                }
-            }
+            self.refreshDataFromApi()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TableViewController {
+            vc.delegate = self
             tableViewController = vc
+        }
+    }
+}
+
+extension RootViewController: TableViewDelegate {
+    
+    func refreshControlWasActivated() {
+        refreshDataFromApi()
+    }
+}
+
+private extension RootViewController {
+    
+    func refreshDataFromApi() {
+        CtaClient().getTrainLines() { result in
+            switch result {
+            case .success(let lines):
+                let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
+                self.tableViewController.display(lines: filteredLines)
+            case .failure(let error):
+                //                    self.viewHandler.showErrorState()
+                print(error)
+            }
         }
     }
 }
