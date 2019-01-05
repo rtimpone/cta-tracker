@@ -43,6 +43,8 @@ class TableViewController: UITableViewController {
         delegate?.refreshControlWasActivated()
     }
     
+    // MARK: Table View Data Source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Sections.statuses {
             return numberOfRows(forLinesDataSource: linesDataSource)
@@ -51,12 +53,34 @@ class TableViewController: UITableViewController {
         return 0
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 42
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == Sections.statuses {
             return statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
         }
         
         return UITableViewCell()
+    }
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let header = SectionHeader.fromNib()
+        
+        switch section {
+        case Sections.statuses:
+            header.label.text = "Route Status"
+        case Sections.arrivals:
+            header.label.text = "Arrivals"
+        default:
+            header.label.text = ""
+        }
+        
+        return header
     }
 }
 

@@ -19,6 +19,27 @@ extension NibBased {
     }
 }
 
+extension NibBased where Self: UIView {
+    
+    static func fromNib() -> Self {
+        
+        let bundle = Bundle(for: self)
+        guard let nibs = bundle.loadNibNamed(nibName, owner: nil, options: nil) else {
+            fatalError("No nibs named '\(nibName)' were found in this bundle")
+        }
+        
+        if nibs.count > 1 {
+            fatalError("More than one nib named '\(nibName)' was found in this bundle")
+        }
+        
+        guard let instance = nibs.first as? Self else {
+            fatalError("The view found in nib named '\(nibName)' was not the correct type, '\(self)'")
+        }
+        
+        return instance
+    }
+}
+
 extension UITableView {
     
     private struct AssociatedKeys {
