@@ -35,6 +35,12 @@ class TableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    func showErrorForLines() {
+        linesDataSource = LineStatusDataSource.error
+        refreshControl?.endRefreshing()
+        tableView.reloadData()
+    }
+    
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
         delegate?.refreshControlWasActivated()
     }
@@ -74,7 +80,9 @@ private extension TableViewController {
             let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
             cell.configure(for: status)
             return cell
-        case .requesting, .error:
+        case .error:
+            return tableView.dequeueReusableCell(ofType: StatusErrorCell.self)
+        case .requesting:
             return UITableViewCell()
         }
     }

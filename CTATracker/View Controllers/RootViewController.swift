@@ -46,6 +46,10 @@ private extension RootViewController {
         CtaClient().getTrainLines() { result in
             switch result {
             case .success(let lines):
+                
+                self.tableViewController.showErrorForLines()
+                return
+                
                 let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
                 self.tableViewController.display(lines: filteredLines)
             case .failure(let error):
