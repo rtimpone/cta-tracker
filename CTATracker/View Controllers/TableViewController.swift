@@ -29,12 +29,12 @@ class TableViewController: UITableViewController {
     private var linesDataSource: DataSource<TrainLine> = .initialState
     weak var delegate: TableViewDelegate?
     
-    func display(lines: [TrainLine]) {
+    func displayTrainLines(_ lines: [TrainLine]) {
         linesDataSource = DataSource.data(lines)
         stopRefreshControlAndReloadData()
     }
     
-    func showErrorForLines() {
+    func displayTrainLinesError() {
         linesDataSource = DataSource.error
         stopRefreshControlAndReloadData()
     }
@@ -58,37 +58,34 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == Sections.statuses {
-            return statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
+        switch indexPath.section {
+        case Sections.statuses:
+            return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
+        case Sections.arrivals:
+            return UITableViewCell()
+        default:
+            return UITableViewCell()
         }
-        
-        return UITableViewCell()
     }
     
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let header = SectionHeader.fromNib()
-        
         switch section {
         case Sections.statuses:
-            header.label.text = "Route Status"
+            return SectionHeader.fromNib(withText: "Route Status")
         case Sections.arrivals:
-            header.label.text = "Arrivals"
+            return SectionHeader.fromNib(withText: "Arrivals")
         default:
-            header.label.text = ""
+            return nil
         }
-        
-        return header
     }
 }
 
 private extension TableViewController {
     
     func stopRefreshControlAndReloadData() {
-        let shouldStopRefreshing = refreshControl?.isRefreshing ?? false
-        if shouldStopRefreshing {
+        if let control = refreshControl, control.isRefreshing {
             refreshControl?.endRefreshing()
         }
         tableView.reloadData()
@@ -100,20 +97,6 @@ private extension TableViewController {
             return lines.count
         case .initialState, .error:
             return 1
-        }
-    }
-    
-    func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<TrainLine>) -> UITableViewCell {
-        switch linesDataSource {
-        case .data(let lines):
-            let status = lines[indexPath.row]
-            let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
-            cell.configure(for: status)
-            return cell
-        case .error:
-            return tableView.dequeueReusableCell(ofType: StatusErrorCell.self)
-        case .initialState:
-            return tableView.dequeueReusableCell(ofType: StatusInitialStateCell.self)
         }
     }
 }

@@ -45,6 +45,7 @@
 		FBE2E21121E11F2600D97D61 /* StatusInitialStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21021E11F2600D97D61 /* StatusInitialStateCell.xib */; };
 		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
 		FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* SectionHeader.xib */; };
+		FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21821E12D4E00D97D61 /* CellFactory.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		FBE2E21021E11F2600D97D61 /* StatusInitialStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusInitialStateCell.xib; sourceTree = "<group>"; };
 		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -313,6 +315,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FBE2E21721E12D4200D97D61 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2E21821E12D4E00D97D61 /* CellFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		FBF179F021C55FD900BF232C = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +351,7 @@
 				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
+				FBE2E21721E12D4200D97D61 /* Factories */,
 				FBCAA0F821C5629800681A6F /* Protocols */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FBF17A1C21C5601C00BF232C /* Storyboards */,
@@ -604,6 +615,7 @@
 				FBE2E20F21E11F2100D97D61 /* StatusInitialStateCell.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* StatusErrorCell.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
+				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */,
 				FBCAA0CD21C561B900681A6F /* ViewHandler.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,

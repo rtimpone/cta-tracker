@@ -47,10 +47,9 @@ private extension RootViewController {
             switch result {
             case .success(let lines):
                 let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
-                self.tableViewController.display(lines: filteredLines)
+                self.tableViewController.displayTrainLines(filteredLines)
             case .failure(let error):
-                //                    self.viewHandler.showErrorState()
-                print(error)
+                self.tableViewController.displayTrainLinesError()
             }
         }
     }
