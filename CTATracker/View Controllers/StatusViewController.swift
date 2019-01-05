@@ -47,7 +47,7 @@ class StatusViewController: UIViewController {
         
         viewHandler.showLoadingState()
         
-        let client = CTAClient()
+        let client = CtaClient()
         client.getTrainLines() { result in
             switch result {
             case .success(let lines):

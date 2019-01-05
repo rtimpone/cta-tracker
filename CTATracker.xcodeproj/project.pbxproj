@@ -22,8 +22,8 @@
 		FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FA21C562A700681A6F /* CircleView.swift */; };
 		FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FC21C562AD00681A6F /* NibBased.swift */; };
 		FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */; };
-		FBCAA10621C5635000681A6F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10521C5635000681A6F /* APIClient.swift */; };
-		FBCAA10821C5635600681A6F /* CTAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10721C5635600681A6F /* CTAClient.swift */; };
+		FBCAA10621C5635000681A6F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10521C5635000681A6F /* ApiClient.swift */; };
+		FBCAA10821C5635600681A6F /* CtaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10721C5635600681A6F /* CtaClient.swift */; };
 		FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10921C5637500681A6F /* TrainLine.swift */; };
 		FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10B21C5637C00681A6F /* TrainArrival.swift */; };
 		FBCAA10E21C5639500681A6F /* TrainLineResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10D21C5639500681A6F /* TrainLineResponse.swift */; };
@@ -37,6 +37,7 @@
 		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
+		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -107,8 +108,8 @@
 		FBCAA0FA21C562A700681A6F /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FBCAA0FC21C562AD00681A6F /* NibBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBased.swift; sourceTree = "<group>"; };
 		FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
-		FBCAA10521C5635000681A6F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		FBCAA10721C5635600681A6F /* CTAClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAClient.swift; sourceTree = "<group>"; };
+		FBCAA10521C5635000681A6F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		FBCAA10721C5635600681A6F /* CtaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaClient.swift; sourceTree = "<group>"; };
 		FBCAA10921C5637500681A6F /* TrainLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainLine.swift; sourceTree = "<group>"; };
 		FBCAA10B21C5637C00681A6F /* TrainArrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainArrival.swift; sourceTree = "<group>"; };
 		FBCAA10D21C5639500681A6F /* TrainLineResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainLineResponse.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
+		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -245,8 +247,9 @@
 		FBCAA10221C5632700681A6F /* API Clients */ = {
 			isa = PBXGroup;
 			children = (
-				FBCAA10521C5635000681A6F /* APIClient.swift */,
-				FBCAA10721C5635600681A6F /* CTAClient.swift */,
+				FBCAA10521C5635000681A6F /* ApiClient.swift */,
+				FBE2E20621E10B9400D97D61 /* ApiLogger.swift */,
+				FBCAA10721C5635600681A6F /* CtaClient.swift */,
 			);
 			path = "API Clients";
 			sourceTree = "<group>";
@@ -552,10 +555,11 @@
 				FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */,
 				FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */,
 				FB89463921D1A9450018E97B /* TrainStop.swift in Sources */,
+				FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */,
 				FBCAA11821C564C800681A6F /* UIColor+Extensions.swift in Sources */,
 				FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */,
-				FBCAA10621C5635000681A6F /* APIClient.swift in Sources */,
-				FBCAA10821C5635600681A6F /* CTAClient.swift in Sources */,
+				FBCAA10621C5635000681A6F /* ApiClient.swift in Sources */,
+				FBCAA10821C5635600681A6F /* CtaClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

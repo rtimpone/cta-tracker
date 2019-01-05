@@ -32,14 +32,16 @@ public enum ApiError : Error {
 
 typealias ApiCompletionBlock<T: Decodable> = (ApiResult<T>) -> Void
 
-public class APIClient {
+public class ApiClient {
     
     let session: URLSession
     let jsonDecoder: JSONDecoder
+    let logger: ApiLogger
     
-    public init(session: URLSession = .shared, jsonDecoder: JSONDecoder = JSONDecoder()) {
+    public init(session: URLSession = .shared, jsonDecoder: JSONDecoder = JSONDecoder(), logger: ApiLogger = ConsoleApiLogger()) {
         self.session = session
         self.jsonDecoder = jsonDecoder
+        self.logger = logger
     }
     
     func fetchObject<T: Decodable>(ofType type: T.Type, from url: URL, completion: @escaping ApiCompletionBlock<T>) {
@@ -48,10 +50,13 @@ public class APIClient {
         let task = session.dataTask(with: request) { data, response, error in
             
             if let error = error {
+                self.logger.logHttpResponse(nil, toRequest: request)
                 ApiResult.failure(.connectionError(error)) -=> completion
             }
             else {
                 let httpResponse = response as! HTTPURLResponse
+                self.logger.logHttpResponse(httpResponse, toRequest: request)
+                
                 switch httpResponse.statusCode {
                 case 200:
                     do {

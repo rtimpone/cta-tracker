@@ -63,7 +63,7 @@ class ArrivalsViewController: UIViewController {
     
     func downloadArrivalTimes(forStop stop: TrainStop, completion: @escaping (QueueResult) -> ()) {
         
-        let client = CTAClient()
+        let client = CtaClient()
         client.getArrivals(forStop: stop) { result in
             switch result {
             case .success(let arrivals):

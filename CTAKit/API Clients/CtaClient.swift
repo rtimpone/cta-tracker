@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CTAClient: APIClient {
+public class CtaClient: ApiClient {
     
     public func getTrainLines(completion: @escaping (ApiResult<[TrainLine]>) -> Void) {
         
