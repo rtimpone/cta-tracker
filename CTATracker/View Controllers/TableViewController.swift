@@ -14,8 +14,8 @@ struct Sections {
     static let arrivals = 1
 }
 
-enum LineStatusDataSource {
-    case lines([TrainLine])
+enum DataSource<T> {
+    case data([T])
     case initialState
     case error
 }
@@ -26,16 +26,16 @@ protocol TableViewDelegate: class {
 
 class TableViewController: UITableViewController {
     
-    private var linesDataSource: LineStatusDataSource = .initialState
+    private var linesDataSource: DataSource<TrainLine> = .initialState
     weak var delegate: TableViewDelegate?
     
     func display(lines: [TrainLine]) {
-        linesDataSource = LineStatusDataSource.lines(lines)
+        linesDataSource = DataSource.data(lines)
         stopRefreshControlAndReloadData()
     }
     
     func showErrorForLines() {
-        linesDataSource = LineStatusDataSource.error
+        linesDataSource = DataSource.error
         stopRefreshControlAndReloadData()
     }
     
@@ -94,18 +94,18 @@ private extension TableViewController {
         tableView.reloadData()
     }
     
-    func numberOfRows(forLinesDataSource dataSource: LineStatusDataSource) -> Int {
+    func numberOfRows(forLinesDataSource dataSource: DataSource<TrainLine>) -> Int {
         switch linesDataSource {
-        case .lines(let lines):
+        case .data(let lines):
             return lines.count
         case .initialState, .error:
             return 1
         }
     }
     
-    func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: LineStatusDataSource) -> UITableViewCell {
+    func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<TrainLine>) -> UITableViewCell {
         switch linesDataSource {
-        case .lines(let lines):
+        case .data(let lines):
             let status = lines[indexPath.row]
             let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
             cell.configure(for: status)
