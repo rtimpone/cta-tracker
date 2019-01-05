@@ -39,8 +39,8 @@
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* TableViewController.swift */; };
-		FBE2E20B21E11DC000D97D61 /* StatusErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* StatusErrorCell.swift */; };
-		FBE2E20D21E11DC900D97D61 /* StatusErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E20C21E11DC900D97D61 /* StatusErrorCell.xib */; };
+		FBE2E20B21E11DC000D97D61 /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* ErrorCell.swift */; };
+		FBE2E20D21E11DC900D97D61 /* ErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E20C21E11DC900D97D61 /* ErrorCell.xib */; };
 		FBE2E20F21E11F2100D97D61 /* StatusInitialStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20E21E11F2100D97D61 /* StatusInitialStateCell.swift */; };
 		FBE2E21121E11F2600D97D61 /* StatusInitialStateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21021E11F2600D97D61 /* StatusInitialStateCell.xib */; };
 		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
@@ -134,8 +134,8 @@
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBE2E20821E1154F00D97D61 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		FBE2E20A21E11DC000D97D61 /* StatusErrorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusErrorCell.swift; sourceTree = "<group>"; };
-		FBE2E20C21E11DC900D97D61 /* StatusErrorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusErrorCell.xib; sourceTree = "<group>"; };
+		FBE2E20A21E11DC000D97D61 /* ErrorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
+		FBE2E20C21E11DC900D97D61 /* ErrorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorCell.xib; sourceTree = "<group>"; };
 		FBE2E20E21E11F2100D97D61 /* StatusInitialStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusInitialStateCell.swift; sourceTree = "<group>"; };
 		FBE2E21021E11F2600D97D61 /* StatusInitialStateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusInitialStateCell.xib; sourceTree = "<group>"; };
 		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -300,8 +300,8 @@
 				FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */,
 				FBCAA11221C5647800681A6F /* StatusCell.swift */,
 				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
-				FBE2E20A21E11DC000D97D61 /* StatusErrorCell.swift */,
-				FBE2E20C21E11DC900D97D61 /* StatusErrorCell.xib */,
+				FBE2E20A21E11DC000D97D61 /* ErrorCell.swift */,
+				FBE2E20C21E11DC900D97D61 /* ErrorCell.xib */,
 				FBE2E20E21E11F2100D97D61 /* StatusInitialStateCell.swift */,
 				FBE2E21021E11F2600D97D61 /* StatusInitialStateCell.xib */,
 			);
@@ -575,7 +575,7 @@
 				FBE2E21121E11F2600D97D61 /* StatusInitialStateCell.xib in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
 				FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */,
-				FBE2E20D21E11DC900D97D61 /* StatusErrorCell.xib in Resources */,
+				FBE2E20D21E11DC900D97D61 /* ErrorCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,7 +625,7 @@
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20F21E11F2100D97D61 /* StatusInitialStateCell.swift in Sources */,
-				FBE2E20B21E11DC000D97D61 /* StatusErrorCell.swift in Sources */,
+				FBE2E20B21E11DC000D97D61 /* ErrorCell.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */,
