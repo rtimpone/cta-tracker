@@ -16,7 +16,7 @@ struct Sections {
 
 enum LineStatusDataSource {
     case lines([TrainLine])
-    case requesting
+    case initialState
     case error
 }
 
@@ -26,19 +26,17 @@ protocol TableViewDelegate: class {
 
 class TableViewController: UITableViewController {
     
-    private var linesDataSource: LineStatusDataSource = .lines([])
+    private var linesDataSource: LineStatusDataSource = .initialState
     weak var delegate: TableViewDelegate?
     
     func display(lines: [TrainLine]) {
         linesDataSource = LineStatusDataSource.lines(lines)
-        refreshControl?.endRefreshing()
-        tableView.reloadData()
+        stopRefreshControlAndReloadData()
     }
     
     func showErrorForLines() {
         linesDataSource = LineStatusDataSource.error
-        refreshControl?.endRefreshing()
-        tableView.reloadData()
+        stopRefreshControlAndReloadData()
     }
     
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
@@ -64,11 +62,19 @@ class TableViewController: UITableViewController {
 
 private extension TableViewController {
     
+    func stopRefreshControlAndReloadData() {
+        let shouldStopRefreshing = refreshControl?.isRefreshing ?? false
+        if shouldStopRefreshing {
+            refreshControl?.endRefreshing()
+        }
+        tableView.reloadData()
+    }
+    
     func numberOfRows(forLinesDataSource dataSource: LineStatusDataSource) -> Int {
         switch linesDataSource {
         case .lines(let lines):
             return lines.count
-        case .requesting, .error:
+        case .initialState, .error:
             return 1
         }
     }
@@ -82,8 +88,8 @@ private extension TableViewController {
             return cell
         case .error:
             return tableView.dequeueReusableCell(ofType: StatusErrorCell.self)
-        case .requesting:
-            return UITableViewCell()
+        case .initialState:
+            return tableView.dequeueReusableCell(ofType: StatusInitialStateCell.self)
         }
     }
 }
