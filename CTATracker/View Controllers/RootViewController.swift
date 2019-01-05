@@ -11,8 +11,6 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
-    
     weak var tableViewController: TableViewController!
     
     override func viewDidLoad() {
@@ -43,12 +41,11 @@ extension RootViewController: TableViewDelegate {
 private extension RootViewController {
     
     func refreshDataFromApi() {
-        CtaClient().getTrainLines() { result in
+        StatusRequestHandler.requestTrainStatus() { result in
             switch result {
             case .success(let lines):
-                let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
-                self.tableViewController.displayTrainLines(filteredLines)
-            case .failure(let error):
+                self.tableViewController.displayTrainLines(lines)
+            case .error:
                 self.tableViewController.displayTrainLinesError()
             }
         }

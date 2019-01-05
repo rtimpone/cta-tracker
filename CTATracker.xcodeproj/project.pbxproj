@@ -46,6 +46,7 @@
 		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
 		FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* SectionHeader.xib */; };
 		FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21821E12D4E00D97D61 /* CellFactory.swift */; };
+		FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -140,6 +141,7 @@
 		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
+		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -323,6 +325,14 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		FBE2E21A21E12FC900D97D61 /* Request Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */,
+			);
+			path = "Request Handlers";
+			sourceTree = "<group>";
+		};
 		FBF179F021C55FD900BF232C = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
 				FBCAA0F821C5629800681A6F /* Protocols */,
+				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FBF17A1C21C5601C00BF232C /* Storyboards */,
 				FBCAA0D321C5620200681A6F /* Table Handlers */,
@@ -612,6 +623,7 @@
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
+				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20F21E11F2100D97D61 /* StatusInitialStateCell.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* StatusErrorCell.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,

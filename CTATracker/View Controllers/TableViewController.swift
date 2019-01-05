@@ -31,12 +31,12 @@ class TableViewController: UITableViewController {
     
     func displayTrainLines(_ lines: [TrainLine]) {
         linesDataSource = DataSource.data(lines)
-        stopRefreshControlAndReloadData()
+        stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
     func displayTrainLinesError() {
         linesDataSource = DataSource.error
-        stopRefreshControlAndReloadData()
+        stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
@@ -84,11 +84,14 @@ class TableViewController: UITableViewController {
 
 private extension TableViewController {
     
-    func stopRefreshControlAndReloadData() {
+    func stopRefreshControlAndReloadSection(_ section: Int) {
+        
         if let control = refreshControl, control.isRefreshing {
             refreshControl?.endRefreshing()
         }
-        tableView.reloadData()
+        
+        let indexSet = IndexSet(integer: section)
+        tableView.reloadSections(indexSet, with: .automatic)
     }
     
     func numberOfRows(forLinesDataSource dataSource: DataSource<TrainLine>) -> Int {
