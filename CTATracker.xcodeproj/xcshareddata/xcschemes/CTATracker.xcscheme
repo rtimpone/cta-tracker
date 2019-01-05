@@ -34,6 +34,34 @@
                ReferencedContainer = "container:CTATracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FBF17A0C21C55FDB00BF232C"
+               BuildableName = "CTATrackerTests.xctest"
+               BlueprintName = "CTATrackerTests"
+               ReferencedContainer = "container:CTATracker.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FBCAA0E121C5625000681A6F"
+               BuildableName = "CTAKitTests.xctest"
+               BlueprintName = "CTAKitTests"
+               ReferencedContainer = "container:CTATracker.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

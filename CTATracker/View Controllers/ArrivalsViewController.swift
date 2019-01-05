@@ -11,6 +11,11 @@ import UIKit
 
 class ArrivalsViewController: UIViewController {
     
+    enum QueueResult {
+        case success
+        case error
+    }
+    
     let stopsToShow: [String] = []
     
     @IBOutlet weak var loadingView: UIView!
@@ -22,70 +27,60 @@ class ArrivalsViewController: UIViewController {
     var tableHandler: ArrivalsTableHandler!
     var viewHandler: ViewHandler!
     
+    var stopsQueue: [TrainStop] = []
+    var arrivals: [StationArrivals] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableHandler = ArrivalsTableHandler(tableView: tableView)
         viewHandler = ViewHandler(displayView: displayView, errorView: errorView, loadingView: loadingView, loadingIndicator: loadingIndicator)
+        stopsQueue = TrainStop.allStops
     }
     
     func refreshArrivalTimes() {
-        
         viewHandler.showLoadingState()
+        processNextInQueue()
+    }
+    
+    func processNextInQueue() {
         
-        let client = CTAClient()
-        client.getArrivals() { result in
-            switch result {
-            case .success(let arrivals):
-                for arrival in arrivals {
-                    print(arrival)
-                }
-            case .failure(let error):
-                print(error)
-            }
+        guard stopsQueue.count > 0 else {
+            filterArrivalsAndDisplayThem()
+            return
         }
         
-        //call API
-        //if success
-        filterArrivalsAndDisplayThem()
-        //else let error
-        //self.viewHandler.showErrorState()
-        //print(error)
+        let nextInQueue = stopsQueue.removeFirst()
+        downloadArrivalTimes(forStop: nextInQueue) { result in
+            switch result {
+            case .success:
+                self.processNextInQueue()
+            case .error:
+                self.viewHandler.showErrorState()
+            }
+        }
+    }
+    
+    func downloadArrivalTimes(forStop stop: TrainStop, completion: @escaping (QueueResult) -> ()) {
+        
+        let client = CtaClient()
+        client.getArrivals(forStop: stop) { result in
+            switch result {
+            case .success(let arrivals):
+                self.arrivals.append(arrivals)
+                completion(.success)
+            case .failure(let error):
+                print(error)
+                completion(.error)
+            }
+        }
     }
     
     func filterArrivalsAndDisplayThem() {
         
         //filter out only the stops we want
         
-        let arrivals = [String]()
-        tableHandler.display(arrivalTimes: arrivals)
+        tableHandler.display(arrivals: arrivals)
         viewHandler.showDisplayState()
-    }
-}
-
-class ArrivalsTableHandler: NSObject {
-    
-    weak var tableView: UITableView!
-    private var stops: [String] = []
-    
-    init(tableView: UITableView) {
-        self.tableView = tableView
-        super.init()
-        tableView.dataSource = self
-    }
-    
-    func display(arrivalTimes: [String]) {
-        self.stops = arrivalTimes
-        tableView.reloadData()
-    }
-}
-
-extension ArrivalsTableHandler: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return stops.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
     }
 }

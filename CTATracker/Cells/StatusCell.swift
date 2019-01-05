@@ -20,6 +20,20 @@ class StatusCell: UITableViewCell, NibBased {
         lineColorView.backgroundColor = line.displayColor
         lineLabel.text = line.title
         statusLabel.text = line.status.rawValue
-        statusLabel.textColor = line.status == .normal ? .black : .red
+        statusLabel.textColor = color(forStatus: line.status)
+    }
+}
+
+private extension StatusCell {
+    
+    func color(forStatus status: TrainLine.LineStatus) -> UIColor {
+        switch status {
+        case .normal, .serviceChange:
+            return .black
+        case .minorDelays, .majorDelays, .significantDelays, .serviceDisruption:
+            return .red
+        case .unknown:
+            return .lightGray
+        }
     }
 }

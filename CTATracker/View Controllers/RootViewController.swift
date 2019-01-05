@@ -21,7 +21,7 @@ class RootViewController: UIViewController {
         
         //request location permission here
         
-        Locations.initializeLocations {
+        UTCOffsets.lookupOffsets {
             self.statusController.refreshTrainLines()
             self.arrivalsController.refreshArrivalTimes()
         }
