@@ -16,6 +16,7 @@ class RootViewController: UIViewController {
     let statusRequestHandler = StatusRequestHandler()
     
     weak var tableViewController: TableViewController!
+    var currentDeviceCoordinate: Coordinate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +24,18 @@ class RootViewController: UIViewController {
         let permissionStatus = locationHandler.fetchCurrentPermissionStatus()
         switch permissionStatus {
         case .granted:
-            makeInitialApiRequests()
+            makeRequestsWithLocationPermission()
         case .denied:
-            print("unable to sort by location")
+            makeRequestsWithoutLocationPermission()
         case .notYetRequested:
-            locationHandler.requestLocationPermission() { [weak self] permissionWasGranted in
-                if permissionWasGranted {
-                    self?.makeInitialApiRequests()
+            locationHandler.requestLocationPermission() { [weak self] permissionGranted in
+                if permissionGranted {
+                    self?.makeRequestsWithLocationPermission()
                 }
                 else {
-                    //hide sorting options for train stops
+                    self?.makeRequestsWithoutLocationPermission()
                 }
             }
-            makeInitialApiRequests()
         }
     }
     
@@ -46,7 +46,14 @@ class RootViewController: UIViewController {
         }
     }
     
-    func makeInitialApiRequests() {
+    func getCurrentLocation(completion: @escaping () -> Void) {
+        locationHandler.fetchCurrentLocation() { coordinate in
+            self.currentDeviceCoordinate = coordinate
+            completion()
+        }
+    }
+    
+    func makeInitialNetworkRequests() {
         UTCOffsets.lookupOffsets {
             self.refreshDataFromApi()
         }
@@ -61,6 +68,20 @@ extension RootViewController: TableViewDelegate {
 }
 
 private extension RootViewController {
+    
+    func makeRequestsWithLocationPermission() {
+        getCurrentLocation {
+            UTCOffsets.lookupOffsets {
+                self.refreshDataFromApi()
+            }
+        }
+    }
+    
+    func makeRequestsWithoutLocationPermission() {
+        UTCOffsets.lookupOffsets {
+            self.refreshDataFromApi()
+        }
+    }
     
     func refreshDataFromApi() {
         
@@ -78,7 +99,11 @@ private extension RootViewController {
         arrivalsRequestHandler.requestTrainStopArrivalTimes() { result in
             switch result {
             case .success(let arrivals):
-                self.tableViewController.displayArrivals(arrivals)
+                var sortedArrivals = arrivals
+                if let coordinate = self.currentDeviceCoordinate {
+                    sortedArrivals = ArrivalsSorter.sortArrivals(arrivals, byDistanceTo: coordinate)
+                }
+                self.tableViewController.displayArrivals(sortedArrivals)
             case .error:
                 self.tableViewController.displayArrivalsError()
             }

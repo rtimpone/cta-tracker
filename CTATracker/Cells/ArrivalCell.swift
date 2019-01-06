@@ -40,7 +40,7 @@ class ArrivalCell: UITableViewCell, NibBased {
             return
         }
         
-        destinationLabel.text = arrivals.station.name
+        destinationLabel.text = arrivals.stop.name
         firstArrivalView.configure(for: etas[0])
         
         guard etas.count > 1 else {

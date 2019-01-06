@@ -14,12 +14,19 @@ enum PermissionStatus {
     case notYetRequested
 }
 
+struct Coordinate {
+    var latitude: Double
+    var longitude: Double
+}
+
 class LocationHandler: NSObject {
     
-    typealias PermissionRequestCompletion = (_ permissionWasGranted: Bool) -> Void
+    typealias RequestPermissionCompletion = (_ permissionWasGranted: Bool) -> Void
+    typealias FetchLocationCompletion = (Coordinate) -> Void
     
     let manager: CLLocationManager
-    var permissionRequestCompletion: PermissionRequestCompletion?
+    var requestPermissionCompletion: RequestPermissionCompletion?
+    var fetchLocationCompletion: FetchLocationCompletion?
     
     override init() {
         manager = CLLocationManager()
@@ -40,14 +47,19 @@ class LocationHandler: NSObject {
         }
     }
     
-    func requestLocationPermission(completion: @escaping PermissionRequestCompletion) {
+    func fetchCurrentLocation(completion: @escaping FetchLocationCompletion) {
+        fetchLocationCompletion = completion
+        manager.startUpdatingLocation()
+    }
+    
+    func requestLocationPermission(completion: @escaping RequestPermissionCompletion) {
         
         let currentStatus = fetchCurrentPermissionStatus()
         guard currentStatus == .notYetRequested else {
             return
         }
         
-        permissionRequestCompletion = completion
+        requestPermissionCompletion = completion
         manager.requestWhenInUseAuthorization()
     }
 }
@@ -57,13 +69,20 @@ extension LocationHandler: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            permissionRequestCompletion?(true)
-            permissionRequestCompletion = nil
+            requestPermissionCompletion?(true)
         case .denied, .restricted:
-            permissionRequestCompletion?(false)
-            permissionRequestCompletion = nil
+            requestPermissionCompletion?(false)
         case .notDetermined:
             break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        if let mostRecentLocation = locations.last {
+            let coordinate = Coordinate(latitude: mostRecentLocation.coordinate.latitude, longitude: mostRecentLocation.coordinate.longitude)
+            fetchLocationCompletion?(coordinate)
+            fetchLocationCompletion = nil
         }
     }
 }
