@@ -56,7 +56,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p8Y-pw-mue"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CTA Status" id="Zcq-na-wef"/>
+                    <navigationItem key="navigationItem" title="CTA Status" id="Zcq-na-wef">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZMZ-Q8-mf2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ed-Lb-UWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

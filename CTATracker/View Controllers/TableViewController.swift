@@ -32,6 +32,8 @@ enum DataSource<T> {
 
 protocol TableViewDelegate: class {
     func refreshControlWasActivated()
+    func didSelectTrainLine(_ line: TrainLine)
+    func didSelectArrivals(_ arrivals: StationArrivals)
 }
 
 class TableViewController: UITableViewController {
@@ -118,6 +120,23 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView(frame: CGRect(x: 0, y: 0, width: 0.01, height: 0.01))
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case Sections.statuses:
+            if case .data(let lines) = linesDataSource {
+                let line = lines[indexPath.row]
+                delegate?.didSelectTrainLine(line)
+            }
+        case Sections.arrivals:
+            if case .data(let arrivals) = arrivalsDataSource {
+                let arrival = arrivals[indexPath.row]
+                delegate?.didSelectArrivals(arrival)
+            }
+        default:
+            break
+        }
     }
 }
 

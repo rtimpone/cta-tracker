@@ -7,6 +7,7 @@
 //
 
 import CTAKit
+import SafariServices
 import UIKit
 
 class RootViewController: UIViewController {
@@ -64,6 +65,15 @@ extension RootViewController: TableViewDelegate {
     
     func refreshControlWasActivated() {
         refreshDataFromApi()
+    }
+    
+    func didSelectTrainLine(_ line: TrainLine) {
+        let sfc = SFSafariViewController(url: line.routeUrl)
+        present(sfc, animated: true)
+    }
+    
+    func didSelectArrivals(_ arrivals: StationArrivals) {
+        print("Arrivals was selected for: \(arrivals.stop.name)")
     }
 }
 
