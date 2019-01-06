@@ -85,6 +85,10 @@ class TableViewController: UITableViewController {
         return 42
     }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Sections.statuses:
@@ -107,6 +111,10 @@ class TableViewController: UITableViewController {
         default:
             return nil
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect(x: 0, y: 0, width: 0.01, height: 0.01))
     }
 }
 
