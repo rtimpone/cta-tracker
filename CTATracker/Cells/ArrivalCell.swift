@@ -40,12 +40,12 @@ class ArrivalCell: UITableViewCell, NibBased {
                 let eta = etas[index]
                 view.configure(for: eta)
                 
-                let isLastEtaToDisplay = (index == etas.count - 1) || (index == arrivalViews.count - 1)
+                let isLastEtaAvailable = index == etas.count - 1
+                let isLastViewAvailable = index == arrivalViews.count - 1
                 
-                if isLastEtaToDisplay {
+                if isLastEtaAvailable || isLastViewAvailable {
                     bottomConstraint = constraintFromBottomOfCellContentView(toBottomOfView: view)
                     bottomConstraint?.isActive = true
-                    layoutIfNeeded()
                 }
             }
             else {
