@@ -11,11 +11,6 @@
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
-		FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C621C5619200681A6F /* StatusViewController.swift */; };
-		FBCAA0C921C5619D00681A6F /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */; };
-		FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */; };
-		FBCAA0CD21C561B900681A6F /* ViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CC21C561B900681A6F /* ViewHandler.swift */; };
-		FBCAA0D221C561DA00681A6F /* ArrivalsTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0D121C561DA00681A6F /* ArrivalsTableHandler.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,11 +99,6 @@
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
-		FBCAA0C621C5619200681A6F /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
-		FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
-		FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableHandler.swift; sourceTree = "<group>"; };
-		FBCAA0CC21C561B900681A6F /* ViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHandler.swift; sourceTree = "<group>"; };
-		FBCAA0D121C561DA00681A6F /* ArrivalsTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsTableHandler.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,23 +185,6 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		FBCAA0D321C5620200681A6F /* Table Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				FBCAA0D121C561DA00681A6F /* ArrivalsTableHandler.swift */,
-				FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */,
-			);
-			path = "Table Handlers";
-			sourceTree = "<group>";
-		};
-		FBCAA0D421C5621C00681A6F /* View Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				FBCAA0CC21C561B900681A6F /* ViewHandler.swift */,
-			);
-			path = "View Handlers";
-			sourceTree = "<group>";
-		};
 		FBCAA0DB21C5625000681A6F /* CTAKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,13 +222,6 @@
 				FBE2E21521E1210500D97D61 /* SectionHeader.xib */,
 			);
 			path = "Custom Views";
-			sourceTree = "<group>";
-		};
-		FBCAA0FE21C562BD00681A6F /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FBCAA10121C562E700681A6F /* Resources */ = {
@@ -371,10 +337,7 @@
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FBF17A1C21C5601C00BF232C /* Storyboards */,
-				FBCAA0D321C5620200681A6F /* Table Handlers */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
-				FBCAA0D421C5621C00681A6F /* View Handlers */,
-				FBCAA0FE21C562BD00681A6F /* Utilities */,
 			);
 			path = CTATracker;
 			sourceTree = "<group>";
@@ -410,10 +373,8 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */,
 				FBF17A2021C5607800BF232C /* RootViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
-				FBCAA0C621C5619200681A6F /* StatusViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -631,17 +592,12 @@
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
-				FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */,
-				FBCAA0CD21C561B900681A6F /* ViewHandler.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
-				FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
-				FBCAA0D221C561DA00681A6F /* ArrivalsTableHandler.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
 				FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */,
-				FBCAA0C921C5619D00681A6F /* ArrivalsViewController.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

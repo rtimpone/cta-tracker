@@ -12,66 +12,52 @@ import UIKit
 class ArrivalCell: UITableViewCell, NibBased {
     
     @IBOutlet weak var destinationLabel: UILabel!
+    
     @IBOutlet weak var firstArrivalView: ArrivalView!
     @IBOutlet weak var secondArrivalView: ArrivalView!
     @IBOutlet weak var thirdArrivalView: ArrivalView!
     @IBOutlet weak var fourthArrivalView: ArrivalView!
+    @IBOutlet weak var fifthArrivalView: ArrivalView!
+    @IBOutlet weak var sixthArrivalView: ArrivalView!
     
-    @IBOutlet weak var verticalConstraintFromFirstToSecond: NSLayoutConstraint!
-    @IBOutlet weak var verticalConstraintFromSecondToThird: NSLayoutConstraint!
-    @IBOutlet weak var verticalConstraintFromThirdToFourth: NSLayoutConstraint!
+    var arrivalViews: [ArrivalView] {
+        return [firstArrivalView, secondArrivalView, thirdArrivalView, fourthArrivalView, fifthArrivalView, sixthArrivalView]
+    }
     
+    var bottomConstraint: NSLayoutConstraint?
+
     func configure(for arrivals: StationArrivals) {
         
-        let etas = arrivals.etas
-        
-        verticalConstraintFromFirstToSecond.constant = 8
-        verticalConstraintFromSecondToThird.constant = 8
-        verticalConstraintFromThirdToFourth.constant = 8
-        
-        guard etas.count > 0 else {
-            firstArrivalView.configureForHidden()
-            secondArrivalView.configureForHidden()
-            thirdArrivalView.configureForHidden()
-            fourthArrivalView.configureForHidden()
-            verticalConstraintFromFirstToSecond.constant = 0
-            verticalConstraintFromSecondToThird.constant = 0
-            verticalConstraintFromThirdToFourth.constant = 0
-            return
-        }
-        
         destinationLabel.text = arrivals.stop.name
-        firstArrivalView.configure(for: etas[0])
         
-        guard etas.count > 1 else {
-            secondArrivalView.configureForHidden()
-            thirdArrivalView.configureForHidden()
-            fourthArrivalView.configureForHidden()
-            verticalConstraintFromFirstToSecond.constant = 0
-            verticalConstraintFromSecondToThird.constant = 0
-            verticalConstraintFromThirdToFourth.constant = 0
-            return
+        bottomConstraint?.isActive = false
+        
+        let etas = arrivals.etas
+        for (index, view) in arrivalViews.enumerated() {
+            
+            if index < etas.count {
+                
+                view.isHidden = false
+                
+                let eta = etas[index]
+                view.configure(for: eta)
+                
+                let isLastEtaAvailable = index == etas.count - 1
+                let isLastViewAvailable = index == arrivalViews.count - 1
+                
+                if isLastEtaAvailable || isLastViewAvailable {
+                    bottomConstraint = constraintFromBottomOfCellContentView(toBottomOfView: view)
+                    bottomConstraint?.isActive = true
+                }
+            }
+            else {
+                view.isHidden = true
+            }
         }
-        
-        secondArrivalView.configure(for: etas[1])
-        
-        guard etas.count > 2 else {
-            thirdArrivalView.configureForHidden()
-            fourthArrivalView.configureForHidden()
-            verticalConstraintFromSecondToThird.constant = 0
-            verticalConstraintFromThirdToFourth.constant = 0
-            return
-        }
-        
-        thirdArrivalView.configure(for: etas[2])
-        
-        guard etas.count > 3 else {
-            fourthArrivalView.configureForHidden()
-            verticalConstraintFromThirdToFourth.constant = 0
-            return
-        }
-        
-        fourthArrivalView.configure(for: etas[3])
+    }
+    
+    func constraintFromBottomOfCellContentView(toBottomOfView view: UIView) -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 16.5)
     }
 }
 
@@ -86,12 +72,6 @@ class ArrivalView: UIView {
         circleView.isHidden = false
         destinationLabel.text = eta.destination
         etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status)
-    }
-    
-    func configureForHidden() {
-        circleView.isHidden = true
-        destinationLabel.text = ""
-        etaLabel.text = ""
     }
 }
 
