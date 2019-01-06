@@ -61,7 +61,10 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
-        delegate?.refreshControlWasActivated()
+        //need to wait for startRefreshing animation to finish before alerting delegate
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.delegate?.refreshControlWasActivated()
+        }
     }
     
     // MARK: Table View Data Source
@@ -122,11 +125,21 @@ private extension TableViewController {
     
     func stopRefreshControlAndReloadSection(_ section: Int) {
         
-        if let control = refreshControl, control.isRefreshing {
-            refreshControl?.endRefreshing()
+        let isRefreshing = refreshControl?.isRefreshing ?? false
+        if isRefreshing {
+            
+            //had to play around with the timing of these calls to avoid jumpiness when stopping the refresh control
+            let delay = 0.3
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.refreshControl?.endRefreshing()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay + 0.1) {
+                self.tableView.reloadData()
+            }
         }
-        
-        let indexSet = IndexSet(integer: section)
-        tableView.reloadSections(indexSet, with: .automatic)
+        else {
+            tableView.reloadData()
+        }
     }
 }
