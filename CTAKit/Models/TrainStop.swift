@@ -8,18 +8,26 @@
 
 import Foundation
 
-public struct TrainStop {
+public enum StopType {
+    case platform
+    case station
+}
+
+public struct TrainStop: Hashable {
     
-    enum StopType {
-        case platform
-        case station
+    public let id: Int
+    public let name: String
+    public let type: StopType
+    public let latitude: Double
+    public let longitude: Double
+    
+    public init(id: Int, name: String, type: StopType, latitude: Double, longitude: Double) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.latitude = latitude
+        self.longitude = longitude
     }
-    
-    let id: Int
-    let name: String
-    let type: StopType
-    let latitude: Double
-    let longitude: Double
     
     public static let allStops = [
         TrainStop(id: 30131, name: "Adams/Wabash (Northbound)", type: .platform, latitude: 41.879507, longitude: -87.626037),

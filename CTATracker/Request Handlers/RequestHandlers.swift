@@ -44,7 +44,7 @@ class ArrivalsRequestHandler: RequestHandler {
                 case .success(let arrivals):
                     allArrivals.append(arrivals)
                     if queueCount == 0 {
-                        let sortedArrivals = allArrivals.sorted(by: { $0.station.name < $1.station.name })
+                        let sortedArrivals = allArrivals.sorted(by: { $0.stop.name < $1.stop.name })
                         self.isRequesting = false
                         completion(.success(sortedArrivals))
                     }

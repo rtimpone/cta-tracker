@@ -99,10 +99,11 @@ private extension RootViewController {
         arrivalsRequestHandler.requestTrainStopArrivalTimes() { result in
             switch result {
             case .success(let arrivals):
+                var sortedArrivals = arrivals
                 if let coordinate = self.currentDeviceCoordinate {
-                    //sort by location
+                    sortedArrivals = ArrivalsSorter.sortArrivals(arrivals, byDistanceTo: coordinate)
                 }
-                self.tableViewController.displayArrivals(arrivals)
+                self.tableViewController.displayArrivals(sortedArrivals)
             case .error:
                 self.tableViewController.displayArrivalsError()
             }

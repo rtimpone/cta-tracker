@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
+		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
+		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
 		FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C621C5619200681A6F /* StatusViewController.swift */; };
 		FBCAA0C921C5619D00681A6F /* ArrivalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */; };
 		FBCAA0CB21C561AE00681A6F /* StatusTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */; };
 		FBCAA0CD21C561B900681A6F /* ViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0CC21C561B900681A6F /* ViewHandler.swift */; };
 		FBCAA0D221C561DA00681A6F /* ArrivalsTableHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0D121C561DA00681A6F /* ArrivalsTableHandler.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
-		FBCAA0EA21C5625000681A6F /* CTAKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* CTAKitTests.swift */; };
+		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0F021C5625000681A6F /* CTAKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,7 +51,6 @@
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
 		FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */; };
-		FBF17A1221C55FDB00BF232C /* CTATrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A1121C55FDB00BF232C /* CTATrackerTests.swift */; };
 		FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,8 @@
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
+		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
+		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
 		FBCAA0C621C5619200681A6F /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		FBCAA0C821C5619D00681A6F /* ArrivalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsViewController.swift; sourceTree = "<group>"; };
 		FBCAA0CA21C561AE00681A6F /* StatusTableHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableHandler.swift; sourceTree = "<group>"; };
@@ -110,7 +113,7 @@
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCAA0E221C5625000681A6F /* CTAKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTAKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBCAA0E921C5625000681A6F /* CTAKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAKitTests.swift; sourceTree = "<group>"; };
+		FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionTests.swift; sourceTree = "<group>"; };
 		FBCAA0EB21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCAA0FA21C562A700681A6F /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		FBCAA0FC21C562AD00681A6F /* NibBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBased.swift; sourceTree = "<group>"; };
@@ -145,7 +148,6 @@
 		FBF17A0621C55FDB00BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBF17A0821C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBF17A1121C55FDB00BF232C /* CTATrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTATrackerTests.swift; sourceTree = "<group>"; };
 		FBF17A1321C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF17A2021C5607800BF232C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB98C5B621E1963A004D61B6 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */,
+				FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		FBCAA0D321C5620200681A6F /* Table Handlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +227,7 @@
 		FBCAA0E821C5625000681A6F /* CTAKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBCAA0E921C5625000681A6F /* CTAKitTests.swift */,
+				FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */,
 				FBCAA0EB21C5625000681A6F /* Info.plist */,
 			);
 			path = CTAKitTests;
@@ -243,7 +254,6 @@
 		FBCAA0FE21C562BD00681A6F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
+				FB98C5B621E1963A004D61B6 /* Location */,
 				FBCAA0F821C5629800681A6F /* Protocols */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
@@ -371,8 +382,8 @@
 		FBF17A1021C55FDB00BF232C /* CTATrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A1121C55FDB00BF232C /* CTATrackerTests.swift */,
 				FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */,
+				FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */,
 				FBF17A1321C55FDB00BF232C /* Info.plist */,
 			);
 			path = CTATrackerTests;
@@ -606,7 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBCAA0EA21C5625000681A6F /* CTAKitTests.swift in Sources */,
+				FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +637,7 @@
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
 				FBCAA0C721C5619200681A6F /* StatusViewController.swift in Sources */,
+				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
 				FBCAA0D221C561DA00681A6F /* ArrivalsTableHandler.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
 				FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */,
@@ -639,7 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */,
-				FBF17A1221C55FDB00BF232C /* CTATrackerTests.swift in Sources */,
+				FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,7 +43,7 @@ public class CtaClient: ApiClient {
             switch result {
             case .success(let container):
                 let responses = container.root.etas
-                guard let arrivals = StationArrivals(from: responses) else {
+                guard let arrivals = StationArrivals(from: responses, for: stop) else {
                     completion(.failure(.invalidData))
                     return
                 }
