@@ -33,6 +33,14 @@ struct RouteStatusResponse: Decodable {
     let routeColorCode: String?
     let textColorCode: String?
     let status: String
+    let routeUrl: NestedRouteURL
+    
+    struct NestedRouteURL: Decodable {
+        let url: URL
+        enum CodingKeys: String, CodingKey {
+            case url = "#cdata-section"
+        }
+    }
     
     enum CodingKeys: String, CodingKey {
         case id = "ServiceId"
@@ -40,5 +48,6 @@ struct RouteStatusResponse: Decodable {
         case routeColorCode = "RouteColorCode"
         case textColorCode = "RouteTextColor"
         case status = "RouteStatus"
+        case routeUrl = "RouteURL"
     }
 }

@@ -15,6 +15,7 @@ public struct TrainLine {
     public let title: String
     public let displayColor: UIColor
     public let status: LineStatus
+    public let routeUrl: URL
     
     public enum LineStatus: String {
         case normal = "Normal Service"
@@ -38,5 +39,6 @@ public struct TrainLine {
         }
         
         status = LineStatus(rawValue: response.status) ?? .unknown
+        routeUrl = response.routeUrl.url
     }
 }
