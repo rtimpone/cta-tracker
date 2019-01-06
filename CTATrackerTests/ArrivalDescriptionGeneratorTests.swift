@@ -120,14 +120,21 @@ class ArrivalDescriptionGeneratorTests: XCTestCase {
     
     func testDescriptionForTrainDueInThirtyOneMinutes() {
         let seconds = 31 * 60
-        let expectedString = "Over 30 min"
+        let expectedString = "31 min"
         assertStringForEnRouteTrainArriving(inSeconds: seconds, matches: expectedString)
         assertStringForScheduledTrainArriving(inSeconds: seconds, matches: expectedString)
     }
     
-    func testDescriptionForTrainDueInFortyFiveMinutes() {
-        let seconds = 45 * 60
-        let expectedString = "Over 30 min"
+    func testDescriptionForTrainDueInSixtyMinutes() {
+        let seconds = 60 * 60
+        let expectedString = "1 hour"
+        assertStringForEnRouteTrainArriving(inSeconds: seconds, matches: expectedString)
+        assertStringForScheduledTrainArriving(inSeconds: seconds, matches: expectedString)
+    }
+    
+    func testDescriptionForTrainDueInSixtyOneMinutes() {
+        let seconds = 61 * 60
+        let expectedString = "Over an hour"
         assertStringForEnRouteTrainArriving(inSeconds: seconds, matches: expectedString)
         assertStringForScheduledTrainArriving(inSeconds: seconds, matches: expectedString)
     }
