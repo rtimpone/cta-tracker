@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-z1-vGj">
-                        <rect key="frame" x="16" y="11" width="343" height="20"/>
+                        <rect key="frame" x="16" y="11" width="343" height="21.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-cv-PZD" userLabel="First Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
-                        <rect key="frame" x="16" y="41" width="343" height="22"/>
+                        <rect key="frame" x="16" y="42.5" width="343" height="22"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-Uh-Uza" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
@@ -68,7 +68,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-eg-DOD" userLabel="Second Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
-                        <rect key="frame" x="16" y="71" width="343" height="22"/>
+                        <rect key="frame" x="16" y="72.5" width="343" height="22"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-TU-Q6u" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
@@ -110,7 +110,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-ej-g67" userLabel="Third Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
-                        <rect key="frame" x="16" y="101" width="343" height="22"/>
+                        <rect key="frame" x="16" y="102.5" width="343" height="22"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFS-QR-E3O" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
@@ -152,7 +152,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-2I-LIR" userLabel="Fourth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
-                        <rect key="frame" x="16" y="131" width="343" height="22"/>
+                        <rect key="frame" x="16" y="132.5" width="343" height="22"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Vf-bAf" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
@@ -199,7 +199,6 @@
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="top" secondItem="gjk-ej-g67" secondAttribute="bottom" constant="8" id="2AU-r5-wBY"/>
                     <constraint firstItem="ra4-cv-PZD" firstAttribute="leading" secondItem="CGH-bL-Ubc" secondAttribute="leading" constant="16" id="2aO-dw-c70"/>
                     <constraint firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" constant="16" id="4ue-ST-Uj7"/>
-                    <constraint firstAttribute="bottom" secondItem="tpv-2I-LIR" secondAttribute="bottom" constant="16.5" id="8oe-YK-oiO"/>
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="leading" secondItem="gjk-ej-g67" secondAttribute="leading" id="9oa-Zn-LSB"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="trailing" secondItem="fTU-eg-DOD" secondAttribute="trailing" id="Fcu-gh-5Hm"/>
                     <constraint firstItem="JjB-FL-yrd" firstAttribute="leading" secondItem="Grq-46-bn4" secondAttribute="leading" id="KY8-d2-Z3P"/>
@@ -222,9 +221,6 @@
                 <outlet property="fourthArrivalView" destination="tpv-2I-LIR" id="R4Y-Wi-s12"/>
                 <outlet property="secondArrivalView" destination="fTU-eg-DOD" id="Vfv-Zg-gaU"/>
                 <outlet property="thirdArrivalView" destination="gjk-ej-g67" id="GJC-1a-bpf"/>
-                <outlet property="verticalConstraintFromFirstToSecond" destination="VqC-op-TCh" id="R6Z-FU-eHp"/>
-                <outlet property="verticalConstraintFromSecondToThird" destination="ZV8-CN-TIx" id="EtU-Pc-mDW"/>
-                <outlet property="verticalConstraintFromThirdToFourth" destination="2AU-r5-wBY" id="WxN-NY-03M"/>
             </connections>
             <point key="canvasLocation" x="-82.400000000000006" y="129.98500749625188"/>
         </tableViewCell>
