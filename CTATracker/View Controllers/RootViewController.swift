@@ -11,41 +11,77 @@ import UIKit
 
 class RootViewController: UIViewController {
     
-    var statusController: StatusViewController!
-    var arrivalsController: ArrivalsViewController!
+    let locationHandler = LocationHandler()
+    let arrivalsRequestHandler = ArrivalsRequestHandler()
+    let statusRequestHandler = StatusRequestHandler()
     
-    @IBOutlet weak var statusViewHeightConstraint: NSLayoutConstraint!
+    weak var tableViewController: TableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //request location permission here
-        
-        UTCOffsets.lookupOffsets {
-            self.statusController.refreshTrainLines()
-            self.arrivalsController.refreshArrivalTimes()
+        let permissionStatus = locationHandler.fetchCurrentPermissionStatus()
+        switch permissionStatus {
+        case .granted:
+            makeInitialApiRequests()
+        case .denied:
+            print("unable to sort by location")
+        case .notYetRequested:
+            locationHandler.requestLocationPermission() { [weak self] permissionWasGranted in
+                if permissionWasGranted {
+                    self?.makeInitialApiRequests()
+                }
+                else {
+                    //hide sorting options for train stops
+                }
+            }
+            makeInitialApiRequests()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: self)
-        if let vc = segue.destination as? StatusViewController {
-            statusController = vc
+        if let vc = segue.destination as? TableViewController {
             vc.delegate = self
+            tableViewController = vc
         }
-        else if let vc = segue.destination as? ArrivalsViewController {
-            arrivalsController = vc
+    }
+    
+    func makeInitialApiRequests() {
+        UTCOffsets.lookupOffsets {
+            self.refreshDataFromApi()
         }
     }
 }
 
-extension RootViewController: StatusViewControllerDelegate {
+extension RootViewController: TableViewDelegate {
     
-    func tableContentHeightDidUpdate(_ newHeight: CGFloat) {
-        let minHeightForTableView = CGFloat(138)
-        if newHeight > minHeightForTableView {
-            statusViewHeightConstraint.constant = newHeight
-            view.layoutIfNeeded()
+    func refreshControlWasActivated() {
+        refreshDataFromApi()
+    }
+}
+
+private extension RootViewController {
+    
+    func refreshDataFromApi() {
+        
+        //refresh control
+        
+        statusRequestHandler.requestTrainStatus() { result in
+            switch result {
+            case .success(let lines):
+                self.tableViewController.displayTrainLines(lines)
+            case .error:
+                self.tableViewController.displayTrainLinesError()
+            }
+        }
+        
+        arrivalsRequestHandler.requestTrainStopArrivalTimes() { result in
+            switch result {
+            case .success(let arrivals):
+                self.tableViewController.displayArrivals(arrivals)
+            case .error:
+                self.tableViewController.displayArrivalsError()
+            }
         }
     }
 }

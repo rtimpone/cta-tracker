@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="K41-nm-33W" customClass="SectionHeader" customModule="CTATracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulv-IU-dGu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nv-7Z-4Si">
+                            <rect key="frame" x="8" y="10.5" width="122" height="21"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <color key="textColor" white="0.10760916099999999" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="8Nv-7Z-4Si" firstAttribute="centerY" secondItem="ulv-IU-dGu" secondAttribute="centerY" id="N8l-ID-zb6"/>
+                        <constraint firstItem="8Nv-7Z-4Si" firstAttribute="leading" secondItem="ulv-IU-dGu" secondAttribute="leading" constant="8" id="jFk-Xq-aR7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Gty-iZ-BxS" firstAttribute="bottom" secondItem="ulv-IU-dGu" secondAttribute="bottom" id="Aut-ot-Lg8"/>
+                <constraint firstItem="Gty-iZ-BxS" firstAttribute="trailing" secondItem="ulv-IU-dGu" secondAttribute="trailing" id="Lrl-Gr-VGF"/>
+                <constraint firstItem="ulv-IU-dGu" firstAttribute="top" secondItem="Gty-iZ-BxS" secondAttribute="top" id="eiX-CN-Pjb"/>
+                <constraint firstItem="ulv-IU-dGu" firstAttribute="leading" secondItem="Gty-iZ-BxS" secondAttribute="leading" id="kc7-iZ-w2b"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Gty-iZ-BxS"/>
+            <connections>
+                <outlet property="label" destination="8Nv-7Z-4Si" id="01R-2J-iuz"/>
+            </connections>
+            <point key="canvasLocation" x="154.40000000000001" y="74.662668665667169"/>
+        </view>
+    </objects>
+</document>
