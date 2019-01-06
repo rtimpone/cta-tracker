@@ -7,16 +7,8 @@
 //
 
 import CTAKit
+import SafariServices
 import UIKit
-
-struct Segues {
-    static let routeDetails = "statusDetailsSegue"
-}
-
-class TableViewSelections {
-    var trainLine: TrainLine?
-    var arrivals: StationArrivals?
-}
 
 class RootViewController: UIViewController {
     
@@ -26,7 +18,6 @@ class RootViewController: UIViewController {
     
     weak var tableViewController: TableViewController!
     var currentDeviceCoordinate: Coordinate?
-    var tableViewSelections = TableViewSelections()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +45,6 @@ class RootViewController: UIViewController {
             vc.delegate = self
             tableViewController = vc
         }
-        if let vc = segue.destination as? RouteDetailsViewController {
-            vc.line = tableViewSelections.trainLine
-        }
     }
     
     func getCurrentLocation(completion: @escaping () -> Void) {
@@ -80,13 +68,12 @@ extension RootViewController: TableViewDelegate {
     }
     
     func didSelectTrainLine(_ line: TrainLine) {
-        tableViewSelections.trainLine = line
-        performSegue(withIdentifier: Segues.routeDetails, sender: self)
+        let sfc = SFSafariViewController(url: line.routeUrl)
+        present(sfc, animated: true)
     }
     
     func didSelectArrivals(_ arrivals: StationArrivals) {
         print("Arrivals was selected for: \(arrivals.stop.name)")
-        tableViewSelections.arrivals = arrivals
     }
 }
 

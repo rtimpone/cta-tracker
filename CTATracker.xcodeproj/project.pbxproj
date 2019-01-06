@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
-		FB77EEBD21E293B600D8B389 /* RouteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77EEBC21E293B600D8B389 /* RouteDetailsViewController.swift */; };
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
@@ -97,7 +96,6 @@
 
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
-		FB77EEBC21E293B600D8B389 /* RouteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailsViewController.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				FBF17A2021C5607800BF232C /* RootViewController.swift */,
-				FB77EEBC21E293B600D8B389 /* RouteDetailsViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -591,7 +588,6 @@
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
-				FB77EEBD21E293B600D8B389 /* RouteDetailsViewController.swift in Sources */,
 				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
