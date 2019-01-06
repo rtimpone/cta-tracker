@@ -9,6 +9,15 @@
 import CTAKit
 import UIKit
 
+struct Segues {
+    static let routeDetails = "statusDetailsSegue"
+}
+
+class TableViewSelections {
+    var trainLine: TrainLine?
+    var arrivals: StationArrivals?
+}
+
 class RootViewController: UIViewController {
     
     let locationHandler = LocationHandler()
@@ -17,6 +26,7 @@ class RootViewController: UIViewController {
     
     weak var tableViewController: TableViewController!
     var currentDeviceCoordinate: Coordinate?
+    var tableViewSelections = TableViewSelections()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +54,9 @@ class RootViewController: UIViewController {
             vc.delegate = self
             tableViewController = vc
         }
+        if let vc = segue.destination as? RouteDetailsViewController {
+            vc.line = tableViewSelections.trainLine
+        }
     }
     
     func getCurrentLocation(completion: @escaping () -> Void) {
@@ -67,11 +80,13 @@ extension RootViewController: TableViewDelegate {
     }
     
     func didSelectTrainLine(_ line: TrainLine) {
-        print("Line was selected: \(line.routeUrl)")
+        tableViewSelections.trainLine = line
+        performSegue(withIdentifier: Segues.routeDetails, sender: self)
     }
     
     func didSelectArrivals(_ arrivals: StationArrivals) {
         print("Arrivals was selected for: \(arrivals.stop.name)")
+        tableViewSelections.arrivals = arrivals
     }
 }
 
