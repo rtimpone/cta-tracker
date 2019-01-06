@@ -12,10 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="187" id="BVc-Jk-n0Y" customClass="ArrivalCell" customModule="CTATracker" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVc-Jk-n0Y" id="CGH-bL-Ubc">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="231.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-z1-vGj">
@@ -193,6 +193,90 @@
                             <outlet property="etaLabel" destination="HeP-Xg-Dwn" id="y4T-Af-u2e"/>
                         </connections>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R43-iD-1FU" userLabel="Fifth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                        <rect key="frame" x="16" y="162.5" width="343" height="22"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-zM-Mjh" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1" width="20" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="6lp-z8-qVp"/>
+                                    <constraint firstAttribute="width" secondItem="KKf-zM-Mjh" secondAttribute="height" multiplier="1:1" id="kE0-or-Gq8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kimball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-TS-1go">
+                                <rect key="frame" x="30" y="0.0" width="60" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jB3-uf-vYU">
+                                <rect key="frame" x="100" y="0.0" width="243" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rrv-TS-1go" firstAttribute="top" secondItem="R43-iD-1FU" secondAttribute="top" id="04i-Ar-daQ"/>
+                            <constraint firstItem="rrv-TS-1go" firstAttribute="leading" secondItem="KKf-zM-Mjh" secondAttribute="trailing" constant="10" id="2E9-5T-rcs"/>
+                            <constraint firstAttribute="trailing" secondItem="jB3-uf-vYU" secondAttribute="trailing" id="7jN-cv-80h"/>
+                            <constraint firstItem="KKf-zM-Mjh" firstAttribute="leading" secondItem="R43-iD-1FU" secondAttribute="leading" id="BMT-mt-qkr"/>
+                            <constraint firstItem="jB3-uf-vYU" firstAttribute="top" secondItem="R43-iD-1FU" secondAttribute="top" id="IIa-ya-QH0"/>
+                            <constraint firstItem="KKf-zM-Mjh" firstAttribute="centerY" secondItem="R43-iD-1FU" secondAttribute="centerY" id="Ord-AU-ksV"/>
+                            <constraint firstAttribute="bottom" secondItem="rrv-TS-1go" secondAttribute="bottom" constant="1" id="VLt-eO-Ppl"/>
+                            <constraint firstAttribute="bottom" secondItem="jB3-uf-vYU" secondAttribute="bottom" constant="1" id="Y8g-Jr-2ht"/>
+                            <constraint firstItem="jB3-uf-vYU" firstAttribute="leading" secondItem="rrv-TS-1go" secondAttribute="trailing" constant="10" id="tUy-CU-NjF"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="circleView" destination="KKf-zM-Mjh" id="3xf-Hj-WS8"/>
+                            <outlet property="destinationLabel" destination="rrv-TS-1go" id="WTL-31-1Ny"/>
+                            <outlet property="etaLabel" destination="jB3-uf-vYU" id="Jfx-pV-yXW"/>
+                        </connections>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sc-eZ-NTz" userLabel="Sixth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                        <rect key="frame" x="16" y="192.5" width="343" height="22"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-4D-cbk" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1" width="20" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="8LW-YX-exR"/>
+                                    <constraint firstAttribute="width" secondItem="8yH-4D-cbk" secondAttribute="height" multiplier="1:1" id="TZL-pR-lyb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kimball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5T-jk-bpe">
+                                <rect key="frame" x="30" y="0.0" width="60" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tk-Iy-m5U">
+                                <rect key="frame" x="100" y="0.0" width="243" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I5T-jk-bpe" firstAttribute="leading" secondItem="8yH-4D-cbk" secondAttribute="trailing" constant="10" id="5bm-3d-rmP"/>
+                            <constraint firstAttribute="trailing" secondItem="3Tk-Iy-m5U" secondAttribute="trailing" id="7yi-Ga-7Kl"/>
+                            <constraint firstItem="8yH-4D-cbk" firstAttribute="leading" secondItem="2Sc-eZ-NTz" secondAttribute="leading" id="YXt-sd-1u1"/>
+                            <constraint firstAttribute="bottom" secondItem="I5T-jk-bpe" secondAttribute="bottom" constant="1" id="ZxL-IO-qov"/>
+                            <constraint firstItem="3Tk-Iy-m5U" firstAttribute="leading" secondItem="I5T-jk-bpe" secondAttribute="trailing" constant="10" id="bQx-mM-OaG"/>
+                            <constraint firstItem="I5T-jk-bpe" firstAttribute="top" secondItem="2Sc-eZ-NTz" secondAttribute="top" id="ets-ar-GeO"/>
+                            <constraint firstItem="3Tk-Iy-m5U" firstAttribute="top" secondItem="2Sc-eZ-NTz" secondAttribute="top" id="kLG-hQ-QRz"/>
+                            <constraint firstAttribute="bottom" secondItem="3Tk-Iy-m5U" secondAttribute="bottom" constant="1" id="sTT-5x-BB4"/>
+                            <constraint firstItem="8yH-4D-cbk" firstAttribute="centerY" secondItem="2Sc-eZ-NTz" secondAttribute="centerY" id="yL9-LB-yTR"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="circleView" destination="8yH-4D-cbk" id="xgM-ba-a4A"/>
+                            <outlet property="destinationLabel" destination="I5T-jk-bpe" id="Rca-4H-21o"/>
+                            <outlet property="etaLabel" destination="3Tk-Iy-m5U" id="j5F-rT-6oW"/>
+                        </connections>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ra4-cv-PZD" firstAttribute="top" secondItem="zyc-z1-vGj" secondAttribute="bottom" constant="10" id="1LY-5v-RbG"/>
@@ -200,26 +284,34 @@
                     <constraint firstItem="ra4-cv-PZD" firstAttribute="leading" secondItem="CGH-bL-Ubc" secondAttribute="leading" constant="16" id="2aO-dw-c70"/>
                     <constraint firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" constant="16" id="4ue-ST-Uj7"/>
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="leading" secondItem="gjk-ej-g67" secondAttribute="leading" id="9oa-Zn-LSB"/>
+                    <constraint firstItem="2Sc-eZ-NTz" firstAttribute="leading" secondItem="R43-iD-1FU" secondAttribute="leading" id="AXe-JO-vuV"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="trailing" secondItem="fTU-eg-DOD" secondAttribute="trailing" id="Fcu-gh-5Hm"/>
                     <constraint firstItem="JjB-FL-yrd" firstAttribute="leading" secondItem="Grq-46-bn4" secondAttribute="leading" id="KY8-d2-Z3P"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" id="MRa-2E-Pur"/>
+                    <constraint firstItem="2Sc-eZ-NTz" firstAttribute="trailing" secondItem="R43-iD-1FU" secondAttribute="trailing" id="NaZ-O3-vJO"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="top" secondItem="ra4-cv-PZD" secondAttribute="bottom" constant="8" id="VqC-op-TCh"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="leading" secondItem="ra4-cv-PZD" secondAttribute="leading" id="XBd-Rk-xzf"/>
+                    <constraint firstItem="R43-iD-1FU" firstAttribute="top" secondItem="tpv-2I-LIR" secondAttribute="bottom" constant="8" id="Yzu-7e-J1I"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="top" secondItem="fTU-eg-DOD" secondAttribute="bottom" constant="8" id="ZV8-CN-TIx"/>
                     <constraint firstItem="Grq-46-bn4" firstAttribute="leading" secondItem="iv8-JX-ReW" secondAttribute="leading" id="cwp-xm-Mj9"/>
+                    <constraint firstItem="R43-iD-1FU" firstAttribute="leading" secondItem="tpv-2I-LIR" secondAttribute="leading" id="dbA-AR-PCD"/>
                     <constraint firstAttribute="trailing" secondItem="zyc-z1-vGj" secondAttribute="trailing" constant="16" id="djR-Pz-MW4"/>
                     <constraint firstItem="zyc-z1-vGj" firstAttribute="top" secondItem="CGH-bL-Ubc" secondAttribute="top" constant="11" id="gXJ-YP-zA2"/>
                     <constraint firstItem="zyc-z1-vGj" firstAttribute="leading" secondItem="CGH-bL-Ubc" secondAttribute="leading" constant="16" id="hAn-I1-PPE"/>
+                    <constraint firstItem="R43-iD-1FU" firstAttribute="trailing" secondItem="tpv-2I-LIR" secondAttribute="trailing" id="jcg-b8-t9V"/>
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="trailing" secondItem="gjk-ej-g67" secondAttribute="trailing" id="tI0-x6-z5P"/>
                     <constraint firstItem="sDe-Nf-61p" firstAttribute="leading" secondItem="JjB-FL-yrd" secondAttribute="leading" id="tYY-Ux-Nth"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="leading" secondItem="fTU-eg-DOD" secondAttribute="leading" id="was-HB-3Zo"/>
+                    <constraint firstItem="2Sc-eZ-NTz" firstAttribute="top" secondItem="R43-iD-1FU" secondAttribute="bottom" constant="8" id="zeb-O3-uWs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="destinationLabel" destination="zyc-z1-vGj" id="cKl-af-t2A"/>
+                <outlet property="fifthArrivalView" destination="R43-iD-1FU" id="Asm-sd-zcA"/>
                 <outlet property="firstArrivalView" destination="ra4-cv-PZD" id="GQl-KE-kKZ"/>
                 <outlet property="fourthArrivalView" destination="tpv-2I-LIR" id="R4Y-Wi-s12"/>
                 <outlet property="secondArrivalView" destination="fTU-eg-DOD" id="Vfv-Zg-gaU"/>
+                <outlet property="sixthArrivalView" destination="2Sc-eZ-NTz" id="6Gw-0v-Twu"/>
                 <outlet property="thirdArrivalView" destination="gjk-ej-g67" id="GJC-1a-bpf"/>
             </connections>
             <point key="canvasLocation" x="-82.400000000000006" y="129.98500749625188"/>

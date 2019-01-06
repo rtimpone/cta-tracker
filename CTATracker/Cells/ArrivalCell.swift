@@ -17,9 +17,11 @@ class ArrivalCell: UITableViewCell, NibBased {
     @IBOutlet weak var secondArrivalView: ArrivalView!
     @IBOutlet weak var thirdArrivalView: ArrivalView!
     @IBOutlet weak var fourthArrivalView: ArrivalView!
+    @IBOutlet weak var fifthArrivalView: ArrivalView!
+    @IBOutlet weak var sixthArrivalView: ArrivalView!
     
     var arrivalViews: [ArrivalView] {
-        return [firstArrivalView, secondArrivalView, thirdArrivalView, fourthArrivalView]
+        return [firstArrivalView, secondArrivalView, thirdArrivalView, fourthArrivalView, fifthArrivalView, sixthArrivalView]
     }
     
     var bottomConstraint: NSLayoutConstraint?
