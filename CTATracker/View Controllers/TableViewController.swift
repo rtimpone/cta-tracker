@@ -15,9 +15,19 @@ struct Sections {
 }
 
 enum DataSource<T> {
+    
     case data([T])
     case initialState
     case error
+    
+    var numberOfRows: Int {
+        switch self {
+        case .data(let objects):
+            return objects.count
+        case .initialState, .error:
+            return 1
+        }
+    }
 }
 
 protocol TableViewDelegate: class {
@@ -26,6 +36,7 @@ protocol TableViewDelegate: class {
 
 class TableViewController: UITableViewController {
     
+    private var arrivalsDataSource: DataSource<StationArrivals> = .initialState
     private var linesDataSource: DataSource<TrainLine> = .initialState
     weak var delegate: TableViewDelegate?
     
@@ -39,18 +50,35 @@ class TableViewController: UITableViewController {
         stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
+    func displayArrivals(_ arrivals: [StationArrivals]) {
+        arrivalsDataSource = DataSource.data(arrivals)
+        stopRefreshControlAndReloadSection(Sections.arrivals)
+    }
+    
+    func displayArrivalsError() {
+        arrivalsDataSource = DataSource.error
+        stopRefreshControlAndReloadSection(Sections.arrivals)
+    }
+    
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
         delegate?.refreshControlWasActivated()
     }
     
     // MARK: Table View Data Source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == Sections.statuses {
-            return numberOfRows(forLinesDataSource: linesDataSource)
+        switch section {
+        case Sections.statuses:
+            return linesDataSource.numberOfRows
+        case Sections.arrivals:
+            return arrivalsDataSource.numberOfRows
+        default:
+            return 0
         }
-        
-        return 0
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -62,7 +90,7 @@ class TableViewController: UITableViewController {
         case Sections.statuses:
             return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
         case Sections.arrivals:
-            return UITableViewCell()
+            return CellFactory.arrivalsCellForRow(at: indexPath, in: tableView, dataSource: arrivalsDataSource)
         default:
             return UITableViewCell()
         }
@@ -92,14 +120,5 @@ private extension TableViewController {
         
         let indexSet = IndexSet(integer: section)
         tableView.reloadSections(indexSet, with: .automatic)
-    }
-    
-    func numberOfRows(forLinesDataSource dataSource: DataSource<TrainLine>) -> Int {
-        switch linesDataSource {
-        case .data(let lines):
-            return lines.count
-        case .initialState, .error:
-            return 1
-        }
     }
 }

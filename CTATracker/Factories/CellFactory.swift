@@ -27,6 +27,23 @@ class CellFactory {
             return dequeueGenericMessageCell(in: tableView, withText: "Getting status data for CTA routes...")
         }
     }
+    
+    static func arrivalsCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<StationArrivals>) -> UITableViewCell {
+        
+        switch dataSource {
+        case .data(let arrivals):
+            let arrival = arrivals[indexPath.row]
+            let cell = tableView.dequeueReusableCell(ofType: ArrivalCell.self)
+            cell.configure(for: arrival)
+            return cell
+            
+        case .error:
+            return dequeueGenericMessageCell(in: tableView, withText: "Unable to get data for CTA arrivals")
+            
+        case .initialState:
+            return dequeueGenericMessageCell(in: tableView, withText: "Getting data for CTA arrivals...")
+        }
+    }
 }
 
 private extension CellFactory {

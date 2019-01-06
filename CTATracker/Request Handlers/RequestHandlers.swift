@@ -10,17 +10,63 @@ import CTAKit
 import Foundation
 
 enum RequestHandlerResult<T> {
-    case success([T])
+    case success(T)
     case error
 }
 
-class StatusRequestHandler {
+class RequestHandler {
+    let client = CtaClient()
+}
+
+class ArrivalsRequestHandler: RequestHandler {
     
-    static let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    let stopsToShow = TrainStop.allStops
+    var isRequesting = false
     
-    static func requestTrainStatus(completion: @escaping (RequestHandlerResult<TrainLine>) -> Void) {
+    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StationArrivals]>) -> Void) {
         
-        CtaClient().getTrainLines() { result in
+        if isRequesting {
+            print("Arrival requests are already in flight, wait until requests are finished before starting again")
+            return
+        }
+        
+        isRequesting = true
+        
+        var allArrivals: [StationArrivals] = []
+        var queueCount = stopsToShow.count
+        
+        for stop in stopsToShow {
+            client.getArrivals(forStop: stop) { result in
+                
+                queueCount -= 1
+                
+                switch result {
+                case .success(let arrivals):
+                    allArrivals.append(arrivals)
+                    if queueCount == 0 {
+                        let sortedArrivals = allArrivals.sorted(by: { $0.station.name < $1.station.name })
+                        self.isRequesting = false
+                        completion(.success(sortedArrivals))
+                    }
+                case .failure(let error):
+                    print(error)
+                    if queueCount == 0 {
+                        self.isRequesting = false
+                        completion(.error)
+                    }
+                }
+            }
+        }
+    }
+}
+
+class StatusRequestHandler: RequestHandler {
+    
+    let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    
+    func requestTrainStatus(completion: @escaping (RequestHandlerResult<[TrainLine]>) -> Void) {
+        
+        client.getTrainLines() { result in
             switch result {
             case .success(let lines):
                 let filteredLines = lines.filter { self.linesToShow.contains($0.title) }

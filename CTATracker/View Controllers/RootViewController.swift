@@ -11,15 +11,31 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    let locationHandler = LocationHandler()
+    let arrivalsRequestHandler = ArrivalsRequestHandler()
+    let statusRequestHandler = StatusRequestHandler()
+    
     weak var tableViewController: TableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //request location permission here
-        
-        UTCOffsets.lookupOffsets {
-            self.refreshDataFromApi()
+        let permissionStatus = locationHandler.fetchCurrentPermissionStatus()
+        switch permissionStatus {
+        case .granted:
+            makeInitialApiRequests()
+        case .denied:
+            print("unable to sort by location")
+        case .notYetRequested:
+            locationHandler.requestLocationPermission() { [weak self] permissionWasGranted in
+                if permissionWasGranted {
+                    self?.makeInitialApiRequests()
+                }
+                else {
+                    //hide sorting options for train stops
+                }
+            }
+            makeInitialApiRequests()
         }
     }
     
@@ -27,6 +43,12 @@ class RootViewController: UIViewController {
         if let vc = segue.destination as? TableViewController {
             vc.delegate = self
             tableViewController = vc
+        }
+    }
+    
+    func makeInitialApiRequests() {
+        UTCOffsets.lookupOffsets {
+            self.refreshDataFromApi()
         }
     }
 }
@@ -41,12 +63,24 @@ extension RootViewController: TableViewDelegate {
 private extension RootViewController {
     
     func refreshDataFromApi() {
-        StatusRequestHandler.requestTrainStatus() { result in
+        
+        //refresh control
+        
+        statusRequestHandler.requestTrainStatus() { result in
             switch result {
             case .success(let lines):
                 self.tableViewController.displayTrainLines(lines)
             case .error:
                 self.tableViewController.displayTrainLinesError()
+            }
+        }
+        
+        arrivalsRequestHandler.requestTrainStopArrivalTimes() { result in
+            switch result {
+            case .success(let arrivals):
+                self.tableViewController.displayArrivals(arrivals)
+            case .error:
+                self.tableViewController.displayArrivalsError()
             }
         }
     }
