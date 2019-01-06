@@ -86,8 +86,11 @@ class ArrivalDescriptionGenerator {
             else if seconds < 60 {
                 return "Due"
             }
-            else if seconds > 30 * 60 {
-                return "Over 30 min"
+            else if seconds > 60 * 60 {
+                return "Over an hour"
+            }
+            else if seconds == 60 * 60 {
+                return "1 hour"
             }
             else {
                 return minutesStringForNumberOfSecondsRoundingUp(seconds)
