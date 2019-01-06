@@ -28,9 +28,13 @@ public class CtaClient: ApiClient {
     
     public func getArrivals(forStop stop: TrainStop, completion: @escaping (ApiResult<StationArrivals>) -> Void) {
 
-        let params = ["key": Credentials.apiKey,
-                      "stpid": "\(stop.id)",
-                      "outputType": "JSON"]
+        var params = ["key": Credentials.apiKey, "outputType": "JSON"]
+        switch stop.type {
+        case .platform:
+            params["stpid"] = "\(stop.id)"
+        case .station:
+            params["mapid"] = "\(stop.id)"
+        }
         
         let baseURL = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx"
         
