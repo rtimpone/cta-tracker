@@ -65,6 +65,14 @@ extension RootViewController: TableViewDelegate {
     func refreshControlWasActivated() {
         refreshDataFromApi()
     }
+    
+    func didSelectTrainLine(_ line: TrainLine) {
+        print("Line was selected: \(line.routeUrl)")
+    }
+    
+    func didSelectArrivals(_ arrivals: StationArrivals) {
+        print("Arrivals was selected for: \(arrivals.stop.name)")
+    }
 }
 
 private extension RootViewController {
