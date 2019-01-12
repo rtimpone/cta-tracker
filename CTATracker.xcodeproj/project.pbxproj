@@ -131,7 +131,7 @@
 		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
 		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
-		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBF17A0321C55FDB00BF232C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 		FBF179FA21C55FD900BF232C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBF179F921C55FD900BF232C /* CTATracker.app */,
+				FBF179F921C55FD900BF232C /* CTA.app */,
 				FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */,
 				FBCAA0DA21C5625000681A6F /* CTAKit.framework */,
 				FBCAA0E221C5625000681A6F /* CTAKitTests.xctest */,
@@ -454,7 +454,7 @@
 			);
 			name = CTATracker;
 			productName = CTATracker;
-			productReference = FBF179F921C55FD900BF232C /* CTATracker.app */;
+			productReference = FBF179F921C55FD900BF232C /* CTA.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBF17A0C21C55FDB00BF232C /* CTATrackerTests */ = {
@@ -892,7 +892,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CTA;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -911,7 +911,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CTA;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

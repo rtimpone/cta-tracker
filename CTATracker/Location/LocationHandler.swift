@@ -21,23 +21,15 @@ struct Coordinate {
 
 class LocationHandler: NSObject {
     
-    typealias RequestPermissionCompletion = (_ permissionWasGranted: Bool) -> Void
+    typealias RequestPermissionCompletion = () -> Void
     typealias FetchLocationCompletion = (Coordinate) -> Void
     
     let manager: CLLocationManager
     var requestPermissionCompletion: RequestPermissionCompletion?
     var fetchLocationCompletion: FetchLocationCompletion?
     
-    override init() {
-        manager = CLLocationManager()
-        super.init()
-        manager.delegate = self
-    }
-    
-    func fetchCurrentPermissionStatus() -> PermissionStatus {
-        
-        let status = CLLocationManager.authorizationStatus()
-        switch status {
+    var permissionStatus: PermissionStatus {
+        switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse, .authorizedAlways:
             return .granted
         case .denied, .restricted:
@@ -47,6 +39,12 @@ class LocationHandler: NSObject {
         }
     }
     
+    override init() {
+        manager = CLLocationManager()
+        super.init()
+        manager.delegate = self
+    }
+    
     func fetchCurrentLocation(completion: @escaping FetchLocationCompletion) {
         fetchLocationCompletion = completion
         manager.startUpdatingLocation()
@@ -54,8 +52,7 @@ class LocationHandler: NSObject {
     
     func requestLocationPermission(completion: @escaping RequestPermissionCompletion) {
         
-        let currentStatus = fetchCurrentPermissionStatus()
-        guard currentStatus == .notYetRequested else {
+        guard permissionStatus == .notYetRequested else {
             return
         }
         
@@ -69,9 +66,9 @@ extension LocationHandler: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
-            requestPermissionCompletion?(true)
+            requestPermissionCompletion?()
         case .denied, .restricted:
-            requestPermissionCompletion?(false)
+            requestPermissionCompletion?()
         case .notDetermined:
             break
         }
