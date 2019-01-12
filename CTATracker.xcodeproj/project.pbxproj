@@ -176,6 +176,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB84808821EA320E007F932E /* Asset Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
+			);
+			path = "Asset Catalog";
+			sourceTree = "<group>";
+		};
 		FB98C5B621E1963A004D61B6 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +336,7 @@
 		FBF179FB21C55FD900BF232C /* CTATracker */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
+				FB84808821EA320E007F932E /* Asset Catalog */,
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
