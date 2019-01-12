@@ -19,6 +19,7 @@ public struct TrainLine {
     
     public enum LineStatus: String {
         case normal = "Normal Service"
+        case specialNote = "Special Note"
         case serviceChange = "Service Change"
         case minorDelays = "Minor Delays"
         case majorDelays = "Major Delays"

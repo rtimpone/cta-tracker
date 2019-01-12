@@ -28,7 +28,7 @@ private extension StatusCell {
     
     func color(forStatus status: TrainLine.LineStatus) -> UIColor {
         switch status {
-        case .normal, .serviceChange:
+        case .normal, .specialNote, .serviceChange:
             return .black
         case .minorDelays, .majorDelays, .significantDelays, .serviceDisruption:
             return .red
