@@ -17,6 +17,8 @@ public struct TrainLine {
     public let status: LineStatus
     public let routeUrl: URL
     
+    public private(set) var alerts: [Alert] = []
+    
     public enum LineStatus: String {
         case normal = "Normal Service"
         case specialNote = "Special Note"
@@ -41,5 +43,9 @@ public struct TrainLine {
         
         status = LineStatus(rawValue: response.status) ?? .unknown
         routeUrl = response.routeUrl.url
+    }
+    
+    mutating func addAlert(_ alert: Alert) {
+        alerts.append(alert)
     }
 }

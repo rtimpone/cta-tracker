@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
+		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
+		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		FBCAA10421C5633A00681A6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB63DB9521F3F476001F048D /* Alert.swift */,
 				FBCAA10B21C5637C00681A6F /* TrainArrival.swift */,
 				FBCAA10921C5637500681A6F /* TrainLine.swift */,
 				FB89463821D1A9450018E97B /* TrainStop.swift */,
@@ -572,6 +575,7 @@
 				FBCAA11021C5639A00681A6F /* TrainArrivalResponse.swift in Sources */,
 				FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */,
 				FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */,
+				FB63DB9621F3F476001F048D /* Alert.swift in Sources */,
 				FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */,
 				FB89463921D1A9450018E97B /* TrainStop.swift in Sources */,
 				FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */,
