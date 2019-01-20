@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBF179F821C55FD900BF232C"
-               BuildableName = "CTATracker.app"
+               BuildableName = "CTA.app"
                BlueprintName = "CTATracker"
                ReferencedContainer = "container:CTATracker.xcodeproj">
             </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF179F821C55FD900BF232C"
-            BuildableName = "CTATracker.app"
+            BuildableName = "CTA.app"
             BlueprintName = "CTATracker"
             ReferencedContainer = "container:CTATracker.xcodeproj">
          </BuildableReference>
@@ -118,7 +118,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF179F821C55FD900BF232C"
-            BuildableName = "CTATracker.app"
+            BuildableName = "CTA.app"
             BlueprintName = "CTATracker"
             ReferencedContainer = "container:CTATracker.xcodeproj">
          </BuildableReference>
@@ -144,7 +144,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF179F821C55FD900BF232C"
-            BuildableName = "CTATracker.app"
+            BuildableName = "CTA.app"
             BlueprintName = "CTATracker"
             ReferencedContainer = "container:CTATracker.xcodeproj">
          </BuildableReference>
