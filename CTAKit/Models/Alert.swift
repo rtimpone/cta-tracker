@@ -10,6 +10,6 @@ import Foundation
 
 public struct Alert {
     
-    let headline: String
-    let message: String
+    public let headline: String
+    public let message: String
 }
