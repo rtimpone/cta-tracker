@@ -76,4 +76,16 @@ class StatusRequestHandler: RequestHandler {
             }
         }
     }
+
+    func requestAlerts(completion: @escaping (RequestHandlerResult<[Alert]>) -> Void) {
+        
+        client.getAlerts() { result in
+            switch result {
+            case .success(let alerts):
+                completion(.success(alerts))
+            case .failure:
+                completion(.error)
+            }
+        }
+    }
 }

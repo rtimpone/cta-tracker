@@ -12,4 +12,14 @@ public struct Alert {
     
     public let headline: String
     public let message: String
+    public let routesImpacted: [Route]
+    
+    init(from response: AlertResponse) {
+        headline = response.headline
+        message = response.shortDescription
+        
+        let impactedServices = response.impactedServicesContainer.services
+        let idsOfRoutesImpacted = impactedServices.map { $0.serviceId }
+        routesImpacted = Route.allRoutes().filter { idsOfRoutesImpacted.contains($0.id) }
+    }
 }

@@ -51,7 +51,7 @@ extension RootViewController: TableViewDelegate {
     }
     
     func didSelectTrainLine(_ line: TrainLine) {
-        let sfc = SFSafariViewController(url: line.routeUrl)
+        let sfc = SFSafariViewController(url: line.statusUrl)
         present(sfc, animated: true)
     }
     
@@ -120,6 +120,15 @@ private extension RootViewController {
                 self.tableViewController.displayArrivals(sortedArrivals)
             case .error:
                 self.tableViewController.displayArrivalsError()
+            }
+        }
+        
+        statusRequestHandler.requestAlerts() { result in
+            switch result {
+            case .success(let alerts):
+                alerts.forEach { print($0) }
+            case .error:
+                print("error")
             }
         }
     }

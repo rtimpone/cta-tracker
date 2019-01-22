@@ -41,7 +41,7 @@ private extension StatusCell {
         switch status {
         case .normal, .specialNote, .serviceChange:
             return .black
-        case .minorDelays, .majorDelays, .significantDelays, .serviceDisruption:
+        case .minorDelays, .majorDelays, .significantDelays, .serviceDisruptionMajorDelays, .serviceDisruption:
             return .red
         case .unknown:
             return .lightGray

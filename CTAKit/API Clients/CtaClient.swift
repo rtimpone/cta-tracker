@@ -26,6 +26,21 @@ public class CtaClient: ApiClient {
         }
     }
     
+    public func getAlerts(completion: @escaping (ApiResult<[Alert]>) -> Void) {
+        let routes = "Red,Brn,P,Pexp"
+        let url = URL(string: "http://www.transitchicago.com/api/1.0/alerts.aspx?routeid=\(routes)&outputType=JSON")!
+        fetchObject(ofType: AlertsContainerResponse.self, from: url) { result in
+            switch result {
+            case .success(let alertsContainer):
+                let alertResponses = alertsContainer.root.alerts
+                let alerts = alertResponses.map{ Alert(from: $0) }
+                completion(.success(alerts))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     public func getArrivals(forStop stop: TrainStop, completion: @escaping (ApiResult<StationArrivals>) -> Void) {
 
         var params = ["key": Credentials.apiKey, "outputType": "JSON"]

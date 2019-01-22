@@ -15,7 +15,7 @@ public struct TrainLine {
     public let title: String
     public let displayColor: UIColor
     public let status: LineStatus
-    public let routeUrl: URL
+    public let statusUrl: URL
     
     public private(set) var alerts: [Alert] = []
     
@@ -26,12 +26,13 @@ public struct TrainLine {
         case minorDelays = "Minor Delays"
         case majorDelays = "Major Delays"
         case significantDelays = "Significant Delays"
+        case serviceDisruptionMajorDelays = "Service Disruption / Major Delays"
         case serviceDisruption = "Service Disruption"
         case unknown = "Unknown"
     }
     
     init(fromResponse response: RouteStatusResponse) {
-        id = response.id
+        id = response.serviceId
         title = response.title
         
         if let routeColor = response.routeColorCode {
@@ -42,7 +43,7 @@ public struct TrainLine {
         }
         
         status = LineStatus(rawValue: response.status) ?? .unknown
-        routeUrl = response.routeUrl.url
+        statusUrl = response.statusUrl.url
     }
     
     mutating func addAlert(_ alert: Alert) {

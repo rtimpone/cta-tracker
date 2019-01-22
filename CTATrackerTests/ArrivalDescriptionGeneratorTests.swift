@@ -8,7 +8,7 @@
 
 import XCTest
 import CTAKit
-@testable import CTATracker
+@testable import CTA
 
 class ArrivalDescriptionGeneratorTests: XCTestCase {
     

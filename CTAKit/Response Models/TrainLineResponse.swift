@@ -28,12 +28,12 @@ struct RouteInfo: Decodable {
 
 struct RouteStatusResponse: Decodable {
     
-    let id: String
+    let serviceId: String
     let title: String
     let routeColorCode: String?
     let textColorCode: String?
     let status: String
-    let routeUrl: NestedRouteURL
+    let statusUrl: NestedRouteURL
     
     struct NestedRouteURL: Decodable {
         let url: URL
@@ -43,11 +43,11 @@ struct RouteStatusResponse: Decodable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case id = "ServiceId"
+        case serviceId = "ServiceId"
         case title = "Route"
         case routeColorCode = "RouteColorCode"
         case textColorCode = "RouteTextColor"
         case status = "RouteStatus"
-        case routeUrl = "RouteURL"
+        case statusUrl = "RouteURL"
     }
 }

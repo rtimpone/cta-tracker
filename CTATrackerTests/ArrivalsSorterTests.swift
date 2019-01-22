@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import CTAKit
-@testable import CTATracker
+@testable import CTA
 
 class ArrivalsSorterTests: XCTestCase {
 
