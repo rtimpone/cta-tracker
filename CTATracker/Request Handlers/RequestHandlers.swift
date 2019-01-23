@@ -88,6 +88,7 @@ class StatusRequestHandler: RequestHandler {
                 trainLines = lines.filter { self.linesToShow.contains($0.title) }
                 
                 if queueCount == 0 {
+                    self.isRequesting = false
                     self.updateLines(trainLines, withAlerts: trainAlerts)
                     completion(.success(trainLines))
                 }
@@ -108,6 +109,7 @@ class StatusRequestHandler: RequestHandler {
                 trainAlerts = alerts
                 
                 if queueCount == 0 {
+                    self.isRequesting = false
                     self.updateLines(trainLines, withAlerts: trainAlerts)
                     completion(.success(trainLines))
                 }
