@@ -63,29 +63,69 @@ class ArrivalsRequestHandler: RequestHandler {
 class StatusRequestHandler: RequestHandler {
     
     let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    var isRequesting = false
     
     func requestTrainStatus(completion: @escaping (RequestHandlerResult<[TrainLine]>) -> Void) {
         
+        if isRequesting {
+            print("Status requests are already in flight, wait until requests are finished before starting again")
+            return
+        }
+        
+        isRequesting = true
+        var queueCount = 2
+        
+        var trainLines: [TrainLine] = []
+        var trainAlerts: [Alert] = []
+        
         client.getTrainLines() { result in
+            
+            queueCount -= 1
+            
             switch result {
             case .success(let lines):
-                let filteredLines = lines.filter { self.linesToShow.contains($0.title) }
-                completion(.success(filteredLines))
+                
+                trainLines = lines.filter { self.linesToShow.contains($0.title) }
+                
+                if queueCount == 0 {
+                    self.updateLines(trainLines, withAlerts: trainAlerts)
+                    completion(.success(trainLines))
+                }
+                
             case .failure(_):
+                self.isRequesting = false
+                completion(.error)
+            }
+        }
+        
+        client.getAlerts() { result in
+            
+            queueCount -= 1
+            
+            switch result {
+            case .success(let alerts):
+                
+                trainAlerts = alerts
+                
+                if queueCount == 0 {
+                    self.updateLines(trainLines, withAlerts: trainAlerts)
+                    completion(.success(trainLines))
+                }
+                
+            case .failure:
+                self.isRequesting = false
                 completion(.error)
             }
         }
     }
+}
 
-    func requestAlerts(completion: @escaping (RequestHandlerResult<[Alert]>) -> Void) {
-        
-        client.getAlerts() { result in
-            switch result {
-            case .success(let alerts):
-                completion(.success(alerts))
-            case .failure:
-                completion(.error)
-            }
+private extension StatusRequestHandler {
+    
+    func updateLines(_ lines: [TrainLine], withAlerts alerts: [Alert]) {
+        for var line in lines {
+            let alerts = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(line.id) }
+            line.addAlerts(alerts)
         }
     }
 }

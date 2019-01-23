@@ -46,7 +46,7 @@ public struct TrainLine {
         statusUrl = response.statusUrl.url
     }
     
-    mutating func addAlert(_ alert: Alert) {
-        alerts.append(alert)
+    public mutating func addAlerts(_ alerts: [Alert]) {
+        self.alerts.append(contentsOf: alerts)
     }
 }

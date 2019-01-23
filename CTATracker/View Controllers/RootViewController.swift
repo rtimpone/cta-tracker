@@ -122,14 +122,5 @@ private extension RootViewController {
                 self.tableViewController.displayArrivalsError()
             }
         }
-        
-        statusRequestHandler.requestAlerts() { result in
-            switch result {
-            case .success(let alerts):
-                alerts.forEach { print($0) }
-            case .error:
-                print("error")
-            }
-        }
     }
 }
