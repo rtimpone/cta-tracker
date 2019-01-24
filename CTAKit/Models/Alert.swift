@@ -13,12 +13,14 @@ public struct Alert {
     public let headline: String
     public let message: String
     public let severity: Int
+    public let impact: String
     public let routesImpacted: [Route]
     
     init(from response: AlertResponse) {
         headline = response.headline
         message = response.shortDescription
         severity = Int(response.severityScore) ?? 0
+        impact = response.impact
         
         let impactedServices = response.impactedServicesContainer.services
         let idsOfRoutesImpacted = impactedServices.map { $0.serviceId }

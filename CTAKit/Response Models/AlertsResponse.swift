@@ -31,12 +31,14 @@ struct AlertResponse: Decodable {
     let headline: String
     let shortDescription: String
     let severityScore: String
+    let impact: String
     let impactedServicesContainer: ImpactedServicesContainerResponse
     
     enum CodingKeys: String, CodingKey {
         case headline = "Headline"
         case shortDescription = "ShortDescription"
         case severityScore = "SeverityScore"
+        case impact = "Impact"
         case impactedServicesContainer = "ImpactedService"
     }
 }

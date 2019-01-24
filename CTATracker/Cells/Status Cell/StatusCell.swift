@@ -20,33 +20,22 @@ class StatusCell: UITableViewCell, NibBased {
         
         lineColorView.backgroundColor = line.displayColor
         lineLabel.text = line.title
-        statusLabel.text = line.status.rawValue
-        statusLabel.textColor = color(forStatus: line.status)
-        
-        let mostSevereAlert = line.alerts.sorted { $0.severity > $1.severity }.first
+
+        let severeAlerts = line.alerts.filter({ $0.isSevere })
+        let mostSevereAlert = severeAlerts.sorted(by: { $0.severity > $1.severity }).first
         
         if let alert = mostSevereAlert {
             alertView.isHidden = false
             alertView.updateLabels(for: alert)
             alertView.updateHeightConstraintForVisisble()
+            statusLabel.textColor = .red
+            statusLabel.text = alert.impact
         }
         else {
             alertView.isHidden = true
             alertView.updateHeightConstraintForHidden()
-        }
-    }
-}
-
-private extension StatusCell {
-    
-    func color(forStatus status: TrainLine.LineStatus) -> UIColor {
-        switch status {
-        case .normal, .specialNote, .serviceChange:
-            return .black
-        case .minorDelays, .majorDelays, .significantDelays, .serviceDisruptionMajorDelays, .serviceDisruption:
-            return .red
-        case .unknown:
-            return .lightGray
+            statusLabel.textColor = .black
+            statusLabel.text = "Normal"
         }
     }
 }
