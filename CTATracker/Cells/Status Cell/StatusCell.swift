@@ -23,7 +23,9 @@ class StatusCell: UITableViewCell, NibBased {
         statusLabel.text = line.status.rawValue
         statusLabel.textColor = color(forStatus: line.status)
         
-        if let alert = line.alerts.first {
+        let mostSevereAlert = line.alerts.sorted { $0.severity > $1.severity }.first
+        
+        if let alert = mostSevereAlert {
             alertView.isHidden = false
             alertView.updateLabels(for: alert)
             alertView.updateHeightConstraintForVisisble()

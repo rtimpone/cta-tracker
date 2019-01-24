@@ -89,8 +89,8 @@ class StatusRequestHandler: RequestHandler {
                 
                 if queueCount == 0 {
                     self.isRequesting = false
-                    self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(trainLines))
+                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
+                    completion(.success(linesWithAlerts))
                 }
                 
             case .failure(_):
@@ -110,8 +110,8 @@ class StatusRequestHandler: RequestHandler {
                 
                 if queueCount == 0 {
                     self.isRequesting = false
-                    self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(trainLines))
+                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
+                    completion(.success(linesWithAlerts))
                 }
                 
             case .failure:
@@ -124,10 +124,13 @@ class StatusRequestHandler: RequestHandler {
 
 private extension StatusRequestHandler {
     
-    func updateLines(_ lines: [TrainLine], withAlerts alerts: [Alert]) {
+    func updateLines(_ lines: [TrainLine], withAlerts alerts: [Alert]) -> [TrainLine] {
+        var updatedTrainLines: [TrainLine] = []
         for var line in lines {
-            let alerts = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(line.id) }
-            line.addAlerts(alerts)
+            let alertsForThisLine = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(line.id) }
+            line.addAlerts(alertsForThisLine)
+            updatedTrainLines.append(line)
         }
+        return updatedTrainLines
     }
 }
