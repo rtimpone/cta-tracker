@@ -35,7 +35,7 @@ class StatusCell: UITableViewCell, NibBased {
             alertView.isHidden = true
             alertView.updateHeightConstraintForHidden()
             statusLabel.textColor = .black
-            statusLabel.text = "Normal"
+            statusLabel.text = "Normal Service"
         }
     }
 }
