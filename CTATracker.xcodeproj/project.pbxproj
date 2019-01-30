@@ -8,9 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
+		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
+		FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */; };
+		FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF13021F6C9630070CF9C /* MockJson.swift */; };
+		FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* ArrivalView.swift */; };
+		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
+		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
+		FBBE4AF421F5774B00DAA0A1 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FBBE4AF321F5774B00DAA0A1 /* routes.json */; };
+		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
+		FBBE4AF821F5793800DAA0A1 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF721F5793800DAA0A1 /* RouteData.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,9 +105,18 @@
 
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
+		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertResponseTests.swift; sourceTree = "<group>"; };
+		FB7FF13021F6C9630070CF9C /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
+		FB87A31921F3FEED0002431F /* ArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalView.swift; sourceTree = "<group>"; };
+		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
+		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
+		FBBE4AF321F5774B00DAA0A1 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = ../../../../../Desktop/routes.json; sourceTree = "<group>"; };
+		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FBBE4AF721F5793800DAA0A1 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,7 +149,7 @@
 		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
 		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
-		FBF179F921C55FD900BF232C /* CTATracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTATracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBF17A0321C55FDB00BF232C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +194,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB84808821EA320E007F932E /* Asset Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
+			);
+			path = "Asset Catalog";
+			sourceTree = "<group>";
+		};
+		FB87A31B21F3FEFA0002431F /* Status Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB87A31921F3FEED0002431F /* ArrivalView.swift */,
+				FBCAA11221C5647800681A6F /* StatusCell.swift */,
+				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
+			);
+			path = "Status Cell";
+			sourceTree = "<group>";
+		};
+		FB87A31C21F3FF020002431F /* Generic Message Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */,
+				FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */,
+			);
+			path = "Generic Message Cell";
+			sourceTree = "<group>";
+		};
+		FB87A31D21F3FF0B0002431F /* Arrival Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */,
+				FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */,
+			);
+			path = "Arrival Cell";
+			sourceTree = "<group>";
+		};
+		FB87A31E21F3FF2F0002431F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FB98C5B621E1963A004D61B6 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +247,20 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		FBBE4AF221F5774100DAA0A1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FBBE4AF721F5793800DAA0A1 /* RouteData.swift */,
+				FBBE4AF321F5774B00DAA0A1 /* routes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		FBCAA0DB21C5625000681A6F /* CTAKit */ = {
 			isa = PBXGroup;
 			children = (
 				FBCAA10221C5632700681A6F /* API Clients */,
+				FBBE4AF221F5774100DAA0A1 /* Data */,
 				FBCAA11621C564BB00681A6F /* Extensions */,
 				FBCAA10421C5633A00681A6F /* Models */,
 				FBCAA10121C562E700681A6F /* Resources */,
@@ -200,6 +272,8 @@
 		FBCAA0E821C5625000681A6F /* CTAKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */,
+				FB7FF13021F6C9630070CF9C /* MockJson.swift */,
 				FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */,
 				FBCAA0EB21C5625000681A6F /* Info.plist */,
 			);
@@ -249,6 +323,7 @@
 		FBCAA10321C5633200681A6F /* Response Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB87A32121F4011C0002431F /* AlertsResponse.swift */,
 				FBCAA10F21C5639A00681A6F /* TrainArrivalResponse.swift */,
 				FBCAA10D21C5639500681A6F /* TrainLineResponse.swift */,
 			);
@@ -258,6 +333,8 @@
 		FBCAA10421C5633A00681A6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB63DB9521F3F476001F048D /* Alert.swift */,
+				FBBE4AF521F577E500DAA0A1 /* Route.swift */,
 				FBCAA10B21C5637C00681A6F /* TrainArrival.swift */,
 				FBCAA10921C5637500681A6F /* TrainLine.swift */,
 				FB89463821D1A9450018E97B /* TrainStop.swift */,
@@ -268,12 +345,9 @@
 		FBCAA11121C5647100681A6F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */,
-				FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */,
-				FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */,
-				FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */,
-				FBCAA11221C5647800681A6F /* StatusCell.swift */,
-				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
+				FB87A31D21F3FF0B0002431F /* Arrival Cell */,
+				FB87A31C21F3FF020002431F /* Generic Message Cell */,
+				FB87A31B21F3FEFA0002431F /* Status Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -317,7 +391,7 @@
 		FBF179FA21C55FD900BF232C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBF179F921C55FD900BF232C /* CTATracker.app */,
+				FBF179F921C55FD900BF232C /* CTA.app */,
 				FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */,
 				FBCAA0DA21C5625000681A6F /* CTAKit.framework */,
 				FBCAA0E221C5625000681A6F /* CTAKitTests.xctest */,
@@ -328,7 +402,7 @@
 		FBF179FB21C55FD900BF232C /* CTATracker */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
+				FB84808821EA320E007F932E /* Asset Catalog */,
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
@@ -337,6 +411,7 @@
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FBF17A1C21C5601C00BF232C /* Storyboards */,
+				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
 			path = CTATracker;
@@ -446,7 +521,7 @@
 			);
 			name = CTATracker;
 			productName = CTATracker;
-			productReference = FBF179F921C55FD900BF232C /* CTATracker.app */;
+			productReference = FBF179F921C55FD900BF232C /* CTA.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBF17A0C21C55FDB00BF232C /* CTATrackerTests */ = {
@@ -521,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA11A21C5680900681A6F /* credentials.json in Resources */,
+				FBBE4AF421F5774B00DAA0A1 /* routes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,10 +636,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA11E21C5746100681A6F /* Locations.swift in Sources */,
+				FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */,
 				FBCAA10E21C5639500681A6F /* TrainLineResponse.swift in Sources */,
+				FBBE4AF821F5793800DAA0A1 /* RouteData.swift in Sources */,
+				FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */,
 				FBCAA11021C5639A00681A6F /* TrainArrivalResponse.swift in Sources */,
 				FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */,
 				FBCAA10C21C5637C00681A6F /* TrainArrival.swift in Sources */,
+				FB63DB9621F3F476001F048D /* Alert.swift in Sources */,
 				FBCAA10A21C5637500681A6F /* TrainLine.swift in Sources */,
 				FB89463921D1A9450018E97B /* TrainStop.swift in Sources */,
 				FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */,
@@ -578,7 +658,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */,
 				FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */,
+				FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,9 +678,11 @@
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
+				FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
 				FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
+				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,7 +815,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTATracker.app/CTATracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
 			name = Debug;
 		};
@@ -751,7 +835,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTATracker.app/CTATracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
 			name = Release;
 		};
@@ -884,7 +968,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CTA;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -903,7 +987,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CTA;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -926,7 +1010,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTATracker.app/CTATracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
 			name = Debug;
 		};
@@ -947,7 +1031,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTATracker.app/CTATracker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
 			name = Release;
 		};

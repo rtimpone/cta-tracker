@@ -22,20 +22,16 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let permissionStatus = locationHandler.fetchCurrentPermissionStatus()
-        switch permissionStatus {
+        setupWillEnterForegroundNotificationSubscription()
+        
+        switch locationHandler.permissionStatus {
         case .granted:
             makeRequestsWithLocationPermission()
         case .denied:
             makeRequestsWithoutLocationPermission()
         case .notYetRequested:
-            locationHandler.requestLocationPermission() { [weak self] permissionGranted in
-                if permissionGranted {
-                    self?.makeRequestsWithLocationPermission()
-                }
-                else {
-                    self?.makeRequestsWithoutLocationPermission()
-                }
+            locationHandler.requestLocationPermission() { [weak self] in
+                self?.refreshLocationAndTrainData()
             }
         }
     }
@@ -46,29 +42,16 @@ class RootViewController: UIViewController {
             tableViewController = vc
         }
     }
-    
-    func getCurrentLocation(completion: @escaping () -> Void) {
-        locationHandler.fetchCurrentLocation() { coordinate in
-            self.currentDeviceCoordinate = coordinate
-            completion()
-        }
-    }
-    
-    func makeInitialNetworkRequests() {
-        UTCOffsets.lookupOffsets {
-            self.refreshDataFromApi()
-        }
-    }
 }
 
 extension RootViewController: TableViewDelegate {
     
     func refreshControlWasActivated() {
-        refreshDataFromApi()
+        refreshLocationAndTrainData()
     }
     
     func didSelectTrainLine(_ line: TrainLine) {
-        let sfc = SFSafariViewController(url: line.routeUrl)
+        let sfc = SFSafariViewController(url: line.statusUrl)
         present(sfc, animated: true)
     }
     
@@ -78,6 +61,30 @@ extension RootViewController: TableViewDelegate {
 }
 
 private extension RootViewController {
+    
+    func setupWillEnterForegroundNotificationSubscription() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAppWillEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func didReceiveAppWillEnterForegroundNotification() {
+        refreshLocationAndTrainData()
+    }
+    
+    func refreshLocationAndTrainData() {
+        if locationHandler.permissionStatus == .granted {
+            makeRequestsWithLocationPermission()
+        }
+        else {
+            makeRequestsWithoutLocationPermission()
+        }
+    }
+    
+    func getCurrentLocation(completion: @escaping () -> Void) {
+        locationHandler.fetchCurrentLocation() { coordinate in
+            self.currentDeviceCoordinate = coordinate
+            completion()
+        }
+    }
     
     func makeRequestsWithLocationPermission() {
         getCurrentLocation {
@@ -94,9 +101,6 @@ private extension RootViewController {
     }
     
     func refreshDataFromApi() {
-        
-        //refresh control
-        
         statusRequestHandler.requestTrainStatus() { result in
             switch result {
             case .success(let lines):
