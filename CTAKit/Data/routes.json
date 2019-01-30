@@ -1,0 +1,49 @@
+{
+  "routes": [
+    {
+      "id": "Red",
+      "title": "Red Line",
+      "color": "c60c30"
+    },
+    {
+      "id": "Blue",
+      "title": "Blue Line",
+      "color": "00a1de"
+    },
+    {
+      "id": "Brn",
+      "title": "Brown Line",
+      "color": "62361b"
+    },
+    {
+      "id": "G",
+      "title": "Green Line",
+      "color": "009b3a"
+    },
+    {
+      "id": "Org",
+      "title": "Orange Line",
+      "color": "f9461c"
+    },
+    {
+      "id": "P",
+      "title": "Purple Line",
+      "color": "522398"
+    },
+    {
+      "id": "Pexp",
+      "title": "Purple Line Express",
+      "color": "522398"
+    },
+    {
+      "id": "Pink",
+      "title": "Pink Line",
+      "color": "e27ea6"
+    },
+    {
+      "id": "Y",
+      "title": "Yellow Line",
+      "color": "f9e300"
+    }
+  ]
+}

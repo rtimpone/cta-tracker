@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
+		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */; };
 		FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF13021F6C9630070CF9C /* MockJson.swift */; };
 		FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* ArrivalView.swift */; };
@@ -17,7 +18,6 @@
 		FB89463921D1A9450018E97B /* TrainStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* TrainStop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
-		FBBE4AF421F5774B00DAA0A1 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FBBE4AF321F5774B00DAA0A1 /* routes.json */; };
 		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
 		FBBE4AF821F5793800DAA0A1 /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF721F5793800DAA0A1 /* RouteData.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
@@ -106,6 +106,7 @@
 /* Begin PBXFileReference section */
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertResponseTests.swift; sourceTree = "<group>"; };
 		FB7FF13021F6C9630070CF9C /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
 		FB87A31921F3FEED0002431F /* ArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalView.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		FB89463821D1A9450018E97B /* TrainStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
-		FBBE4AF321F5774B00DAA0A1 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = routes.json; path = ../../../../../Desktop/routes.json; sourceTree = "<group>"; };
 		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		FBBE4AF721F5793800DAA0A1 /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBE4AF721F5793800DAA0A1 /* RouteData.swift */,
-				FBBE4AF321F5774B00DAA0A1 /* routes.json */,
+				FB6E4D922201F169002AC392 /* routes.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -596,7 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA11A21C5680900681A6F /* credentials.json in Resources */,
-				FBBE4AF421F5774B00DAA0A1 /* routes.json in Resources */,
+				FB6E4D932201F169002AC392 /* routes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
