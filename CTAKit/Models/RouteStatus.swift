@@ -1,5 +1,5 @@
 //
-//  TrainLine.swift
+//  RouteStatus.swift
 //  CTAKit
 //
 //  Created by Rob Timpone on 12/15/18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct TrainLine {
+public struct RouteStatus {
     
     public let id: String
     public let title: String

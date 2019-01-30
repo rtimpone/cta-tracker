@@ -11,11 +11,11 @@ import UIKit
 
 class CellFactory {
     
-    static func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<TrainLine>) -> UITableViewCell {
+    static func statusCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<RouteStatus>) -> UITableViewCell {
         
         switch dataSource {
-        case .data(let lines):
-            let status = lines[indexPath.row]
+        case .data(let statuses):
+            let status = statuses[indexPath.row]
             let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
             cell.configure(for: status)
             return cell

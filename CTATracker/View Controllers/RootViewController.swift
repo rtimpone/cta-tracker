@@ -44,14 +44,14 @@ class RootViewController: UIViewController {
     }
 }
 
-extension RootViewController: TableViewDelegate {
+extension RootViewController: TableViewControllerDelegate {
     
     func refreshControlWasActivated() {
         refreshLocationAndTrainData()
     }
     
-    func didSelectTrainLine(_ line: TrainLine) {
-        let sfc = SFSafariViewController(url: line.statusUrl)
+    func didSelectRoute(_ route: RouteStatus) {
+        let sfc = SFSafariViewController(url: route.statusUrl)
         present(sfc, animated: true)
     }
     
@@ -103,10 +103,10 @@ private extension RootViewController {
     func refreshDataFromApi() {
         statusRequestHandler.requestTrainStatus() { result in
             switch result {
-            case .success(let lines):
-                self.tableViewController.displayTrainLines(lines)
+            case .success(let routes):
+                self.tableViewController.displayRouteStatuses(routes)
             case .error:
-                self.tableViewController.displayTrainLinesError()
+                self.tableViewController.displayRoutesStatusError()
             }
         }
         

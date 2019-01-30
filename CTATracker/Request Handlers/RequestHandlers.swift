@@ -62,10 +62,10 @@ class ArrivalsRequestHandler: RequestHandler {
 
 class StatusRequestHandler: RequestHandler {
     
-    let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    let routesToShow = ["Red Line", "Brown Line", "Purple Line"]
     var isRequesting = false
     
-    func requestTrainStatus(completion: @escaping (RequestHandlerResult<[TrainLine]>) -> Void) {
+    func requestTrainStatus(completion: @escaping (RequestHandlerResult<[RouteStatus]>) -> Void) {
         
         if isRequesting {
             print("Status requests are already in flight, wait until requests are finished before starting again")
@@ -75,7 +75,7 @@ class StatusRequestHandler: RequestHandler {
         isRequesting = true
         var queueCount = 2
         
-        var trainLines: [TrainLine] = []
+        var routes: [RouteStatus] = []
         var trainAlerts: [Alert] = []
         
         client.getTrainLines() { result in
@@ -83,14 +83,14 @@ class StatusRequestHandler: RequestHandler {
             queueCount -= 1
             
             switch result {
-            case .success(let lines):
+            case .success(let routesFromApi):
                 
-                trainLines = lines.filter { self.linesToShow.contains($0.title) }
+                routes = routesFromApi.filter { self.routesToShow.contains($0.title) }
                 
                 if queueCount == 0 {
                     self.isRequesting = false
-                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(linesWithAlerts))
+                    let routesWithAlerts = self.updateRoutes(routes, withAlerts: trainAlerts)
+                    completion(.success(routesWithAlerts))
                 }
                 
             case .failure(_):
@@ -110,8 +110,8 @@ class StatusRequestHandler: RequestHandler {
                 
                 if queueCount == 0 {
                     self.isRequesting = false
-                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(linesWithAlerts))
+                    let routesWithAlerts = self.updateRoutes(routes, withAlerts: trainAlerts)
+                    completion(.success(routesWithAlerts))
                 }
                 
             case .failure:
@@ -124,13 +124,13 @@ class StatusRequestHandler: RequestHandler {
 
 private extension StatusRequestHandler {
     
-    func updateLines(_ lines: [TrainLine], withAlerts alerts: [Alert]) -> [TrainLine] {
-        var updatedTrainLines: [TrainLine] = []
-        for var line in lines {
-            let alertsForThisLine = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(line.id) }
-            line.addAlerts(alertsForThisLine)
-            updatedTrainLines.append(line)
+    func updateRoutes(_ routes: [RouteStatus], withAlerts alerts: [Alert]) -> [RouteStatus] {
+        var updatedRoutes: [RouteStatus] = []
+        for var route in routes {
+            let alertsForThisRoute = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(route.id) }
+            route.addAlerts(alertsForThisRoute)
+            updatedRoutes.append(route)
         }
-        return updatedTrainLines
+        return updatedRoutes
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 public class CtaClient: ApiClient {
     
-    public func getTrainLines(completion: @escaping (ApiResult<[TrainLine]>) -> Void) {
+    public func getTrainLines(completion: @escaping (ApiResult<[RouteStatus]>) -> Void) {
         
         let url = URL(string: "http://www.transitchicago.com/api/1.0/routes.aspx?outputType=JSON")!
         fetchObject(ofType: RouteInfoContainer.self, from: url) { result in
@@ -18,7 +18,7 @@ public class CtaClient: ApiClient {
             case .success(let infoContainer):
                 let routeStatusResponses = infoContainer.info.routeStatusResponses
                 let trainStatusResponses = routeStatusResponses.filter { $0.title.range(of: " Line") != nil }
-                let trainStatuses = trainStatusResponses.map { TrainLine(fromResponse: $0) }
+                let trainStatuses = trainStatusResponses.map { RouteStatus(fromResponse: $0) }
                 completion(.success(trainStatuses))
             case .failure(let error):
                 completion(.failure(error))

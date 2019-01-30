@@ -30,25 +30,25 @@ enum DataSource<T> {
     }
 }
 
-protocol TableViewDelegate: class {
+protocol TableViewControllerDelegate: class {
     func refreshControlWasActivated()
-    func didSelectTrainLine(_ line: TrainLine)
+    func didSelectRoute(_ route: RouteStatus)
     func didSelectArrivals(_ arrivals: StationArrivals)
 }
 
 class TableViewController: UITableViewController {
     
     private var arrivalsDataSource: DataSource<StationArrivals> = .initialState
-    private var linesDataSource: DataSource<TrainLine> = .initialState
-    weak var delegate: TableViewDelegate?
+    private var statusDataSource: DataSource<RouteStatus> = .initialState
+    weak var delegate: TableViewControllerDelegate?
     
-    func displayTrainLines(_ lines: [TrainLine]) {
-        linesDataSource = DataSource.data(lines)
+    func displayRouteStatuses(_ statuses: [RouteStatus]) {
+        statusDataSource = DataSource.data(statuses)
         stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
-    func displayTrainLinesError() {
-        linesDataSource = DataSource.error
+    func displayRoutesStatusError() {
+        statusDataSource = DataSource.error
         stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
@@ -78,7 +78,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case Sections.statuses:
-            return linesDataSource.numberOfRows
+            return statusDataSource.numberOfRows
         case Sections.arrivals:
             return arrivalsDataSource.numberOfRows
         default:
@@ -97,7 +97,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Sections.statuses:
-            return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: linesDataSource)
+            return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: statusDataSource)
         case Sections.arrivals:
             return CellFactory.arrivalsCellForRow(at: indexPath, in: tableView, dataSource: arrivalsDataSource)
         default:
@@ -125,9 +125,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case Sections.statuses:
-            if case .data(let lines) = linesDataSource {
-                let line = lines[indexPath.row]
-                delegate?.didSelectTrainLine(line)
+            if case .data(let statuses) = statusDataSource {
+                let status = statuses[indexPath.row]
+                delegate?.didSelectRoute(status)
             }
         case Sections.arrivals:
             if case .data(let arrivals) = arrivalsDataSource {
