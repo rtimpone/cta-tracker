@@ -38,6 +38,6 @@ public struct Alert {
         
         let impactedServices = response.impactedServicesContainer.services
         let idsOfRoutesImpacted = impactedServices.map { $0.serviceId }
-        routesImpacted = Route.allRoutes().filter { idsOfRoutesImpacted.contains($0.id) }
+        routesImpacted = RouteDataFetcher.fetchAllRoutes().filter { idsOfRoutesImpacted.contains($0.id) }
     }
 }

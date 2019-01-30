@@ -50,8 +50,8 @@ extension RootViewController: TableViewControllerDelegate {
         refreshLocationAndTrainData()
     }
     
-    func didSelectRoute(_ route: RouteStatus) {
-        let sfc = SFSafariViewController(url: route.statusUrl)
+    func didSelectStatus(_ status: RouteStatus) {
+        let sfc = SFSafariViewController(url: status.route.url)
         present(sfc, animated: true)
     }
     

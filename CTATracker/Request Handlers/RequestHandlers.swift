@@ -62,7 +62,7 @@ class ArrivalsRequestHandler: RequestHandler {
 
 class StatusRequestHandler: RequestHandler {
     
-    let routesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    let selectedRoutes = ["Red Line", "Brown Line", "Purple Line"]
     var isRequesting = false
     
     func requestTrainStatus(completion: @escaping (RequestHandlerResult<[RouteStatus]>) -> Void) {
@@ -73,64 +73,19 @@ class StatusRequestHandler: RequestHandler {
         }
         
         isRequesting = true
-        var queueCount = 2
         
-        var routes: [RouteStatus] = []
-        var trainAlerts: [Alert] = []
-        
-        client.getTrainLines() { result in
-            
-            queueCount -= 1
+        let routesToShow = RouteDataFetcher.fetchAllRoutes().filter { self.selectedRoutes.contains($0.title) }
+        client.getStatuses(for: routesToShow) { result in
             
             switch result {
-            case .success(let routesFromApi):
-                
-                routes = routesFromApi.filter { self.routesToShow.contains($0.title) }
-                
-                if queueCount == 0 {
-                    self.isRequesting = false
-                    let routesWithAlerts = self.updateRoutes(routes, withAlerts: trainAlerts)
-                    completion(.success(routesWithAlerts))
-                }
-                
-            case .failure(_):
+            case .success(let statuses):
                 self.isRequesting = false
-                completion(.error)
-            }
-        }
-        
-        client.getAlerts() { result in
-            
-            queueCount -= 1
-            
-            switch result {
-            case .success(let alerts):
-                
-                trainAlerts = alerts
-                
-                if queueCount == 0 {
-                    self.isRequesting = false
-                    let routesWithAlerts = self.updateRoutes(routes, withAlerts: trainAlerts)
-                    completion(.success(routesWithAlerts))
-                }
+                completion(.success(statuses))
                 
             case .failure:
                 self.isRequesting = false
                 completion(.error)
             }
         }
-    }
-}
-
-private extension StatusRequestHandler {
-    
-    func updateRoutes(_ routes: [RouteStatus], withAlerts alerts: [Alert]) -> [RouteStatus] {
-        var updatedRoutes: [RouteStatus] = []
-        for var route in routes {
-            let alertsForThisRoute = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(route.id) }
-            route.addAlerts(alertsForThisRoute)
-            updatedRoutes.append(route)
-        }
-        return updatedRoutes
     }
 }

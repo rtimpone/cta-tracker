@@ -9,32 +9,17 @@
 import Foundation
 
 public class CtaClient: ApiClient {
-    
-    public func getTrainLines(completion: @escaping (ApiResult<[RouteStatus]>) -> Void) {
-        
-        let url = URL(string: "http://www.transitchicago.com/api/1.0/routes.aspx?outputType=JSON")!
-        fetchObject(ofType: RouteInfoContainer.self, from: url) { result in
-            switch result {
-            case .success(let infoContainer):
-                let routeStatusResponses = infoContainer.info.routeStatusResponses
-                let trainStatusResponses = routeStatusResponses.filter { $0.title.range(of: " Line") != nil }
-                let trainStatuses = trainStatusResponses.map { RouteStatus(fromResponse: $0) }
-                completion(.success(trainStatuses))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    public func getAlerts(completion: @escaping (ApiResult<[Alert]>) -> Void) {
-        let routes = "Red,Brn,P,Pexp"
-        let url = URL(string: "http://www.transitchicago.com/api/1.0/alerts.aspx?routeid=\(routes)&outputType=JSON")!
+
+    public func getStatuses(for routes: [Route], completion: @escaping (ApiResult<[RouteStatus]>) -> Void) {
+        let routeIds = routes.map{ $0.id }.joined(separator: ",")
+        let url = URL(string: "http://www.transitchicago.com/api/1.0/alerts.aspx?routeid=\(routeIds)&outputType=JSON")!
         fetchObject(ofType: AlertsContainerResponse.self, from: url) { result in
             switch result {
             case .success(let alertsContainer):
                 let alertResponses = alertsContainer.root.alerts
                 let alerts = alertResponses.map{ Alert(from: $0) }
-                completion(.success(alerts))
+                let statuses = self.routeStatusesFor(routes: routes, with: alerts)
+                completion(.success(statuses))
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -67,5 +52,28 @@ public class CtaClient: ApiClient {
                 completion(.failure(error))
             }
         }
+    }
+}
+
+private extension CtaClient {
+    
+    func routeStatusesFor(routes: [Route], with alerts: [Alert]) -> [RouteStatus] {
+        let alertsByRoute = self.alertsForRouteDictionary(from: alerts)
+        let statuses = routes.map { route -> RouteStatus in
+            let alerts = alertsByRoute[route] ?? []
+            return RouteStatus(route: route, alerts: alerts)
+        }
+        return statuses
+    }
+    
+    func alertsForRouteDictionary(from alerts: [Alert]) -> [Route: [Alert]] {
+        let alertsForRouteDictionary = alerts.reduce(into: [Route: [Alert]]()) { (dictionary, alert) in
+            for route in alert.routesImpacted {
+                var alertsForRoute = dictionary[route] ?? []
+                alertsForRoute.append(alert)
+                dictionary[route] = alertsForRoute
+            }
+        }
+        return alertsForRouteDictionary
     }
 }

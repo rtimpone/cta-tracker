@@ -18,8 +18,8 @@ class StatusCell: UITableViewCell, NibBased {
     
     func configure(for status: RouteStatus) {
         
-        routeColorView.backgroundColor = status.displayColor
-        routeTitleLabel.text = status.title
+        routeColorView.backgroundColor = status.route.color
+        routeTitleLabel.text = status.route.title
 
         let severeAlerts = status.alerts.filter({ $0.isSevere })
         let mostSevereAlert = severeAlerts.sorted(by: { $0.severity > $1.severity }).first

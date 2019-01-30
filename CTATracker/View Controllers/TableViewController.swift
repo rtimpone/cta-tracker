@@ -32,7 +32,7 @@ enum DataSource<T> {
 
 protocol TableViewControllerDelegate: class {
     func refreshControlWasActivated()
-    func didSelectRoute(_ route: RouteStatus)
+    func didSelectStatus(_ status: RouteStatus)
     func didSelectArrivals(_ arrivals: StationArrivals)
 }
 
@@ -127,7 +127,7 @@ class TableViewController: UITableViewController {
         case Sections.statuses:
             if case .data(let statuses) = statusDataSource {
                 let status = statuses[indexPath.row]
-                delegate?.didSelectRoute(status)
+                delegate?.didSelectStatus(status)
             }
         case Sections.arrivals:
             if case .data(let arrivals) = arrivalsDataSource {

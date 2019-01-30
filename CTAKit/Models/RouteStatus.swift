@@ -9,30 +9,13 @@
 import Foundation
 import UIKit
 
-public struct RouteStatus {
+public class RouteStatus {
     
-    public let id: String
-    public let title: String
-    public let displayColor: UIColor
-    public let statusUrl: URL
+    public let route: Route
+    public let alerts: [Alert]
     
-    public private(set) var alerts: [Alert] = []
-    
-    init(fromResponse response: RouteStatusResponse) {
-        id = response.serviceId
-        title = response.title
-        
-        if let routeColor = response.routeColorCode {
-            displayColor = UIColor(hex: routeColor)
-        }
-        else {
-            displayColor = .white
-        }
-        
-        statusUrl = response.statusUrl.url
-    }
-    
-    public mutating func addAlerts(_ alerts: [Alert]) {
-        self.alerts.append(contentsOf: alerts)
+    public init(route: Route, alerts: [Alert]) {
+        self.route = route
+        self.alerts = alerts
     }
 }
