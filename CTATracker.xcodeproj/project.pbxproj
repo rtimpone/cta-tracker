@@ -24,6 +24,7 @@
 		FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */; };
 		FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */; };
 		FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FB0122188601003FBB40 /* StationSectionHeader.xib */; };
+		FB86FB0422188882003FBB40 /* EtaDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */; };
 		FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* AlertView.swift */; };
 		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
 		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
@@ -134,6 +135,7 @@
 		FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGenerator.swift; sourceTree = "<group>"; };
 		FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSectionHeader.swift; sourceTree = "<group>"; };
 		FB86FB0122188601003FBB40 /* StationSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationSectionHeader.xib; sourceTree = "<group>"; };
+		FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB87A31921F3FEED0002431F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
 		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */,
+				FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */,
 				FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */,
 				FBF17A1321C55FDB00BF232C /* Info.plist */,
 			);
@@ -803,6 +806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB86FB0422188882003FBB40 /* EtaDescriptionGeneratorTests.swift in Sources */,
 				FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */,
 				FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */,
 			);
