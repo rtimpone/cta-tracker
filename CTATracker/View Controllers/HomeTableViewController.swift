@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  HomeTableViewController.swift
 //  CTATracker
 //
 //  Created by Rob Timpone on 1/5/19.
@@ -30,17 +30,17 @@ enum DataSource<T> {
     }
 }
 
-protocol TableViewControllerDelegate: class {
+protocol HomeTableViewControllerDelegate: class {
     func refreshControlWasActivated()
     func didSelectStatus(_ status: RouteStatus)
     func didSelectArrivals(_ arrivals: StopArrivals)
 }
 
-class TableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController {
     
     private var arrivalsDataSource: DataSource<StopArrivals> = .initialState
     private var statusDataSource: DataSource<RouteStatus> = .initialState
-    weak var delegate: TableViewControllerDelegate?
+    weak var delegate: HomeTableViewControllerDelegate?
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
         statusDataSource = DataSource.data(statuses)
@@ -140,7 +140,7 @@ class TableViewController: UITableViewController {
     }
 }
 
-private extension TableViewController {
+private extension HomeTableViewController {
     
     func stopRefreshControlAndReloadSection(_ section: Int) {
         

@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  HomeViewController.swift
 //  CTATracker
 //
 //  Created by Rob Timpone on 12/15/18.
@@ -10,13 +10,13 @@ import CTAKit
 import SafariServices
 import UIKit
 
-class RootViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     let locationHandler = LocationHandler()
     let arrivalsRequestHandler = ArrivalsRequestHandler()
     let statusRequestHandler = StatusRequestHandler()
     
-    weak var tableViewController: TableViewController!
+    weak var tableViewController: HomeTableViewController!
     var currentDeviceCoordinate: Coordinate?
     
     override func viewDidLoad() {
@@ -37,14 +37,14 @@ class RootViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? TableViewController {
+        if let vc = segue.destination as? HomeTableViewController {
             vc.delegate = self
             tableViewController = vc
         }
     }
 }
 
-extension RootViewController: TableViewControllerDelegate {
+extension HomeViewController: HomeTableViewControllerDelegate {
     
     func refreshControlWasActivated() {
         refreshLocationAndTrainData()
@@ -60,7 +60,7 @@ extension RootViewController: TableViewControllerDelegate {
     }
 }
 
-private extension RootViewController {
+private extension HomeViewController {
     
     func setupWillEnterForegroundNotificationSubscription() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveAppWillEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)

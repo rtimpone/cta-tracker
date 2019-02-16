@@ -50,7 +50,7 @@
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
 		FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDCCD02218672700D41793 /* StationViewController.storyboard */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
-		FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* TableViewController.swift */; };
+		FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
 		FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */; };
 		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
@@ -61,7 +61,7 @@
 		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
 		FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */; };
-		FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* RootViewController.swift */; };
+		FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,7 +154,7 @@
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
 		FBDDCCD02218672700D41793 /* StationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationViewController.storyboard; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
-		FBE2E20821E1154F00D97D61 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
 		FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericMessageCell.xib; sourceTree = "<group>"; };
 		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		FBF17A0821C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF17A1321C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBF17A2021C5607800BF232C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FBF17A2021C5607800BF232C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,10 +473,10 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
+				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
-				FBF17A2021C5607800BF232C /* RootViewController.swift */,
-				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -746,12 +746,12 @@
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
-				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
+				FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
-				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
+				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
 				FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
