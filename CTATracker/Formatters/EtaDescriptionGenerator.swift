@@ -16,9 +16,9 @@ class EtaDescriptionGenerator {
             return "Now"
         }
         
-        let minutes = abs(secondsUntilArrival / 60)
-        let seconds = abs(secondsUntilArrival % 60)
-        let timeDescription = self.timeDescription(forMinutes: minutes, seconds: seconds)
+        let secondsComponent = abs(secondsUntilArrival % 60)
+        let minutesComponent = abs(secondsUntilArrival / 60)
+        let timeDescription = self.timeDescription(forSeconds: secondsComponent, minutes: minutesComponent)
         
         return secondsUntilArrival > 0 ? timeDescription : "Late by \(timeDescription)"
     }
@@ -26,20 +26,13 @@ class EtaDescriptionGenerator {
 
 private extension EtaDescriptionGenerator {
     
-    static func timeDescription(forMinutes minutes: Int, seconds: Int) -> String {
-        
-        var timeDescription = ""
-        
-        if minutes == 0 && seconds > 0 {
-            timeDescription = "\(seconds)s"
-        }
-        else if minutes > 0 && seconds == 0 {
-            timeDescription = "\(minutes)m"
+    static func timeDescription(forSeconds seconds: Int, minutes: Int) -> String {
+        if minutes > 0 {
+            let secondsWithZeroPadding = String(format: "%02d", seconds)
+            return "\(minutes)m \(secondsWithZeroPadding)s"
         }
         else {
-            timeDescription = "\(minutes)m \(seconds)s"
+            return "\(seconds)s"
         }
-        
-        return timeDescription
     }
 }

@@ -39,12 +39,12 @@ class EtaDescriptionGeneratorTests: XCTestCase {
     
     func testArrivalInSixtySeconds() {
         let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(60)
-        XCTAssertEqual(output, "1m")
+        XCTAssertEqual(output, "1m 00s")
     }
     
     func testArrivalInSixtyOneSeconds() {
         let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(61)
-        XCTAssertEqual(output, "1m 1s")
+        XCTAssertEqual(output, "1m 01s")
     }
     
     func testArrivalInSeventyOneSeconds() {
@@ -54,16 +54,16 @@ class EtaDescriptionGeneratorTests: XCTestCase {
     
     func testArrivalInOneHundredAndTwentySeconds() {
         let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(120)
-        XCTAssertEqual(output, "2m")
+        XCTAssertEqual(output, "2m 00s")
     }
     
     func testArrivalInOneHundredAndTwentyOneSeconds() {
         let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(121)
-        XCTAssertEqual(output, "2m 1s")
+        XCTAssertEqual(output, "2m 01s")
     }
     
     func testArrivalInTenMinutes() {
         let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(600)
-        XCTAssertEqual(output, "10m")
+        XCTAssertEqual(output, "10m 00s")
     }
 }
