@@ -23,7 +23,7 @@ class StationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewController.displayEtas(arrivals.etas)
+        tableViewController.displayEtas(arrivals.etas, for: arrivals.stop)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

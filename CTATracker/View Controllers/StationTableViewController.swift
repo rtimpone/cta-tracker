@@ -11,10 +11,18 @@ import UIKit
 
 class StationTableViewController: UITableViewController {
     
+    var stop: Stop!
     var etas: [ETA] = []
     
-    func displayEtas(_ etas: [ETA]) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 50
+    }
+    
+    func displayEtas(_ etas: [ETA], for stop: Stop) {
         self.etas = etas
+        self.stop = stop
         tableView.reloadData()
     }
     
@@ -26,8 +34,16 @@ class StationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eta = etas[indexPath.row]
-        let cell =  tableView.dequeueReusableCell(ofType: EtaCell.self)
+        let cell = tableView.dequeueReusableCell(ofType: EtaCell.self)
         cell.configure(for: eta)
         return cell
+    }
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeader(ofType: StationSectionHeader.self)
+        header.configure(withText: stop.name)
+        return header
     }
 }

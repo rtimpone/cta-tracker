@@ -22,6 +22,8 @@
 		FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FAF4221880AF003FBB40 /* EtaCell.xib */; };
 		FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */; };
 		FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */; };
+		FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */; };
+		FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FB0122188601003FBB40 /* StationSectionHeader.xib */; };
 		FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* AlertView.swift */; };
 		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
 		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
@@ -58,8 +60,8 @@
 		FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
 		FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */; };
-		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
-		FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* SectionHeader.xib */; };
+		FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */; };
+		FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */; };
 		FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21821E12D4E00D97D61 /* CellFactory.swift */; };
 		FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
@@ -130,6 +132,8 @@
 		FB86FAF4221880AF003FBB40 /* EtaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EtaCell.xib; sourceTree = "<group>"; };
 		FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGenerator.swift; sourceTree = "<group>"; };
 		FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGenerator.swift; sourceTree = "<group>"; };
+		FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSectionHeader.swift; sourceTree = "<group>"; };
+		FB86FB0122188601003FBB40 /* StationSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationSectionHeader.xib; sourceTree = "<group>"; };
 		FB87A31921F3FEED0002431F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
 		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
@@ -167,8 +171,8 @@
 		FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
 		FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericMessageCell.xib; sourceTree = "<group>"; };
-		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
-		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
+		FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
 		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
 		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +246,17 @@
 				FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */,
 			);
 			path = Formatters;
+			sourceTree = "<group>";
+		};
+		FB86FAFE221885B3003FBB40 /* Section Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */,
+				FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */,
+				FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */,
+				FB86FB0122188601003FBB40 /* StationSectionHeader.xib */,
+			);
+			path = "Section Headers";
 			sourceTree = "<group>";
 		};
 		FB87A31B21F3FEFA0002431F /* Status Cell */ = {
@@ -329,8 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				FBCAA0FA21C562A700681A6F /* CircleView.swift */,
-				FBE2E21321E120FF00D97D61 /* SectionHeader.swift */,
-				FBE2E21521E1210500D97D61 /* SectionHeader.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -458,6 +471,7 @@
 				FB98C5B621E1963A004D61B6 /* Location */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
+				FB86FAFE221885B3003FBB40 /* Section Headers */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
@@ -659,11 +673,12 @@
 			files = (
 				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
 				FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */,
-				FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */,
+				FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
 				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
+				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 			);
@@ -762,6 +777,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
+				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
@@ -777,7 +793,7 @@
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
 				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
-				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
+				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);
