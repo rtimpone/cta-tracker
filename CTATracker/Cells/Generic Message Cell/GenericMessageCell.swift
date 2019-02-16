@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericMessageCell: UITableViewCell, NibBased {
+class GenericMessageCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     

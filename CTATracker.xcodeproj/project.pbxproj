@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0854F222187D5E0039429C /* AutoRegistering.framework */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
@@ -30,7 +31,6 @@
 		FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0F021C5625000681A6F /* CTAKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FA21C562A700681A6F /* CircleView.swift */; };
-		FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FC21C562AD00681A6F /* NibBased.swift */; };
 		FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */; };
 		FBCAA10621C5635000681A6F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10521C5635000681A6F /* ApiClient.swift */; };
 		FBCAA10821C5635600681A6F /* CtaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10721C5635600681A6F /* CtaClient.swift */; };
@@ -111,6 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB0854F222187D5E0039429C /* AutoRegistering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoRegistering.framework; path = Carthage/Build/iOS/AutoRegistering.framework; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionTests.swift; sourceTree = "<group>"; };
 		FBCAA0EB21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCAA0FA21C562A700681A6F /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		FBCAA0FC21C562AD00681A6F /* NibBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBased.swift; sourceTree = "<group>"; };
 		FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		FBCAA10521C5635000681A6F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FBCAA10721C5635600681A6F /* CtaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaClient.swift; sourceTree = "<group>"; };
@@ -195,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */,
+				FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */,
 				FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,14 +299,6 @@
 			path = CTAKitTests;
 			sourceTree = "<group>";
 		};
-		FBCAA0F821C5629800681A6F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FBCAA0FC21C562AD00681A6F /* NibBased.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		FBCAA0F921C5629F00681A6F /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +375,7 @@
 		FBDDCCCB2218655500D41793 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB0854F222187D5E0039429C /* AutoRegistering.framework */,
 				FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */,
 			);
 			name = Frameworks;
@@ -434,7 +428,6 @@
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
 				FB98C5B621E1963A004D61B6 /* Location */,
-				FBCAA0F821C5629800681A6F /* Protocols */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
@@ -666,12 +659,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/StoryboardInstantiable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AutoRegistering.framework",
 			);
 			name = "Carthage - Copy Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/StoryboardInstantiable.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoRegistering.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -751,7 +746,6 @@
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
 				FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
-				FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);

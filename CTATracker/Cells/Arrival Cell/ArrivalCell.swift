@@ -9,7 +9,7 @@
 import CTAKit
 import UIKit
 
-class ArrivalCell: UITableViewCell, NibBased {
+class ArrivalCell: UITableViewCell {
     
     @IBOutlet weak var destinationLabel: UILabel!
     

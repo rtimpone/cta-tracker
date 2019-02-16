@@ -110,9 +110,13 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case Sections.statuses:
-            return SectionHeader.fromNib(withText: "Route Status")
+            let header = tableView.dequeueReusableHeader(ofType: SectionHeader.self)
+            header.configure(withText: "Route Status")
+            return header
         case Sections.arrivals:
-            return SectionHeader.fromNib(withText: "Arrivals")
+            let header = tableView.dequeueReusableHeader(ofType: SectionHeader.self)
+            header.configure(withText: "Arrivals")
+            return header
         default:
             return nil
         }

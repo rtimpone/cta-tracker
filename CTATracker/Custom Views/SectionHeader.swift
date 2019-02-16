@@ -8,13 +8,11 @@
 
 import UIKit
 
-class SectionHeader: UIView, NibBased {
+class SectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var label: UILabel!
     
-    static func fromNib(withText text: String) -> Self {
-        let header = self.fromNib()
-        header.label.text = text
-        return header
+    func configure(withText text: String) {
+        label.text = text
     }
 }
