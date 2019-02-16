@@ -10,9 +10,9 @@ import CTAKit
 
 class ArrivalDescriptionGenerator {
     
-    static func string(for status: ArrivalStatus) -> String {
+    static func string(for status: ArrivalStatus, secondsUntilArrival seconds: Int) -> String {
         switch status {
-        case .enRoute(let seconds), .scheduled(let seconds):
+        case .enRoute, .scheduled:
             if seconds < 0 {
                 return "Overdue"
             }

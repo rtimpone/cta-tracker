@@ -71,6 +71,6 @@ class ArrivalView: UIView {
         circleView.backgroundColor = eta.route.color
         circleView.isHidden = false
         destinationLabel.text = eta.destination
-        etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status)
+        etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status, secondsUntilArrival: eta.secondsUntilArrival)
     }
 }

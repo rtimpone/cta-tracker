@@ -11,8 +11,6 @@ import CTAKit
 class EtaDescriptionGenerator {
     
     static func string(for eta: ETA) -> String {
-        let secondsUntilArrival = eta.arrivalTime.timeIntervalSinceNow
-        let roundedSeconds = Int(secondsUntilArrival.rounded())
-        return "\(roundedSeconds)"
+        return ""
     }
 }

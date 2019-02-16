@@ -13,17 +13,17 @@ import CTAKit
 class ArrivalDescriptionGeneratorTests: XCTestCase {
     
     func testDescriptionForApproachingTrain() {
-        let description = ArrivalDescriptionGenerator.string(for: .approaching)
+        let description = ArrivalDescriptionGenerator.string(for: .approaching, secondsUntilArrival: 0)
         XCTAssertEqual(description, "Approaching", "Incorrect description for a train that is approaching")
     }
     
     func testDescriptionForDelayedTrain() {
-        let description = ArrivalDescriptionGenerator.string(for: .delayed)
+        let description = ArrivalDescriptionGenerator.string(for: .delayed, secondsUntilArrival: 0)
         XCTAssertEqual(description, "Delayed", "Incorrect description for a train that is delayed")
     }
     
     func testDescriptionForUnavailableStatus() {
-        let description = ArrivalDescriptionGenerator.string(for: .unavailable)
+        let description = ArrivalDescriptionGenerator.string(for: .unavailable, secondsUntilArrival: 0)
         XCTAssertEqual(description, "Unavailable", "Incorrect description for a train with an unavailable eta")
     }
     
@@ -144,14 +144,14 @@ private extension ArrivalDescriptionGeneratorTests {
     
     func assertStringForEnRouteTrainArriving(inSeconds seconds: Int, matches expectedString: String, file: StaticString = #file, line: UInt = #line) {
         
-        let status = ArrivalStatus.enRoute(seconds: seconds)
-        let description = ArrivalDescriptionGenerator.string(for: status)
+        let status = ArrivalStatus.enRoute
+        let description = ArrivalDescriptionGenerator.string(for: status, secondsUntilArrival: seconds)
         XCTAssertEqual(description, expectedString, "Incorrect description for en route train", file: file, line: line)
     }
     
     func assertStringForScheduledTrainArriving(inSeconds seconds: Int, matches expectedString: String, file: StaticString = #file, line: UInt = #line) {
-        let status = ArrivalStatus.scheduled(seconds: seconds)
-        let description = ArrivalDescriptionGenerator.string(for: status)
+        let status = ArrivalStatus.scheduled
+        let description = ArrivalDescriptionGenerator.string(for: status, secondsUntilArrival: seconds)
         XCTAssertEqual(description, expectedString, "Incorrect description for scheduled train", file: file, line: line)
     }
 }
