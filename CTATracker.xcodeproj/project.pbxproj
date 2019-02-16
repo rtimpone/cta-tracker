@@ -14,6 +14,7 @@
 		FB6E4D97220237A5002AC392 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D96220237A5002AC392 /* stations.json */; };
 		FB6E4D99220237C6002AC392 /* StationDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */; };
 		FB6E4D9B220239AF002AC392 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D9A220239AF002AC392 /* DataFetcher.swift */; };
+		FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71C57A221856AB00119AA2 /* StationViewController.swift */; };
 		FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */; };
 		FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF13021F6C9630070CF9C /* MockJson.swift */; };
 		FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* ArrivalView.swift */; };
@@ -46,6 +47,7 @@
 		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
+		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* TableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
@@ -114,6 +116,7 @@
 		FB6E4D96220237A5002AC392 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataFetcher.swift; sourceTree = "<group>"; };
 		FB6E4D9A220239AF002AC392 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		FB71C57A221856AB00119AA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertResponseTests.swift; sourceTree = "<group>"; };
 		FB7FF13021F6C9630070CF9C /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
 		FB87A31921F3FEED0002431F /* ArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalView.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
+		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBE2E20821E1154F00D97D61 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */,
+				FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +375,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FBDDCCCB2218655500D41793 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBE2E21721E12D4200D97D61 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +407,7 @@
 				FBCAA0DB21C5625000681A6F /* CTAKit */,
 				FBCAA0E821C5625000681A6F /* CTAKitTests */,
 				FBF179FA21C55FD900BF232C /* Products */,
+				FBDDCCCB2218655500D41793 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -457,6 +471,7 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
 				FBF17A2021C5607800BF232C /* RootViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
 			);
@@ -522,6 +537,8 @@
 				FBF179F621C55FD900BF232C /* Frameworks */,
 				FBF179F721C55FD900BF232C /* Resources */,
 				FBCAA0F421C5625000681A6F /* Embed Frameworks */,
+				FBDDCCCE2218658800D41793 /* Carthage - Copy Frameworks */,
+				FBDDCCCF2218662000D41793 /* Carthage - Check for Outdated Dependencies */,
 			);
 			buildRules = (
 			);
@@ -640,6 +657,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FBDDCCCE2218658800D41793 /* Carthage - Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/StoryboardInstantiable.framework",
+			);
+			name = "Carthage - Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/StoryboardInstantiable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		FBDDCCCF2218662000D41793 /* Carthage - Check for Outdated Dependencies */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage - Check for Outdated Dependencies";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FBCAA0D621C5625000681A6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -687,6 +745,7 @@
 				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
+				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
@@ -974,6 +1033,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTVQW2NNE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CTATracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -993,6 +1056,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTVQW2NNE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CTATracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
