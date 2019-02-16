@@ -435,7 +435,6 @@
 				FBCAA0F821C5629800681A6F /* Protocols */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
-				FBF17A1C21C5601C00BF232C /* Storyboards */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
@@ -452,19 +451,12 @@
 			path = CTATrackerTests;
 			sourceTree = "<group>";
 		};
-		FBF17A1C21C5601C00BF232C /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		FBF17A1E21C5604900BF232C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				FBF179FC21C55FD900BF232C /* AppDelegate.swift */,
 				FBF17A0821C55FDB00BF232C /* Info.plist */,
+				FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
