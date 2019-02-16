@@ -1,5 +1,5 @@
 //
-//  ArrivalView.swift
+//  AlertView.swift
 //  CTATracker
 //
 //  Created by Rob Timpone on 1/19/19.

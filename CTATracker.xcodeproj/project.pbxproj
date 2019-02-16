@@ -18,7 +18,11 @@
 		FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71C57A221856AB00119AA2 /* StationViewController.swift */; };
 		FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */; };
 		FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF13021F6C9630070CF9C /* MockJson.swift */; };
-		FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* ArrivalView.swift */; };
+		FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAF3221880AF003FBB40 /* EtaCell.swift */; };
+		FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FAF4221880AF003FBB40 /* EtaCell.xib */; };
+		FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */; };
+		FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */; };
+		FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* AlertView.swift */; };
 		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
 		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
@@ -122,7 +126,11 @@
 		FB71C57A221856AB00119AA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertResponseTests.swift; sourceTree = "<group>"; };
 		FB7FF13021F6C9630070CF9C /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
-		FB87A31921F3FEED0002431F /* ArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalView.swift; sourceTree = "<group>"; };
+		FB86FAF3221880AF003FBB40 /* EtaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaCell.swift; sourceTree = "<group>"; };
+		FB86FAF4221880AF003FBB40 /* EtaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EtaCell.xib; sourceTree = "<group>"; };
+		FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGenerator.swift; sourceTree = "<group>"; };
+		FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGenerator.swift; sourceTree = "<group>"; };
+		FB87A31921F3FEED0002431F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
 		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -218,10 +226,28 @@
 			path = "Asset Catalog";
 			sourceTree = "<group>";
 		};
+		FB86FAF222188099003FBB40 /* EtaCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB86FAF3221880AF003FBB40 /* EtaCell.swift */,
+				FB86FAF4221880AF003FBB40 /* EtaCell.xib */,
+			);
+			path = EtaCell;
+			sourceTree = "<group>";
+		};
+		FB86FAF7221882B4003FBB40 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */,
+				FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		FB87A31B21F3FEFA0002431F /* Status Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FB87A31921F3FEED0002431F /* ArrivalView.swift */,
+				FB87A31921F3FEED0002431F /* AlertView.swift */,
 				FBCAA11221C5647800681A6F /* StatusCell.swift */,
 				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
 			);
@@ -357,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				FB87A31D21F3FF0B0002431F /* Arrival Cell */,
+				FB86FAF222188099003FBB40 /* EtaCell */,
 				FB87A31C21F3FF020002431F /* Generic Message Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
 			);
@@ -427,6 +454,7 @@
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
+				FB86FAF7221882B4003FBB40 /* Formatters */,
 				FB98C5B621E1963A004D61B6 /* Location */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
@@ -630,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
+				FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */,
 				FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
@@ -736,15 +765,18 @@
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
+				FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
+				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
+				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
-				FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */,
+				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,

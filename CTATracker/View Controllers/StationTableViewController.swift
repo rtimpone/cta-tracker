@@ -26,8 +26,8 @@ class StationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let eta = etas[indexPath.row]
-        let cell =  UITableViewCell(style: .default, reuseIdentifier: "etaCell")
-        cell.textLabel?.text = eta.destination
+        let cell =  tableView.dequeueReusableCell(ofType: EtaCell.self)
+        cell.configure(for: eta)
         return cell
     }
 }
