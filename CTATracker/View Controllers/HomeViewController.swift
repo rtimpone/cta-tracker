@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: self)
         if let vc = segue.destination as? HomeTableViewController {
             vc.delegate = self
             tableViewController = vc
@@ -56,8 +57,7 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectArrivals(_ arrivals: StopArrivals) {
-        print("Arrivals was selected for: \(arrivals.stop.name)")
-        let svc = StationViewController.instance()
+        let svc = StationViewController.instance(withArrivals: arrivals)
         navigationController?.pushViewController(svc, animated: true)
     }
 }

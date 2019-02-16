@@ -49,6 +49,7 @@
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
 		FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDCCD02218672700D41793 /* StationViewController.storyboard */; };
+		FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
@@ -153,6 +154,7 @@
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
 		FBDDCCD02218672700D41793 /* StationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationViewController.storyboard; sourceTree = "<group>"; };
+		FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
 				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
+				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
 			path = "View Controllers";
@@ -742,6 +745,7 @@
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
+				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
