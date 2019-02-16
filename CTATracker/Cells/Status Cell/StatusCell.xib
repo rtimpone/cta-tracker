@@ -85,8 +85,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="alertView" destination="jjb-tp-Tv1" id="J6i-K9-obz"/>
-                <outlet property="lineColorView" destination="NYI-Qf-h15" id="zTR-QZ-l1G"/>
-                <outlet property="lineLabel" destination="otj-US-SLf" id="Rge-kQ-OZ2"/>
+                <outlet property="routeColorView" destination="NYI-Qf-h15" id="zTR-QZ-l1G"/>
+                <outlet property="routeTitleLabel" destination="otj-US-SLf" id="Rge-kQ-OZ2"/>
                 <outlet property="statusLabel" destination="i7Z-wf-8pP" id="Oyz-E7-Nuy"/>
             </connections>
             <point key="canvasLocation" x="-327.19999999999999" y="49.475262368815599"/>

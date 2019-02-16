@@ -20,10 +20,9 @@ class RequestHandler {
 
 class ArrivalsRequestHandler: RequestHandler {
     
-    let stopsToShow = TrainStop.allStops
     var isRequesting = false
     
-    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StationArrivals]>) -> Void) {
+    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
         
         if isRequesting {
             print("Arrival requests are already in flight, wait until requests are finished before starting again")
@@ -32,7 +31,29 @@ class ArrivalsRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        var allArrivals: [StationArrivals] = []
+        let stopNames = [
+            "Adams/Wabash (Northbound)",
+            "Belmont",
+            "Damen (Loop-bound)",
+            "Morse (95th-bound)",
+            "Monroe (Howard-bound)"
+        ]
+        
+        var stopsToShow: [Stop] = []
+        for station in StationDataFetcher.fetchAllStations() {
+            if stopNames.contains(station.name) {
+                stopsToShow.append(station)
+            }
+            else {
+                for platform in station.platforms {
+                    if stopNames.contains(platform.name) {
+                        stopsToShow.append(platform)
+                    }
+                }
+            }
+        }
+        
+        var allArrivals: [StopArrivals] = []
         var queueCount = stopsToShow.count
         
         for stop in stopsToShow {
@@ -62,10 +83,10 @@ class ArrivalsRequestHandler: RequestHandler {
 
 class StatusRequestHandler: RequestHandler {
     
-    let linesToShow = ["Red Line", "Brown Line", "Purple Line"]
+    let selectedRoutes = ["Red Line", "Brown Line", "Purple Line"]
     var isRequesting = false
     
-    func requestTrainStatus(completion: @escaping (RequestHandlerResult<[TrainLine]>) -> Void) {
+    func requestTrainStatus(completion: @escaping (RequestHandlerResult<[RouteStatus]>) -> Void) {
         
         if isRequesting {
             print("Status requests are already in flight, wait until requests are finished before starting again")
@@ -73,64 +94,19 @@ class StatusRequestHandler: RequestHandler {
         }
         
         isRequesting = true
-        var queueCount = 2
         
-        var trainLines: [TrainLine] = []
-        var trainAlerts: [Alert] = []
-        
-        client.getTrainLines() { result in
-            
-            queueCount -= 1
+        let routesToShow = RouteDataFetcher.fetchAllRoutes().filter { self.selectedRoutes.contains($0.title) }
+        client.getStatuses(for: routesToShow) { result in
             
             switch result {
-            case .success(let lines):
-                
-                trainLines = lines.filter { self.linesToShow.contains($0.title) }
-                
-                if queueCount == 0 {
-                    self.isRequesting = false
-                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(linesWithAlerts))
-                }
-                
-            case .failure(_):
+            case .success(let statuses):
                 self.isRequesting = false
-                completion(.error)
-            }
-        }
-        
-        client.getAlerts() { result in
-            
-            queueCount -= 1
-            
-            switch result {
-            case .success(let alerts):
-                
-                trainAlerts = alerts
-                
-                if queueCount == 0 {
-                    self.isRequesting = false
-                    let linesWithAlerts = self.updateLines(trainLines, withAlerts: trainAlerts)
-                    completion(.success(linesWithAlerts))
-                }
+                completion(.success(statuses))
                 
             case .failure:
                 self.isRequesting = false
                 completion(.error)
             }
         }
-    }
-}
-
-private extension StatusRequestHandler {
-    
-    func updateLines(_ lines: [TrainLine], withAlerts alerts: [Alert]) -> [TrainLine] {
-        var updatedTrainLines: [TrainLine] = []
-        for var line in lines {
-            let alertsForThisLine = alerts.filter { $0.routesImpacted.map({ $0.id }).contains(line.id) }
-            line.addAlerts(alertsForThisLine)
-            updatedTrainLines.append(line)
-        }
-        return updatedTrainLines
     }
 }

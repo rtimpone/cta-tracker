@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct StationArrivals {
+public struct StopArrivals {
     
-    public let stop: TrainStop
+    public let stop: Stop
     public let etas: [ETA]
     
-    init?(from responses: [ArrivalETAResponse], for stop: TrainStop) {
+    init?(from responses: [ArrivalETAResponse], for stop: Stop) {
         self.stop = stop
         let unsortedArrivals = responses.compactMap { ETA(from: $0) }
         etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
@@ -35,7 +35,8 @@ public struct ETA {
     
     init?(from response: ArrivalETAResponse) {
         
-        self.route = Route.allRoutes().first { $0.id == response.routeCode }!
+        // TODO: this is temporary until data modeling is cleaned up
+        self.route = RouteDataFetcher.fetchAllRoutes().first { $0.id == response.routeCode }!
         self.destination = response.destination
         
         let arrivalTimeWithOffset = response.arrivalTimeString + " " + UTCOffsets.chicago

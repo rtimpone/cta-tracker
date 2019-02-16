@@ -11,17 +11,17 @@ import UIKit
 
 class StatusCell: UITableViewCell, NibBased {
     
-    @IBOutlet weak var lineColorView: UIView!
-    @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var routeColorView: UIView!
+    @IBOutlet weak var routeTitleLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var alertView: AlertView!
     
-    func configure(for line: TrainLine) {
+    func configure(for status: RouteStatus) {
         
-        lineColorView.backgroundColor = line.displayColor
-        lineLabel.text = line.title
+        routeColorView.backgroundColor = status.route.color
+        routeTitleLabel.text = status.route.title
 
-        let severeAlerts = line.alerts.filter({ $0.isSevere })
+        let severeAlerts = status.alerts.filter({ $0.isSevere })
         let mostSevereAlert = severeAlerts.sorted(by: { $0.severity > $1.severity }).first
         
         if let alert = mostSevereAlert {
