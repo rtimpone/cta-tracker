@@ -48,6 +48,7 @@
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
+		FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDCCD02218672700D41793 /* StationViewController.storyboard */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* TableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
@@ -151,6 +152,7 @@
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
+		FBDDCCD02218672700D41793 /* StationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationViewController.storyboard; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBE2E20821E1154F00D97D61 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
+				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 				FBF17A2021C5607800BF232C /* RootViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
 			);
@@ -638,6 +641,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
 				FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
