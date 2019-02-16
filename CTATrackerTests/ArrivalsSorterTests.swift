@@ -16,7 +16,7 @@ class ArrivalsSorterTests: XCTestCase {
     let westernAndLawrence = Coordinate(latitude: 41.968438, longitude: -87.688882)
     let stateAndJackson = Coordinate(latitude: 41.877623, longitude: -87.627740)
     
-    let arrivals: [StationArrivals] = [
+    let arrivals: [StopArrivals] = [
         mockArrival(forStopNamed: "Adams/Wabash", latitude: 41.879507, longitude: -87.626037),
         mockArrival(forStopNamed: "Damen", latitude: 41.966286, longitude: -87.678639),
         mockArrival(forStopNamed: "Belmont", latitude: 41.939751, longitude: -87.65338),
@@ -29,14 +29,14 @@ class ArrivalsSorterTests: XCTestCase {
     ]
     
     func testSortEmptyArray() {
-        let emptyStopsArray: [StationArrivals] = []
+        let emptyStopsArray: [StopArrivals] = []
         let sortedArrivals = ArrivalsSorter.sortArrivals(emptyStopsArray, byDistanceTo: sheridanAndLunt)
         XCTAssertEqual(sortedArrivals.count, 0, "Expected a sorted empty array to be an empty array")
     }
     
     func testSingleItemArray() {
         let damen = arrivals[1]
-        let singleArrivalsArray: [StationArrivals] = [damen]
+        let singleArrivalsArray: [StopArrivals] = [damen]
         let sortedArrivals = ArrivalsSorter.sortArrivals(singleArrivalsArray, byDistanceTo: sheridanAndLunt)
         let closestArrival = sortedArrivals.first!
         XCTAssertEqual(closestArrival.stop.name, "Damen", "Expected a sorted single item array to be the same array")
@@ -63,7 +63,7 @@ class ArrivalsSorterTests: XCTestCase {
 
 private extension ArrivalsSorterTests {
     
-    static func mockArrival(forStopNamed name: String, latitude: Double, longitude: Double) -> StationArrivals {
+    static func mockArrival(forStopNamed name: String, latitude: Double, longitude: Double) -> StopArrivals {
         
         let mockJSON = """
         {
@@ -81,7 +81,23 @@ private extension ArrivalsSorterTests {
         
         let decoder = JSONDecoder()
         let arrivalResponse = try! decoder.decode(ArrivalETAResponse.self, from: mockJSON.data(using: .utf8)!)
-        let stop = TrainStop(id: 0, name: name, type: .platform, latitude: latitude, longitude: longitude)
-        return StationArrivals(from: [arrivalResponse], for: stop)!
+        let stop = MockLocationStop(name: name, latitude: latitude, longitude: longitude)
+        return StopArrivals(from: [arrivalResponse], for: stop)!
+    }
+}
+
+struct MockLocationStop: Stop {
+    
+    var id: Int = 0
+    var type: StopType = .platform
+    
+    var name: String
+    var latitude: Double
+    var longitude: Double
+    
+    init(name: String, latitude: Double, longitude: Double) {
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

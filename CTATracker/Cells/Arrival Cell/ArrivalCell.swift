@@ -26,7 +26,7 @@ class ArrivalCell: UITableViewCell, NibBased {
     
     var bottomConstraint: NSLayoutConstraint?
 
-    func configure(for arrivals: StationArrivals) {
+    func configure(for arrivals: StopArrivals) {
         
         destinationLabel.text = arrivals.stop.name
         

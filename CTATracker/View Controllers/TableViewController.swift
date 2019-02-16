@@ -33,12 +33,12 @@ enum DataSource<T> {
 protocol TableViewControllerDelegate: class {
     func refreshControlWasActivated()
     func didSelectStatus(_ status: RouteStatus)
-    func didSelectArrivals(_ arrivals: StationArrivals)
+    func didSelectArrivals(_ arrivals: StopArrivals)
 }
 
 class TableViewController: UITableViewController {
     
-    private var arrivalsDataSource: DataSource<StationArrivals> = .initialState
+    private var arrivalsDataSource: DataSource<StopArrivals> = .initialState
     private var statusDataSource: DataSource<RouteStatus> = .initialState
     weak var delegate: TableViewControllerDelegate?
     
@@ -52,7 +52,7 @@ class TableViewController: UITableViewController {
         stopRefreshControlAndReloadSection(Sections.statuses)
     }
     
-    func displayArrivals(_ arrivals: [StationArrivals]) {
+    func displayArrivals(_ arrivals: [StopArrivals]) {
         arrivalsDataSource = DataSource.data(arrivals)
         stopRefreshControlAndReloadSection(Sections.arrivals)
     }

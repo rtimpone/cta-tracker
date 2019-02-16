@@ -55,7 +55,7 @@ extension RootViewController: TableViewControllerDelegate {
         present(sfc, animated: true)
     }
     
-    func didSelectArrivals(_ arrivals: StationArrivals) {
+    func didSelectArrivals(_ arrivals: StopArrivals) {
         print("Arrivals was selected for: \(arrivals.stop.name)")
     }
 }

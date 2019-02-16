@@ -8,12 +8,12 @@
 
 import Foundation
 
-public struct StationArrivals {
+public struct StopArrivals {
     
-    public let stop: TrainStop
+    public let stop: Stop
     public let etas: [ETA]
     
-    init?(from responses: [ArrivalETAResponse], for stop: TrainStop) {
+    init?(from responses: [ArrivalETAResponse], for stop: Stop) {
         self.stop = stop
         let unsortedArrivals = responses.compactMap { ETA(from: $0) }
         etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }

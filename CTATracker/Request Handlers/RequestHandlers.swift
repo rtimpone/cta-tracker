@@ -20,10 +20,9 @@ class RequestHandler {
 
 class ArrivalsRequestHandler: RequestHandler {
     
-    let stopsToShow = TrainStop.allStops
     var isRequesting = false
     
-    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StationArrivals]>) -> Void) {
+    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
         
         if isRequesting {
             print("Arrival requests are already in flight, wait until requests are finished before starting again")
@@ -32,7 +31,29 @@ class ArrivalsRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        var allArrivals: [StationArrivals] = []
+        let stopNames = [
+            "Adams/Wabash (Northbound)",
+            "Belmont",
+            "Damen (Loop-bound)",
+            "Morse (95th-bound)",
+            "Monroe (Howard-bound)"
+        ]
+        
+        var stopsToShow: [Stop] = []
+        for station in StationDataFetcher.fetchAllStations() {
+            if stopNames.contains(station.name) {
+                stopsToShow.append(station)
+            }
+            else {
+                for platform in station.platforms {
+                    if stopNames.contains(platform.name) {
+                        stopsToShow.append(platform)
+                    }
+                }
+            }
+        }
+        
+        var allArrivals: [StopArrivals] = []
         var queueCount = stopsToShow.count
         
         for stop in stopsToShow {

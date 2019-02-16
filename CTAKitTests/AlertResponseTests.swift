@@ -54,6 +54,6 @@ private extension AlertResponseTests {
         }
         
         let impactedServices = alert.impactedServicesContainer.services
-        XCTAssertEqual(impactedServices.count, expectedNumberOfServices, "Incorrect numbrer of impacted services in the response")
+        XCTAssertEqual(impactedServices.count, expectedNumberOfServices, "Incorrect number of impacted services in the response")
     }
 }

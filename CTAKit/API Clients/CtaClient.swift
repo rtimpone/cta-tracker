@@ -26,7 +26,7 @@ public class CtaClient: ApiClient {
         }
     }
     
-    public func getArrivals(forStop stop: TrainStop, completion: @escaping (ApiResult<StationArrivals>) -> Void) {
+    public func getArrivals(forStop stop: Stop, completion: @escaping (ApiResult<StopArrivals>) -> Void) {
 
         var params = ["key": Credentials.apiKey, "outputType": "JSON"]
         switch stop.type {
@@ -43,7 +43,7 @@ public class CtaClient: ApiClient {
             switch result {
             case .success(let container):
                 let responses = container.root.etas
-                guard let arrivals = StationArrivals(from: responses, for: stop) else {
+                guard let arrivals = StopArrivals(from: responses, for: stop) else {
                     completion(.failure(.invalidData))
                     return
                 }

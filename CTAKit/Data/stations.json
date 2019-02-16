@@ -1,0 +1,74 @@
+[
+  {
+    "id": 40680,
+    "name": "Adams/Wabash",
+    "latitude": 41.879507,
+    "longitude": -87.626037,
+    "platforms": [
+      {
+        "id": 30131,
+        "name": "Adams/Wabash (Northbound)"
+      }
+    ]
+  },
+  {
+    "id": 41320,
+    "name": "Belmont",
+    "latitude": 41.939751,
+    "longitude": -87.65338,
+    "platforms": [
+      {
+        "id": 30255,
+        "name": "Belmont (Howard-bound)"
+      },
+      {
+        "id": 30256,
+        "name": "Belmont (95th-bound)"
+      },
+      {
+        "id": 30257,
+        "name": "Belmont (Kimball-Linden-bound)"
+      },
+      {
+        "id": 30258,
+        "name": "Belmont (Loop-bound)"
+      }
+    ]
+  },
+  {
+    "id": 40090,
+    "name": "Damen",
+    "latitude": 41.966286,
+    "longitude": -87.678639,
+    "platforms": [
+      {
+        "id": 30019,
+        "name": "Damen (Loop-bound)"
+      }
+    ]
+  },
+  {
+    "id": 40100,
+    "name": "Morse",
+    "latitude": 42.008362,
+    "longitude": -87.665909,
+    "platforms": [
+      {
+        "id": 30211,
+        "name": "Morse (95th-bound)"
+      }
+    ]
+  },
+  {
+    "id": 41090,
+    "name": "Monroe",
+    "latitude": 41.880745,
+    "longitude": -87.627696,
+    "platforms": [
+      {
+        "id": 30211,
+        "name": "Monroe (Howard-bound)"
+      }
+    ]
+  }
+]

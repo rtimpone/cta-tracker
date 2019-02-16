@@ -19,6 +19,8 @@ struct MockJson {
               {
                 "Headline": "headline",
                 "ShortDescription": "short description",
+                "SeverityScore": "50",
+                "Impact": "Minor delays",
                 "ImpactedService": {
                   "Service": {
                     "ServiceType": "R",
@@ -38,6 +40,8 @@ struct MockJson {
               {
                 "Headline": "headline",
                 "ShortDescription": "short description",
+                "SeverityScore": "65",
+                "Impact": "Major delays",
                 "ImpactedService": {
                   "Service": [
                     {

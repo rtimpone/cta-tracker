@@ -23,21 +23,10 @@ struct RouteData: Decodable {
     }
 }
 
-public class RouteDataFetcher {
+public class RouteDataFetcher: DataFetcher {
     
     public static func fetchAllRoutes() -> [Route] {
-        let data = fetchRoutesFileData()
-        let decoder = JSONDecoder()
-        let routeDataObjects = try! decoder.decode([RouteData].self, from: data)
+        let routeDataObjects = decodeObject(ofType: [RouteData].self, fromFileNamed: "routes", ofType: "json")
         return routeDataObjects.compactMap { Route(from: $0) }
-    }
-}
-
-private extension RouteDataFetcher {
-    
-    static func fetchRoutesFileData() -> Data {
-        let bundle = Bundle(for: RouteDataFetcher.self)
-        let path = bundle.path(forResource: "routes", ofType: "json")!
-        return FileManager.default.contents(atPath: path)!
     }
 }

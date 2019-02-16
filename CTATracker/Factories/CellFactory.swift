@@ -28,7 +28,7 @@ class CellFactory {
         }
     }
     
-    static func arrivalsCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<StationArrivals>) -> UITableViewCell {
+    static func arrivalsCellForRow(at indexPath: IndexPath, in tableView: UITableView, dataSource: DataSource<StopArrivals>) -> UITableViewCell {
         
         switch dataSource {
         case .data(let arrivals):
