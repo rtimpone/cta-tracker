@@ -58,7 +58,7 @@
 		FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21821E12D4E00D97D61 /* CellFactory.swift */; };
 		FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
-		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
+		FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
 		FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */; };
 		FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* HomeViewController.swift */; };
@@ -163,7 +163,7 @@
 		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		FBF17A0321C55FDB00BF232C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF17A0621C55FDB00BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBF17A0821C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -455,7 +455,6 @@
 		FBF17A1C21C5601C00BF232C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A0021C55FD900BF232C /* Main.storyboard */,
 				FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -475,6 +474,7 @@
 			children = (
 				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
+				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
@@ -646,7 +646,7 @@
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
-				FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */,
+				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 			);
@@ -796,12 +796,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FBF17A0021C55FD900BF232C /* Main.storyboard */ = {
+		FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FBF17A0121C55FD900BF232C /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */ = {
