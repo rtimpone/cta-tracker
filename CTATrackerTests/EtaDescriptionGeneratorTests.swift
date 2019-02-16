@@ -12,9 +12,58 @@ import CTAKit
 
 class EtaDescriptionGeneratorTests: XCTestCase {
     
+    func testArrivalInNegativeSeventySeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(-70)
+        XCTAssertEqual(output, "Late by 1m 10s")
+    }
+    
+    func testArrivalInNegativeTenSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(-10)
+        XCTAssertEqual(output, "Late by 10s")
+    }
+    
+    func testArrivalInZeroSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(0)
+        XCTAssertEqual(output, "Now")
+    }
+    
+    func testArrivalInThreeSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(3)
+        XCTAssertEqual(output, "3s")
+    }
+    
     func testArrivalInThirtySeconds() {
-        
-//        let eta = ETA(
-//        let
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(30)
+        XCTAssertEqual(output, "30s")
+    }
+    
+    func testArrivalInSixtySeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(60)
+        XCTAssertEqual(output, "1m")
+    }
+    
+    func testArrivalInSixtyOneSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(61)
+        XCTAssertEqual(output, "1m 1s")
+    }
+    
+    func testArrivalInSeventyOneSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(71)
+        XCTAssertEqual(output, "1m 11s")
+    }
+    
+    func testArrivalInOneHundredAndTwentySeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(120)
+        XCTAssertEqual(output, "2m")
+    }
+    
+    func testArrivalInOneHundredAndTwentyOneSeconds() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(121)
+        XCTAssertEqual(output, "2m 1s")
+    }
+    
+    func testArrivalInTenMinutes() {
+        let output = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(600)
+        XCTAssertEqual(output, "10m")
     }
 }

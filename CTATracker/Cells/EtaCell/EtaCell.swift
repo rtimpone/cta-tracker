@@ -18,6 +18,6 @@ class EtaCell: UITableViewCell {
     func configure(for eta: ETA) {
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
-        etaLabel.text = EtaDescriptionGenerator.string(for: eta)
+        etaLabel.text = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(eta.secondsUntilArrival)
     }
 }
