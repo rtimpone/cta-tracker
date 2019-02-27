@@ -16,11 +16,16 @@ class EtaCell: UITableViewCell {
     @IBOutlet weak var etaLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
+    func highlightEtaLabel() {
+        Animator.animateTextColorChangingOnLabel(etaLabel, to: .blue, duration: 0.5)
+    }
+    
     func configure(for eta: ETA) {
         
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
         etaLabel.text = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(eta.secondsUntilArrival)
+        etaLabel.textColor = .black
         
         switch eta.status {
         case .delayed:

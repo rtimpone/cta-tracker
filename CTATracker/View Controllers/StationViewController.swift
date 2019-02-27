@@ -54,12 +54,10 @@ extension StationViewController: TimerManagerDelegate {
     
     func timerDidFire() {
         
-        print("reloading etas")
         tableViewController.reloadEtas()
         
         secondsElapsed += 1
         if secondsElapsed % 10 == 0 {
-            print("requesting updated etas")
             requestUpdatedEtas()
         }
     }
@@ -68,7 +66,6 @@ extension StationViewController: TimerManagerDelegate {
         requestHandler.requestUpdatedArrivalTimes(forStop: arrivals.stop) { result in
             if let arrivals = result.value {
                 self.arrivals = arrivals
-                print("setting new etas")
                 self.tableViewController.setEtas(arrivals.etas, for: arrivals.stop)
             }
         }

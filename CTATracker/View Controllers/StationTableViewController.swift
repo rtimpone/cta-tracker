@@ -23,6 +23,11 @@ class StationTableViewController: UITableViewController {
     func setEtas(_ etas: [ETA], for stop: Stop) {
         self.etas = etas
         self.stop = stop
+        for cell in tableView.visibleCells {
+            if let etaCell = cell as? EtaCell {
+                etaCell.highlightEtaLabel()
+            }
+        }
     }
     
     func reloadEtas() {

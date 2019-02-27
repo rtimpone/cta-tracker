@@ -69,6 +69,7 @@
 		FBE353A6222752D50062C428 /* ArrivalsRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A5222752D50062C428 /* ArrivalsRequestHandler.swift */; };
 		FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */; };
 		FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A9222752E30062C428 /* StationRequestHandler.swift */; };
+		FBE353AC222759C00062C428 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353AB222759C00062C428 /* Animator.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -185,6 +186,7 @@
 		FBE353A5222752D50062C428 /* ArrivalsRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsRequestHandler.swift; sourceTree = "<group>"; };
 		FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestHandler.swift; sourceTree = "<group>"; };
 		FBE353A9222752E30062C428 /* StationRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRequestHandler.swift; sourceTree = "<group>"; };
+		FBE353AB222759C00062C428 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		FB87A31E21F3FF2F0002431F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FBE353AB222759C00062C428 /* Animator.swift */,
 				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
 			);
@@ -796,6 +799,7 @@
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
+				FBE353AC222759C00062C428 /* Animator.swift in Sources */,
 				FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */,
 				FBE353A6222752D50062C428 /* ArrivalsRequestHandler.swift in Sources */,
 				FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */,
