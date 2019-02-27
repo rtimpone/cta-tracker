@@ -14,10 +14,24 @@ class EtaCell: UITableViewCell {
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var etaLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     func configure(for eta: ETA) {
+        
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
         etaLabel.text = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(eta.secondsUntilArrival)
+        
+        switch eta.status {
+        case .delayed:
+            infoLabel.text = "Delayed"
+            infoLabel.textColor = .red
+        case .scheduled:
+            infoLabel.text = "Scheduled"
+            infoLabel.textColor = .lightGray
+        case .approaching, .enRoute, .unavailable:
+            infoLabel.text = ""
+            infoLabel.textColor = .black
+        }
     }
 }

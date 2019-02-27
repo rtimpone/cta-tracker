@@ -25,7 +25,13 @@ public struct ETA {
     public let route: Route
     public let status: ArrivalStatus
     public let destination: String
-    public let secondsUntilArrival: Int
+    public let arrivalTime: Date
+    
+    public var secondsUntilArrival: Int {
+        let now = Date()
+        let exactSecondsUntilArrival = arrivalTime.timeIntervalSince(now)
+        return Int(exactSecondsUntilArrival)
+    }
     
     private static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -43,10 +49,7 @@ public struct ETA {
         guard let arrivalTime = ETA.dateFormatter.date(from: arrivalTimeWithOffset) else {
             return nil
         }
-        
-        let now = Date()
-        let exactSecondsUntilArrival = arrivalTime.timeIntervalSince(now)
-        secondsUntilArrival = Int(exactSecondsUntilArrival)
+        self.arrivalTime = arrivalTime
         
         let isApproaching = Bool(response.isApproachingString) ?? false
         let isScheduled = Bool(response.isScheduledString) ?? false
@@ -54,20 +57,20 @@ public struct ETA {
         let isFault = Bool(response.isScheduleFaultString) ?? false
         
         if isApproaching {
-            status = ArrivalStatus.approaching
+            status = .approaching
         }
         else if isDelayed {
-            status = ArrivalStatus.delayed
+            status = .delayed
         }
         else if isFault {
-            status = ArrivalStatus.unavailable
+            status = .unavailable
         }
         else {
             if isScheduled {
-                status = ArrivalStatus.scheduled
+                status = .scheduled
             }
             else {
-                status = ArrivalStatus.enRoute
+                status = .enRoute
             }
         }
     }

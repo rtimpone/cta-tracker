@@ -20,22 +20,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-dN-odh" customClass="CircleView" customModule="CTA" customModuleProvider="target">
-                        <rect key="frame" x="16" y="13" width="24" height="24"/>
+                        <rect key="frame" x="16" y="10.5" width="24" height="24"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="Ngc-SR-d9E"/>
                             <constraint firstAttribute="width" constant="24" id="j5d-oS-fup"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kimball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DH-94-mcI" userLabel="Destination Label">
-                        <rect key="frame" x="52" y="12" width="164.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0m 00s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kv-y2-DSG" userLabel="Time Label">
-                        <rect key="frame" x="224.5" y="12" width="79.5" height="26"/>
-                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="0m 00s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kv-y2-DSG" userLabel="Time Label">
+                        <rect key="frame" x="238.5" y="12" width="65.5" height="21"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -46,19 +40,32 @@
                             <constraint firstAttribute="height" constant="1" id="b8e-O2-v0U"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzk-qN-MAO" userLabel="Time Label">
+                        <rect key="frame" x="136" y="12" width="92.5" height="21"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Kimball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DH-94-mcI" userLabel="Destination Label">
+                        <rect key="frame" x="52" y="12" width="76" height="21"/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Uzk-qN-MAO" firstAttribute="leading" secondItem="5DH-94-mcI" secondAttribute="trailing" constant="8" id="33h-6H-n40"/>
+                    <constraint firstItem="6Kv-y2-DSG" firstAttribute="centerY" secondItem="Uzk-qN-MAO" secondAttribute="centerY" id="C4x-w4-fA7"/>
                     <constraint firstItem="cK3-dN-odh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GTM-6G-37B"/>
-                    <constraint firstAttribute="trailing" secondItem="6Kv-y2-DSG" secondAttribute="trailing" constant="16" id="HSs-dt-OxG"/>
-                    <constraint firstItem="6Kv-y2-DSG" firstAttribute="top" secondItem="5DH-94-mcI" secondAttribute="top" id="Q5O-0Y-fZq"/>
-                    <constraint firstItem="5DH-94-mcI" firstAttribute="leading" secondItem="cK3-dN-odh" secondAttribute="trailing" constant="12" id="VyM-5j-1bC"/>
-                    <constraint firstItem="0yE-wD-gfo" firstAttribute="top" secondItem="5DH-94-mcI" secondAttribute="bottom" constant="11" id="YDO-fo-5Jc"/>
-                    <constraint firstItem="5DH-94-mcI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="j2v-k8-Ufj"/>
-                    <constraint firstItem="cK3-dN-odh" firstAttribute="centerY" secondItem="6Kv-y2-DSG" secondAttribute="centerY" id="kEb-VI-CIm"/>
+                    <constraint firstItem="5DH-94-mcI" firstAttribute="centerY" secondItem="cK3-dN-odh" secondAttribute="centerY" id="HvT-Kl-XGA"/>
+                    <constraint firstItem="cK3-dN-odh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JdR-vW-7ha"/>
+                    <constraint firstItem="Uzk-qN-MAO" firstAttribute="centerY" secondItem="5DH-94-mcI" secondAttribute="centerY" id="LpU-BL-Mkd"/>
+                    <constraint firstAttribute="trailing" secondItem="6Kv-y2-DSG" secondAttribute="trailing" constant="16" id="cP4-I0-RL1"/>
+                    <constraint firstItem="5DH-94-mcI" firstAttribute="leading" secondItem="cK3-dN-odh" secondAttribute="trailing" constant="12" id="j2R-iJ-bdS"/>
                     <constraint firstAttribute="trailing" secondItem="0yE-wD-gfo" secondAttribute="trailing" id="kGd-LE-2IS"/>
                     <constraint firstItem="0yE-wD-gfo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="oja-qH-M0m"/>
                     <constraint firstAttribute="bottom" secondItem="0yE-wD-gfo" secondAttribute="bottom" id="vJb-xc-lFR"/>
-                    <constraint firstItem="6Kv-y2-DSG" firstAttribute="leading" secondItem="5DH-94-mcI" secondAttribute="trailing" constant="8" id="zKj-fk-ULH"/>
+                    <constraint firstItem="6Kv-y2-DSG" firstAttribute="leading" secondItem="Uzk-qN-MAO" secondAttribute="trailing" constant="10" id="yUN-Uo-Fh0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -66,6 +73,7 @@
                 <outlet property="circleView" destination="cK3-dN-odh" id="xrm-0X-Kpo"/>
                 <outlet property="destinationLabel" destination="5DH-94-mcI" id="lzc-16-Pkh"/>
                 <outlet property="etaLabel" destination="6Kv-y2-DSG" id="i0L-uY-x5I"/>
+                <outlet property="infoLabel" destination="Uzk-qN-MAO" id="hnT-E0-A7p"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="152.47376311844079"/>
         </tableViewCell>

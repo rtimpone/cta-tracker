@@ -20,9 +20,12 @@ class StationTableViewController: UITableViewController {
         tableView.estimatedSectionHeaderHeight = 50
     }
     
-    func displayEtas(_ etas: [ETA], for stop: Stop) {
+    func setEtas(_ etas: [ETA], for stop: Stop) {
         self.etas = etas
         self.stop = stop
+    }
+    
+    func reloadEtas() {
         tableView.reloadData()
     }
     
