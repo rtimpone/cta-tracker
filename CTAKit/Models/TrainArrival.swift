@@ -16,7 +16,7 @@ public struct StopArrivals {
     init?(from responses: [ArrivalETAResponse], for stop: Stop) {
         self.stop = stop
         let unsortedArrivals = responses.compactMap { ETA(from: $0) }
-        etas = unsortedArrivals.sorted { $0.arrivalTime < $1.arrivalTime }
+        etas = unsortedArrivals.sorted { $0.secondsUntilArrival < $1.secondsUntilArrival }
     }
 }
 
@@ -26,6 +26,12 @@ public struct ETA {
     public let status: ArrivalStatus
     public let destination: String
     public let arrivalTime: Date
+    
+    public var secondsUntilArrival: Int {
+        let now = Date()
+        let exactSecondsUntilArrival = arrivalTime.timeIntervalSince(now)
+        return Int(exactSecondsUntilArrival)
+    }
     
     private static let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -51,25 +57,20 @@ public struct ETA {
         let isFault = Bool(response.isScheduleFaultString) ?? false
         
         if isApproaching {
-            status = ArrivalStatus.approaching
+            status = .approaching
         }
         else if isDelayed {
-            status = ArrivalStatus.delayed
+            status = .delayed
         }
         else if isFault {
-            status = ArrivalStatus.unavailable
+            status = .unavailable
         }
         else {
-            
-            let now = Date()
-            let exactSecondsUntilArrival = arrivalTime.timeIntervalSince(now)
-            let intSecondsUntilArrival = Int(exactSecondsUntilArrival)
-            
             if isScheduled {
-                status = ArrivalStatus.scheduled(seconds: intSecondsUntilArrival)
+                status = .scheduled
             }
             else {
-                status = ArrivalStatus.enRoute(seconds: intSecondsUntilArrival)
+                status = .enRoute
             }
         }
     }
@@ -78,10 +79,10 @@ public struct ETA {
 public enum ArrivalStatus {
 
     /// The train is on its way as normal
-    case enRoute(seconds: Int)
+    case enRoute
     
     /// A train is scheduled to arrive but has not yet left
-    case scheduled(seconds: Int)
+    case scheduled
     
     /// The train is approaching the station and will arrive soon
     case approaching

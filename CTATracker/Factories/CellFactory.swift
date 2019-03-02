@@ -6,6 +6,7 @@
 //  Copyright © 2019 Rob Timpone. All rights reserved.
 //
 
+import AutoRegistering
 import CTAKit
 import UIKit
 

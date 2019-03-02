@@ -1,14 +1,14 @@
 //
-//  ErrorCell.swift
+//  StationSectionHeader.swift
 //  CTATracker
 //
-//  Created by Rob Timpone on 1/5/19.
+//  Created by Rob Timpone on 2/16/19.
 //  Copyright © 2019 Rob Timpone. All rights reserved.
 //
 
 import UIKit
 
-class GenericMessageCell: UITableViewCell {
+class StationSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var label: UILabel!
     

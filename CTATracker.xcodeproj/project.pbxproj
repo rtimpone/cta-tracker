@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0854F222187D5E0039429C /* AutoRegistering.framework */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
@@ -14,9 +15,17 @@
 		FB6E4D97220237A5002AC392 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D96220237A5002AC392 /* stations.json */; };
 		FB6E4D99220237C6002AC392 /* StationDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */; };
 		FB6E4D9B220239AF002AC392 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D9A220239AF002AC392 /* DataFetcher.swift */; };
+		FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71C57A221856AB00119AA2 /* StationViewController.swift */; };
 		FB7FF12E21F6BDAA0070CF9C /* AlertResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */; };
 		FB7FF13121F6C9630070CF9C /* MockJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF13021F6C9630070CF9C /* MockJson.swift */; };
-		FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* ArrivalView.swift */; };
+		FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAF3221880AF003FBB40 /* EtaCell.swift */; };
+		FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FAF4221880AF003FBB40 /* EtaCell.xib */; };
+		FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */; };
+		FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */; };
+		FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */; };
+		FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB86FB0122188601003FBB40 /* StationSectionHeader.xib */; };
+		FB86FB0422188882003FBB40 /* EtaDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */; };
+		FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31921F3FEED0002431F /* AlertView.swift */; };
 		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
 		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
@@ -29,7 +38,6 @@
 		FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0F021C5625000681A6F /* CTAKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FA21C562A700681A6F /* CircleView.swift */; };
-		FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FC21C562AD00681A6F /* NibBased.swift */; };
 		FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */; };
 		FBCAA10621C5635000681A6F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10521C5635000681A6F /* ApiClient.swift */; };
 		FBCAA10821C5635600681A6F /* CtaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA10721C5635600681A6F /* CtaClient.swift */; };
@@ -46,19 +54,27 @@
 		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
+		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
+		FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDCCD02218672700D41793 /* StationViewController.storyboard */; };
+		FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
-		FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* TableViewController.swift */; };
+		FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
 		FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */; };
-		FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* SectionHeader.swift */; };
-		FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* SectionHeader.xib */; };
+		FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */; };
+		FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */; };
 		FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21821E12D4E00D97D61 /* CellFactory.swift */; };
-		FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */; };
+		FBE353A222274DF10062C428 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A122274DF10062C428 /* TimerManager.swift */; };
+		FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A3222752CE0062C428 /* RequestHandler.swift */; };
+		FBE353A6222752D50062C428 /* ArrivalsRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A5222752D50062C428 /* ArrivalsRequestHandler.swift */; };
+		FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */; };
+		FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A9222752E30062C428 /* StationRequestHandler.swift */; };
+		FBE353AC222759C00062C428 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353AB222759C00062C428 /* Animator.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
-		FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* Main.storyboard */; };
+		FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
 		FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */; };
-		FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* RootViewController.swift */; };
+		FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB0854F222187D5E0039429C /* AutoRegistering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoRegistering.framework; path = Carthage/Build/iOS/AutoRegistering.framework; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
@@ -114,9 +131,17 @@
 		FB6E4D96220237A5002AC392 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataFetcher.swift; sourceTree = "<group>"; };
 		FB6E4D9A220239AF002AC392 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		FB71C57A221856AB00119AA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		FB7FF12D21F6BDAA0070CF9C /* AlertResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertResponseTests.swift; sourceTree = "<group>"; };
 		FB7FF13021F6C9630070CF9C /* MockJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJson.swift; sourceTree = "<group>"; };
-		FB87A31921F3FEED0002431F /* ArrivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalView.swift; sourceTree = "<group>"; };
+		FB86FAF3221880AF003FBB40 /* EtaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaCell.swift; sourceTree = "<group>"; };
+		FB86FAF4221880AF003FBB40 /* EtaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EtaCell.xib; sourceTree = "<group>"; };
+		FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGenerator.swift; sourceTree = "<group>"; };
+		FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGenerator.swift; sourceTree = "<group>"; };
+		FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSectionHeader.swift; sourceTree = "<group>"; };
+		FB86FB0122188601003FBB40 /* StationSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StationSectionHeader.xib; sourceTree = "<group>"; };
+		FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtaDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
+		FB87A31921F3FEED0002431F /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
 		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
@@ -130,7 +155,6 @@
 		FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionTests.swift; sourceTree = "<group>"; };
 		FBCAA0EB21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCAA0FA21C562A700681A6F /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		FBCAA0FC21C562AD00681A6F /* NibBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBased.swift; sourceTree = "<group>"; };
 		FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		FBCAA10521C5635000681A6F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		FBCAA10721C5635600681A6F /* CtaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaClient.swift; sourceTree = "<group>"; };
@@ -147,23 +171,31 @@
 		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
+		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
+		FBDDCCD02218672700D41793 /* StationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationViewController.storyboard; sourceTree = "<group>"; };
+		FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
-		FBE2E20821E1154F00D97D61 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
 		FBE2E20C21E11DC900D97D61 /* GenericMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericMessageCell.xib; sourceTree = "<group>"; };
-		FBE2E21321E120FF00D97D61 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
-		FBE2E21521E1210500D97D61 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
+		FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
+		FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
 		FBE2E21821E12D4E00D97D61 /* CellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFactory.swift; sourceTree = "<group>"; };
-		FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandlers.swift; sourceTree = "<group>"; };
+		FBE353A122274DF10062C428 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		FBE353A3222752CE0062C428 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		FBE353A5222752D50062C428 /* ArrivalsRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsRequestHandler.swift; sourceTree = "<group>"; };
+		FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestHandler.swift; sourceTree = "<group>"; };
+		FBE353A9222752E30062C428 /* StationRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRequestHandler.swift; sourceTree = "<group>"; };
+		FBE353AB222759C00062C428 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		FBF17A0321C55FDB00BF232C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBF17A0621C55FDB00BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBF17A0821C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF17A1321C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBF17A2021C5607800BF232C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		FBF17A2021C5607800BF232C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +219,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0EF21C5625000681A6F /* CTAKit.framework in Frameworks */,
+				FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */,
+				FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,10 +242,39 @@
 			path = "Asset Catalog";
 			sourceTree = "<group>";
 		};
+		FB86FAF222188099003FBB40 /* EtaCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB86FAF3221880AF003FBB40 /* EtaCell.swift */,
+				FB86FAF4221880AF003FBB40 /* EtaCell.xib */,
+			);
+			path = EtaCell;
+			sourceTree = "<group>";
+		};
+		FB86FAF7221882B4003FBB40 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FB86FAF8221882C9003FBB40 /* ArrivalDescriptionGenerator.swift */,
+				FB86FAFA221882FA003FBB40 /* EtaDescriptionGenerator.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		FB86FAFE221885B3003FBB40 /* Section Headers */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2E21321E120FF00D97D61 /* HomeSectionHeader.swift */,
+				FBE2E21521E1210500D97D61 /* HomeSectionHeader.xib */,
+				FB86FAFF221885F9003FBB40 /* StationSectionHeader.swift */,
+				FB86FB0122188601003FBB40 /* StationSectionHeader.xib */,
+			);
+			path = "Section Headers";
+			sourceTree = "<group>";
+		};
 		FB87A31B21F3FEFA0002431F /* Status Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FB87A31921F3FEED0002431F /* ArrivalView.swift */,
+				FB87A31921F3FEED0002431F /* AlertView.swift */,
 				FBCAA11221C5647800681A6F /* StatusCell.swift */,
 				FBCAA11421C5647F00681A6F /* StatusCell.xib */,
 			);
@@ -239,7 +302,9 @@
 		FB87A31E21F3FF2F0002431F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FBE353AB222759C00062C428 /* Animator.swift */,
 				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
+				FBE353A122274DF10062C428 /* TimerManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -289,20 +354,10 @@
 			path = CTAKitTests;
 			sourceTree = "<group>";
 		};
-		FBCAA0F821C5629800681A6F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FBCAA0FC21C562AD00681A6F /* NibBased.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		FBCAA0F921C5629F00681A6F /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				FBCAA0FA21C562A700681A6F /* CircleView.swift */,
-				FBE2E21321E120FF00D97D61 /* SectionHeader.swift */,
-				FBE2E21521E1210500D97D61 /* SectionHeader.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -355,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				FB87A31D21F3FF0B0002431F /* Arrival Cell */,
+				FB86FAF222188099003FBB40 /* EtaCell */,
 				FB87A31C21F3FF020002431F /* Generic Message Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
 			);
@@ -370,6 +426,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FBDDCCCB2218655500D41793 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB0854F222187D5E0039429C /* AutoRegistering.framework */,
+				FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBE2E21721E12D4200D97D61 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +446,10 @@
 		FBE2E21A21E12FC900D97D61 /* Request Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				FBE2E21B21E12FD800D97D61 /* RequestHandlers.swift */,
+				FBE353A5222752D50062C428 /* ArrivalsRequestHandler.swift */,
+				FBE353A3222752CE0062C428 /* RequestHandler.swift */,
+				FBE353A9222752E30062C428 /* StationRequestHandler.swift */,
+				FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */,
 			);
 			path = "Request Handlers";
 			sourceTree = "<group>";
@@ -394,6 +462,7 @@
 				FBCAA0DB21C5625000681A6F /* CTAKit */,
 				FBCAA0E821C5625000681A6F /* CTAKitTests */,
 				FBF179FA21C55FD900BF232C /* Products */,
+				FBDDCCCB2218655500D41793 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -415,11 +484,11 @@
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
+				FB86FAF7221882B4003FBB40 /* Formatters */,
 				FB98C5B621E1963A004D61B6 /* Location */,
-				FBCAA0F821C5629800681A6F /* Protocols */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
-				FBF17A1C21C5601C00BF232C /* Storyboards */,
+				FB86FAFE221885B3003FBB40 /* Section Headers */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
@@ -430,19 +499,11 @@
 			isa = PBXGroup;
 			children = (
 				FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */,
+				FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */,
 				FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */,
 				FBF17A1321C55FDB00BF232C /* Info.plist */,
 			);
 			path = CTATrackerTests;
-			sourceTree = "<group>";
-		};
-		FBF17A1C21C5601C00BF232C /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				FBF17A0021C55FD900BF232C /* Main.storyboard */,
-				FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		FBF17A1E21C5604900BF232C /* Resources */ = {
@@ -450,6 +511,7 @@
 			children = (
 				FBF179FC21C55FD900BF232C /* AppDelegate.swift */,
 				FBF17A0821C55FDB00BF232C /* Info.plist */,
+				FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -457,8 +519,12 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A2021C5607800BF232C /* RootViewController.swift */,
-				FBE2E20821E1154F00D97D61 /* TableViewController.swift */,
+				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
+				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
+				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
+				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
+				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
+				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -522,6 +588,8 @@
 				FBF179F621C55FD900BF232C /* Frameworks */,
 				FBF179F721C55FD900BF232C /* Resources */,
 				FBCAA0F421C5625000681A6F /* Embed Frameworks */,
+				FBDDCCCE2218658800D41793 /* Carthage - Copy Frameworks */,
+				FBDDCCCF2218662000D41793 /* Carthage - Check for Outdated Dependencies */,
 			);
 			buildRules = (
 			);
@@ -621,11 +689,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBE2E21621E1210500D97D61 /* SectionHeader.xib in Resources */,
+				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
+				FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */,
+				FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
-				FBF17A0221C55FD900BF232C /* Main.storyboard in Resources */,
+				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
+				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 			);
@@ -639,6 +710,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FBDDCCCE2218658800D41793 /* Carthage - Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/StoryboardInstantiable.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AutoRegistering.framework",
+			);
+			name = "Carthage - Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/StoryboardInstantiable.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoRegistering.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		FBDDCCCF2218662000D41793 /* Carthage - Check for Outdated Dependencies */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage - Check for Outdated Dependencies";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBCAA0D621C5625000681A6F /* Sources */ = {
@@ -681,18 +795,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
+				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
-				FBE2E21C21E12FD800D97D61 /* RequestHandlers.swift in Sources */,
+				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
-				FBE2E20921E1154F00D97D61 /* TableViewController.swift in Sources */,
+				FBE353AC222759C00062C428 /* Animator.swift in Sources */,
+				FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */,
+				FBE353A6222752D50062C428 /* ArrivalsRequestHandler.swift in Sources */,
+				FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */,
+				FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */,
+				FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
+				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
+				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
+				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
+				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
-				FBF17A2121C5607800BF232C /* RootViewController.swift in Sources */,
+				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
+				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
-				FB87A31A21F3FEED0002431F /* ArrivalView.swift in Sources */,
-				FBE2E21421E120FF00D97D61 /* SectionHeader.swift in Sources */,
-				FBCAA0FD21C562AD00681A6F /* NibBased.swift in Sources */,
+				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
+				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);
@@ -702,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB86FB0422188882003FBB40 /* EtaDescriptionGeneratorTests.swift in Sources */,
 				FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */,
 				FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */,
 			);
@@ -733,12 +858,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FBF17A0021C55FD900BF232C /* Main.storyboard */ = {
+		FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FBF17A0121C55FD900BF232C /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */ = {
@@ -974,6 +1099,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTVQW2NNE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CTATracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -993,6 +1122,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HTVQW2NNE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CTATracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

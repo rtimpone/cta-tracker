@@ -9,7 +9,7 @@
 import CTAKit
 import UIKit
 
-class StatusCell: UITableViewCell, NibBased {
+class StatusCell: UITableViewCell {
     
     @IBOutlet weak var routeColorView: UIView!
     @IBOutlet weak var routeTitleLabel: UILabel!

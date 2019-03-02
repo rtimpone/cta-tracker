@@ -1,5 +1,5 @@
 //
-//  ErrorCell.swift
+//  SectionHeader.swift
 //  CTATracker
 //
 //  Created by Rob Timpone on 1/5/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenericMessageCell: UITableViewCell {
+class HomeSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var label: UILabel!
     
