@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0854F222187D5E0039429C /* AutoRegistering.framework */; };
+		FB08D6DC222B026900525206 /* platforms.json in Resources */ = {isa = PBXBuildFile; fileRef = FB08D6DB222B026900525206 /* platforms.json */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB6E4D952201F2E4002AC392 /* RouteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */; };
-		FB6E4D97220237A5002AC392 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D96220237A5002AC392 /* stations.json */; };
 		FB6E4D99220237C6002AC392 /* StationDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */; };
 		FB6E4D9B220239AF002AC392 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D9A220239AF002AC392 /* DataFetcher.swift */; };
 		FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71C57A221856AB00119AA2 /* StationViewController.swift */; };
@@ -124,11 +124,11 @@
 
 /* Begin PBXFileReference section */
 		FB0854F222187D5E0039429C /* AutoRegistering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoRegistering.framework; path = Carthage/Build/iOS/AutoRegistering.framework; sourceTree = "<group>"; };
+		FB08D6DB222B026900525206 /* platforms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = platforms.json; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataFetcher.swift; sourceTree = "<group>"; };
-		FB6E4D96220237A5002AC392 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDataFetcher.swift; sourceTree = "<group>"; };
 		FB6E4D9A220239AF002AC392 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		FB71C57A221856AB00119AA2 /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
@@ -322,10 +322,10 @@
 			isa = PBXGroup;
 			children = (
 				FB6E4D9A220239AF002AC392 /* DataFetcher.swift */,
+				FB08D6DB222B026900525206 /* platforms.json */,
 				FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */,
 				FB6E4D922201F169002AC392 /* routes.json */,
 				FB6E4D98220237C6002AC392 /* StationDataFetcher.swift */,
-				FB6E4D96220237A5002AC392 /* stations.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -674,7 +674,7 @@
 			files = (
 				FBCAA11A21C5680900681A6F /* credentials.json in Resources */,
 				FB6E4D932201F169002AC392 /* routes.json in Resources */,
-				FB6E4D97220237A5002AC392 /* stations.json in Resources */,
+				FB08D6DC222B026900525206 /* platforms.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

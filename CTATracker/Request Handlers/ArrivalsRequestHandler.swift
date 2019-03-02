@@ -21,22 +21,17 @@ class ArrivalsRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        let stopNames = [
-            "Adams/Wabash (Northbound)",
-            "Belmont",
-            "Damen (Loop-bound)",
-            "Morse (95th-bound)",
-            "Monroe (Howard-bound)"
-        ]
+        // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
+        let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
         
         var stopsToShow: [Stop] = []
         for station in StationDataFetcher.fetchAllStations() {
-            if stopNames.contains(station.name) {
+            if favoriteStopIds.contains(station.id) {
                 stopsToShow.append(station)
             }
             else {
                 for platform in station.platforms {
-                    if stopNames.contains(platform.name) {
+                    if favoriteStopIds.contains(platform.id) {
                         stopsToShow.append(platform)
                     }
                 }
