@@ -112,7 +112,7 @@ private extension HomeViewController {
             }
         }
         
-        arrivalsRequestHandler.requestTrainStopArrivalTimes() { result in
+        arrivalsRequestHandler.requestTrainStopArrivalTimes(currentLocation: currentDeviceCoordinate) { result in
             switch result {
             case .success(let arrivals):
                 var sortedArrivals = arrivals

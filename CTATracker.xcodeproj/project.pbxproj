@@ -75,6 +75,7 @@
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
 		FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0521C55FDB00BF232C /* LaunchScreen.storyboard */; };
 		FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF17A2021C5607800BF232C /* HomeViewController.swift */; };
+		FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFD187B222B0D4600D0EA9D /* DistanceCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		FBF17A0D21C55FDB00BF232C /* CTATrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF17A1321C55FDB00BF232C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBF17A2021C5607800BF232C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FBFD187B222B0D4600D0EA9D /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */,
+				FBFD187B222B0D4600D0EA9D /* DistanceCalculator.swift */,
 				FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */,
 			);
 			path = Location;
@@ -812,6 +815,7 @@
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
+				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,

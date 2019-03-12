@@ -12,7 +12,7 @@ class ArrivalsRequestHandler: RequestHandler {
     
     var isRequesting = false
     
-    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
+    func requestTrainStopArrivalTimes(currentLocation: Coordinate?, completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
         
         if isRequesting {
             print("Arrival requests are already in flight, wait until requests are finished before starting again")
@@ -23,15 +23,26 @@ class ArrivalsRequestHandler: RequestHandler {
         
         // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
         let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
+
+        var idsOfStopsToShow = favoriteStopIds
+        
+        // the closest stop to the user, if they provide their location
+        if let coordinate = currentLocation, let closestStation = stationClosestToCoordinate(coordinate) {
+            if !idsOfStopsToShow.contains(closestStation.id) {
+                idsOfStopsToShow.append(closestStation.id)
+            }
+        }
         
         var stopsToShow: [Stop] = []
-        for station in StationDataFetcher.fetchAllStations() {
-            if favoriteStopIds.contains(station.id) {
+        
+        let allStations = StationDataFetcher.fetchAllStations()
+        for station in allStations {
+            if idsOfStopsToShow.contains(station.id) {
                 stopsToShow.append(station)
             }
             else {
                 for platform in station.platforms {
-                    if favoriteStopIds.contains(platform.id) {
+                    if idsOfStopsToShow.contains(platform.id) {
                         stopsToShow.append(platform)
                     }
                 }
@@ -62,5 +73,16 @@ class ArrivalsRequestHandler: RequestHandler {
                 }
             }
         }
+    }
+}
+
+private extension ArrivalsRequestHandler {
+    
+    func stationClosestToCoordinate(_ coordinate: Coordinate) -> Station? {
+        let allStations = StationDataFetcher.fetchAllStations()
+        let sortedStations = allStations.sorted(by: { station1, station2 in
+            DistanceCalculator.distance(from: station1, to: coordinate) < DistanceCalculator.distance(from: station2, to: coordinate)
+        })
+        return sortedStations.first
     }
 }
