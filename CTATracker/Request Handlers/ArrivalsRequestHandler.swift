@@ -21,34 +21,7 @@ class ArrivalsRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
-        let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
-
-        var idsOfStopsToShow = favoriteStopIds
-        
-        // the closest stop to the user, if they provide their location
-        if let coordinate = currentLocation, let closestStation = stationClosestToCoordinate(coordinate) {
-            if !idsOfStopsToShow.contains(closestStation.id) {
-                idsOfStopsToShow.append(closestStation.id)
-            }
-        }
-        
-        var stopsToShow: [Stop] = []
-        
-        let allStations = StationDataFetcher.fetchAllStations()
-        for station in allStations {
-            if idsOfStopsToShow.contains(station.id) {
-                stopsToShow.append(station)
-            }
-            else {
-                for platform in station.platforms {
-                    if idsOfStopsToShow.contains(platform.id) {
-                        stopsToShow.append(platform)
-                    }
-                }
-            }
-        }
-        
+        let stopsToShow = self.stopsToShow(currentLocation: currentLocation)
         var allArrivals: [StopArrivals] = []
         var queueCount = stopsToShow.count
         
@@ -77,6 +50,46 @@ class ArrivalsRequestHandler: RequestHandler {
 }
 
 private extension ArrivalsRequestHandler {
+    
+    func stopsToShow(currentLocation: Coordinate?) -> [Stop] {
+        
+        // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
+        let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
+        var closestStation: Station?
+        
+        if let coordinate = currentLocation {
+            closestStation = stationClosestToCoordinate(coordinate)
+        }
+        
+        var stopsToShow: [Stop] = []
+        
+        let allStations = StationDataFetcher.fetchAllStations()
+        for station in allStations {
+            
+            var hasAddedStop = false
+            
+            if favoriteStopIds.contains(station.id) {
+                stopsToShow.append(station)
+                hasAddedStop = true
+            }
+            else {
+                for platform in station.platforms {
+                    if favoriteStopIds.contains(platform.id) {
+                        stopsToShow.append(platform)
+                        hasAddedStop = true
+                    }
+                }
+            }
+            
+            if !hasAddedStop, let closestStation = closestStation {
+                if station.id == closestStation.id {
+                    stopsToShow.append(closestStation)
+                }
+            }
+        }
+        
+        return stopsToShow
+    }
     
     func stationClosestToCoordinate(_ coordinate: Coordinate) -> Station? {
         let allStations = StationDataFetcher.fetchAllStations()
