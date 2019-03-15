@@ -53,8 +53,7 @@ private extension ArrivalsRequestHandler {
     
     func stopsToShow(currentLocation: Coordinate?) -> [Stop] {
         
-        // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
-        let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
+        let favoriteStopIds = FavoriteStops.fetchFavoriteStopIds()
         var closestStation: Station?
         
         if let coordinate = currentLocation {

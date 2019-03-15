@@ -10,6 +10,7 @@
 		FB0854F322187D5E0039429C /* AutoRegistering.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0854F222187D5E0039429C /* AutoRegistering.framework */; };
 		FB08D6DC222B026900525206 /* platforms.json in Resources */ = {isa = PBXBuildFile; fileRef = FB08D6DB222B026900525206 /* platforms.json */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
+		FB10F2C8223B1D7100BE2B76 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10F2C7223B1D7100BE2B76 /* Favorites.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB6E4D952201F2E4002AC392 /* RouteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */; };
@@ -127,6 +128,7 @@
 		FB0854F222187D5E0039429C /* AutoRegistering.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoRegistering.framework; path = Carthage/Build/iOS/AutoRegistering.framework; sourceTree = "<group>"; };
 		FB08D6DB222B026900525206 /* platforms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = platforms.json; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
+		FB10F2C7223B1D7100BE2B76 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataFetcher.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				FBE353AB222759C00062C428 /* Animator.swift */,
 				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
+				FB10F2C7223B1D7100BE2B76 /* Favorites.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
 			);
 			path = Utilities;
@@ -815,6 +818,7 @@
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
+				FB10F2C8223B1D7100BE2B76 /* Favorites.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,

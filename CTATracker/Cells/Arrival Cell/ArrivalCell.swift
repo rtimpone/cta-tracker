@@ -12,6 +12,16 @@ import UIKit
 class ArrivalCell: UITableViewCell {
     
     @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var locationIcon: UIImageView!
+    
+    var locationIconOriginalWidthValue: CGFloat = 0
+    @IBOutlet weak var locationIconWidthConstraint: NSLayoutConstraint! {
+        didSet {
+            if locationIconOriginalWidthValue == 0 {
+                locationIconOriginalWidthValue = locationIconWidthConstraint.constant
+            }
+        }
+    }
     
     @IBOutlet weak var firstArrivalView: ArrivalView!
     @IBOutlet weak var secondArrivalView: ArrivalView!
@@ -26,9 +36,12 @@ class ArrivalCell: UITableViewCell {
     
     var bottomConstraint: NSLayoutConstraint?
 
-    func configure(for arrivals: StopArrivals) {
+    func configure(for arrivals: StopArrivals, isLocationBased: Bool) {
         
         destinationLabel.text = arrivals.stop.name
+        
+        locationIcon.isHidden = !isLocationBased
+        locationIconWidthConstraint.constant = isLocationBased ? locationIconOriginalWidthValue : 0
         
         bottomConstraint?.isActive = false
         
