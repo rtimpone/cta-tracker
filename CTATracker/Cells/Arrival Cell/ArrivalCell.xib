@@ -279,6 +279,7 @@
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="pQD-8M-ddZ">
                         <rect key="frame" x="79.5" y="12" width="22" height="22"/>
+                        <color key="tintColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="obv-hc-GnL"/>
                             <constraint firstAttribute="height" constant="22" id="wZK-pQ-PEj"/>

@@ -35,6 +35,11 @@ class ArrivalCell: UITableViewCell {
     }
     
     var bottomConstraint: NSLayoutConstraint?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        locationIcon.tintColor = UIColor(hex: "7F7F7F")
+    }
 
     func configure(for arrivals: StopArrivals, isLocationBased: Bool) {
         
