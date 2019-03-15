@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="187" id="BVc-Jk-n0Y" customClass="ArrivalCell" customModule="CTATracker" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="187" id="BVc-Jk-n0Y" customClass="ArrivalCell" customModule="CTA" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BVc-Jk-n0Y" id="CGH-bL-Ubc">
@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-z1-vGj">
-                        <rect key="frame" x="16" y="11" width="343" height="21.5"/>
+                        <rect key="frame" x="16" y="11" width="59.5" height="21.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-cv-PZD" userLabel="First Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-cv-PZD" userLabel="First Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="42.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-Uh-Uza" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-Uh-Uza" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -67,10 +67,10 @@
                             <outlet property="etaLabel" destination="lrY-jP-tng" id="PEh-6D-7z4"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-eg-DOD" userLabel="Second Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTU-eg-DOD" userLabel="Second Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="72.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-TU-Q6u" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8w-TU-Q6u" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -109,10 +109,10 @@
                             <outlet property="etaLabel" destination="Fgi-xk-XJy" id="zrs-ft-tPJ"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-ej-g67" userLabel="Third Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjk-ej-g67" userLabel="Third Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="102.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFS-QR-E3O" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFS-QR-E3O" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -151,10 +151,10 @@
                             <outlet property="etaLabel" destination="m6z-uq-65u" id="8Dd-SC-dZi"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-2I-LIR" userLabel="Fourth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-2I-LIR" userLabel="Fourth Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="132.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Vf-bAf" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcU-Vf-bAf" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -193,10 +193,10 @@
                             <outlet property="etaLabel" destination="HeP-Xg-Dwn" id="y4T-Af-u2e"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R43-iD-1FU" userLabel="Fifth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R43-iD-1FU" userLabel="Fifth Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="162.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-zM-Mjh" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKf-zM-Mjh" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -235,10 +235,10 @@
                             <outlet property="etaLabel" destination="jB3-uf-vYU" id="Jfx-pV-yXW"/>
                         </connections>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sc-eZ-NTz" userLabel="Sixth Arrival View" customClass="ArrivalView" customModule="CTATracker" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sc-eZ-NTz" userLabel="Sixth Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
                         <rect key="frame" x="16" y="192.5" width="343" height="22"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-4D-cbk" customClass="CircleView" customModule="CTATracker" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yH-4D-cbk" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="20" height="20"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -277,25 +277,35 @@
                             <outlet property="etaLabel" destination="3Tk-Iy-m5U" id="j5F-rT-6oW"/>
                         </connections>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="pQD-8M-ddZ">
+                        <rect key="frame" x="79.5" y="12" width="22" height="22"/>
+                        <color key="tintColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="obv-hc-GnL"/>
+                            <constraint firstAttribute="height" constant="22" id="wZK-pQ-PEj"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ra4-cv-PZD" firstAttribute="top" secondItem="zyc-z1-vGj" secondAttribute="bottom" constant="10" id="1LY-5v-RbG"/>
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="top" secondItem="gjk-ej-g67" secondAttribute="bottom" constant="8" id="2AU-r5-wBY"/>
                     <constraint firstItem="ra4-cv-PZD" firstAttribute="leading" secondItem="CGH-bL-Ubc" secondAttribute="leading" constant="16" id="2aO-dw-c70"/>
                     <constraint firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" constant="16" id="4ue-ST-Uj7"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pQD-8M-ddZ" secondAttribute="trailing" constant="16" id="7OX-B7-HVH"/>
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="leading" secondItem="gjk-ej-g67" secondAttribute="leading" id="9oa-Zn-LSB"/>
                     <constraint firstItem="2Sc-eZ-NTz" firstAttribute="leading" secondItem="R43-iD-1FU" secondAttribute="leading" id="AXe-JO-vuV"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="trailing" secondItem="fTU-eg-DOD" secondAttribute="trailing" id="Fcu-gh-5Hm"/>
                     <constraint firstItem="JjB-FL-yrd" firstAttribute="leading" secondItem="Grq-46-bn4" secondAttribute="leading" id="KY8-d2-Z3P"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" id="MRa-2E-Pur"/>
                     <constraint firstItem="2Sc-eZ-NTz" firstAttribute="trailing" secondItem="R43-iD-1FU" secondAttribute="trailing" id="NaZ-O3-vJO"/>
+                    <constraint firstItem="pQD-8M-ddZ" firstAttribute="centerY" secondItem="zyc-z1-vGj" secondAttribute="centerY" constant="1" id="Qjz-L0-bLU"/>
+                    <constraint firstItem="pQD-8M-ddZ" firstAttribute="leading" secondItem="zyc-z1-vGj" secondAttribute="trailing" constant="4" id="Tu1-dN-JLw"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="top" secondItem="ra4-cv-PZD" secondAttribute="bottom" constant="8" id="VqC-op-TCh"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="leading" secondItem="ra4-cv-PZD" secondAttribute="leading" id="XBd-Rk-xzf"/>
                     <constraint firstItem="R43-iD-1FU" firstAttribute="top" secondItem="tpv-2I-LIR" secondAttribute="bottom" constant="8" id="Yzu-7e-J1I"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="top" secondItem="fTU-eg-DOD" secondAttribute="bottom" constant="8" id="ZV8-CN-TIx"/>
                     <constraint firstItem="Grq-46-bn4" firstAttribute="leading" secondItem="iv8-JX-ReW" secondAttribute="leading" id="cwp-xm-Mj9"/>
                     <constraint firstItem="R43-iD-1FU" firstAttribute="leading" secondItem="tpv-2I-LIR" secondAttribute="leading" id="dbA-AR-PCD"/>
-                    <constraint firstAttribute="trailing" secondItem="zyc-z1-vGj" secondAttribute="trailing" constant="16" id="djR-Pz-MW4"/>
                     <constraint firstItem="zyc-z1-vGj" firstAttribute="top" secondItem="CGH-bL-Ubc" secondAttribute="top" constant="11" id="gXJ-YP-zA2"/>
                     <constraint firstItem="zyc-z1-vGj" firstAttribute="leading" secondItem="CGH-bL-Ubc" secondAttribute="leading" constant="16" id="hAn-I1-PPE"/>
                     <constraint firstItem="R43-iD-1FU" firstAttribute="trailing" secondItem="tpv-2I-LIR" secondAttribute="trailing" id="jcg-b8-t9V"/>
@@ -310,11 +320,16 @@
                 <outlet property="fifthArrivalView" destination="R43-iD-1FU" id="Asm-sd-zcA"/>
                 <outlet property="firstArrivalView" destination="ra4-cv-PZD" id="GQl-KE-kKZ"/>
                 <outlet property="fourthArrivalView" destination="tpv-2I-LIR" id="R4Y-Wi-s12"/>
+                <outlet property="locationIcon" destination="pQD-8M-ddZ" id="TTX-8T-oLS"/>
+                <outlet property="locationIconWidthConstraint" destination="obv-hc-GnL" id="BhL-gF-vKJ"/>
                 <outlet property="secondArrivalView" destination="fTU-eg-DOD" id="Vfv-Zg-gaU"/>
                 <outlet property="sixthArrivalView" destination="2Sc-eZ-NTz" id="6Gw-0v-Twu"/>
                 <outlet property="thirdArrivalView" destination="gjk-ej-g67" id="GJC-1a-bpf"/>
             </connections>
-            <point key="canvasLocation" x="-82.400000000000006" y="129.98500749625188"/>
+            <point key="canvasLocation" x="-82.400000000000006" y="129.53523238380811"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="location-icon" width="60" height="60"/>
+    </resources>
 </document>

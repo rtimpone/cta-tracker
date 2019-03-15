@@ -9,7 +9,6 @@
 import Foundation
 
 public enum StopType {
-    
     case station
     case platform
 }
@@ -32,12 +31,12 @@ public struct Station: Stop {
     public let platforms: [Platform]
     public let type: StopType = .station
     
-    init(from data: StationData) {
-        id = data.id
-        name = data.name
-        latitude = data.latitude
-        longitude = data.longitude
-        platforms = data.platforms.compactMap { Platform(from: $0, latitude: data.latitude, longitude: data.longitude) }
+    init(id: Int, name: String, latitude: Double, longitude: Double, platforms: [Platform]) {
+        self.id = id
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.platforms = platforms
     }
 }
 
@@ -49,10 +48,10 @@ public struct Platform: Stop {
     public let longitude: Double
     public let type: StopType = .platform
     
-    init(from data: PlatformData, latitude: Double, longitude: Double) {
+    init(from data: PlatformData) {
         id = data.id
-        name = data.name
-        self.latitude = latitude
-        self.longitude = longitude
+        name = "\(data.stationName) (\(data.platformDescription))"
+        latitude = data.latitude
+        longitude = data.longitude
     }
 }

@@ -34,8 +34,9 @@ class CellFactory {
         switch dataSource {
         case .data(let arrivals):
             let arrival = arrivals[indexPath.row]
+            let isLocationBased = !FavoriteStops.stopIsFavorite(arrival.stop)
             let cell = tableView.dequeueReusableCell(ofType: ArrivalCell.self)
-            cell.configure(for: arrival)
+            cell.configure(for: arrival, isLocationBased: isLocationBased)
             return cell
             
         case .error:

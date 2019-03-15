@@ -10,7 +10,7 @@ import Foundation
 
 extension UIColor {
     
-    convenience init(hex: String) {
+    public convenience init(hex: String) {
         
         let trimmedString = hex.replacingOccurrences(of: "#", with: "")
         

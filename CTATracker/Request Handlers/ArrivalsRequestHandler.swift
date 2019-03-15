@@ -12,7 +12,7 @@ class ArrivalsRequestHandler: RequestHandler {
     
     var isRequesting = false
     
-    func requestTrainStopArrivalTimes(completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
+    func requestTrainStopArrivalTimes(currentLocation: Coordinate?, completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
         
         if isRequesting {
             print("Arrival requests are already in flight, wait until requests are finished before starting again")
@@ -21,28 +21,7 @@ class ArrivalsRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        let stopNames = [
-            "Adams/Wabash (Northbound)",
-            "Belmont",
-            "Damen (Loop-bound)",
-            "Morse (95th-bound)",
-            "Monroe (Howard-bound)"
-        ]
-        
-        var stopsToShow: [Stop] = []
-        for station in StationDataFetcher.fetchAllStations() {
-            if stopNames.contains(station.name) {
-                stopsToShow.append(station)
-            }
-            else {
-                for platform in station.platforms {
-                    if stopNames.contains(platform.name) {
-                        stopsToShow.append(platform)
-                    }
-                }
-            }
-        }
-        
+        let stopsToShow = self.stopsToShow(currentLocation: currentLocation)
         var allArrivals: [StopArrivals] = []
         var queueCount = stopsToShow.count
         
@@ -67,5 +46,55 @@ class ArrivalsRequestHandler: RequestHandler {
                 }
             }
         }
+    }
+}
+
+private extension ArrivalsRequestHandler {
+    
+    func stopsToShow(currentLocation: Coordinate?) -> [Stop] {
+        
+        let favoriteStopIds = FavoriteStops.fetchFavoriteStopIds()
+        var closestStation: Station?
+        
+        if let coordinate = currentLocation {
+            closestStation = stationClosestToCoordinate(coordinate)
+        }
+        
+        var stopsToShow: [Stop] = []
+        
+        let allStations = StationDataFetcher.fetchAllStations()
+        for station in allStations {
+            
+            var hasAddedStop = false
+            
+            if favoriteStopIds.contains(station.id) {
+                stopsToShow.append(station)
+                hasAddedStop = true
+            }
+            else {
+                for platform in station.platforms {
+                    if favoriteStopIds.contains(platform.id) {
+                        stopsToShow.append(platform)
+                        hasAddedStop = true
+                    }
+                }
+            }
+            
+            if !hasAddedStop, let closestStation = closestStation {
+                if station.id == closestStation.id {
+                    stopsToShow.append(closestStation)
+                }
+            }
+        }
+        
+        return stopsToShow
+    }
+    
+    func stationClosestToCoordinate(_ coordinate: Coordinate) -> Station? {
+        let allStations = StationDataFetcher.fetchAllStations()
+        let sortedStations = allStations.sorted(by: { station1, station2 in
+            DistanceCalculator.distance(from: station1, to: coordinate) < DistanceCalculator.distance(from: station2, to: coordinate)
+        })
+        return sortedStations.first
     }
 }
