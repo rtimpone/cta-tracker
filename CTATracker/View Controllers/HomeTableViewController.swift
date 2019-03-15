@@ -111,11 +111,11 @@ class HomeTableViewController: UITableViewController {
         switch section {
         case Sections.statuses:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Route Status")
+            header.configure(withText: "Route Status", inSection: section, delegate: self)
             return header
         case Sections.arrivals:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Arrivals")
+            header.configure(withText: "Arrivals", inSection: section, delegate: self)
             return header
         default:
             return nil
@@ -164,5 +164,12 @@ private extension HomeTableViewController {
         else {
             tableView.reloadData()
         }
+    }
+}
+
+extension HomeTableViewController: HomeSectionHeaderDelegate {
+    
+    func didSelectHeader(inSection section: Int) {
+        print("Selected header in section \(section)")
     }
 }
