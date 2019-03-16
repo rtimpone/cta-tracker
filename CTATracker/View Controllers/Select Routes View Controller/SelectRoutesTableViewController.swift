@@ -11,6 +11,7 @@ import UIKit
 
 protocol SelectRoutesTableViewControllerDelegate: class {
     func routeIsSelected(_ route: Route) -> Bool
+    func didSelectRoute(_ route: Route)
 }
 
 class SelectRoutesTableViewController: UITableViewController {
@@ -35,5 +36,12 @@ class SelectRoutesTableViewController: UITableViewController {
         let isSelected = delegate?.routeIsSelected(route) ?? false
         cell.configure(for: route, isSelected: isSelected)
         return cell
+    }
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let route = routes[indexPath.row]
+        delegate?.didSelectRoute(route)
     }
 }

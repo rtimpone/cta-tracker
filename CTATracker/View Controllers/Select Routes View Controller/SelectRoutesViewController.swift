@@ -32,4 +32,11 @@ extension SelectRoutesViewController: SelectRoutesTableViewControllerDelegate {
     func routeIsSelected(_ route: Route) -> Bool {
         return false
     }
+    
+    func didSelectRoute(_ route: Route) {
+        
+        print("Did select route: \(route)")
+        
+        //update temp favorites
+    }
 }
