@@ -30,7 +30,7 @@ class SelectRoutesViewController: UIViewController {
 extension SelectRoutesViewController: SelectRoutesTableViewControllerDelegate {
     
     func routeIsSelected(_ route: Route) -> Bool {
-        return FavoritesManager.routeIsFavorite(route)
+        return FavoriteRoutesManager.routeIsFavorite(route)
     }
     
     func didSelectRoute(_ route: Route) {

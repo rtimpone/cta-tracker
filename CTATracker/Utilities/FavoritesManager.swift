@@ -9,27 +9,91 @@
 import CTAKit
 import Foundation
 
-struct FavoritesManager {
+protocol FavoritesManager {
+    
+    associatedtype FavoriteType
+    static var key: String { get }
+    
+    static func fetchFavorites() -> [FavoriteType]
+    static func isFavorite(_ object: FavoriteType) -> Bool
+    static func addToFavorites(_ object: FavoriteType)
+    static func removeFromFavorites(_ object: FavoriteType)
+    static func defaultFavorites() -> [FavoriteType]
+}
 
-    // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
-    private static let favoriteStopIds = [30131, 41320, 30019, 30021, 30211]
+extension FavoritesManager where FavoriteType: Equatable {
     
-    // Red Line, Brown Line, Purple Line
-    private static let favoriteRouteIds = ["Red", "Brn", "P"]
-    
-    static func fetchFavoriteStopIds() -> [Int] {
-        return favoriteStopIds
+    static func fetchFavorites() -> [FavoriteType] {
+        return UserDefaultsClient.fetchArray(forKey: key) as? [FavoriteType] ?? defaultFavorites()
     }
+    
+    static func isFavorite(_ object: FavoriteType) -> Bool {
+        let favorites = fetchFavorites()
+        return favorites.contains(object)
+    }
+    
+    static func addToFavorites(_ object: FavoriteType) {
+        var favorites = fetchFavorites()
+        if !favorites.contains(object) {
+            favorites.append(object)
+        }
+        UserDefaultsClient.setArray(favorites, forKey: key)
+    }
+    
+    static func removeFromFavorites(_ object: FavoriteType) {
+        var favorites = fetchFavorites()
+        favorites.removeAll(where: { $0 == object })
+        UserDefaultsClient.setArray(favorites, forKey: key)
+    }
+}
+
+struct FavoriteRoutesManager: FavoritesManager {
+    
+    typealias FavoriteType = String
+    static let key = "favoriteRouteIds"
     
     static func fetchFavoriteRouteIds() -> [String] {
-        return favoriteRouteIds
-    }
-    
-    static func stopIsFavorite(_ stop: Stop) -> Bool {
-        return favoriteStopIds.contains(stop.id)
+        return fetchFavorites()
     }
     
     static func routeIsFavorite(_ route: Route) -> Bool {
-        return favoriteRouteIds.contains(route.id)
+        return isFavorite(route.id)
+    }
+    
+    static func defaultFavorites() -> [String] {
+        
+        // Red Line, Brown Line, Purple Line
+        return ["Red", "Brn", "P"]
+    }
+}
+
+struct FavoriteStopsManager: FavoritesManager {
+    
+    typealias FavoriteType = Int
+    static let key = "favoriteStopIds"
+    
+    static func fetchFavoriteStopIds() -> [Int] {
+        return fetchFavorites()
+    }
+    
+    static func stopIsFavorite(_ stop: Stop) -> Bool {
+        return isFavorite(stop.id)
+    }
+    
+    static func defaultFavorites() -> [Int] {
+        
+        // Adams/Wabash (Northbound), Belmont, Damen (Loop-bound), Morse (95th-bound), Monroe (Howard-bound)
+        return [30131, 41320, 30019, 30021, 30211]
+    }
+}
+
+struct UserDefaultsClient {
+    
+    static func setArray(_ array: [Any], forKey key: String) {
+        UserDefaults.standard.set(array, forKey: key)
+    }
+    
+    static func fetchArray(forKey key: String) -> [Any]? {
+        return UserDefaults.standard.array(forKey: key)
     }
 }

@@ -21,7 +21,7 @@ class StatusRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        let favoriteRouteIds = FavoritesManager.fetchFavoriteRouteIds()
+        let favoriteRouteIds = FavoriteRoutesManager.fetchFavoriteRouteIds()
         let routesToShow = RouteDataFetcher.fetchAllRoutes().filter { favoriteRouteIds.contains($0.id) }
         client.getStatuses(for: routesToShow) { result in
             
