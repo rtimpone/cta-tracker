@@ -21,6 +21,10 @@ class SelectRoutesTableViewController: UITableViewController {
     
     func displayRoutes(_ routes: [Route]) {
         self.routes = routes
+        refreshRoutes()
+    }
+    
+    func refreshRoutes() {
         tableView.reloadData()
     }
     

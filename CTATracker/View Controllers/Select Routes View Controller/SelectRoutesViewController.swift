@@ -9,9 +9,20 @@
 import CTAKit
 import UIKit
 
+protocol SelectRoutesViewControllerDelegate: class {
+    func didUpdateFavoriteRoutes()
+}
+
 class SelectRoutesViewController: UIViewController {
 
     weak var tableViewController: SelectRoutesTableViewController!
+    weak var delegate: SelectRoutesViewControllerDelegate?
+    
+    static func instance(withDelegate delegate: SelectRoutesViewControllerDelegate) -> SelectRoutesViewController {
+        let vc = SelectRoutesViewController.instantiateFromStoryboard()
+        vc.delegate = delegate
+        return vc
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +46,14 @@ extension SelectRoutesViewController: SelectRoutesTableViewControllerDelegate {
     
     func didSelectRoute(_ route: Route) {
         
-        print("Did select route: \(route)")
+        if FavoriteRoutesManager.routeIsFavorite(route) {
+            FavoriteRoutesManager.removeRouteFromFavorites(route)
+        }
+        else {
+            FavoriteRoutesManager.addRouteToFavorites(route)
+        }
         
-        //update temp favorites
+        tableViewController.refreshRoutes()
+        delegate?.didUpdateFavoriteRoutes()
     }
 }

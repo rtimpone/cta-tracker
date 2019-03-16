@@ -9,7 +9,7 @@
 import CTAKit
 import Foundation
 
-protocol FavoritesManager {
+fileprivate protocol FavoritesManager {
     
     associatedtype FavoriteType
     static var key: String { get }
@@ -60,6 +60,14 @@ struct FavoriteRoutesManager: FavoritesManager {
         return isFavorite(route.id)
     }
     
+    static func addRouteToFavorites(_ route: Route) {
+        addToFavorites(route.id)
+    }
+    
+    static func removeRouteFromFavorites(_ route: Route) {
+        removeFromFavorites(route.id)
+    }
+    
     static func defaultFavorites() -> [String] {
         
         // Red Line, Brown Line, Purple Line
@@ -78,6 +86,14 @@ struct FavoriteStopsManager: FavoritesManager {
     
     static func stopIsFavorite(_ stop: Stop) -> Bool {
         return isFavorite(stop.id)
+    }
+    
+    static func addStopToFavorites(_ stop: Stop) {
+        addToFavorites(stop.id)
+    }
+    
+    static func removeStopFromFavorites(_ stop: Stop) {
+        removeFromFavorites(stop.id)
     }
     
     static func defaultFavorites() -> [Int] {

@@ -62,13 +62,20 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectEditRoutes() {
-        let srvc = SelectRoutesViewController.instantiateFromStoryboard()
+        let srvc = SelectRoutesViewController.instance(withDelegate: self)
         navigationController?.pushViewController(srvc, animated: true)
     }
     
     func didSelectEditStops() {
         let ssvc = SelectStopsViewController.instantiateFromStoryboard()
         navigationController?.pushViewController(ssvc, animated: true)
+    }
+}
+
+extension HomeViewController: SelectRoutesViewControllerDelegate {
+    
+    func didUpdateFavoriteRoutes() {
+        refreshRoutesDataFromApi()
     }
 }
 
@@ -113,6 +120,11 @@ private extension HomeViewController {
     }
     
     func refreshDataFromApi() {
+        refreshRoutesDataFromApi()
+        refreshArrivalsDataFromApi()
+    }
+    
+    func refreshRoutesDataFromApi() {
         statusRequestHandler.requestTrainStatus() { result in
             switch result {
             case .success(let routes):
@@ -121,7 +133,9 @@ private extension HomeViewController {
                 self.tableViewController.displayRoutesStatusError()
             }
         }
-        
+    }
+    
+    func refreshArrivalsDataFromApi() {
         arrivalsRequestHandler.requestTrainStopArrivalTimes(currentLocation: currentDeviceCoordinate) { result in
             switch result {
             case .success(let arrivals):
