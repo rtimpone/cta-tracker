@@ -34,6 +34,8 @@ protocol HomeTableViewControllerDelegate: class {
     func refreshControlWasActivated()
     func didSelectStatus(_ status: RouteStatus)
     func didSelectArrivals(_ arrivals: StopArrivals)
+    func didSelectEditRoutes()
+    func didSelectEditStops()
 }
 
 class HomeTableViewController: UITableViewController {
@@ -170,6 +172,13 @@ private extension HomeTableViewController {
 extension HomeTableViewController: HomeSectionHeaderDelegate {
     
     func didSelectHeader(inSection section: Int) {
-        print("Selected header in section \(section)")
+        switch section {
+            case Sections.statuses:
+            delegate?.didSelectEditRoutes()
+        case Sections.arrivals:
+            delegate?.didSelectEditStops()
+        default:
+            break
+        }
     }
 }

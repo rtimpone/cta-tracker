@@ -58,6 +58,12 @@
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
 		FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDCCD02218672700D41793 /* StationViewController.storyboard */; };
 		FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */; };
+		FBDDFCBF223BD3600082210F /* SelectRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */; };
+		FBDDFCC1223BD3680082210F /* SelectStopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */; };
+		FBDDFCC7223BD3940082210F /* SelectRoutesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */; };
+		FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */; };
+		FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */; };
+		FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */; };
 		FBE2E20721E10B9400D97D61 /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20621E10B9400D97D61 /* ApiLogger.swift */; };
 		FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */; };
 		FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */; };
@@ -177,6 +183,12 @@
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
 		FBDDCCD02218672700D41793 /* StationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StationViewController.storyboard; sourceTree = "<group>"; };
 		FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
+		FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoutesViewController.swift; sourceTree = "<group>"; };
+		FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStopsViewController.swift; sourceTree = "<group>"; };
+		FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRoutesViewController.storyboard; sourceTree = "<group>"; };
+		FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectStopsViewController.storyboard; sourceTree = "<group>"; };
+		FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoutesTableViewController.swift; sourceTree = "<group>"; };
+		FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStopsTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20621E10B9400D97D61 /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
 		FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		FBE2E20A21E11DC000D97D61 /* GenericMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMessageCell.swift; sourceTree = "<group>"; };
@@ -529,6 +541,12 @@
 				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
 				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
+				FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */,
+				FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */,
+				FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */,
+				FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */,
+				FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */,
+				FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */,
 				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
@@ -697,6 +715,7 @@
 			files = (
 				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
 				FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */,
+				FBDDFCC7223BD3940082210F /* SelectRoutesViewController.storyboard in Resources */,
 				FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
@@ -705,6 +724,7 @@
 				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
+				FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,21 +822,25 @@
 			files = (
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
+				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBE353AC222759C00062C428 /* Animator.swift in Sources */,
 				FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */,
 				FBE353A6222752D50062C428 /* ArrivalsRequestHandler.swift in Sources */,
+				FBDDFCBF223BD3600082210F /* SelectRoutesViewController.swift in Sources */,
 				FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */,
 				FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */,
+				FBDDFCC1223BD3680082210F /* SelectStopsViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
 				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
+				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* Favorites.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,

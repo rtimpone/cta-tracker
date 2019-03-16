@@ -60,6 +60,16 @@ extension HomeViewController: HomeTableViewControllerDelegate {
         let svc = StationViewController.instance(withArrivals: arrivals)
         navigationController?.pushViewController(svc, animated: true)
     }
+    
+    func didSelectEditRoutes() {
+        let srvc = SelectRoutesViewController.instantiateFromStoryboard()
+        navigationController?.pushViewController(srvc, animated: true)
+    }
+    
+    func didSelectEditStops() {
+        let ssvc = SelectStopsViewController.instantiateFromStoryboard()
+        navigationController?.pushViewController(ssvc, animated: true)
+    }
 }
 
 private extension HomeViewController {
