@@ -10,7 +10,6 @@ import CTAKit
 
 class StatusRequestHandler: RequestHandler {
     
-    let selectedRoutes = ["Red Line", "Brown Line", "Purple Line"]
     var isRequesting = false
     
     func requestTrainStatus(completion: @escaping (RequestHandlerResult<[RouteStatus]>) -> Void) {
@@ -22,7 +21,8 @@ class StatusRequestHandler: RequestHandler {
         
         isRequesting = true
         
-        let routesToShow = RouteDataFetcher.fetchAllRoutes().filter { self.selectedRoutes.contains($0.title) }
+        let favoriteRouteIds = FavoritesManager.fetchFavoriteRouteIds()
+        let routesToShow = RouteDataFetcher.fetchAllRoutes().filter { favoriteRouteIds.contains($0.id) }
         client.getStatuses(for: routesToShow) { result in
             
             switch result {

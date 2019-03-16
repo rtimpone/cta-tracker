@@ -53,7 +53,7 @@ private extension ArrivalsRequestHandler {
     
     func stopsToShow(currentLocation: Coordinate?) -> [Stop] {
         
-        let favoriteStopIds = FavoriteStops.fetchFavoriteStopIds()
+        let favoriteStopIds = FavoritesManager.fetchFavoriteStopIds()
         var closestStation: Station?
         
         if let coordinate = currentLocation {
