@@ -11,6 +11,8 @@
 		FB08D6DC222B026900525206 /* platforms.json in Resources */ = {isa = PBXBuildFile; fileRef = FB08D6DB222B026900525206 /* platforms.json */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB10F2C8223B1D7100BE2B76 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10F2C7223B1D7100BE2B76 /* Favorites.swift */; };
+		FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58E65F223D5D2C008861BA /* RouteCell.swift */; };
+		FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58E660223D5D2C008861BA /* RouteCell.xib */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB6E4D952201F2E4002AC392 /* RouteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */; };
@@ -135,6 +137,8 @@
 		FB08D6DB222B026900525206 /* platforms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = platforms.json; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB10F2C7223B1D7100BE2B76 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		FB58E65F223D5D2C008861BA /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
+		FB58E660223D5D2C008861BA /* RouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteCell.xib; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataFetcher.swift; sourceTree = "<group>"; };
@@ -250,6 +254,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB58E65A223D5C93008861BA /* Home View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
+				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
+				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
+			);
+			path = "Home View Controller";
+			sourceTree = "<group>";
+		};
+		FB58E65B223D5CAC008861BA /* Station View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
+				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
+				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
+			);
+			path = "Station View Controller";
+			sourceTree = "<group>";
+		};
+		FB58E65C223D5CBD008861BA /* Select Stops View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */,
+				FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */,
+				FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */,
+			);
+			path = "Select Stops View Controller";
+			sourceTree = "<group>";
+		};
+		FB58E65D223D5CC8008861BA /* Select Routes View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */,
+				FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */,
+				FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */,
+			);
+			path = "Select Routes View Controller";
+			sourceTree = "<group>";
+		};
+		FB58E65E223D5D0D008861BA /* Route Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB58E65F223D5D2C008861BA /* RouteCell.swift */,
+				FB58E660223D5D2C008861BA /* RouteCell.xib */,
+			);
+			path = "Route Cell";
+			sourceTree = "<group>";
+		};
 		FB84808821EA320E007F932E /* Asset Catalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +483,7 @@
 				FB87A31D21F3FF0B0002431F /* Arrival Cell */,
 				FB86FAF222188099003FBB40 /* EtaCell */,
 				FB87A31C21F3FF020002431F /* Generic Message Cell */,
+				FB58E65E223D5D0D008861BA /* Route Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
 			);
 			path = Cells;
@@ -537,18 +591,10 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
-				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
-				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
-				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
-				FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */,
-				FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */,
-				FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */,
-				FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */,
-				FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */,
-				FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */,
-				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
-				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
+				FB58E65A223D5C93008861BA /* Home View Controller */,
+				FB58E65D223D5CC8008861BA /* Select Routes View Controller */,
+				FB58E65C223D5CBD008861BA /* Select Stops View Controller */,
+				FB58E65B223D5CAC008861BA /* Station View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -724,6 +770,7 @@
 				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
+				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
 				FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,6 +872,7 @@
 				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
+				FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBE353AC222759C00062C428 /* Animator.swift in Sources */,
 				FB86FAF9221882C9003FBB40 /* ArrivalDescriptionGenerator.swift in Sources */,
