@@ -32,6 +32,8 @@
 		FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A31F21F3FF400002431F /* ConstraintFactory.swift */; };
 		FB87A32221F4011C0002431F /* AlertsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87A32121F4011C0002431F /* AlertsResponse.swift */; };
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
+		FB8CD95A22411AA300F69E39 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CD95822411AA300F69E39 /* StationCell.swift */; };
+		FB8CD95B22411AA300F69E39 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8CD95922411AA300F69E39 /* StationCell.xib */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
 		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
@@ -158,6 +160,8 @@
 		FB87A31F21F3FF400002431F /* ConstraintFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintFactory.swift; sourceTree = "<group>"; };
 		FB87A32121F4011C0002431F /* AlertsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsResponse.swift; sourceTree = "<group>"; };
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		FB8CD95822411AA300F69E39 /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationCell.swift; path = "CTATracker/Cells/Station Cell/StationCell.swift"; sourceTree = SOURCE_ROOT; };
+		FB8CD95922411AA300F69E39 /* StationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StationCell.xib; path = "CTATracker/Cells/Station Cell/StationCell.xib"; sourceTree = SOURCE_ROOT; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
 		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -379,6 +383,23 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FB8CD95622411A5400F69E39 /* Platform Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Platform Cell";
+			sourceTree = "<group>";
+		};
+		FB8CD95722411A5B00F69E39 /* Station Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB8CD95822411AA300F69E39 /* StationCell.swift */,
+				FB8CD95922411AA300F69E39 /* StationCell.xib */,
+			);
+			name = "Station Cell";
+			path = "New Group/Station Cell";
+			sourceTree = "<group>";
+		};
 		FB98C5B621E1963A004D61B6 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,8 +504,10 @@
 				FB87A31D21F3FF0B0002431F /* Arrival Cell */,
 				FB86FAF222188099003FBB40 /* EtaCell */,
 				FB87A31C21F3FF020002431F /* Generic Message Cell */,
+				FB8CD95622411A5400F69E39 /* Platform Cell */,
 				FB58E65E223D5D0D008861BA /* Route Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
+				FB8CD95722411A5B00F69E39 /* Station Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -771,6 +794,7 @@
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
+				FB8CD95B22411AA300F69E39 /* StationCell.xib in Resources */,
 				FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -872,6 +896,7 @@
 				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
+				FB8CD95A22411AA300F69E39 /* StationCell.swift in Sources */,
 				FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBE353AC222759C00062C428 /* Animator.swift in Sources */,
