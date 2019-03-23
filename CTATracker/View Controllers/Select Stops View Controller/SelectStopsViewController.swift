@@ -42,7 +42,7 @@ class SelectStopsViewController: UIViewController {
 extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     
     func stopIsSelected(_ stop: Stop) -> Bool {
-        return false
+        return FavoriteStopsManager.stopIsFavorite(stop)
     }
     
     func didSelectStop(_ stop: Stop) {
