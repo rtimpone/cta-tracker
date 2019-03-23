@@ -18,10 +18,7 @@ class PlatformCell: UITableViewCell {
     func configure(for platform: Platform, isSelected: Bool) {
         nameLabel.text = platform.name
         selectedLabel.isHidden = !isSelected
-        
-        //configure route colors view for this platform
-        
-        colorsView.showRoutes()
+        colorsView.showColors(forRoutes: platform.routes)
     }
 }
 
@@ -42,8 +39,27 @@ class RouteColorsView: UIView {
         return [colorView1, colorView2, colorView3, colorView4, colorView5, colorView6, colorView7, colorView8, colorView9, colorView10]
     }
     
-    func showRoutes() {
-        for view in colorViews {
+    func showColors(forRoutes routes: [Route]) {
+        
+        var numberOfViewsPopulated = 0
+        for (index, route) in routes.enumerated() {
+            let view = colorViews[index]
+            view.backgroundColor = route.color
+            view.isHidden = false
+            numberOfViewsPopulated += 1
+        }
+
+        let firstIndexToHide = numberOfViewsPopulated
+        hideColorViewsStartingAtIndex(firstIndexToHide)
+    }
+}
+
+private extension RouteColorsView {
+    
+    func hideColorViewsStartingAtIndex(_ firstIndexToHide: Int) {
+        let indicesToHide = firstIndexToHide..<colorViews.count
+        for index in indicesToHide {
+            let view = colorViews[index]
             view.isHidden = true
         }
     }

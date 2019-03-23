@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="18m-Vc-BVO"/>
-                                    <constraint firstAttribute="width" secondItem="6gL-yG-JfQ" secondAttribute="height" multiplier="1:1" id="7fD-fm-JK1"/>
+                                    <constraint firstAttribute="width" secondItem="6gL-yG-JfQ" secondAttribute="height" multiplier="1:1" id="WNr-oH-zCg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-Ie-rae" customClass="CircleView" customModule="CTA" customModuleProvider="target">
@@ -109,7 +109,6 @@
                             <constraint firstItem="pql-tA-Xcj" firstAttribute="centerY" secondItem="D6w-Zr-5LA" secondAttribute="centerY" id="dZP-Fn-QhU"/>
                             <constraint firstItem="JfR-aV-fbU" firstAttribute="leading" secondItem="yZ5-Ty-fdY" secondAttribute="trailing" constant="8" id="eSR-Fi-cIe"/>
                             <constraint firstItem="l6j-H2-X9k" firstAttribute="centerY" secondItem="JfR-aV-fbU" secondAttribute="centerY" id="eio-fa-RcY"/>
-                            <constraint firstAttribute="trailing" secondItem="31U-i0-alq" secondAttribute="trailing" constant="15.5" id="ezP-03-wmr"/>
                             <constraint firstItem="6gL-yG-JfQ" firstAttribute="leading" secondItem="g9d-YF-syA" secondAttribute="leading" id="i94-mg-d11"/>
                             <constraint firstItem="JDx-jz-Ctq" firstAttribute="width" secondItem="l6j-H2-X9k" secondAttribute="width" id="iK1-gq-0i3"/>
                             <constraint firstItem="6gL-yG-JfQ" firstAttribute="top" secondItem="g9d-YF-syA" secondAttribute="top" id="iwy-UD-GST"/>
