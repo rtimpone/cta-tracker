@@ -15,7 +15,7 @@ class StationCell: UITableViewCell {
     @IBOutlet weak var selectedLabel: UILabel!
 
     func configure(for station: Station, isSelected: Bool) {
-        stationTitleLabel.text = "\(station.name) (All Platforms)"
+        stationTitleLabel.text = station.name
         selectedLabel.isHidden = !isSelected
     }
 }

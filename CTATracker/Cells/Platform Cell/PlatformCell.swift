@@ -14,11 +14,14 @@ class PlatformCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var colorsView: RouteColorsView!
+    @IBOutlet weak var colorsViewWidthConstraint: NSLayoutConstraint!
     
     func configure(for platform: Platform, isSelected: Bool) {
+        
         nameLabel.text = platform.name
         selectedLabel.isHidden = !isSelected
         colorsView.showColors(forRoutes: platform.routes)
+        colorsViewWidthConstraint.constant = colorsView.widthForNumberOfRoutes(platform.routes.count)
     }
 }
 
@@ -28,15 +31,9 @@ class RouteColorsView: UIView {
     @IBOutlet weak var colorView2: UIView!
     @IBOutlet weak var colorView3: UIView!
     @IBOutlet weak var colorView4: UIView!
-    @IBOutlet weak var colorView5: UIView!
-    @IBOutlet weak var colorView6: UIView!
-    @IBOutlet weak var colorView7: UIView!
-    @IBOutlet weak var colorView8: UIView!
-    @IBOutlet weak var colorView9: UIView!
-    @IBOutlet weak var colorView10: UIView!
     
     var colorViews: [UIView] {
-        return [colorView1, colorView2, colorView3, colorView4, colorView5, colorView6, colorView7, colorView8, colorView9, colorView10]
+        return [colorView1, colorView2, colorView3, colorView4]
     }
     
     func showColors(forRoutes routes: [Route]) {
@@ -51,6 +48,18 @@ class RouteColorsView: UIView {
 
         let firstIndexToHide = numberOfViewsPopulated
         hideColorViewsStartingAtIndex(firstIndexToHide)
+    }
+    
+    func widthForNumberOfRoutes(_ routesCount: Int) -> CGFloat {
+        
+        let colorViewWidth = 20
+        let spacingBetweenColorViewsWidth = 8
+        
+        let numberOfColorViewsToShow = routesCount
+        let numberOfSpacers = routesCount - 1
+        
+        let width = (numberOfColorViewsToShow * colorViewWidth) + (numberOfSpacers * spacingBetweenColorViewsWidth)
+        return CGFloat(width)
     }
 }
 
