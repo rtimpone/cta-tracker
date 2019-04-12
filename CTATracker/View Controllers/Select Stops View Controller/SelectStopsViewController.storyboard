@@ -29,7 +29,7 @@
                         <constraints>
                             <constraint firstItem="apC-8C-jua" firstAttribute="trailing" secondItem="79c-3e-4iO" secondAttribute="trailing" id="JMW-HK-FLS"/>
                             <constraint firstItem="apC-8C-jua" firstAttribute="top" secondItem="79c-3e-4iO" secondAttribute="top" id="eHq-rz-g0x"/>
-                            <constraint firstItem="apC-8C-jua" firstAttribute="bottom" secondItem="79c-3e-4iO" secondAttribute="bottom" id="fyV-Sp-FbQ"/>
+                            <constraint firstItem="apC-8C-jua" firstAttribute="bottom" secondItem="9Gr-OT-U86" secondAttribute="bottom" id="fyV-Sp-FbQ"/>
                             <constraint firstItem="apC-8C-jua" firstAttribute="leading" secondItem="79c-3e-4iO" secondAttribute="leading" id="vgO-Fc-XXF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="79c-3e-4iO"/>

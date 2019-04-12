@@ -29,7 +29,7 @@
                         <constraints>
                             <constraint firstItem="3GG-Qi-xVn" firstAttribute="leading" secondItem="mUB-0n-r2T" secondAttribute="leading" id="KK9-zq-oy1"/>
                             <constraint firstItem="3GG-Qi-xVn" firstAttribute="top" secondItem="mUB-0n-r2T" secondAttribute="top" id="Meq-T7-L1D"/>
-                            <constraint firstItem="3GG-Qi-xVn" firstAttribute="bottom" secondItem="mUB-0n-r2T" secondAttribute="bottom" id="Yrv-HM-z8y"/>
+                            <constraint firstItem="3GG-Qi-xVn" firstAttribute="bottom" secondItem="WaQ-KF-1Gf" secondAttribute="bottom" id="Yrv-HM-z8y"/>
                             <constraint firstItem="3GG-Qi-xVn" firstAttribute="trailing" secondItem="mUB-0n-r2T" secondAttribute="trailing" id="ptq-Yb-eba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mUB-0n-r2T"/>
