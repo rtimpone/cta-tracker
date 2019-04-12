@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Belmont" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H81-d5-CLJ">
-                        <rect key="frame" x="16" y="11" width="263" height="20.5"/>
+                        <rect key="frame" x="46" y="11" width="233" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-YF-syA" userLabel="Circle View Container" customClass="RouteColorsView" customModule="CTA" customModuleProvider="target">
-                        <rect key="frame" x="16" y="43.5" width="287.5" height="20"/>
+                        <rect key="frame" x="46" y="43.5" width="257.5" height="20"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gL-yG-JfQ" customClass="CircleView" customModule="CTA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -141,7 +141,7 @@
                     <constraint firstItem="H81-d5-CLJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Nzb-we-GOc"/>
                     <constraint firstItem="g9d-YF-syA" firstAttribute="leading" secondItem="H81-d5-CLJ" secondAttribute="leading" id="OE9-Ft-5eg"/>
                     <constraint firstAttribute="trailing" secondItem="KPZ-bg-Iqb" secondAttribute="trailing" constant="16.5" id="PO7-pa-GnT"/>
-                    <constraint firstItem="H81-d5-CLJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pch-4Z-HSA"/>
+                    <constraint firstItem="H81-d5-CLJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="46" id="Pch-4Z-HSA"/>
                     <constraint firstItem="KPZ-bg-Iqb" firstAttribute="centerY" secondItem="H81-d5-CLJ" secondAttribute="centerY" id="Yms-k8-Coi"/>
                     <constraint firstItem="KPZ-bg-Iqb" firstAttribute="leading" secondItem="H81-d5-CLJ" secondAttribute="trailing" constant="10" id="a5Z-8b-iGR"/>
                     <constraint firstAttribute="bottom" secondItem="g9d-YF-syA" secondAttribute="bottom" constant="11" id="aOY-GO-qAR"/>

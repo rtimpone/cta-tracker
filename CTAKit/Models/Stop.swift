@@ -52,7 +52,7 @@ public struct Platform: Stop {
     init(from data: PlatformData) {
         
         id = data.id
-        name = "\(data.stationName) (\(data.platformDescription))"
+        name = data.platformDescription
         latitude = data.latitude
         longitude = data.longitude
         
