@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
     weak var tableViewController: HomeTableViewController!
     var currentDeviceCoordinate: Coordinate?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupWillEnterForegroundNotificationSubscription()
         
