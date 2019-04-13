@@ -14,13 +14,6 @@ class ArrivalsRequestHandler: RequestHandler {
     
     func requestTrainStopArrivalTimes(currentLocation: Coordinate?, completion: @escaping (RequestHandlerResult<[StopArrivals]>) -> Void) {
         
-        if isRequesting {
-            print("Arrival requests are already in flight, wait until requests are finished before starting again")
-            return
-        }
-        
-        isRequesting = true
-        
         let stopsToShow = self.stopsToShow(currentLocation: currentLocation)
         var allArrivals: [StopArrivals] = []
         var queueCount = stopsToShow.count
@@ -35,12 +28,10 @@ class ArrivalsRequestHandler: RequestHandler {
                     allArrivals.append(arrivals)
                     if queueCount == 0 {
                         let sortedArrivals = allArrivals.sorted(by: { $0.stop.name < $1.stop.name })
-                        self.isRequesting = false
                         completion(.success(sortedArrivals))
                     }
                 case .failure:
                     if queueCount == 0 {
-                        self.isRequesting = false
                         completion(.error)
                     }
                 }
