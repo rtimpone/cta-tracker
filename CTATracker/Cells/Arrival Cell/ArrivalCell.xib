@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,6 +22,12 @@
                         <rect key="frame" x="16" y="11" width="59.5" height="21.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for arrivals data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikc-TG-zFQ" userLabel="Empty State Label">
+                        <rect key="frame" x="16" y="42.5" width="343" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-cv-PZD" userLabel="First Arrival View" customClass="ArrivalView" customModule="CTA" customModuleProvider="target">
@@ -295,15 +301,19 @@
                     <constraint firstItem="tpv-2I-LIR" firstAttribute="leading" secondItem="gjk-ej-g67" secondAttribute="leading" id="9oa-Zn-LSB"/>
                     <constraint firstItem="2Sc-eZ-NTz" firstAttribute="leading" secondItem="R43-iD-1FU" secondAttribute="leading" id="AXe-JO-vuV"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="trailing" secondItem="fTU-eg-DOD" secondAttribute="trailing" id="Fcu-gh-5Hm"/>
+                    <constraint firstItem="Ikc-TG-zFQ" firstAttribute="leading" secondItem="zyc-z1-vGj" secondAttribute="leading" id="GCy-Wa-iaG"/>
                     <constraint firstItem="JjB-FL-yrd" firstAttribute="leading" secondItem="Grq-46-bn4" secondAttribute="leading" id="KY8-d2-Z3P"/>
+                    <constraint firstItem="Ikc-TG-zFQ" firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" id="Kij-cr-uhr"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="trailing" secondItem="ra4-cv-PZD" secondAttribute="trailing" id="MRa-2E-Pur"/>
                     <constraint firstItem="2Sc-eZ-NTz" firstAttribute="trailing" secondItem="R43-iD-1FU" secondAttribute="trailing" id="NaZ-O3-vJO"/>
                     <constraint firstItem="pQD-8M-ddZ" firstAttribute="centerY" secondItem="zyc-z1-vGj" secondAttribute="centerY" constant="1" id="Qjz-L0-bLU"/>
                     <constraint firstItem="pQD-8M-ddZ" firstAttribute="leading" secondItem="zyc-z1-vGj" secondAttribute="trailing" constant="4" id="Tu1-dN-JLw"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="top" secondItem="ra4-cv-PZD" secondAttribute="bottom" constant="8" id="VqC-op-TCh"/>
                     <constraint firstItem="fTU-eg-DOD" firstAttribute="leading" secondItem="ra4-cv-PZD" secondAttribute="leading" id="XBd-Rk-xzf"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ikc-TG-zFQ" secondAttribute="bottom" constant="11" id="XPp-x0-z0m"/>
                     <constraint firstItem="R43-iD-1FU" firstAttribute="top" secondItem="tpv-2I-LIR" secondAttribute="bottom" constant="8" id="Yzu-7e-J1I"/>
                     <constraint firstItem="gjk-ej-g67" firstAttribute="top" secondItem="fTU-eg-DOD" secondAttribute="bottom" constant="8" id="ZV8-CN-TIx"/>
+                    <constraint firstItem="Ikc-TG-zFQ" firstAttribute="top" secondItem="zyc-z1-vGj" secondAttribute="bottom" constant="10" id="a6P-gi-a3e"/>
                     <constraint firstItem="Grq-46-bn4" firstAttribute="leading" secondItem="iv8-JX-ReW" secondAttribute="leading" id="cwp-xm-Mj9"/>
                     <constraint firstItem="R43-iD-1FU" firstAttribute="leading" secondItem="tpv-2I-LIR" secondAttribute="leading" id="dbA-AR-PCD"/>
                     <constraint firstItem="zyc-z1-vGj" firstAttribute="top" secondItem="CGH-bL-Ubc" secondAttribute="top" constant="11" id="gXJ-YP-zA2"/>
@@ -317,6 +327,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="destinationLabel" destination="zyc-z1-vGj" id="cKl-af-t2A"/>
+                <outlet property="emptyStateLabel" destination="Ikc-TG-zFQ" id="Tab-sf-Ai1"/>
                 <outlet property="fifthArrivalView" destination="R43-iD-1FU" id="Asm-sd-zcA"/>
                 <outlet property="firstArrivalView" destination="ra4-cv-PZD" id="GQl-KE-kKZ"/>
                 <outlet property="fourthArrivalView" destination="tpv-2I-LIR" id="R4Y-Wi-s12"/>
