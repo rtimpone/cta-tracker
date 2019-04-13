@@ -23,7 +23,18 @@ class SelectStopsTableViewController: UITableViewController {
         var stops: [Stop] = []
         for station in stations {
             stops.append(station)
-            stops.append(contentsOf: station.platforms)
+            let sortedPlatforms = station.platforms.sorted(by: {
+                guard let route0 = $0.routes.first, let route1 = $1.routes.first else {
+                    return false
+                }
+                if route0 == route1 {
+                    return $0.name < $1.name
+                }
+                else {
+                    return route0.title < route1.title
+                }
+            })
+            stops.append(contentsOf: sortedPlatforms)
         }
         self.stops = stops
         refreshStops()
