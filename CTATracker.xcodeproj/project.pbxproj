@@ -729,17 +729,20 @@
 				TargetAttributes = {
 					FBCAA0D921C5625000681A6F = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					FBCAA0E121C5625000681A6F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = FBF179F821C55FD900BF232C;
 					};
 					FBF179F821C55FD900BF232C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					FBF17A0C21C55FDB00BF232C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = FBF179F821C55FD900BF232C;
 					};
 				};
@@ -1012,7 +1015,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1041,7 +1044,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTAKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1062,7 +1065,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTAKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
@@ -1082,7 +1085,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTAKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
@@ -1222,7 +1225,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
 				PRODUCT_NAME = CTA;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1245,7 +1248,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATracker;
 				PRODUCT_NAME = CTA;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1265,7 +1268,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
@@ -1286,7 +1289,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robtimpone.CTATrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CTA.app/CTA";
 			};
