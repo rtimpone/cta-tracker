@@ -23,7 +23,8 @@ enum DataSource<T> {
     var numberOfRows: Int {
         switch self {
         case .data(let objects):
-            return objects.count
+            //need to return at least one row to handle empty state cell
+            return max(objects.count, 1)
         case .initialState, .error:
             return 1
         }
