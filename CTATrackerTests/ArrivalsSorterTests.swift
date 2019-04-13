@@ -82,7 +82,7 @@ private extension ArrivalsSorterTests {
         let decoder = JSONDecoder()
         let arrivalResponse = try! decoder.decode(ArrivalETAResponse.self, from: mockJSON.data(using: .utf8)!)
         let stop = MockLocationStop(name: name, latitude: latitude, longitude: longitude)
-        return StopArrivals(from: [arrivalResponse], for: stop)!
+        return StopArrivals(from: [arrivalResponse], for: stop)
     }
 }
 
