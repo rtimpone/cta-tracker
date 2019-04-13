@@ -36,6 +36,8 @@ class LocationHandler: NSObject {
             return .denied
         case .notDetermined:
             return .notYetRequested
+        @unknown default:
+            fatalError("Unsupported authorization status")
         }
     }
     
@@ -71,6 +73,8 @@ extension LocationHandler: CLLocationManagerDelegate {
             requestPermissionCompletion?()
         case .notDetermined:
             break
+        @unknown default:
+            fatalError("Unsupported authorization status")
         }
     }
     
