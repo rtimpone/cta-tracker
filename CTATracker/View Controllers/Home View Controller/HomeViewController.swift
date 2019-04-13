@@ -74,8 +74,12 @@ extension HomeViewController: HomeTableViewControllerDelegate {
 
 extension HomeViewController: SelectRoutesViewControllerDelegate {
     
-    func didUpdateFavoriteRoutes() {
-//        tableViewController.refreshRoutes()
+    func didAddRouteToFavorites(_ route: Route) {
+        tableViewController.addPlaceholderRouteStatus(for: route)
+    }
+    
+    func didRemoveRouteFromFavorites(_ route: Route) {
+        tableViewController.removeRouteStatus(for: route)
     }
 }
 

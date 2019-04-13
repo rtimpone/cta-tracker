@@ -10,7 +10,8 @@ import CTAKit
 import UIKit
 
 protocol SelectRoutesViewControllerDelegate: class {
-    func didUpdateFavoriteRoutes()
+    func didAddRouteToFavorites(_ route: Route)
+    func didRemoveRouteFromFavorites(_ route: Route)
 }
 
 class SelectRoutesViewController: UIViewController {
@@ -27,7 +28,8 @@ class SelectRoutesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let routes = RouteDataFetcher.fetchAllRoutes()
-        tableViewController.displayRoutes(routes)
+        let sortedRoutes = routes.sorted(by: { $0.title < $1.title })
+        tableViewController.displayRoutes(sortedRoutes)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,12 +50,13 @@ extension SelectRoutesViewController: SelectRoutesTableViewControllerDelegate {
         
         if FavoriteRoutesManager.routeIsFavorite(route) {
             FavoriteRoutesManager.removeRouteFromFavorites(route)
+            delegate?.didRemoveRouteFromFavorites(route)
         }
         else {
             FavoriteRoutesManager.addRouteToFavorites(route)
+            delegate?.didAddRouteToFavorites(route)
         }
         
         tableViewController.refreshRoutes()
-        delegate?.didUpdateFavoriteRoutes()
     }
 }

@@ -45,7 +45,7 @@ class HomeTableViewController: UITableViewController {
     weak var delegate: HomeTableViewControllerDelegate?
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
-        statusDataSource = DataSource.data(statuses)
+        setRoutesDataSource(to: statuses)
         stopRefreshControlAndReloadData()
     }
     
@@ -62,6 +62,25 @@ class HomeTableViewController: UITableViewController {
     func displayArrivalsError() {
         arrivalsDataSource = DataSource.error
         stopRefreshControlAndReloadData()
+    }
+    
+    func addPlaceholderRouteStatus(for route: Route) {
+        guard case .data(var statuses) = statusDataSource else {
+            return
+        }
+        let placeholder = RouteStatus(route: route, alerts: [])
+        statuses.append(placeholder)
+        setRoutesDataSource(to: statuses)
+        refreshSection(Sections.statuses)
+    }
+    
+    func removeRouteStatus(for route: Route) {
+        guard case .data(var statuses) = statusDataSource else {
+            return
+        }
+        statuses.removeAll() { $0.route.id == route.id }
+        setRoutesDataSource(to: statuses)
+        refreshSection(Sections.statuses)
     }
     
     func addPlaceholderArrivals(for stop: Stop) {
@@ -88,6 +107,11 @@ class HomeTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.delegate?.refreshControlWasActivated()
         }
+    }
+    
+    func setRoutesDataSource(to statuses: [RouteStatus]) {
+        let sortedStatuses = statuses.sorted(by: { $0.route.title < $1.route.title })
+        statusDataSource = DataSource.data(sortedStatuses)
     }
     
     // MARK: Table View Data Source
