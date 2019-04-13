@@ -43,16 +43,22 @@ public struct Station: Stop {
 public struct Platform: Stop {
     
     public let id: Int
-    public let name: String
+    public let stationName: String
+    public let platformDescription: String
     public let latitude: Double
     public let longitude: Double
     public let type: StopType = .platform
     public let routes: [Route]
     
+    public var name: String {
+        return "\(stationName) (\(platformDescription))"
+    }
+    
     init(from data: PlatformData) {
         
         id = data.id
-        name = data.platformDescription
+        stationName = data.stationName
+        platformDescription = data.platformDescription
         latitude = data.latitude
         longitude = data.longitude
         
