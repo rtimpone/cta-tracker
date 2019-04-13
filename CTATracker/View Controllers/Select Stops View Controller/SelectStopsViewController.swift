@@ -10,7 +10,8 @@ import CTAKit
 import UIKit
 
 protocol SelectStopsViewControllerDelegate: class {
-    func didUpdateFavoriteStops()
+    func didAddStopToFavorites(_ stop: Stop)
+    func didRemoveStopsFromFavorites(_ stop: Stop)
 }
 
 class SelectStopsViewController: UIViewController {
@@ -49,12 +50,13 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
         
         if FavoriteStopsManager.stopIsFavorite(stop) {
             FavoriteStopsManager.removeStopFromFavorites(stop)
+            delegate?.didRemoveStopsFromFavorites(stop)
         }
         else {
             FavoriteStopsManager.addStopToFavorites(stop)
+            delegate?.didAddStopToFavorites(stop)
         }
         
         tableViewController.refreshStops()
-        delegate?.didUpdateFavoriteStops()
     }
 }

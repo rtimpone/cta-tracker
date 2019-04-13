@@ -46,22 +46,41 @@ class HomeTableViewController: UITableViewController {
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
         statusDataSource = DataSource.data(statuses)
-        stopRefreshControlAndReloadSection(Sections.statuses)
+        stopRefreshControlAndReloadData()
     }
     
     func displayRoutesStatusError() {
         statusDataSource = DataSource.error
-        stopRefreshControlAndReloadSection(Sections.statuses)
+        stopRefreshControlAndReloadData()
     }
     
     func displayArrivals(_ arrivals: [StopArrivals]) {
         arrivalsDataSource = DataSource.data(arrivals)
-        stopRefreshControlAndReloadSection(Sections.arrivals)
+        stopRefreshControlAndReloadData()
     }
     
     func displayArrivalsError() {
         arrivalsDataSource = DataSource.error
-        stopRefreshControlAndReloadSection(Sections.arrivals)
+        stopRefreshControlAndReloadData()
+    }
+    
+    func addPlaceholderArrivals(for stop: Stop) {
+        guard case .data(var arrivals) = arrivalsDataSource else {
+            return
+        }
+        let placeholder = StopArrivals.emptyArrivals(for: stop)
+        arrivals.append(placeholder)
+        arrivalsDataSource = .data(arrivals)
+        refreshSection(Sections.arrivals)
+    }
+    
+    func removeArrivals(for stop: Stop) {
+        guard case .data(var arrivals) = arrivalsDataSource else {
+            return
+        }
+        arrivals.removeAll { $0.stop.id == stop.id }
+        arrivalsDataSource = .data(arrivals)
+        refreshSection(Sections.arrivals)
     }
     
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
@@ -148,7 +167,7 @@ class HomeTableViewController: UITableViewController {
 
 private extension HomeTableViewController {
     
-    func stopRefreshControlAndReloadSection(_ section: Int) {
+    func stopRefreshControlAndReloadData() {
         
         let isRefreshing = refreshControl?.isRefreshing ?? false
         if isRefreshing {
@@ -166,6 +185,11 @@ private extension HomeTableViewController {
         else {
             tableView.reloadData()
         }
+    }
+    
+    func refreshSection(_ section: Int) {
+        let indexSet = IndexSet(integer: section)
+        tableView.reloadSections(indexSet, with: .none)
     }
 }
 

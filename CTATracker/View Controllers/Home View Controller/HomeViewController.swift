@@ -75,14 +75,18 @@ extension HomeViewController: HomeTableViewControllerDelegate {
 extension HomeViewController: SelectRoutesViewControllerDelegate {
     
     func didUpdateFavoriteRoutes() {
-        refreshRoutesDataFromApi()
+//        tableViewController.refreshRoutes()
     }
 }
 
 extension HomeViewController: SelectStopsViewControllerDelegate {
     
-    func didUpdateFavoriteStops() {
-        refreshArrivalsDataFromApi()
+    func didAddStopToFavorites(_ stop: Stop) {
+        tableViewController.addPlaceholderArrivals(for: stop)
+    }
+    
+    func didRemoveStopsFromFavorites(_ stop: Stop) {
+        tableViewController.removeArrivals(for: stop)
     }
 }
 
