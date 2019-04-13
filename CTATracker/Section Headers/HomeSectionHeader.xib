@@ -26,11 +26,24 @@
                             <color key="textColor" white="0.10760916099999999" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chB-vh-I8N">
+                            <rect key="frame" x="337" y="4.5" width="30" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Edit">
+                                <color key="titleColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="editAction:" destination="-2" eventType="touchUpInside" id="jST-gi-0we"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
+                        <constraint firstItem="chB-vh-I8N" firstAttribute="centerY" secondItem="8Nv-7Z-4Si" secondAttribute="centerY" id="59Z-aV-kiv"/>
+                        <constraint firstAttribute="trailing" secondItem="chB-vh-I8N" secondAttribute="trailing" constant="8" id="HET-0T-nx3"/>
                         <constraint firstItem="8Nv-7Z-4Si" firstAttribute="centerY" secondItem="ulv-IU-dGu" secondAttribute="centerY" id="N8l-ID-zb6"/>
                         <constraint firstItem="8Nv-7Z-4Si" firstAttribute="leading" secondItem="ulv-IU-dGu" secondAttribute="leading" constant="8" id="jFk-Xq-aR7"/>
+                        <constraint firstItem="chB-vh-I8N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Nv-7Z-4Si" secondAttribute="trailing" constant="16" id="loa-KM-Zyo"/>
                     </constraints>
                 </view>
             </subviews>

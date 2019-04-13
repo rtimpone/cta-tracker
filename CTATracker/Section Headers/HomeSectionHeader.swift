@@ -8,11 +8,34 @@
 
 import UIKit
 
+protocol HomeSectionHeaderDelegate: class {
+    func didSelectHeader(inSection section: Int)
+}
+
 class HomeSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var label: UILabel!
+    weak var delegate: HomeSectionHeaderDelegate?
     
-    func configure(withText text: String) {
+    func configure(withText text: String, inSection section: Int, delegate: HomeSectionHeaderDelegate) {
         label.text = text
+        setSectionNumber(section)
+        self.delegate = delegate
+    }
+    
+    @IBAction func editAction(_ sender: UIButton) {
+        let section = sectionNumber()
+        delegate?.didSelectHeader(inSection: section)
+    }
+}
+
+private extension HomeSectionHeader {
+    
+    func setSectionNumber(_ section: Int) {
+        tag = section
+    }
+    
+    func sectionNumber() -> Int {
+        return tag
     }
 }

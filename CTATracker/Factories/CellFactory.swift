@@ -16,6 +16,11 @@ class CellFactory {
         
         switch dataSource {
         case .data(let statuses):
+            
+            guard statuses.count > 0 else {
+                return dequeueGenericMessageCell(in: tableView, withText: "No routes selected")
+            }
+            
             let status = statuses[indexPath.row]
             let cell = tableView.dequeueReusableCell(ofType: StatusCell.self)
             cell.configure(for: status)
@@ -33,8 +38,13 @@ class CellFactory {
         
         switch dataSource {
         case .data(let arrivals):
+            
+            guard arrivals.count > 0 else {
+                return dequeueGenericMessageCell(in: tableView, withText: "No stops selected")
+            }
+            
             let arrival = arrivals[indexPath.row]
-            let isLocationBased = !FavoriteStops.stopIsFavorite(arrival.stop)
+            let isLocationBased = !FavoriteStopsManager.stopIsFavorite(arrival.stop)
             let cell = tableView.dequeueReusableCell(ofType: ArrivalCell.self)
             cell.configure(for: arrival, isLocationBased: isLocationBased)
             return cell

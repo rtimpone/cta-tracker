@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
     weak var tableViewController: HomeTableViewController!
     var currentDeviceCoordinate: Coordinate?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setupWillEnterForegroundNotificationSubscription()
         
@@ -59,6 +59,38 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     func didSelectArrivals(_ arrivals: StopArrivals) {
         let svc = StationViewController.instance(withArrivals: arrivals)
         navigationController?.pushViewController(svc, animated: true)
+    }
+    
+    func didSelectEditRoutes() {
+        let srvc = SelectRoutesViewController.instance(withDelegate: self)
+        navigationController?.pushViewController(srvc, animated: true)
+    }
+    
+    func didSelectEditStops() {
+        let ssvc = SelectStopsViewController.instance(withDelegate: self)
+        navigationController?.pushViewController(ssvc, animated: true)
+    }
+}
+
+extension HomeViewController: SelectRoutesViewControllerDelegate {
+    
+    func didAddRouteToFavorites(_ route: Route) {
+        tableViewController.addPlaceholderRouteStatus(for: route)
+    }
+    
+    func didRemoveRouteFromFavorites(_ route: Route) {
+        tableViewController.removeRouteStatus(for: route)
+    }
+}
+
+extension HomeViewController: SelectStopsViewControllerDelegate {
+    
+    func didAddStopToFavorites(_ stop: Stop) {
+        tableViewController.addPlaceholderArrivals(for: stop)
+    }
+    
+    func didRemoveStopsFromFavorites(_ stop: Stop) {
+        tableViewController.removeArrivals(for: stop)
     }
 }
 
@@ -103,6 +135,11 @@ private extension HomeViewController {
     }
     
     func refreshDataFromApi() {
+        refreshRoutesDataFromApi()
+        refreshArrivalsDataFromApi()
+    }
+    
+    func refreshRoutesDataFromApi() {
         statusRequestHandler.requestTrainStatus() { result in
             switch result {
             case .success(let routes):
@@ -111,7 +148,9 @@ private extension HomeViewController {
                 self.tableViewController.displayRoutesStatusError()
             }
         }
-        
+    }
+    
+    func refreshArrivalsDataFromApi() {
         arrivalsRequestHandler.requestTrainStopArrivalTimes(currentLocation: currentDeviceCoordinate) { result in
             switch result {
             case .success(let arrivals):

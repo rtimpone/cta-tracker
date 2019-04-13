@@ -13,10 +13,14 @@ public struct StopArrivals {
     public let stop: Stop
     public let etas: [ETA]
     
-    init?(from responses: [ArrivalETAResponse], for stop: Stop) {
+    init(from responses: [ArrivalETAResponse], for stop: Stop) {
         self.stop = stop
         let unsortedArrivals = responses.compactMap { ETA(from: $0) }
         etas = unsortedArrivals.sorted { $0.secondsUntilArrival < $1.secondsUntilArrival }
+    }
+    
+    public static func emptyArrivals(for stop: Stop) -> StopArrivals {
+        return StopArrivals(from: [], for: stop)
     }
 }
 

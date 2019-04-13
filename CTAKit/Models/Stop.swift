@@ -43,15 +43,74 @@ public struct Station: Stop {
 public struct Platform: Stop {
     
     public let id: Int
-    public let name: String
+    public let stationName: String
+    public let platformDescription: String
     public let latitude: Double
     public let longitude: Double
     public let type: StopType = .platform
+    public let routes: [Route]
+    
+    public var name: String {
+        return "\(stationName) (\(platformDescription))"
+    }
     
     init(from data: PlatformData) {
+        
         id = data.id
-        name = "\(data.stationName) (\(data.platformDescription))"
+        stationName = data.stationName
+        platformDescription = data.platformDescription
         latitude = data.latitude
         longitude = data.longitude
+        
+        let allRoutes = RouteDataFetcher.fetchAllRoutes()
+        
+        var routes: [Route] = []
+        
+        if data.hasRed {
+            let redLine = allRoutes.first(where: { $0.title == "Red Line" })!
+            routes.append(redLine)
+        }
+        
+        if data.hasBlue {
+            let blueLine = allRoutes.first(where: { $0.title == "Blue Line" })!
+            routes.append(blueLine)
+        }
+        
+        if data.hasGreen {
+            let greenLine = allRoutes.first(where: { $0.title == "Green Line" })!
+            routes.append(greenLine)
+        }
+        
+        if data.hasBrown {
+            let brownLine = allRoutes.first(where: { $0.title == "Brown Line" })!
+            routes.append(brownLine)
+        }
+        
+        if data.hasPurple {
+            let purpleLine = allRoutes.first(where: { $0.title == "Purple Line" })!
+            routes.append(purpleLine)
+        }
+        
+        if data.hasPurpleExpress {
+            let purpleLineExpress = allRoutes.first(where: { $0.title == "Purple Line Express" })!
+            routes.append(purpleLineExpress)
+        }
+        
+        if data.hasYellow {
+            let yellowLine = allRoutes.first(where: { $0.title == "Yellow Line" })!
+            routes.append(yellowLine)
+        }
+        
+        if data.hasPink {
+            let pinkLine = allRoutes.first(where: { $0.title == "Pink Line" })!
+            routes.append(pinkLine)
+        }
+        
+        if data.hasOrange {
+            let orangeLine = allRoutes.first(where: { $0.title == "Orange Line" })!
+            routes.append(orangeLine)
+        }
+        
+        self.routes = routes
     }
 }

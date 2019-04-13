@@ -23,7 +23,8 @@ enum DataSource<T> {
     var numberOfRows: Int {
         switch self {
         case .data(let objects):
-            return objects.count
+            //need to return at least one row to handle empty state cell
+            return max(objects.count, 1)
         case .initialState, .error:
             return 1
         }
@@ -34,6 +35,8 @@ protocol HomeTableViewControllerDelegate: class {
     func refreshControlWasActivated()
     func didSelectStatus(_ status: RouteStatus)
     func didSelectArrivals(_ arrivals: StopArrivals)
+    func didSelectEditRoutes()
+    func didSelectEditStops()
 }
 
 class HomeTableViewController: UITableViewController {
@@ -43,23 +46,61 @@ class HomeTableViewController: UITableViewController {
     weak var delegate: HomeTableViewControllerDelegate?
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
-        statusDataSource = DataSource.data(statuses)
-        stopRefreshControlAndReloadSection(Sections.statuses)
+        setRoutesDataSource(to: statuses)
+        stopRefreshControlAndReloadData()
     }
     
     func displayRoutesStatusError() {
         statusDataSource = DataSource.error
-        stopRefreshControlAndReloadSection(Sections.statuses)
+        stopRefreshControlAndReloadData()
     }
     
     func displayArrivals(_ arrivals: [StopArrivals]) {
         arrivalsDataSource = DataSource.data(arrivals)
-        stopRefreshControlAndReloadSection(Sections.arrivals)
+        stopRefreshControlAndReloadData()
     }
     
     func displayArrivalsError() {
         arrivalsDataSource = DataSource.error
-        stopRefreshControlAndReloadSection(Sections.arrivals)
+        stopRefreshControlAndReloadData()
+    }
+    
+    func addPlaceholderRouteStatus(for route: Route) {
+        guard case .data(var statuses) = statusDataSource else {
+            return
+        }
+        let placeholder = RouteStatus(route: route, alerts: [])
+        statuses.append(placeholder)
+        setRoutesDataSource(to: statuses)
+        refreshSection(Sections.statuses)
+    }
+    
+    func removeRouteStatus(for route: Route) {
+        guard case .data(var statuses) = statusDataSource else {
+            return
+        }
+        statuses.removeAll() { $0.route.id == route.id }
+        setRoutesDataSource(to: statuses)
+        refreshSection(Sections.statuses)
+    }
+    
+    func addPlaceholderArrivals(for stop: Stop) {
+        guard case .data(var arrivals) = arrivalsDataSource else {
+            return
+        }
+        let placeholder = StopArrivals.emptyArrivals(for: stop)
+        arrivals.append(placeholder)
+        arrivalsDataSource = .data(arrivals)
+        refreshSection(Sections.arrivals)
+    }
+    
+    func removeArrivals(for stop: Stop) {
+        guard case .data(var arrivals) = arrivalsDataSource else {
+            return
+        }
+        arrivals.removeAll { $0.stop.id == stop.id }
+        arrivalsDataSource = .data(arrivals)
+        refreshSection(Sections.arrivals)
     }
     
     @IBAction func refreshControlActivated(_ sender: UIRefreshControl) {
@@ -67,6 +108,11 @@ class HomeTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.delegate?.refreshControlWasActivated()
         }
+    }
+    
+    func setRoutesDataSource(to statuses: [RouteStatus]) {
+        let sortedStatuses = statuses.sorted(by: { $0.route.title < $1.route.title })
+        statusDataSource = DataSource.data(sortedStatuses)
     }
     
     // MARK: Table View Data Source
@@ -111,11 +157,11 @@ class HomeTableViewController: UITableViewController {
         switch section {
         case Sections.statuses:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Route Status")
+            header.configure(withText: "Route Status", inSection: section, delegate: self)
             return header
         case Sections.arrivals:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Arrivals")
+            header.configure(withText: "Arrivals", inSection: section, delegate: self)
             return header
         default:
             return nil
@@ -146,7 +192,7 @@ class HomeTableViewController: UITableViewController {
 
 private extension HomeTableViewController {
     
-    func stopRefreshControlAndReloadSection(_ section: Int) {
+    func stopRefreshControlAndReloadData() {
         
         let isRefreshing = refreshControl?.isRefreshing ?? false
         if isRefreshing {
@@ -163,6 +209,25 @@ private extension HomeTableViewController {
         }
         else {
             tableView.reloadData()
+        }
+    }
+    
+    func refreshSection(_ section: Int) {
+        let indexSet = IndexSet(integer: section)
+        tableView.reloadSections(indexSet, with: .none)
+    }
+}
+
+extension HomeTableViewController: HomeSectionHeaderDelegate {
+    
+    func didSelectHeader(inSection section: Int) {
+        switch section {
+            case Sections.statuses:
+            delegate?.didSelectEditRoutes()
+        case Sections.arrivals:
+            delegate?.didSelectEditStops()
+        default:
+            break
         }
     }
 }

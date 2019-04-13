@@ -13,6 +13,7 @@ class ArrivalCell: UITableViewCell {
     
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var locationIcon: UIImageView!
+    @IBOutlet weak var emptyStateLabel: UILabel!
     
     var locationIconOriginalWidthValue: CGFloat = 0
     @IBOutlet weak var locationIconWidthConstraint: NSLayoutConstraint! {
@@ -44,6 +45,7 @@ class ArrivalCell: UITableViewCell {
     func configure(for arrivals: StopArrivals, isLocationBased: Bool) {
         
         destinationLabel.text = arrivals.stop.name
+        emptyStateLabel.isHidden = !arrivals.etas.isEmpty
         
         locationIcon.isHidden = !isLocationBased
         locationIconWidthConstraint.constant = isLocationBased ? locationIconOriginalWidthValue : 0

@@ -30,7 +30,7 @@
                             <constraint firstItem="p8Y-pw-mue" firstAttribute="trailing" secondItem="diH-GX-de7" secondAttribute="trailing" id="drd-rI-fBq"/>
                             <constraint firstItem="diH-GX-de7" firstAttribute="leading" secondItem="p8Y-pw-mue" secondAttribute="leading" id="fBQ-J0-BWe"/>
                             <constraint firstItem="diH-GX-de7" firstAttribute="top" secondItem="p8Y-pw-mue" secondAttribute="top" id="fDf-zI-yFE"/>
-                            <constraint firstItem="p8Y-pw-mue" firstAttribute="bottom" secondItem="diH-GX-de7" secondAttribute="bottom" id="zPt-tG-YVP"/>
+                            <constraint firstAttribute="bottom" secondItem="diH-GX-de7" secondAttribute="bottom" id="zPt-tG-YVP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p8Y-pw-mue"/>
                     </view>
