@@ -67,7 +67,7 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectEditStops() {
-        let ssvc = SelectStopsViewController.instantiateFromStoryboard()
+        let ssvc = SelectStopsViewController.instance(withDelegate: self)
         navigationController?.pushViewController(ssvc, animated: true)
     }
 }
@@ -76,6 +76,13 @@ extension HomeViewController: SelectRoutesViewControllerDelegate {
     
     func didUpdateFavoriteRoutes() {
         refreshRoutesDataFromApi()
+    }
+}
+
+extension HomeViewController: SelectStopsViewControllerDelegate {
+    
+    func didUpdateFavoriteStops() {
+        refreshArrivalsDataFromApi()
     }
 }
 

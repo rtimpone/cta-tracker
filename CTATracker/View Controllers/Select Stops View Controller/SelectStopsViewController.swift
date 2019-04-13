@@ -46,6 +46,15 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     }
     
     func didSelectStop(_ stop: Stop) {
-        print("did select stop: \(stop)")
+        
+        if FavoriteStopsManager.stopIsFavorite(stop) {
+            FavoriteStopsManager.removeStopFromFavorites(stop)
+        }
+        else {
+            FavoriteStopsManager.addStopToFavorites(stop)
+        }
+        
+        tableViewController.refreshStops()
+        delegate?.didUpdateFavoriteStops()
     }
 }

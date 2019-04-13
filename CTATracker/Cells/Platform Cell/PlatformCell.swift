@@ -18,7 +18,7 @@ class PlatformCell: UITableViewCell {
     
     func configure(for platform: Platform, isSelected: Bool) {
         
-        nameLabel.text = platform.name
+        nameLabel.text = platform.platformDescription
         selectedLabel.isHidden = !isSelected
         colorsView.showColors(forRoutes: platform.routes)
         colorsViewWidthConstraint.constant = colorsView.widthForNumberOfRoutes(platform.routes.count)
