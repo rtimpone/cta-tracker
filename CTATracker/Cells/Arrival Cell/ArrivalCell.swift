@@ -85,12 +85,23 @@ class ArrivalView: UIView {
     
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var etaLabel: UILabel!
     
     func configure(for eta: ETA) {
         circleView.backgroundColor = eta.route.color
         circleView.isHidden = false
         destinationLabel.text = eta.destination
+        
+        switch eta.status {
+        case .scheduled:
+            iconImageView.image = Images.clock
+        case .delayed:
+            iconImageView.image = Images.error
+        case .enRoute, .approaching, .unavailable:
+            iconImageView.image = nil
+        }
+        
         etaLabel.text = ArrivalDescriptionGenerator.string(for: eta.status, secondsUntilArrival: eta.secondsUntilArrival)
     }
 }
