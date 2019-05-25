@@ -39,7 +39,7 @@ class ArrivalCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        locationIcon.tintColor = UIColor(hex: "7F7F7F")
+        locationIcon.tintColor = Colors.darkGray
     }
 
     func configure(for arrivals: StopArrivals, isLocationBased: Bool) {

@@ -36,6 +36,7 @@
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
+		FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA38BFF2299FF3F003EAEF8 /* Colors.swift */; };
 		FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A1F224127AD00AC2320 /* StationCell.swift */; };
 		FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A20224127AD00AC2320 /* StationCell.xib */; };
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
@@ -168,6 +169,7 @@
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
+		FBA38BFF2299FF3F003EAEF8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FBB47A1F224127AD00AC2320 /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		FBB47A20224127AD00AC2320 /* StationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				FBE353AB222759C00062C428 /* Animator.swift */,
+				FBA38BFF2299FF3F003EAEF8 /* Colors.swift */,
 				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
@@ -933,6 +936,7 @@
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
+				FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,

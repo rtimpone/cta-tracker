@@ -85,6 +85,6 @@ class RouteColorFilterView: CircleView {
     }
     
     func styleForUnselectedState() {
-        backgroundColor = .white
+        backgroundColor = Colors.lightGray
     }
 }
