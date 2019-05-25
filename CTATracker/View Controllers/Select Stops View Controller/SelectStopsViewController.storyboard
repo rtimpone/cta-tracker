@@ -19,22 +19,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apC-8C-jua">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <connections>
                                     <segue destination="SAc-HM-q55" kind="embed" id="cuw-Go-aGu"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-P8-sms" userLabel="Filter View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-sX-6qk" userLabel="Search View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dXf-6t-vcj">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="fe2-hf-akY" id="ari-ja-h7B"/>
+                                                </connections>
+                                            </searchBar>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dXf-6t-vcj" secondAttribute="trailing" id="NKe-6N-so0"/>
+                                            <constraint firstAttribute="bottom" secondItem="dXf-6t-vcj" secondAttribute="bottom" id="ZOu-11-uvb"/>
+                                            <constraint firstItem="dXf-6t-vcj" firstAttribute="leading" secondItem="tdT-sX-6qk" secondAttribute="leading" id="ga3-hb-j3L"/>
+                                            <constraint firstItem="dXf-6t-vcj" firstAttribute="top" secondItem="tdT-sX-6qk" secondAttribute="top" id="nhr-r2-CZV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-r7-FBY" userLabel="Colors View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tdT-sX-6qk" firstAttribute="top" secondItem="Afg-P8-sms" secondAttribute="top" id="42d-Lf-LbU"/>
+                                    <constraint firstAttribute="trailing" secondItem="WXO-r7-FBY" secondAttribute="trailing" id="7rx-Yu-4sJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tdT-sX-6qk" secondAttribute="bottom" id="A4g-02-XfB"/>
+                                    <constraint firstItem="WXO-r7-FBY" firstAttribute="top" secondItem="Afg-P8-sms" secondAttribute="top" id="Hvw-Wh-Cnp"/>
+                                    <constraint firstAttribute="bottom" secondItem="WXO-r7-FBY" secondAttribute="bottom" id="KFN-k3-5iC"/>
+                                    <constraint firstAttribute="trailing" secondItem="tdT-sX-6qk" secondAttribute="trailing" id="Oii-pM-t7y"/>
+                                    <constraint firstAttribute="height" constant="44" id="RuA-cT-7cR"/>
+                                    <constraint firstItem="tdT-sX-6qk" firstAttribute="leading" secondItem="Afg-P8-sms" secondAttribute="leading" id="T3q-4S-51d"/>
+                                    <constraint firstItem="WXO-r7-FBY" firstAttribute="leading" secondItem="Afg-P8-sms" secondAttribute="leading" id="fCY-ji-XCq"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsR-DV-r2R">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.10000000000000001" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="overlayAction:" destination="fe2-hf-akY" eventType="touchDown" id="Uqy-1g-oyY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Afg-P8-sms" firstAttribute="trailing" secondItem="79c-3e-4iO" secondAttribute="trailing" id="Cp8-4D-w6b"/>
                             <constraint firstItem="apC-8C-jua" firstAttribute="trailing" secondItem="79c-3e-4iO" secondAttribute="trailing" id="JMW-HK-FLS"/>
-                            <constraint firstItem="apC-8C-jua" firstAttribute="top" secondItem="79c-3e-4iO" secondAttribute="top" id="eHq-rz-g0x"/>
+                            <constraint firstItem="IsR-DV-r2R" firstAttribute="trailing" secondItem="apC-8C-jua" secondAttribute="trailing" id="N13-Mt-mvc"/>
+                            <constraint firstItem="Afg-P8-sms" firstAttribute="top" secondItem="79c-3e-4iO" secondAttribute="top" id="O2f-8Y-PPU"/>
+                            <constraint firstItem="Afg-P8-sms" firstAttribute="leading" secondItem="79c-3e-4iO" secondAttribute="leading" id="WlA-fw-E48"/>
                             <constraint firstItem="apC-8C-jua" firstAttribute="bottom" secondItem="9Gr-OT-U86" secondAttribute="bottom" id="fyV-Sp-FbQ"/>
+                            <constraint firstItem="apC-8C-jua" firstAttribute="top" secondItem="Afg-P8-sms" secondAttribute="bottom" id="jze-CG-o30"/>
+                            <constraint firstItem="IsR-DV-r2R" firstAttribute="top" secondItem="apC-8C-jua" secondAttribute="top" id="kZV-53-pqk"/>
+                            <constraint firstItem="IsR-DV-r2R" firstAttribute="leading" secondItem="apC-8C-jua" secondAttribute="leading" id="qR7-oR-Emq"/>
+                            <constraint firstItem="IsR-DV-r2R" firstAttribute="bottom" secondItem="apC-8C-jua" secondAttribute="bottom" id="skn-31-4SW"/>
                             <constraint firstItem="apC-8C-jua" firstAttribute="leading" secondItem="79c-3e-4iO" secondAttribute="leading" id="vgO-Fc-XXF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="79c-3e-4iO"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="fWb-HY-IqT">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="4vS-Go-l1r">
+                            <connections>
+                                <action selector="searchAction:" destination="fe2-hf-akY" id="csx-C1-Va4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="colorsView" destination="WXO-r7-FBY" id="Kaa-Zx-6qU"/>
+                        <outlet property="filterView" destination="Afg-P8-sms" id="xfS-Gf-koh"/>
+                        <outlet property="overlayButton" destination="IsR-DV-r2R" id="fcw-FL-LK6"/>
+                        <outlet property="searchBar" destination="dXf-6t-vcj" id="eoA-mP-3Ah"/>
+                        <outlet property="searchView" destination="tdT-sX-6qk" id="y4o-Rj-Uyz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jh-IU-TNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +113,7 @@
             <objects>
                 <tableViewController id="SAc-HM-q55" customClass="SelectStopsTableViewController" customModule="CTA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ElV-w3-cKS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>

@@ -18,6 +18,13 @@ class SelectStopsViewController: UIViewController {
     
     weak var tableViewController: SelectStopsTableViewController!
     weak var delegate: SelectStopsViewControllerDelegate?
+    let allStations = StationDataFetcher.fetchAllStations().sorted(by: { $0.name < $1.name })
+    
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var colorsView: UIView!
+    @IBOutlet weak var overlayButton: UIButton!
     
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
@@ -27,15 +34,38 @@ class SelectStopsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let stations = StationDataFetcher.fetchAllStations()
-        let sortedStations = stations.sorted(by: { $0.name < $1.name })
-        tableViewController.displayStations(sortedStations)
+        tableViewController.displayStations(allStations)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let tvc = segue.destination as? SelectStopsTableViewController {
             tableViewController = tvc
             tvc.delegate = self
+        }
+    }
+    
+    @IBAction func searchAction(_ sender: UIBarButtonItem) {
+        
+        filterView.bringSubviewToFront(searchView)
+        searchBar.becomeFirstResponder()
+        
+        overlayButton.isHidden = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.overlayButton.alpha = 1
+        }) { finished in
+            
+        }
+    }
+    
+    @IBAction func overlayAction(_ sender: UIButton) {
+        filterView.sendSubviewToBack(searchView)
+        searchBar.resignFirstResponder()
+        
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.overlayButton.alpha = 0
+        }) { finished in
+            self.overlayButton.isHidden = true
         }
     }
 }
@@ -58,5 +88,22 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
         }
         
         tableViewController.refreshStops()
+    }
+}
+
+extension SelectStopsViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        let whiteSpaceRemovedText = searchText.components(separatedBy: .whitespaces).joined()
+        
+        if whiteSpaceRemovedText.count == 0 {
+            tableViewController.displayStations(allStations)
+        }
+        else {
+            let filteredStations = allStations.filter { $0.name.contains(searchText) }
+            let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
+            tableViewController.displayStations(sortedFilteredStations)
+        }
     }
 }
