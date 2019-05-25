@@ -20,12 +20,6 @@ class SelectStopsViewController: UIViewController {
     weak var delegate: SelectStopsViewControllerDelegate?
     let allStations = StationDataFetcher.fetchAllStations().sorted(by: { $0.name < $1.name })
     
-    @IBOutlet weak var filterView: UIView!
-    @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var colorsView: UIView!
-    @IBOutlet weak var overlayButton: UIButton!
-    
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
         vc.delegate = delegate
@@ -35,6 +29,13 @@ class SelectStopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewController.displayStations(allStations)
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.searchBar.showsCancelButton = false
+        search.hidesNavigationBarDuringPresentation = true
+        search.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = search
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,11 +46,7 @@ class SelectStopsViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: UIBarButtonItem) {
-        showSearch()
-    }
-    
-    @IBAction func overlayAction(_ sender: UIButton) {
-        dismissSearch()
+        navigationItem.searchController?.searchBar.becomeFirstResponder()
     }
 }
 
@@ -74,12 +71,20 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     }
 }
 
-extension SelectStopsViewController: UISearchBarDelegate {
+extension SelectStopsViewController: UISearchResultsUpdating {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func updateSearchResults(for searchController: UISearchController) {
+
+        guard searchController.isActive else {
+            return
+        }
+        
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
         
         let whiteSpaceRemovedText = searchText.components(separatedBy: .whitespaces).joined()
-        
+
         if whiteSpaceRemovedText.count == 0 {
             tableViewController.displayStations(allStations)
         }
@@ -87,42 +92,6 @@ extension SelectStopsViewController: UISearchBarDelegate {
             let filteredStations = allStations.filter { $0.name.contains(searchText) }
             let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
             tableViewController.displayStations(sortedFilteredStations)
-        }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        dismissSearch()
-    }
-}
-
-private extension SelectStopsViewController {
-    
-    func showSearch() {
-        filterView.bringSubviewToFront(searchView)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        searchBar.becomeFirstResponder()
-        showOverlay()
-    }
-    
-    func dismissSearch() {
-        filterView.sendSubviewToBack(searchView)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        searchBar.resignFirstResponder()
-        hideOverlay()
-    }
-    
-    func showOverlay() {
-        overlayButton.isHidden = false
-        UIView.animate(withDuration: 0.3) {
-            self.overlayButton.alpha = 1
-        }
-    }
-    
-    func hideOverlay() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.overlayButton.alpha = 0
-        }) { finished in
-            self.overlayButton.isHidden = true
         }
     }
 }
