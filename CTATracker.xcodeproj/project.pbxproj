@@ -86,6 +86,7 @@
 		FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */; };
 		FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A9222752E30062C428 /* StationRequestHandler.swift */; };
 		FBE353AC222759C00062C428 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353AB222759C00062C428 /* Animator.swift */; };
+		FBE56C17229A00FE002AD904 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE56C16229A00FE002AD904 /* HapticsManager.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -220,6 +221,7 @@
 		FBE353A7222752DE0062C428 /* StatusRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusRequestHandler.swift; sourceTree = "<group>"; };
 		FBE353A9222752E30062C428 /* StationRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRequestHandler.swift; sourceTree = "<group>"; };
 		FBE353AB222759C00062C428 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		FBE56C16229A00FE002AD904 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				FBA38BFF2299FF3F003EAEF8 /* Colors.swift */,
 				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
+				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
 			);
 			path = Utilities;
@@ -945,6 +948,7 @@
 				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
+				FBE56C17229A00FE002AD904 /* HapticsManager.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
