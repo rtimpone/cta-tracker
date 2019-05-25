@@ -46,13 +46,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="79c-3e-4iO"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="fWb-HY-IqT">
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="4vS-Go-l1r">
-                            <connections>
-                                <action selector="searchAction:" destination="fe2-hf-akY" id="csx-C1-Va4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Select Stations" id="fWb-HY-IqT"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Jh-IU-TNi" userLabel="First Responder" sceneMemberID="firstResponder"/>

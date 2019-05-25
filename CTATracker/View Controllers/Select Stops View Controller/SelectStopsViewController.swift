@@ -44,10 +44,6 @@ class SelectStopsViewController: UIViewController {
             rcfvc.delegate = self
         }
     }
-    
-    @IBAction func searchAction(_ sender: UIBarButtonItem) {
-        navigationItem.searchController?.searchBar.becomeFirstResponder()
-    }
 }
 
 extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
@@ -74,11 +70,6 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
 extension SelectStopsViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-
-        guard searchController.isActive else {
-            return
-        }
-
         refreshStationsBeingShown()
     }
 }
@@ -135,8 +126,8 @@ private extension SelectStopsViewController {
         navigationItem.searchController = search
     }
     
-    func stationsMatchingSearchText(_ searchText: String, in array: [Station]) -> [Station] {
-        let filteredStations = array.filter { station in
+    func stationsMatchingSearchText(_ searchText: String, in stations: [Station]) -> [Station] {
+        let filteredStations = stations.filter { station in
             if station.name.contains(searchText) {
                 return true
             }
