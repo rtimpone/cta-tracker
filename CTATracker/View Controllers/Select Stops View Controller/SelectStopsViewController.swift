@@ -16,11 +16,11 @@ protocol SelectStopsViewControllerDelegate: class {
 
 class SelectStopsViewController: UIViewController {
     
+    weak var filterViewController: RouteColorFilterViewController!
     weak var tableViewController: SelectStopsTableViewController!
     weak var delegate: SelectStopsViewControllerDelegate?
     
     let allStations = StationDataFetcher.fetchAllStations().sorted(by: { $0.name < $1.name })
-    lazy var stationsAvailbleForSearch = allStations
     
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
@@ -30,7 +30,7 @@ class SelectStopsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewController.displayStations(stationsAvailbleForSearch)
+        refreshStationsBeingShown()
         setupSearchController()
     }
     
@@ -40,6 +40,7 @@ class SelectStopsViewController: UIViewController {
             tvc.delegate = self
         }
         else if let rcfvc = segue.destination as? RouteColorFilterViewController {
+            filterViewController = rcfvc
             rcfvc.delegate = self
         }
     }
@@ -74,45 +75,56 @@ extension SelectStopsViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
 
-        guard searchController.isActive, let searchText = searchController.searchBar.text else {
+        guard searchController.isActive else {
             return
         }
-        
-        let whiteSpaceRemovedText = searchText.components(separatedBy: .whitespaces).joined()
 
-        if whiteSpaceRemovedText.count == 0 {
-            tableViewController.displayStations(stationsAvailbleForSearch)
-        }
-        else {
-            let stations = stationsMatchingSearchText(searchText)
-            tableViewController.displayStations(stations)
-        }
+        refreshStationsBeingShown()
     }
 }
 
 extension SelectStopsViewController: RouteColorFilterViewControllerDelegate {
     
     func didUpdateRouteFilters(_ routesToShow: Set<Route>) {
-        if routesToShow.isEmpty {
-            stationsAvailbleForSearch = allStations
-        }
-        else {
-            stationsAvailbleForSearch = allStations.filter { station in
-                for platform in station.platforms {
-                    for route in platform.routes {
-                        if routesToShow.contains(route) {
-                            return true
-                        }
-                    }
-                }
-                return false
-            }
-        }
-        tableViewController.displayStations(stationsAvailbleForSearch)
+        refreshStationsBeingShown()
     }
 }
 
 private extension SelectStopsViewController {
+    
+    func stationsNotBeingFilteredOut() -> [Station] {
+        
+        let routesToShow = filterViewController.selectedRoutes
+        
+        guard !routesToShow.isEmpty else {
+            return allStations
+        }
+        
+        let stations = allStations.filter { station in
+            for platform in station.platforms {
+                for route in platform.routes {
+                    if routesToShow.contains(route) {
+                        return true
+                    }
+                }
+            }
+            return false
+        }
+        return stations
+    }
+    
+    func refreshStationsBeingShown() {
+        
+        let availableStations = stationsNotBeingFilteredOut().sorted(by: { $0.name < $1.name })
+        
+        guard let searchText = navigationItem.searchController?.searchBar.text, !searchText.isEmpty else {
+            tableViewController.displayStations(availableStations)
+            return
+        }
+        
+        let searchFilteredStations = stationsMatchingSearchText(searchText, in: availableStations)
+        tableViewController.displayStations(searchFilteredStations)
+    }
     
     func setupSearchController() {
         let search = UISearchController(searchResultsController: nil)
@@ -123,8 +135,8 @@ private extension SelectStopsViewController {
         navigationItem.searchController = search
     }
     
-    func stationsMatchingSearchText(_ searchText: String) -> [Station] {
-        let filteredStations = stationsAvailbleForSearch.filter { station in
+    func stationsMatchingSearchText(_ searchText: String, in array: [Station]) -> [Station] {
+        let filteredStations = array.filter { station in
             if station.name.contains(searchText) {
                 return true
             }
@@ -135,7 +147,6 @@ private extension SelectStopsViewController {
             }
             return false
         }
-        let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
-        return sortedFilteredStations
+        return filteredStations
     }
 }
