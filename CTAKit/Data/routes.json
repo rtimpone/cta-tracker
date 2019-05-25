@@ -31,14 +31,14 @@
   },
   {
     "id": "P",
-    "title": "Purple Line",
-    "color": "522398",
+    "title": "Purple Line (Evanston)",
+    "color": "d8d8ff",
     "url": "http://www.transitchicago.com/purpleline/"
   },
   {
     "id": "Pexp",
     "title": "Purple Line Express",
-    "color": "d8d8ff",
+    "color": "522398",
     "url": "http://www.transitchicago.com/purpleline/"
   },
   {
