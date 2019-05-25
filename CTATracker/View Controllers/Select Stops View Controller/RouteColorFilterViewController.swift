@@ -44,31 +44,31 @@ class RouteColorFilterViewController: UIViewController {
             }
             buttonsToRoutesDictionary[view.button] = route
             view.innerView.backgroundColor = route.color
-            
-            //assign colors to inner views
-            //assign relationship to buttons
-            //assign relationship to views
         }
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
         if let route = buttonsToRoutesDictionary[sender] {
-            update(for: route)
+            update(for: route, sender: sender)
         }
     }
 }
 
 private extension RouteColorFilterViewController {
     
-    func update(for route: Route) {
+    func update(for route: Route, sender: UIButton) {
+        
+        guard let view = circleViews.first(where: { $0?.button == sender }) else {
+            return
+        }
         
         if selectedRoutes.contains(route) {
             selectedRoutes.remove(route)
-            //unselect view for route
+            view?.styleForUnselectedState()
         }
         else {
             selectedRoutes.insert(route)
-            //select view for route
+            view?.styleForSelectedState()
         }
         
         delegate?.didUpdateRouteFilters(selectedRoutes)
@@ -79,4 +79,12 @@ class RouteColorFilterView: CircleView {
     
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var button: UIButton!
+    
+    func styleForSelectedState() {
+        backgroundColor = .blue
+    }
+    
+    func styleForUnselectedState() {
+        backgroundColor = .white
+    }
 }
