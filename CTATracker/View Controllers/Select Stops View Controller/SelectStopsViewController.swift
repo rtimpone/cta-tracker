@@ -29,13 +29,7 @@ class SelectStopsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewController.displayStations(allStations)
-        
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        search.searchBar.showsCancelButton = false
-        search.hidesNavigationBarDuringPresentation = true
-        search.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = search
+        setupSearchController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,11 +69,7 @@ extension SelectStopsViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
 
-        guard searchController.isActive else {
-            return
-        }
-        
-        guard let searchText = searchController.searchBar.text else {
+        guard searchController.isActive, let searchText = searchController.searchBar.text else {
             return
         }
         
@@ -89,9 +79,36 @@ extension SelectStopsViewController: UISearchResultsUpdating {
             tableViewController.displayStations(allStations)
         }
         else {
-            let filteredStations = allStations.filter { $0.name.contains(searchText) }
-            let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
-            tableViewController.displayStations(sortedFilteredStations)
+            let stations = stationsMatchingSearchText(searchText)
+            tableViewController.displayStations(stations)
         }
+    }
+}
+
+private extension SelectStopsViewController {
+    
+    func setupSearchController() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.searchBar.showsCancelButton = false
+        search.hidesNavigationBarDuringPresentation = true
+        search.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = search
+    }
+    
+    func stationsMatchingSearchText(_ searchText: String) -> [Station] {
+        let filteredStations = allStations.filter { station in
+            if station.name.contains(searchText) {
+                return true
+            }
+            for platform in station.platforms {
+                if platform.platformDescription.contains(searchText) {
+                    return true
+                }
+            }
+            return false
+        }
+        let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
+        return sortedFilteredStations
     }
 }
