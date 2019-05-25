@@ -37,6 +37,9 @@ class SelectStopsViewController: UIViewController {
             tableViewController = tvc
             tvc.delegate = self
         }
+        else if let rcfvc = segue.destination as? RouteColorFilterViewController {
+            rcfvc.delegate = self
+        }
     }
     
     @IBAction func searchAction(_ sender: UIBarButtonItem) {
@@ -82,6 +85,13 @@ extension SelectStopsViewController: UISearchResultsUpdating {
             let stations = stationsMatchingSearchText(searchText)
             tableViewController.displayStations(stations)
         }
+    }
+}
+
+extension SelectStopsViewController: RouteColorFilterViewControllerDelegate {
+    
+    func didUpdateRouteFilters(_ routesToShow: Set<Route>) {
+        print(routesToShow)
     }
 }
 
