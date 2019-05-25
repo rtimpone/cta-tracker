@@ -45,28 +45,11 @@ class SelectStopsViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: UIBarButtonItem) {
-        
-        filterView.bringSubviewToFront(searchView)
-        searchBar.becomeFirstResponder()
-        
-        overlayButton.isHidden = false
-        UIView.animate(withDuration: 0.3, animations: {
-            self.overlayButton.alpha = 1
-        }) { finished in
-            
-        }
+        showSearch()
     }
     
     @IBAction func overlayAction(_ sender: UIButton) {
-        filterView.sendSubviewToBack(searchView)
-        searchBar.resignFirstResponder()
-        
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            self.overlayButton.alpha = 0
-        }) { finished in
-            self.overlayButton.isHidden = true
-        }
+        dismissSearch()
     }
 }
 
@@ -104,6 +87,42 @@ extension SelectStopsViewController: UISearchBarDelegate {
             let filteredStations = allStations.filter { $0.name.contains(searchText) }
             let sortedFilteredStations = filteredStations.sorted(by: { $0.name < $1.name })
             tableViewController.displayStations(sortedFilteredStations)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dismissSearch()
+    }
+}
+
+private extension SelectStopsViewController {
+    
+    func showSearch() {
+        filterView.bringSubviewToFront(searchView)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        searchBar.becomeFirstResponder()
+        showOverlay()
+    }
+    
+    func dismissSearch() {
+        filterView.sendSubviewToBack(searchView)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        searchBar.resignFirstResponder()
+        hideOverlay()
+    }
+    
+    func showOverlay() {
+        overlayButton.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.overlayButton.alpha = 1
+        }
+    }
+    
+    func hideOverlay() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.overlayButton.alpha = 0
+        }) { finished in
+            self.overlayButton.isHidden = true
         }
     }
 }
