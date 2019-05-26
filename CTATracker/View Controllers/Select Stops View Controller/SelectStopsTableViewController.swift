@@ -17,28 +17,67 @@ protocol SelectStopsTableViewControllerDelegate: class {
 class SelectStopsTableViewController: UITableViewController {
     
     struct Section {
-        let abbreviation: String
         var stops: [Stop]
     }
     
     weak var delegate: SelectStopsTableViewControllerDelegate?
     var sections: [Section] = []
+    var sectionIndexTitlesToSectionNumbers: [String: Int] = [:]
     
-    let keys = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    let sectionIndexTitles = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     
     func displayStations(_ stations: [Station]) {
         
         let sortedStations = stations.sorted(by: { $0.name < $1.name })
+        var sectionIndexTitlesRecorded: Set<String> = []
         
-        for station in sortedStations {
+        for (index, station) in sortedStations.enumerated() {
             
             var stops: [Stop] = []
             stops.append(station)
             let platforms = sortedPlatforms(for: station)
             stops.append(contentsOf: platforms)
             
-            let section = Section(abbreviation: "foo", stops: stops)
+            let section = Section(stops: stops)
             sections.append(section)
+            
+            let firstCharacterOfStationName = String(station.name.prefix(1))
+            let isNumber = Int(firstCharacterOfStationName) != nil
+            let sectionIndexTitle = isNumber ? "#" : firstCharacterOfStationName
+            let isFirstSectionForIndexTitle = !sectionIndexTitlesRecorded.contains(sectionIndexTitle)
+            
+            if isFirstSectionForIndexTitle {
+                sectionIndexTitlesToSectionNumbers[sectionIndexTitle] = index
+                sectionIndexTitlesRecorded.insert(sectionIndexTitle)
+            }
+        }
+        
+        for (index, sectionIndexTitle) in sectionIndexTitles.enumerated() {
+            if sectionIndexTitlesToSectionNumbers[sectionIndexTitle] == nil {
+                
+                var sectionNumberAssigned = false
+                
+                for forwardIndex in (index + 1)..<sectionIndexTitles.count {
+                    let forwardTitle = sectionIndexTitles[forwardIndex]
+                    if let sectionNumber = sectionIndexTitlesToSectionNumbers[forwardTitle] {
+                        sectionIndexTitlesToSectionNumbers[sectionIndexTitle] = sectionNumber
+                        sectionNumberAssigned = true
+                        break
+                    }
+                }
+                
+                guard !sectionNumberAssigned else {
+                    continue
+                }
+                
+                for backwardsIndex in (0..<index).reversed() {
+                    let backwardsTitle = sectionIndexTitles[backwardsIndex]
+                    if let sectionNumber = sectionIndexTitlesToSectionNumbers[backwardsTitle] {
+                        sectionIndexTitlesToSectionNumbers[sectionIndexTitle] = sectionNumber
+                        break
+                    }
+                }
+            }
         }
         
         refreshStops()
@@ -65,12 +104,11 @@ class SelectStopsTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return keys
+        return sectionIndexTitles
     }
     
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        
-        return 0
+        return sectionIndexTitlesToSectionNumbers[title] ?? 0
     }
     
     // MARK: Table View Delegate
