@@ -20,22 +20,16 @@ class SelectStopsTableViewController: UITableViewController {
     var stops: [Stop] = []
     
     func displayStations(_ stations: [Station]) {
+        
         var stops: [Stop] = []
-        for station in stations {
+        let sortedStations = stations.sorted(by: { $0.name < $1.name })
+        
+        for station in sortedStations {
             stops.append(station)
-            let sortedPlatforms = station.platforms.sorted(by: {
-                guard let route0 = $0.routes.first, let route1 = $1.routes.first else {
-                    return false
-                }
-                if route0 == route1 {
-                    return $0.name < $1.name
-                }
-                else {
-                    return route0.title < route1.title
-                }
-            })
-            stops.append(contentsOf: sortedPlatforms)
+            let platforms = sortedPlatforms(for: station)
+            stops.append(contentsOf: platforms)
         }
+        
         self.stops = stops
         refreshStops()
     }
@@ -80,5 +74,19 @@ private extension SelectStopsTableViewController {
         else {
             fatalError("Invalid stop found in data source: \(stop)")
         }
+    }
+    
+    func sortedPlatforms(for station: Station) -> [Platform] {
+        return station.platforms.sorted(by: {
+            guard let route0 = $0.routes.first, let route1 = $1.routes.first else {
+                return false
+            }
+            if route0 == route1 {
+                return $0.name < $1.name
+            }
+            else {
+                return route0.title < route1.title
+            }
+        })
     }
 }
