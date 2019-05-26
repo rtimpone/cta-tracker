@@ -19,6 +19,7 @@ class SelectStopsViewController: UIViewController {
     weak var filterViewController: RouteColorFilterViewController!
     weak var tableViewController: SelectStopsTableViewController!
     weak var delegate: SelectStopsViewControllerDelegate?
+    let hapticsManager = HapticsManager()
     
     let allStations = StationDataFetcher.fetchAllStations().sorted(by: { $0.name < $1.name })
     
@@ -54,6 +55,8 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     
     func didSelectStop(_ stop: Stop) {
         
+        hapticsManager.fireSelectionHaptic()
+        
         if FavoriteStopsManager.stopIsFavorite(stop) {
             FavoriteStopsManager.removeStopFromFavorites(stop)
             delegate?.didRemoveStopsFromFavorites(stop)
@@ -77,6 +80,7 @@ extension SelectStopsViewController: UISearchResultsUpdating {
 extension SelectStopsViewController: RouteColorFilterViewControllerDelegate {
     
     func didUpdateRouteFilters(_ routesToShow: Set<Route>) {
+        hapticsManager.fireSelectionHaptic()
         refreshStationsBeingShown()
     }
 }

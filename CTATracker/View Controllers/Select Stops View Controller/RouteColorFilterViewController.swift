@@ -17,7 +17,6 @@ class RouteColorFilterViewController: UIViewController {
     
     weak var delegate: RouteColorFilterViewControllerDelegate?
     var selectedRoutes: Set<Route> = []
-    let hapticsManager = HapticsManager()
     
     @IBOutlet weak var circleView1: RouteColorFilterView!
     @IBOutlet weak var circleView2: RouteColorFilterView!
@@ -49,7 +48,6 @@ class RouteColorFilterViewController: UIViewController {
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        hapticsManager.fireSelectionHaptic()
         if let route = buttonsToRoutesDictionary[sender] {
             update(for: route, sender: sender)
         }
