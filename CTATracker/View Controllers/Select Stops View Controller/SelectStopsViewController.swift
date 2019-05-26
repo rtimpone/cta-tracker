@@ -111,13 +111,15 @@ private extension SelectStopsViewController {
     func refreshStationsBeingShown() {
         
         let availableStations = stationsNotBeingFilteredOut()
-        
-        guard let searchText = navigationItem.searchController?.searchBar.text, !searchText.isEmpty else {
+
+        let searchText = navigationItem.searchController?.searchBar.text ?? ""
+        let searchTextWithWhitespaceTrimmed = searchText.trimmingCharacters(in: .whitespaces)
+        guard !searchTextWithWhitespaceTrimmed.isEmpty else {
             tableViewController.displayStations(availableStations)
             return
         }
         
-        let searchFilteredStations = stationsMatchingSearchText(searchText, in: availableStations)
+        let searchFilteredStations = stationsMatchingSearchText(searchTextWithWhitespaceTrimmed, in: availableStations)
         tableViewController.displayStations(searchFilteredStations)
     }
     
