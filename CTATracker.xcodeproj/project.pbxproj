@@ -87,6 +87,8 @@
 		FBE353AA222752E30062C428 /* StationRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353A9222752E30062C428 /* StationRequestHandler.swift */; };
 		FBE353AC222759C00062C428 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE353AB222759C00062C428 /* Animator.swift */; };
 		FBE56C17229A00FE002AD904 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE56C16229A00FE002AD904 /* HapticsManager.swift */; };
+		FBE56C19229AE7DF002AD904 /* SectionIndexTitlesFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE56C18229AE7DF002AD904 /* SectionIndexTitlesFactoryTests.swift */; };
+		FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE56C1A229AE992002AD904 /* SectionIndexTitlesFactory.swift */; };
 		FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF179FC21C55FD900BF232C /* AppDelegate.swift */; };
 		FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */; };
 		FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBF17A0321C55FDB00BF232C /* Assets.xcassets */; };
@@ -222,6 +224,8 @@
 		FBE353A9222752E30062C428 /* StationRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRequestHandler.swift; sourceTree = "<group>"; };
 		FBE353AB222759C00062C428 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		FBE56C16229A00FE002AD904 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		FBE56C18229AE7DF002AD904 /* SectionIndexTitlesFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitlesFactoryTests.swift; sourceTree = "<group>"; };
+		FBE56C1A229AE992002AD904 /* SectionIndexTitlesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionIndexTitlesFactory.swift; sourceTree = "<group>"; };
 		FBF179F921C55FD900BF232C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF179FC21C55FD900BF232C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF17A0121C55FD900BF232C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -391,7 +395,6 @@
 			children = (
 				FBE353AB222759C00062C428 /* Animator.swift */,
 				FBA38BFF2299FF3F003EAEF8 /* Colors.swift */,
-				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
@@ -551,6 +554,8 @@
 			isa = PBXGroup;
 			children = (
 				FBE2E21821E12D4E00D97D61 /* CellFactory.swift */,
+				FB87A31F21F3FF400002431F /* ConstraintFactory.swift */,
+				FBE56C1A229AE992002AD904 /* SectionIndexTitlesFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -611,8 +616,9 @@
 			isa = PBXGroup;
 			children = (
 				FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */,
-				FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */,
 				FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */,
+				FB86FB0322188882003FBB40 /* EtaDescriptionGeneratorTests.swift */,
+				FBE56C18229AE7DF002AD904 /* SectionIndexTitlesFactoryTests.swift */,
 				FBF17A1321C55FDB00BF232C /* Info.plist */,
 			);
 			path = CTATrackerTests;
@@ -936,6 +942,7 @@
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
+				FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
@@ -959,6 +966,7 @@
 			files = (
 				FB86FB0422188882003FBB40 /* EtaDescriptionGeneratorTests.swift in Sources */,
 				FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */,
+				FBE56C19229AE7DF002AD904 /* SectionIndexTitlesFactoryTests.swift in Sources */,
 				FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

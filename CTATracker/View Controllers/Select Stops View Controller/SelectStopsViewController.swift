@@ -19,9 +19,9 @@ class SelectStopsViewController: UIViewController {
     weak var filterViewController: RouteColorFilterViewController!
     weak var tableViewController: SelectStopsTableViewController!
     weak var delegate: SelectStopsViewControllerDelegate?
-    let hapticsManager = HapticsManager()
     
-    let allStations = StationDataFetcher.fetchAllStations().sorted(by: { $0.name < $1.name })
+    let hapticsManager = HapticsManager()
+    let allStations = StationDataFetcher.fetchAllStations()
     
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
@@ -110,7 +110,7 @@ private extension SelectStopsViewController {
     
     func refreshStationsBeingShown() {
         
-        let availableStations = stationsNotBeingFilteredOut().sorted(by: { $0.name < $1.name })
+        let availableStations = stationsNotBeingFilteredOut()
         
         guard let searchText = navigationItem.searchController?.searchBar.text, !searchText.isEmpty else {
             tableViewController.displayStations(availableStations)
