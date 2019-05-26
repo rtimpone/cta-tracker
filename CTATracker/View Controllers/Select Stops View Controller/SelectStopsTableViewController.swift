@@ -28,6 +28,7 @@ class SelectStopsTableViewController: UITableViewController {
         
         let sortedStations = stations.sorted(by: { $0.name < $1.name })
         var stationNames: [String] = []
+        var newSections: [Section] = []
         
         for station in sortedStations {
             
@@ -39,9 +40,10 @@ class SelectStopsTableViewController: UITableViewController {
             stops.append(contentsOf: platforms)
             
             let section = Section(stops: stops)
-            sections.append(section)
+            newSections.append(section)
         }
         
+        sections = newSections
         sectionIndexTitlesToSectionNumbers = SectionIndexTitlesFactory.sectionIndexTitlesToSectionNumbersDictionary(forSortedStrings: stationNames)
         refreshStops()
     }
