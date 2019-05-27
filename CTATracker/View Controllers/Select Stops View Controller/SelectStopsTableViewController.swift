@@ -10,7 +10,7 @@ import CTAKit
 import UIKit
 
 protocol SelectStopsTableViewControllerDelegate: class {
-    func stopIsSelected(_ stop: Stop) -> Bool
+    func cellForStop(_ stop: Stop, in tableView: UITableView) -> UITableViewCell
     func didSelectStop(_ stop: Stop)
 }
 
@@ -20,7 +20,7 @@ class SelectStopsTableViewController: UITableViewController {
         var stops: [Stop]
     }
     
-    weak var delegate: SelectStopsTableViewControllerDelegate?
+    weak var delegate: SelectStopsTableViewControllerDelegate!
     var sections: [Section] = []
     var sectionIndexTitlesToSectionNumbers: [String: Int] = [:]
     
@@ -64,8 +64,7 @@ class SelectStopsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let stop = stopAtIndexPath(indexPath)
-        let isSelected = delegate?.stopIsSelected(stop) ?? false
-        return configuredCell(forStop: stop, isSelected: isSelected)
+        return delegate.cellForStop(stop, in: tableView)
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -80,7 +79,7 @@ class SelectStopsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stop = stopAtIndexPath(indexPath)
-        delegate?.didSelectStop(stop)
+        delegate.didSelectStop(stop)
     }
 }
 

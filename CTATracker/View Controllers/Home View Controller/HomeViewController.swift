@@ -67,8 +67,8 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectEditStops() {
-        let ssvc = SelectStopsViewController.instance(withDelegate: self)
-        navigationController?.pushViewController(ssvc, animated: true)
+        let sfsvc = SelectFavoriteStopsViewController.instance(withDelegate: self)
+        navigationController?.pushViewController(sfsvc, animated: true)
     }
 }
 
@@ -83,7 +83,7 @@ extension HomeViewController: SelectRoutesViewControllerDelegate {
     }
 }
 
-extension HomeViewController: SelectStopsViewControllerDelegate {
+extension HomeViewController: SelectFavoriteStopsViewControllerDelegate {
     
     func didAddStopToFavorites(_ stop: Stop) {
         tableViewController.addPlaceholderArrivals(for: stop)

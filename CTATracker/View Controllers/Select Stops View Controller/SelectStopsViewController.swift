@@ -10,16 +10,15 @@ import CTAKit
 import UIKit
 
 protocol SelectStopsViewControllerDelegate: class {
-    func didAddStopToFavorites(_ stop: Stop)
-    func didRemoveStopsFromFavorites(_ stop: Stop)
+    func cellForStop(_ stop: Stop, in tableView: UITableView) -> UITableViewCell
+    func didSelectStop(_ stop: Stop)
 }
 
 class SelectStopsViewController: UIViewController {
     
+    weak var delegate: SelectStopsViewControllerDelegate!
     weak var filterViewController: RouteColorFilterViewController!
     weak var tableViewController: SelectStopsTableViewController!
-    weak var delegate: SelectStopsViewControllerDelegate?
-    
     let hapticsManager = HapticsManager()
     let allStations = StationDataFetcher.fetchAllStations()
     
@@ -29,9 +28,11 @@ class SelectStopsViewController: UIViewController {
         return vc
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         refreshStationsBeingShown()
+        
+        //need to call this in viewWillAppear b/c 'parent view controller' property may not be set yet if called earlier
         setupSearchController()
     }
     
@@ -49,23 +50,13 @@ class SelectStopsViewController: UIViewController {
 
 extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     
-    func stopIsSelected(_ stop: Stop) -> Bool {
-        return FavoriteStopsManager.stopIsFavorite(stop)
+    func cellForStop(_ stop: Stop, in tableView: UITableView) -> UITableViewCell {
+        return delegate.cellForStop(stop, in: tableView)
     }
     
     func didSelectStop(_ stop: Stop) {
-        
         hapticsManager.fireSelectionHaptic()
-        
-        if FavoriteStopsManager.stopIsFavorite(stop) {
-            FavoriteStopsManager.removeStopFromFavorites(stop)
-            delegate?.didRemoveStopsFromFavorites(stop)
-        }
-        else {
-            FavoriteStopsManager.addStopToFavorites(stop)
-            delegate?.didAddStopToFavorites(stop)
-        }
-        
+        delegate.didSelectStop(stop)
         tableViewController.refreshStops()
     }
 }
@@ -112,7 +103,7 @@ private extension SelectStopsViewController {
         
         let availableStations = stationsNotBeingFilteredOut()
 
-        let searchText = navigationItem.searchController?.searchBar.text ?? ""
+        let searchText = textFromSearchBar()
         let searchTextWithWhitespaceTrimmed = searchText.trimmingCharacters(in: .whitespaces)
         guard !searchTextWithWhitespaceTrimmed.isEmpty else {
             tableViewController.displayStations(availableStations)
@@ -124,12 +115,12 @@ private extension SelectStopsViewController {
     }
     
     func setupSearchController() {
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        search.searchBar.showsCancelButton = false
-        search.hidesNavigationBarDuringPresentation = true
-        search.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = search
+        let sc = UISearchController(searchResultsController: nil)
+        sc.searchResultsUpdater = self
+        sc.searchBar.showsCancelButton = false
+        sc.hidesNavigationBarDuringPresentation = true
+        sc.obscuresBackgroundDuringPresentation = false
+        setSearchController(sc)
     }
     
     func stationsMatchingSearchText(_ searchText: String, in stations: [Station]) -> [Station] {
@@ -145,5 +136,13 @@ private extension SelectStopsViewController {
             return false
         }
         return filteredStations
+    }
+    
+    func textFromSearchBar() -> String {
+        return parent?.navigationItem.searchController?.searchBar.text ?? ""
+    }
+    
+    func setSearchController(_ searchController: UISearchController) {
+        parent?.navigationItem.searchController = searchController
     }
 }
