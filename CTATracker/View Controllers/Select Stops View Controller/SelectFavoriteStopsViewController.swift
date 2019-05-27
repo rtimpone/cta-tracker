@@ -17,6 +17,7 @@ protocol SelectFavoriteStopsViewControllerDelegate: class {
 class SelectFavoriteStopsViewController: UIViewController {
     
     weak var delegate: SelectFavoriteStopsViewControllerDelegate?
+    let hapticsManager = HapticsManager()
     
     static func instance(withDelegate delegate: SelectFavoriteStopsViewControllerDelegate) -> SelectFavoriteStopsViewController {
         let vc = SelectFavoriteStopsViewController.instantiateFromStoryboard()
@@ -51,6 +52,9 @@ extension SelectFavoriteStopsViewController: SelectStopsViewControllerDelegate {
     }
     
     func didSelectStop(_ stop: Stop) {
+        
+        hapticsManager.fireSelectionHaptic()
+        
         if FavoriteStopsManager.stopIsFavorite(stop) {
             FavoriteStopsManager.removeStopFromFavorites(stop)
             delegate?.didRemoveStopsFromFavorites(stop)

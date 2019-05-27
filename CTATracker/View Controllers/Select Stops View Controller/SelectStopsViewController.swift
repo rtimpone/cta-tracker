@@ -53,7 +53,6 @@ extension SelectStopsViewController: SelectStopsTableViewControllerDelegate {
     }
     
     func didSelectStop(_ stop: Stop) {
-        hapticsManager.fireSelectionHaptic()
         delegate.didSelectStop(stop)
         tableViewController.refreshStops()
     }
