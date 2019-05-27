@@ -38,6 +38,7 @@ extension SelectSingleStopViewController: SelectStopsViewControllerDelegate {
     }
     
     func didSelectStop(_ stop: Stop) {
-        //push to arrivals screen
+        let svc = StationViewController.instance(for: stop)
+        self.navigationController?.pushViewController(svc, animated: true)
     }
 }

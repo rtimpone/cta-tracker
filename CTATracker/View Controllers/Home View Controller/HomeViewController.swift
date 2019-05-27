@@ -62,7 +62,7 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectArrivals(_ arrivals: StopArrivals) {
-        let svc = StationViewController.instance(withArrivals: arrivals)
+        let svc = StationViewController.instance(for: arrivals.stop, withArrivals: arrivals)
         navigationController?.pushViewController(svc, animated: true)
     }
     

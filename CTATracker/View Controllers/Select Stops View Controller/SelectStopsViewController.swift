@@ -28,11 +28,9 @@ class SelectStopsViewController: UIViewController {
         return vc
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         refreshStationsBeingShown()
-        
-        //need to call this in viewWillAppear b/c 'parent view controller' property may not be set yet if called earlier
         setupSearchController()
     }
     
