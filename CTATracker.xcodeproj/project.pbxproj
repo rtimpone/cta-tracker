@@ -67,6 +67,8 @@
 		FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11B21C5689600681A6F /* Credentials.swift */; };
 		FBCAA11E21C5746100681A6F /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11D21C5746100681A6F /* Locations.swift */; };
 		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
+		FBD4CF14229C358800B1D6A4 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */; };
+		FBD4CF16229C35A400B1D6A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
@@ -209,6 +211,8 @@
 		FBCAA11B21C5689600681A6F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FBCAA11D21C5746100681A6F /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
@@ -292,27 +296,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		FB58E65A223D5C93008861BA /* Home View Controller */ = {
+		FB58E65A223D5C93008861BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
 				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
 			);
-			path = "Home View Controller";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		FB58E65B223D5CAC008861BA /* Station View Controller */ = {
+		FB58E65B223D5CAC008861BA /* Station */ = {
 			isa = PBXGroup;
 			children = (
 				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
-			path = "Station View Controller";
+			path = Station;
 			sourceTree = "<group>";
 		};
-		FB58E65C223D5CBD008861BA /* Select Stops View Controller */ = {
+		FB58E65C223D5CBD008861BA /* Select Stops */ = {
 			isa = PBXGroup;
 			children = (
 				FB7EF69A22998EA9006FE97F /* RouteColorFilterViewController.swift */,
@@ -324,17 +328,17 @@
 				FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */,
 				FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */,
 			);
-			path = "Select Stops View Controller";
+			path = "Select Stops";
 			sourceTree = "<group>";
 		};
-		FB58E65D223D5CC8008861BA /* Select Routes View Controller */ = {
+		FB58E65D223D5CC8008861BA /* Select Routes */ = {
 			isa = PBXGroup;
 			children = (
 				FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */,
 				FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */,
 				FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */,
 			);
-			path = "Select Routes View Controller";
+			path = "Select Routes";
 			sourceTree = "<group>";
 		};
 		FB58E65E223D5D0D008861BA /* Route Cell */ = {
@@ -563,6 +567,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FBD4CF12229C34AB00B1D6A4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */,
+				FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		FBDDCCCB2218655500D41793 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,10 +673,11 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB58E65A223D5C93008861BA /* Home View Controller */,
-				FB58E65D223D5CC8008861BA /* Select Routes View Controller */,
-				FB58E65C223D5CBD008861BA /* Select Stops View Controller */,
-				FB58E65B223D5CAC008861BA /* Station View Controller */,
+				FB58E65A223D5C93008861BA /* Home */,
+				FB58E65D223D5CC8008861BA /* Select Routes */,
+				FB58E65C223D5CBD008861BA /* Select Stops */,
+				FBD4CF12229C34AB00B1D6A4 /* Settings */,
+				FB58E65B223D5CAC008861BA /* Station */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -847,6 +861,7 @@
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
 				FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */,
+				FBD4CF14229C358800B1D6A4 /* SettingsViewController.storyboard in Resources */,
 				FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +991,7 @@
 				FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */,
 				FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */,
+				FBD4CF16229C35A400B1D6A4 /* SettingsViewController.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,

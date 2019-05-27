@@ -48,6 +48,11 @@ class HomeViewController: UIViewController {
         let vc = SelectSingleStopViewController.instantiateFromStoryboard()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func settingsAction(_ sender: UIBarButtonItem) {
+        let nvc = SettingsViewController.instantiateNavigationControllerWithSettingsViewController()
+        present(nvc, animated: true)
+    }
 }
 
 extension HomeViewController: HomeTableViewControllerDelegate {
