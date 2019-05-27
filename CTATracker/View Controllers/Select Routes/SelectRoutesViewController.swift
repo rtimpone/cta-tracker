@@ -33,6 +33,7 @@ class SelectRoutesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: self)
         if let tvc = segue.destination as? SelectRoutesTableViewController {
             tableViewController = tvc
             tvc.delegate = self

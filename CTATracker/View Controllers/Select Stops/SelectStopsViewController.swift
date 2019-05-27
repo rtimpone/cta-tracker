@@ -35,6 +35,7 @@ class SelectStopsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: self)
         if let tvc = segue.destination as? SelectStopsTableViewController {
             tableViewController = tvc
             tvc.delegate = self
