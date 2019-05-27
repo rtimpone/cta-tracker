@@ -43,6 +43,11 @@ class HomeViewController: UIViewController {
             tableViewController = vc
         }
     }
+    
+    @IBAction func searchAction(_ sender: UIBarButtonItem) {
+        let vc = SelectSingleStopViewController.instantiateFromStoryboard()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: HomeTableViewControllerDelegate {
@@ -57,7 +62,7 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectArrivals(_ arrivals: StopArrivals) {
-        let svc = StationViewController.instance(withArrivals: arrivals)
+        let svc = StationViewController.instance(for: arrivals.stop, withArrivals: arrivals)
         navigationController?.pushViewController(svc, animated: true)
     }
     
@@ -67,8 +72,8 @@ extension HomeViewController: HomeTableViewControllerDelegate {
     }
     
     func didSelectEditStops() {
-        let ssvc = SelectStopsViewController.instance(withDelegate: self)
-        navigationController?.pushViewController(ssvc, animated: true)
+        let sfsvc = SelectFavoriteStopsViewController.instance(withDelegate: self)
+        navigationController?.pushViewController(sfsvc, animated: true)
     }
 }
 
@@ -83,7 +88,7 @@ extension HomeViewController: SelectRoutesViewControllerDelegate {
     }
 }
 
-extension HomeViewController: SelectStopsViewControllerDelegate {
+extension HomeViewController: SelectFavoriteStopsViewControllerDelegate {
     
     func didAddStopToFavorites(_ stop: Stop) {
         tableViewController.addPlaceholderArrivals(for: stop)

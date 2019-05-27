@@ -12,24 +12,30 @@ import UIKit
 
 class StationViewController: UIViewController {
     
-    var arrivals: StopArrivals!
+    var stop: Stop!
+    var arrivals: StopArrivals?
     weak var tableViewController: StationTableViewController!
     let requestHandler = StationRequestHandler()
     let timerManager = TimerManager()
     var secondsElapsed = 0
     
-    static func instance(withArrivals arrivals: StopArrivals) -> StationViewController {
+    static func instance(for stop: Stop, withArrivals arrivals: StopArrivals? = nil) -> StationViewController {
         let vc = StationViewController.instantiateFromStoryboard()
+        vc.stop = stop
         vc.arrivals = arrivals
         return vc
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewController.setEtas(arrivals.etas, for: arrivals.stop)
+        let etas = arrivals?.etas ?? []
+        tableViewController.setEtas(etas, for: stop)
         tableViewController.reloadEtas()
         timerManager.delegate = self
         requestUpdatedEtas()
+        
+        //need to set this explicity so nav bar will show when pushed from single stop search vc
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +69,7 @@ extension StationViewController: TimerManagerDelegate {
     }
     
     func requestUpdatedEtas() {
-        requestHandler.requestUpdatedArrivalTimes(forStop: arrivals.stop) { result in
+        requestHandler.requestUpdatedArrivalTimes(forStop: stop) { result in
             if let arrivals = result.value {
                 self.arrivals = arrivals
                 self.tableViewController.setEtas(arrivals.etas, for: arrivals.stop)

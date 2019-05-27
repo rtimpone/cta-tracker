@@ -11,6 +11,11 @@
 		FB08D6DC222B026900525206 /* platforms.json in Resources */ = {isa = PBXBuildFile; fileRef = FB08D6DB222B026900525206 /* platforms.json */; };
 		FB0F566E21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */; };
 		FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */; };
+		FB1FC623229B5DAF00EFD91E /* SelectFavoriteStopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC622229B5DAF00EFD91E /* SelectFavoriteStopsViewController.swift */; };
+		FB1FC625229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1FC624229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard */; };
+		FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */; };
+		FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */; };
+		FB1FC62C229B674E00EFD91E /* SelectSingleStopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */; };
 		FB2510FE226239D3001FDC15 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2510FD226239D3001FDC15 /* Images.swift */; };
 		FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58E65F223D5D2C008861BA /* RouteCell.swift */; };
 		FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58E660223D5D2C008861BA /* RouteCell.xib */; };
@@ -147,6 +152,11 @@
 		FB08D6DB222B026900525206 /* platforms.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = platforms.json; sourceTree = "<group>"; };
 		FB0F566D21D014A70045FD0F /* ArrivalDescriptionGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalDescriptionGeneratorTests.swift; sourceTree = "<group>"; };
 		FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		FB1FC622229B5DAF00EFD91E /* SelectFavoriteStopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFavoriteStopsViewController.swift; sourceTree = "<group>"; };
+		FB1FC624229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectFavoriteStopsViewController.storyboard; sourceTree = "<group>"; };
+		FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingleStopViewController.swift; sourceTree = "<group>"; };
+		FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectSingleStopViewController.storyboard; sourceTree = "<group>"; };
 		FB2510FD226239D3001FDC15 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FB58E65F223D5D2C008861BA /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		FB58E660223D5D2C008861BA /* RouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteCell.xib; sourceTree = "<group>"; };
@@ -274,6 +284,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB1FC626229B668600EFD91E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FB58E65A223D5C93008861BA /* Home View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,9 +316,13 @@
 			isa = PBXGroup;
 			children = (
 				FB7EF69A22998EA9006FE97F /* RouteColorFilterViewController.swift */,
+				FB1FC622229B5DAF00EFD91E /* SelectFavoriteStopsViewController.swift */,
+				FB1FC624229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard */,
 				FBDDFCCC223BD3BA0082210F /* SelectStopsTableViewController.swift */,
 				FBDDFCC0223BD3680082210F /* SelectStopsViewController.swift */,
 				FBDDFCC8223BD39B0082210F /* SelectStopsViewController.storyboard */,
+				FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */,
+				FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */,
 			);
 			path = "Select Stops View Controller";
 			sourceTree = "<group>";
@@ -599,6 +621,7 @@
 			children = (
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
+				FB1FC626229B668600EFD91E /* Extensions */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
 				FB86FAF7221882B4003FBB40 /* Formatters */,
 				FB84808821EA320E007F932E /* Images */,
@@ -815,10 +838,12 @@
 				FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */,
 				FBF17A0721C55FDB00BF232C /* LaunchScreen.storyboard in Resources */,
 				FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */,
+				FB1FC62C229B674E00EFD91E /* SelectSingleStopViewController.storyboard in Resources */,
 				FBF17A0421C55FDB00BF232C /* Assets.xcassets in Resources */,
 				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
 				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
+				FB1FC625229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
 				FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */,
@@ -936,6 +961,7 @@
 				FBE353A8222752DE0062C428 /* StatusRequestHandler.swift in Sources */,
 				FBE2E20921E1154F00D97D61 /* HomeTableViewController.swift in Sources */,
 				FBDDFCC1223BD3680082210F /* SelectStopsViewController.swift in Sources */,
+				FB1FC623229B5DAF00EFD91E /* SelectFavoriteStopsViewController.swift in Sources */,
 				FBE2E21921E12D4E00D97D61 /* CellFactory.swift in Sources */,
 				FBCAA10021C562CA00681A6F /* LocationHandler.swift in Sources */,
 				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
@@ -947,6 +973,8 @@
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
 				FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */,
+				FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */,
+				FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
