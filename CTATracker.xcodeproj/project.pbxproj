@@ -71,6 +71,7 @@
 		FBD4CF16229C35A400B1D6A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */; };
 		FBD4CF19229C42F500B1D6A4 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */; };
 		FBD4CF1B229C431D00B1D6A4 /* ThemesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */; };
+		FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
@@ -217,6 +218,7 @@
 		FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
 		FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemesViewController.storyboard; sourceTree = "<group>"; };
+		FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		FBD4CF12229C34AB00B1D6A4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */,
 				FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */,
 				FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */,
 			);
@@ -999,6 +1002,7 @@
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
+				FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */,
 				FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
