@@ -37,7 +37,11 @@
                     <navigationItem key="navigationItem" title="CTA Status" id="Zcq-na-wef">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ZMZ-Q8-mf2"/>
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="LD1-YH-5OI"/>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="j4V-LF-PCn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="j4V-LF-PCn">
+                            <connections>
+                                <action selector="searchAction:" destination="bDQ-RX-Ck8" id="7F6-dQ-BJQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>

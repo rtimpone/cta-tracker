@@ -43,6 +43,11 @@ class HomeViewController: UIViewController {
             tableViewController = vc
         }
     }
+    
+    @IBAction func searchAction(_ sender: UIBarButtonItem) {
+        let vc = SelectSingleStopViewController.instantiateFromStoryboard()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: HomeTableViewControllerDelegate {
