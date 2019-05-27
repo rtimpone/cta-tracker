@@ -37,10 +37,17 @@ class StationTableViewController: UITableViewController {
     // MARK: Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return etas.count
+        return max(etas.count, 1)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard etas.count > 0 else {
+            let cell = tableView.dequeueReusableCell(ofType: GenericMessageCell.self)
+            cell.configure(withText: "Getting arrivals data for this station...")
+            return cell
+        }
+        
         let eta = etas[indexPath.row]
         let cell = tableView.dequeueReusableCell(ofType: EtaCell.self)
         cell.configure(for: eta)
