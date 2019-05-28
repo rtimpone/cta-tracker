@@ -52,6 +52,7 @@
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
 		FBB47A27224127C600AC2320 /* PlatformCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A25224127C600AC2320 /* PlatformCell.xib */; };
 		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
+		FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -203,6 +204,7 @@
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
 		FBB47A25224127C600AC2320 /* PlatformCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformCell.xib; sourceTree = "<group>"; };
 		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
+				FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
 				FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
+				FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */,
 				FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */,
 				FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
