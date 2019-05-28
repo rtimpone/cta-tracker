@@ -44,6 +44,9 @@
 		FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA38BFF2299FF3F003EAEF8 /* Colors.swift */; };
 		FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */; };
 		FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */; };
+		FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */; };
+		FBAEF103229CB8A800B5D102 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF102229CB8A800B5D102 /* Theme.swift */; };
+		FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */; };
 		FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A1F224127AD00AC2320 /* StationCell.swift */; };
 		FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A20224127AD00AC2320 /* StationCell.xib */; };
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
@@ -192,6 +195,9 @@
 		FBA38BFF2299FF3F003EAEF8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesTableViewController.swift; sourceTree = "<group>"; };
+		FBAEF102229CB8A800B5D102 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPackage.swift; sourceTree = "<group>"; };
 		FBB47A1F224127AD00AC2320 /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		FBB47A20224127AD00AC2320 /* StationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
@@ -466,6 +472,15 @@
 			path = "Theme Cell";
 			sourceTree = "<group>";
 		};
+		FBAEF101229CB89400B5D102 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */,
+				FBAEF102229CB8A800B5D102 /* Theme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		FBB47A23224127B100AC2320 /* Station Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +615,7 @@
 		FBD4CF17229C42E200B1D6A4 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
+				FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */,
 				FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */,
 				FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */,
 			);
@@ -672,6 +688,7 @@
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FB86FAFE221885B3003FBB40 /* Section Headers */,
+				FBAEF101229CB89400B5D102 /* Themes */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
@@ -1000,6 +1017,7 @@
 				FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */,
 				FBD4CF19229C42F500B1D6A4 /* ThemesViewController.swift in Sources */,
 				FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */,
+				FBAEF103229CB8A800B5D102 /* Theme.swift in Sources */,
 				FB2510FE226239D3001FDC15 /* Images.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */,
@@ -1017,6 +1035,7 @@
 				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
+				FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */,
 				FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */,
@@ -1035,6 +1054,7 @@
 				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
+				FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */,
 				FBE56C17229A00FE002AD904 /* HapticsManager.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);
