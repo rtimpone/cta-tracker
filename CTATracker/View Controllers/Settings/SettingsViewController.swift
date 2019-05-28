@@ -10,8 +10,6 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    weak var tableViewController: SettingsTableViewController!
-    
     static func instantiateNavigationControllerWithSettingsViewController() -> UINavigationController {
         let vc = SettingsViewController.instantiateFromStoryboard()
         let nvc = UINavigationController(rootViewController: vc)
@@ -22,7 +20,6 @@ class SettingsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let vc = segue.destination as? SettingsTableViewController {
-            tableViewController = vc
             vc.delegate = self
         }
         

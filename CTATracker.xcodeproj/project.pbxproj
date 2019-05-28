@@ -42,6 +42,8 @@
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
 		FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA38BFF2299FF3F003EAEF8 /* Colors.swift */; };
+		FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */; };
+		FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */; };
 		FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A1F224127AD00AC2320 /* StationCell.swift */; };
 		FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A20224127AD00AC2320 /* StationCell.xib */; };
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
@@ -188,6 +190,8 @@
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
 		FBA38BFF2299FF3F003EAEF8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 		FBB47A1F224127AD00AC2320 /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		FBB47A20224127AD00AC2320 /* StationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
@@ -453,6 +457,15 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		FBAEF0FA229CB28700B5D102 /* Theme Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */,
+				FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */,
+			);
+			path = "Theme Cell";
+			sourceTree = "<group>";
+		};
 		FBB47A23224127B100AC2320 /* Station Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +573,7 @@
 				FB58E65E223D5D0D008861BA /* Route Cell */,
 				FBB47A23224127B100AC2320 /* Station Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
+				FBAEF0FA229CB28700B5D102 /* Theme Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -875,6 +889,7 @@
 				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
 				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
+				FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */,
 				FB1FC625229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
@@ -979,6 +994,7 @@
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
 				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
+				FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
 				FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */,

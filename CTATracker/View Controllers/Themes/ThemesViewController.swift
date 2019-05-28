@@ -10,11 +10,49 @@ import UIKit
 
 class ThemesViewController: UIViewController {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let vc = segue.destination as? ThemesTableViewController {
+            vc.delegate = self
+        }
+    }
+}
+
+extension ThemesViewController: ThemesTableViewControllerDelegate {
+    
+    func didSelectTheme(_ theme: Theme) {
+        print(theme)
+    }
+}
+
+protocol ThemesTableViewControllerDelegate: class {
+    func didSelectTheme(_ theme: Theme)
 }
 
 class ThemesTableViewController: UITableViewController {
     
+    weak var delegate: ThemesTableViewControllerDelegate?
+    let themes = [LightTheme(), DarkTheme()]
     
+    // MARK: Table View Data Source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return themes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let theme = themes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(ofType: ThemeCell.self)
+        cell.configure(for: theme)
+        return cell
+    }
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let theme = themes[indexPath.row]
+        delegate?.didSelectTheme(theme)
+    }
 }
 
 struct CellTheme {
@@ -52,7 +90,8 @@ struct TableTheme {
 }
 
 class Theme {
-    
+
+    let identifier: String
     let cellTheme: CellTheme
     let navBarTheme: NavBarTheme
     let routeFilterTheme: RouteFilterTheme
@@ -62,6 +101,7 @@ class Theme {
     
     init(identifier: String) {
         
+        self.identifier = identifier
         let package = ColorPackage(identifier: identifier)
         
         self.cellTheme = package.cellTheme()
@@ -76,14 +116,14 @@ class Theme {
 class LightTheme: Theme {
     
     init() {
-        super.init(identifier: "light")
+        super.init(identifier: "Light")
     }
 }
 
 class DarkTheme: Theme {
     
     init() {
-        super.init(identifier: "dark")
+        super.init(identifier: "Dark")
     }
 }
 
@@ -113,7 +153,7 @@ struct ColorPackage {
     init(identifier assetCatalogIdentifier: String) {
         var identifiersToColors: [ColorIdentifiers: UIColor] = [:]
         for identifier in ColorIdentifiers.allCases {
-            let colorName = assetCatalogIdentifier + "-" + identifier.rawValue
+            let colorName = assetCatalogIdentifier + "/" + identifier.rawValue
             let color = UIColor(named: colorName)
             identifiersToColors[identifier] = color
         }
