@@ -53,6 +53,7 @@
 		FBB47A27224127C600AC2320 /* PlatformCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A25224127C600AC2320 /* PlatformCell.xib */; };
 		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
 		FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */; };
+		FBC22F6B229D62F000AB9491 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC22F6A229D62F000AB9491 /* ThemeManager.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -205,6 +206,7 @@
 		FBB47A25224127C600AC2320 /* PlatformCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformCell.xib; sourceTree = "<group>"; };
 		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
+		FBC22F6A229D62F000AB9491 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
+				FBC22F6A229D62F000AB9491 /* ThemeManager.swift */,
 				FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */,
 			);
 			path = Utilities;
@@ -1055,6 +1058,7 @@
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
+				FBC22F6B229D62F000AB9491 /* ThemeManager.swift in Sources */,
 				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
