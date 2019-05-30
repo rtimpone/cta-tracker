@@ -15,10 +15,12 @@ protocol ThemesViewControllerDelegate: class {
 class ThemesViewController: UIViewController {
     
     weak var delegate: ThemesViewControllerDelegate?
+    weak var tableViewController: ThemesTableViewController?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let vc = segue.destination as? ThemesTableViewController {
+            tableViewController = vc
             vc.delegate = self
         }
     }
@@ -36,6 +38,7 @@ extension ThemesViewController: ThemesTableViewControllerDelegate {
     }
     
     func applyTheme(_ theme: Theme) {
-        
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        tableViewController?.applyTheme(theme)
     }
 }

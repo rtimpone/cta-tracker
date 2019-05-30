@@ -37,3 +37,17 @@ class ThemesTableViewController: UITableViewController {
         delegate?.didSelectTheme(theme)
     }
 }
+
+extension ThemesTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        
+        tableView.backgroundColor = theme.tableTheme.backgroundColor
+        
+        for cell in tableView.visibleCells {
+            if let themeCell = cell as? ThemeCell {
+                themeCell.applyTheme(theme)
+            }
+        }
+    }
+}

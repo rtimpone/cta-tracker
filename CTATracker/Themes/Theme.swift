@@ -16,6 +16,7 @@ struct CellTheme {
     let backgroundColor: UIColor
     let titleLabelColor: UIColor
     let detailLabelColor: UIColor
+    let separatorColor: UIColor
 }
 
 struct NavBarTheme {
@@ -53,7 +54,6 @@ struct StatusBarTheme {
 struct TableTheme {
     let backgroundColor: UIColor
     let sectionIndexColor: UIColor
-    let separatorColor: UIColor
 }
 
 protocol Themeable {

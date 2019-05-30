@@ -64,7 +64,7 @@ extension SettingsTableViewController: Themeable {
         supportLabel.textColor = textColor
         aboutLabel.textColor = textColor
         
-        let separatorColor = theme.tableTheme.separatorColor
+        let separatorColor = theme.cellTheme.separatorColor
         themesSeparator.backgroundColor = separatorColor
         supportSeparator.backgroundColor = separatorColor
         aboutSeparator.backgroundColor = separatorColor

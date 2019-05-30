@@ -15,6 +15,7 @@ struct ColorPackage {
         case cellBackgroundColor
         case cellTitleLabelColor
         case cellDetailLabelColor
+        case cellSeparatorColor
         case navBarBackgroundColor
         case navBarButtonColor
         case navBarTitleColor
@@ -29,7 +30,6 @@ struct ColorPackage {
         case sectionHeaderTextColor
         case tableBackgroundColor
         case tableSectionIndexColor
-        case tableSeparatorColor
     }
     
     let identifiersToColors: [ColorIdentifiers: UIColor]
@@ -51,7 +51,8 @@ struct ColorPackage {
     func cellTheme() -> CellTheme {
         return CellTheme(backgroundColor: color(for: .cellBackgroundColor),
                          titleLabelColor: color(for: .cellTitleLabelColor),
-                         detailLabelColor: color(for: .cellDetailLabelColor))
+                         detailLabelColor: color(for: .cellDetailLabelColor),
+                         separatorColor: color(for: .cellSeparatorColor))
     }
     
     func navBarTheme() -> NavBarTheme {
@@ -80,8 +81,7 @@ struct ColorPackage {
     
     func tableTheme() -> TableTheme {
         return TableTheme(backgroundColor: color(for: .tableBackgroundColor),
-                          sectionIndexColor: color(for: .tableSectionIndexColor),
-                          separatorColor: color(for: .tableSeparatorColor))
+                          sectionIndexColor: color(for: .tableSectionIndexColor))
     }
 }
 
