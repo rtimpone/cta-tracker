@@ -15,7 +15,7 @@ protocol ThemesTableViewControllerDelegate: class {
 class ThemesTableViewController: UITableViewController {
     
     weak var delegate: ThemesTableViewControllerDelegate?
-    let themes = [LightTheme(), DarkTheme()]
+    let themes = Theme.allThemes
     
     // MARK: Table View Data Source
     

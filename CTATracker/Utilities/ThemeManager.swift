@@ -14,10 +14,13 @@ struct ThemeManager {
     static let defaultTheme = LightTheme()
     
     static func currentTheme() -> Theme {
-        return UserDefaultsClient.fetchValue(forKey: key) as? Theme ?? defaultTheme
+        guard let themeName = UserDefaultsClient.fetchValue(forKey: key) as? String else {
+            return defaultTheme
+        }
+        return Theme.themeWithName(themeName) ?? defaultTheme
     }
     
     static func setCurrentTheme(_ theme: Theme) {
-        UserDefaultsClient.setValue(theme, forKey: key)
+        UserDefaultsClient.setValue(theme.name, forKey: key)
     }
 }

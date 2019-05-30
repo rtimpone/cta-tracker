@@ -13,6 +13,6 @@ class ThemeCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     func configure(for theme: Theme) {
-        nameLabel.text = theme.identifier
+        nameLabel.text = theme.name
     }
 }

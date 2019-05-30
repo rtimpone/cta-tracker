@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ThemesViewControllerDelegate: class {
+    func themeDidChange(to theme: Theme)
+}
+
 class ThemesViewController: UIViewController {
+    
+    weak var delegate: ThemesViewControllerDelegate?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -21,10 +27,15 @@ class ThemesViewController: UIViewController {
 extension ThemesViewController: ThemesTableViewControllerDelegate {
     
     func didSelectTheme(_ theme: Theme) {
-        print(theme)
+        guard theme != ThemeManager.currentTheme() else {
+            return
+        }
+        ThemeManager.setCurrentTheme(theme)
+        delegate?.themeDidChange(to: theme)
+        applyTheme(theme)
+    }
+    
+    func applyTheme(_ theme: Theme) {
         
-        //write theme to user defaults
-        
-        //apply theme to current and all visible vc's
     }
 }

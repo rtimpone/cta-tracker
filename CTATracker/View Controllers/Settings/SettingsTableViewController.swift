@@ -34,6 +34,13 @@ class SettingsTableViewController: UITableViewController {
     }
 }
 
+extension SettingsTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        tableView.backgroundColor = theme.tableTheme.backgroundColor
+    }
+}
+
 private extension SettingsTableViewController {
     
     func sectionForIndexPath(_ indexPath: IndexPath) -> Section {

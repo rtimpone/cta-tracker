@@ -37,25 +37,45 @@ struct SectionHeaderTheme {
     let textColor: UIColor
 }
 
+struct StatusBarTheme {
+    enum StatusBarColor {
+        case light
+        case dark
+    }
+    let statusBarColor: StatusBarColor
+}
+
 struct TableTheme {
     let backgroundColor: UIColor
     let sectionIndexColor: UIColor
 }
 
+protocol Themeable {
+    func applyTheme(_ theme: Theme)
+}
+
 class Theme {
-    
-    let identifier: String
+
+    let name: String
     let cellTheme: CellTheme
     let navBarTheme: NavBarTheme
     let routeFilterTheme: RouteFilterTheme
     let searchBarTheme: SearchBarTheme
     let sectionHeaderTheme: SectionHeaderTheme
+    let statusBarTheme: StatusBarTheme
     let tableTheme: TableTheme
     
-    init(identifier: String) {
+    static let allThemes = [
+        LightTheme(),
+        DarkTheme()
+    ]
+    
+    init(name: String, statusBarTheme: StatusBarTheme) {
         
-        self.identifier = identifier
-        let package = ColorPackage(identifier: identifier)
+        self.name = name
+        let package = ColorPackage(identifier: name)
+
+        self.statusBarTheme = statusBarTheme
         
         self.cellTheme = package.cellTheme()
         self.navBarTheme = package.navBarTheme()
@@ -64,18 +84,31 @@ class Theme {
         self.sectionHeaderTheme = package.sectionHeaderTheme()
         self.tableTheme = package.tableTheme()
     }
+    
+    static func themeWithName(_ name: String) -> Theme? {
+        return allThemes.first(where: { $0.name == name })
+    }
+}
+
+extension Theme: Equatable {
+    
+    static func ==(lhs: Theme, rhs: Theme) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
 
 class LightTheme: Theme {
     
     init() {
-        super.init(identifier: "Light")
+        let statusBarTheme = StatusBarTheme(statusBarColor: .light)
+        super.init(name: "Light", statusBarTheme: statusBarTheme)
     }
 }
 
 class DarkTheme: Theme {
     
     init() {
-        super.init(identifier: "Dark")
+        let statusBarTheme = StatusBarTheme(statusBarColor: .dark)
+        super.init(name: "Dark", statusBarTheme: statusBarTheme)
     }
 }

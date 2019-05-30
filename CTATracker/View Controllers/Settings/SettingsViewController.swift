@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    weak var tableViewController: SettingsTableViewController?
+    
     static func instantiateNavigationControllerWithSettingsViewController() -> UINavigationController {
         let vc = SettingsViewController.instantiateFromStoryboard()
         let nvc = UINavigationController(rootViewController: vc)
@@ -20,9 +22,9 @@ class SettingsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let vc = segue.destination as? SettingsTableViewController {
+            tableViewController = vc
             vc.delegate = self
         }
-        
     }
     
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
@@ -34,6 +36,30 @@ extension SettingsViewController: SettingsTableViewControllerDelegate {
     
     func didSelectThemes() {
         let vc = ThemesViewController.instantiateFromStoryboard()
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SettingsViewController: ThemesViewControllerDelegate {
+    
+    func themeDidChange(to theme: Theme) {
+        applyTheme(theme)
+    }
+}
+
+extension SettingsViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        
+        guard let navBar = navigationController?.navigationBar else {
+            return
+        }
+        
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navBarTheme.titleColor]
+        navBar.tintColor = theme.navBarTheme.buttonColor
+        navBar.barTintColor = theme.navBarTheme.backgroundColor
+        
+        tableViewController?.applyTheme(theme)
     }
 }
