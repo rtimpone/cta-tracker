@@ -56,6 +56,8 @@ extension SettingsViewController: Themeable {
             return
         }
         
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navBarTheme.titleColor]
         navBar.tintColor = theme.navBarTheme.buttonColor
         navBar.barTintColor = theme.navBarTheme.backgroundColor

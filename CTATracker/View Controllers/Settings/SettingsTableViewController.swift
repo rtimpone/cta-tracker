@@ -20,6 +20,20 @@ class SettingsTableViewController: UITableViewController {
         case about
     }
     
+    @IBOutlet weak var headerSeparatorView: UIView!
+    
+    @IBOutlet weak var themesCell: UITableViewCell!
+    @IBOutlet weak var supportCell: UITableViewCell!
+    @IBOutlet weak var aboutCell: UITableViewCell!
+    
+    @IBOutlet weak var themesLabel: UILabel!
+    @IBOutlet weak var supportLabel: UILabel!
+    @IBOutlet weak var aboutLabel: UILabel!
+    
+    @IBOutlet weak var themesSeparator: UIView!
+    @IBOutlet weak var supportSeparator: UIView!
+    @IBOutlet weak var aboutSeparator: UIView!
+    
     weak var delegate: SettingsTableViewControllerDelegate?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,7 +51,24 @@ class SettingsTableViewController: UITableViewController {
 extension SettingsTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
+        
         tableView.backgroundColor = theme.tableTheme.backgroundColor
+        
+        let cellColor = theme.cellTheme.backgroundColor
+        themesCell.backgroundColor = cellColor
+        supportCell.backgroundColor = cellColor
+        aboutCell.backgroundColor = cellColor
+        
+        let textColor = theme.cellTheme.titleLabelColor
+        themesLabel.textColor = textColor
+        supportLabel.textColor = textColor
+        aboutLabel.textColor = textColor
+        
+        let separatorColor = theme.tableTheme.separatorColor
+        themesSeparator.backgroundColor = separatorColor
+        supportSeparator.backgroundColor = separatorColor
+        aboutSeparator.backgroundColor = separatorColor
+        headerSeparatorView.backgroundColor = separatorColor
     }
 }
 

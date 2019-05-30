@@ -8,7 +8,12 @@
 
 import UIKit
 
+struct BackgroundTheme {
+    let backgroundColor: UIColor
+}
+
 struct CellTheme {
+    let backgroundColor: UIColor
     let titleLabelColor: UIColor
     let detailLabelColor: UIColor
 }
@@ -48,6 +53,7 @@ struct StatusBarTheme {
 struct TableTheme {
     let backgroundColor: UIColor
     let sectionIndexColor: UIColor
+    let separatorColor: UIColor
 }
 
 protocol Themeable {
@@ -57,6 +63,7 @@ protocol Themeable {
 class Theme {
 
     let name: String
+    let backgroundTheme: BackgroundTheme
     let cellTheme: CellTheme
     let navBarTheme: NavBarTheme
     let routeFilterTheme: RouteFilterTheme
@@ -77,6 +84,7 @@ class Theme {
 
         self.statusBarTheme = statusBarTheme
         
+        self.backgroundTheme = package.backgroundTheme()
         self.cellTheme = package.cellTheme()
         self.navBarTheme = package.navBarTheme()
         self.routeFilterTheme = package.routeFilterTheme()
