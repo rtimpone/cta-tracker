@@ -16,6 +16,7 @@ class ThemesTableViewController: UITableViewController {
     
     weak var delegate: ThemesTableViewControllerDelegate?
     let themes = Theme.allThemes
+    var currentTheme: Theme!
     
     // MARK: Table View Data Source
     
@@ -24,9 +25,9 @@ class ThemesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let theme = themes[indexPath.row]
+        let themeOption = themes[indexPath.row]
         let cell = tableView.dequeueReusableCell(ofType: ThemeCell.self)
-        cell.configure(for: theme)
+        cell.configure(for: themeOption, currentTheme: currentTheme)
         return cell
     }
     
@@ -41,13 +42,8 @@ class ThemesTableViewController: UITableViewController {
 extension ThemesTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
-        
+        currentTheme = theme
         tableView.backgroundColor = theme.tableTheme.backgroundColor
-        
-        for cell in tableView.visibleCells {
-            if let themeCell = cell as? ThemeCell {
-                themeCell.applyTheme(theme)
-            }
-        }
+        tableView.reloadData()
     }
 }

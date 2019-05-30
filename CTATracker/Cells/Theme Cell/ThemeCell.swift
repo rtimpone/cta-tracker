@@ -13,8 +13,9 @@ class ThemeCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var separatorView: UIView!
     
-    func configure(for theme: Theme) {
+    func configure(for theme: Theme, currentTheme: Theme) {
         nameLabel.text = theme.name
+        applyTheme(currentTheme)
     }
 }
 

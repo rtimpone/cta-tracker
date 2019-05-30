@@ -17,6 +17,11 @@ class ThemesViewController: UIViewController {
     weak var delegate: ThemesViewControllerDelegate?
     weak var tableViewController: ThemesTableViewController?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        applyCurrentTheme()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if let vc = segue.destination as? ThemesTableViewController {
@@ -36,6 +41,9 @@ extension ThemesViewController: ThemesTableViewControllerDelegate {
         delegate?.themeDidChange(to: theme)
         applyTheme(theme)
     }
+}
+
+extension ThemesViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         view.backgroundColor = theme.backgroundTheme.backgroundColor

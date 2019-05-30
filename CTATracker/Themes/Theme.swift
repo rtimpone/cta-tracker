@@ -60,6 +60,13 @@ protocol Themeable {
     func applyTheme(_ theme: Theme)
 }
 
+extension Themeable {
+    func applyCurrentTheme() {
+        let currentTheme = ThemeManager.currentTheme()
+        applyTheme(currentTheme)
+    }
+}
+
 class Theme {
 
     let name: String
