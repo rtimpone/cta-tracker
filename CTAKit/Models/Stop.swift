@@ -87,7 +87,7 @@ public struct Platform: Stop {
         }
         
         if data.hasPurple {
-            let purpleLine = allRoutes.first(where: { $0.title == "Purple Line (Evanston)" })!
+            let purpleLine = allRoutes.first(where: { $0.title == "Purple Line" })!
             routes.append(purpleLine)
         }
         
