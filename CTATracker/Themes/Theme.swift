@@ -80,20 +80,18 @@ class Theme {
         DarkTheme()
     ]
     
-    init(name: String, statusBarTheme: StatusBarTheme) {
+    init(name: String, colors: ThemeColors.Type, statusBarTheme: StatusBarTheme) {
         
         self.name = name
-        let package = ColorPackage(identifier: name)
-
         self.statusBarTheme = statusBarTheme
         
-        self.backgroundTheme = package.backgroundTheme()
-        self.cellTheme = package.cellTheme()
-        self.navBarTheme = package.navBarTheme()
-        self.routeFilterTheme = package.routeFilterTheme()
-        self.searchBarTheme = package.searchBarTheme()
-        self.sectionHeaderTheme = package.sectionHeaderTheme()
-        self.tableTheme = package.tableTheme()
+        self.backgroundTheme = colors.backgroundTheme()
+        self.cellTheme = colors.cellTheme()
+        self.navBarTheme = colors.navBarTheme()
+        self.routeFilterTheme = colors.routeFilterTheme()
+        self.searchBarTheme = colors.searchBarTheme()
+        self.sectionHeaderTheme = colors.sectionHeaderTheme()
+        self.tableTheme = colors.tableTheme()
     }
     
     static func themeWithName(_ name: String) -> Theme? {
@@ -112,7 +110,7 @@ class LightTheme: Theme {
     
     init() {
         let statusBarTheme = StatusBarTheme(style: .default)
-        super.init(name: "Light", statusBarTheme: statusBarTheme)
+        super.init(name: "Light", colors: LightThemeColors.self, statusBarTheme: statusBarTheme)
     }
 }
 
@@ -120,6 +118,6 @@ class DarkTheme: Theme {
     
     init() {
         let statusBarTheme = StatusBarTheme(style: .lightContent)
-        super.init(name: "Dark", statusBarTheme: statusBarTheme)
+        super.init(name: "Dark", colors: DarkThemeColors.self, statusBarTheme: statusBarTheme)
     }
 }

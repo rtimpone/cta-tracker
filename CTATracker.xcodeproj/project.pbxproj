@@ -47,7 +47,7 @@
 		FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */; };
 		FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */; };
 		FBAEF103229CB8A800B5D102 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF102229CB8A800B5D102 /* Theme.swift */; };
-		FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */; };
+		FBAEF105229CB8BC00B5D102 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */; };
 		FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A1F224127AD00AC2320 /* StationCell.swift */; };
 		FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A20224127AD00AC2320 /* StationCell.xib */; };
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
@@ -201,7 +201,7 @@
 		FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 		FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesTableViewController.swift; sourceTree = "<group>"; };
 		FBAEF102229CB8A800B5D102 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPackage.swift; sourceTree = "<group>"; };
+		FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		FBB47A1F224127AD00AC2320 /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		FBB47A20224127AD00AC2320 /* StationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
@@ -491,8 +491,8 @@
 		FBAEF101229CB89400B5D102 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				FBAEF104229CB8BC00B5D102 /* ColorPackage.swift */,
 				FBAEF102229CB8A800B5D102 /* Theme.swift */,
+				FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -1052,7 +1052,7 @@
 				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
-				FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */,
+				FBAEF105229CB8BC00B5D102 /* ThemeColors.swift in Sources */,
 				FB1FFCC322A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */,
