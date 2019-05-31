@@ -190,6 +190,13 @@ class HomeTableViewController: UITableViewController {
     }
 }
 
+extension HomeTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        
+    }
+}
+
 private extension HomeTableViewController {
     
     func stopRefreshControlAndReloadData() {

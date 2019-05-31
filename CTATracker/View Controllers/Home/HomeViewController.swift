@@ -19,6 +19,11 @@ class HomeViewController: UIViewController {
     weak var tableViewController: HomeTableViewController!
     var currentDeviceCoordinate: Coordinate?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        applyCurrentTheme()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -104,6 +109,27 @@ extension HomeViewController: SelectFavoriteStopsViewControllerDelegate {
     }
 }
 
+extension HomeViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        
+        guard let navBar = navigationController?.navigationBar else {
+            return
+        }
+        
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navBarTheme.titleColor]
+        navBar.tintColor = theme.navBarTheme.buttonColor
+        navBar.barTintColor = theme.navBarTheme.backgroundColor
+        
+        tableViewController?.applyTheme(theme)
+        
+        //update status bar here
+        //self.navigationController?.navigationBar.barStyle = //newStyle
+    }
+}
+
 private extension HomeViewController {
     
     func setupWillEnterForegroundNotificationSubscription() {
@@ -175,3 +201,4 @@ private extension HomeViewController {
         }
     }
 }
+
