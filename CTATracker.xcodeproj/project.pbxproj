@@ -16,7 +16,7 @@
 		FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */; };
 		FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */; };
 		FB1FC62C229B674E00EFD91E /* SelectSingleStopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */; };
-		FB1FFCC322A0BEE700CF9BF4 /* StatusBarCustomizableNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FFCC222A0BEE700CF9BF4 /* StatusBarCustomizableNavigationViewController.swift */; };
+		FB1FFCC322A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */; };
 		FB2510FE226239D3001FDC15 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2510FD226239D3001FDC15 /* Images.swift */; };
 		FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58E65F223D5D2C008861BA /* RouteCell.swift */; };
 		FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58E660223D5D2C008861BA /* RouteCell.xib */; };
@@ -170,7 +170,7 @@
 		FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingleStopViewController.swift; sourceTree = "<group>"; };
 		FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectSingleStopViewController.storyboard; sourceTree = "<group>"; };
-		FB1FFCC222A0BEE700CF9BF4 /* StatusBarCustomizableNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarCustomizableNavigationViewController.swift; sourceTree = "<group>"; };
+		FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableNavigationViewController.swift; sourceTree = "<group>"; };
 		FB2510FD226239D3001FDC15 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FB58E65F223D5D2C008861BA /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		FB58E660223D5D2C008861BA /* RouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteCell.xib; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		FB1FFCC122A0BECB00CF9BF4 /* Other Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB1FFCC222A0BEE700CF9BF4 /* StatusBarCustomizableNavigationViewController.swift */,
+				FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -1053,7 +1053,7 @@
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
 				FBAEF105229CB8BC00B5D102 /* ColorPackage.swift in Sources */,
-				FB1FFCC322A0BEE700CF9BF4 /* StatusBarCustomizableNavigationViewController.swift in Sources */,
+				FB1FFCC322A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
 				FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */,
 				FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */,

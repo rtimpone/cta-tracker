@@ -119,21 +119,10 @@ extension HomeViewController: SettingsViewControllerDelegate {
 extension HomeViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
-        
-        guard let navBar = navigationController?.navigationBar else {
-            return
-        }
-        
         view.backgroundColor = theme.backgroundTheme.backgroundColor
-        
-        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navBarTheme.titleColor]
-        navBar.tintColor = theme.navBarTheme.buttonColor
-        navBar.barTintColor = theme.navBarTheme.backgroundColor
-        
         tableViewController?.applyTheme(theme)
-        
-        if let nvc = navigationController as? StatusBarCustomizableNavigationViewController {
-            nvc.setStatusBarStyle(theme.statusBarTheme.style)
+        if let nvc = navigationController as? ThemeableNavigationViewController {
+            nvc.applyTheme(theme)
         }
     }
 }

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let vc = HomeViewController.instantiateFromStoryboard()
-        let nvc = StatusBarCustomizableNavigationViewController(rootViewController: vc)
+        let nvc = ThemeableNavigationViewController(rootViewController: vc)
         nvc.navigationBar.tintColor = Colors.darkGray
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
