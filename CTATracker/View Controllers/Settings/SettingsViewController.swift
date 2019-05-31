@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol SettingsViewControllerDelegate: class {
+    func themeDidChange(to theme: Theme)
+}
+
 class SettingsViewController: UIViewController {
     
+    weak var delegate: SettingsViewControllerDelegate?
     weak var tableViewController: SettingsTableViewController?
     
-    static func instantiateNavigationControllerWithSettingsViewController() -> UINavigationController {
+    static func instantiateNavigationControllerWithSettingsViewController(delegate: SettingsViewControllerDelegate) -> UINavigationController {
         let vc = SettingsViewController.instantiateFromStoryboard()
-        let nvc = UINavigationController(rootViewController: vc)
+        vc.delegate = delegate
+        let nvc = StatusBarCustomizableNavigationViewController(rootViewController: vc)
         nvc.navigationBar.tintColor = Colors.darkGray
         return nvc
     }
@@ -50,6 +56,7 @@ extension SettingsViewController: ThemesViewControllerDelegate {
     
     func themeDidChange(to theme: Theme) {
         applyTheme(theme)
+        delegate?.themeDidChange(to: theme)
     }
 }
 
@@ -68,5 +75,9 @@ extension SettingsViewController: Themeable {
         navBar.barTintColor = theme.navBarTheme.backgroundColor
         
         tableViewController?.applyTheme(theme)
+        
+        if let nvc = navigationController as? StatusBarCustomizableNavigationViewController {
+            nvc.setStatusBarStyle(theme.statusBarTheme.style)
+        }
     }
 }

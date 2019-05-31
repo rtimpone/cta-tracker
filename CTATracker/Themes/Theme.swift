@@ -44,11 +44,7 @@ struct SectionHeaderTheme {
 }
 
 struct StatusBarTheme {
-    enum StatusBarColor {
-        case light
-        case dark
-    }
-    let statusBarColor: StatusBarColor
+    let style: UIStatusBarStyle
 }
 
 struct TableTheme {
@@ -115,7 +111,7 @@ extension Theme: Equatable {
 class LightTheme: Theme {
     
     init() {
-        let statusBarTheme = StatusBarTheme(statusBarColor: .light)
+        let statusBarTheme = StatusBarTheme(style: .default)
         super.init(name: "Light", statusBarTheme: statusBarTheme)
     }
 }
@@ -123,7 +119,7 @@ class LightTheme: Theme {
 class DarkTheme: Theme {
     
     init() {
-        let statusBarTheme = StatusBarTheme(statusBarColor: .dark)
+        let statusBarTheme = StatusBarTheme(style: .lightContent)
         super.init(name: "Dark", statusBarTheme: statusBarTheme)
     }
 }

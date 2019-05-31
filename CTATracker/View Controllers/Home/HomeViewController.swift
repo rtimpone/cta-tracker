@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func settingsAction(_ sender: UIBarButtonItem) {
-        let nvc = SettingsViewController.instantiateNavigationControllerWithSettingsViewController()
+        let nvc = SettingsViewController.instantiateNavigationControllerWithSettingsViewController(delegate: self)
         present(nvc, animated: true)
     }
 }
@@ -109,6 +109,13 @@ extension HomeViewController: SelectFavoriteStopsViewControllerDelegate {
     }
 }
 
+extension HomeViewController: SettingsViewControllerDelegate {
+    
+    func themeDidChange(to theme: Theme) {
+        applyTheme(theme)
+    }
+}
+
 extension HomeViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
@@ -125,8 +132,9 @@ extension HomeViewController: Themeable {
         
         tableViewController?.applyTheme(theme)
         
-        //update status bar here
-        //self.navigationController?.navigationBar.barStyle = //newStyle
+        if let nvc = navigationController as? StatusBarCustomizableNavigationViewController {
+            nvc.setStatusBarStyle(theme.statusBarTheme.style)
+        }
     }
 }
 
