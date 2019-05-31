@@ -19,6 +19,7 @@ class StatusCell: UITableViewCell {
     func configure(for status: RouteStatus, theme: Theme) {
         
         backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
         
         routeColorView.backgroundColor = status.route.color
         routeTitleLabel.text = status.route.title

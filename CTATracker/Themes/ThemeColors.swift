@@ -106,12 +106,12 @@ struct DarkThemeColors: ThemeColors {
     
     static let backgroundColor: UIColor = .black
     static let cellBackgroundColor: UIColor = .black
-    static let cellTitleLabelColor: UIColor = .orange
+    static let cellTitleLabelColor: UIColor = .white
     static let cellDetailLabelColor: UIColor = .white
     static let cellSeparatorColor: UIColor = .darkGray
     static let navBarBackgroundColor: UIColor = .darkGray
     static let navBarButtonColor: UIColor = .white
-    static let navBarTitleColor: UIColor = .orange
+    static let navBarTitleColor: UIColor = .white
     static let routeFilterBackgroundColor: UIColor = .black
     static let routeFilterSelectedBorderColor: UIColor = .white
     static let routeFilterUnselectedBorderColor: UIColor = .black
@@ -119,7 +119,7 @@ struct DarkThemeColors: ThemeColors {
     static let searchBarBarColor: UIColor = .red
     static let searchBarTextColor: UIColor = .yellow
     static let sectionHeaderBackgroundColor: UIColor = .darkGray
-    static let sectionHeaderButtonColor: UIColor = .white
+    static let sectionHeaderButtonColor: UIColor = .orange
     static let sectionHeaderTextColor: UIColor = .orange
     static let tableBackgroundColor: UIColor = .black
     static let tableSectionIndexColor: UIColor = .orange

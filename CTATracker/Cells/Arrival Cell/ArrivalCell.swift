@@ -44,6 +44,8 @@ class ArrivalCell: UITableViewCell {
 
     func configure(for arrivals: StopArrivals, isLocationBased: Bool, theme: Theme) {
         
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
         destinationLabel.textColor = theme.cellTheme.titleLabelColor
         emptyStateLabel.textColor = theme.cellTheme.detailLabelColor
         

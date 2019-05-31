@@ -14,13 +14,14 @@ protocol HomeSectionHeaderDelegate: class {
 
 class HomeSectionHeader: UITableViewHeaderFooterView {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     weak var delegate: HomeSectionHeaderDelegate?
     
     func configure(withText text: String, theme: Theme, inSection section: Int, delegate: HomeSectionHeaderDelegate) {
         
-        backgroundColor = theme.sectionHeaderTheme.backgroundColor
+        containerView.backgroundColor = theme.sectionHeaderTheme.backgroundColor
         label.textColor = theme.sectionHeaderTheme.textColor
         button.setTitleColor(theme.sectionHeaderTheme.buttonColor, for: .normal)
         
