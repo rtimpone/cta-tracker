@@ -15,9 +15,15 @@ protocol HomeSectionHeaderDelegate: class {
 class HomeSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var button: UIButton!
     weak var delegate: HomeSectionHeaderDelegate?
     
-    func configure(withText text: String, inSection section: Int, delegate: HomeSectionHeaderDelegate) {
+    func configure(withText text: String, theme: Theme, inSection section: Int, delegate: HomeSectionHeaderDelegate) {
+        
+        backgroundColor = theme.sectionHeaderTheme.backgroundColor
+        label.textColor = theme.sectionHeaderTheme.textColor
+        button.setTitleColor(theme.sectionHeaderTheme.buttonColor, for: .normal)
+        
         label.text = text
         setSectionNumber(section)
         self.delegate = delegate

@@ -41,9 +41,10 @@ protocol HomeTableViewControllerDelegate: class {
 
 class HomeTableViewController: UITableViewController {
     
+    weak var delegate: HomeTableViewControllerDelegate?
     private var arrivalsDataSource: DataSource<StopArrivals> = .initialState
     private var statusDataSource: DataSource<RouteStatus> = .initialState
-    weak var delegate: HomeTableViewControllerDelegate?
+    var currentTheme: Theme!
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
         setRoutesDataSource(to: statuses)
@@ -143,9 +144,9 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case Sections.statuses:
-            return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: statusDataSource)
+            return CellFactory.statusCellForRow(at: indexPath, in: tableView, dataSource: statusDataSource, theme: currentTheme)
         case Sections.arrivals:
-            return CellFactory.arrivalsCellForRow(at: indexPath, in: tableView, dataSource: arrivalsDataSource)
+            return CellFactory.arrivalsCellForRow(at: indexPath, in: tableView, dataSource: arrivalsDataSource, theme: currentTheme)
         default:
             return UITableViewCell()
         }
@@ -157,11 +158,11 @@ class HomeTableViewController: UITableViewController {
         switch section {
         case Sections.statuses:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Route Status", inSection: section, delegate: self)
+            header.configure(withText: "Route Status", theme: currentTheme, inSection: section, delegate: self)
             return header
         case Sections.arrivals:
             let header = tableView.dequeueReusableHeader(ofType: HomeSectionHeader.self)
-            header.configure(withText: "Arrivals", inSection: section, delegate: self)
+            header.configure(withText: "Arrivals", theme: currentTheme, inSection: section, delegate: self)
             return header
         default:
             return nil
@@ -193,7 +194,9 @@ class HomeTableViewController: UITableViewController {
 extension HomeTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
-        
+        currentTheme = theme
+        tableView.backgroundColor = theme.tableTheme.backgroundColor
+        tableView.reloadData()
     }
 }
 

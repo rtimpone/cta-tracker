@@ -12,7 +12,9 @@ class GenericMessageCell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     
-    func configure(withText text: String) {
+    func configure(withText text: String, theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        label.textColor = theme.cellTheme.detailLabelColor
         label.text = text
     }
 }

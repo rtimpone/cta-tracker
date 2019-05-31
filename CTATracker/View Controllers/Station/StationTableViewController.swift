@@ -13,6 +13,7 @@ class StationTableViewController: UITableViewController {
     
     var stop: Stop!
     var etas: [ETA] = []
+    var currentTheme: Theme!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class StationTableViewController: UITableViewController {
         
         guard etas.count > 0 else {
             let cell = tableView.dequeueReusableCell(ofType: GenericMessageCell.self)
-            cell.configure(withText: "Getting arrivals data for this station...")
+            cell.configure(withText: "Getting arrivals data for this station...", theme: currentTheme)
             return cell
         }
         

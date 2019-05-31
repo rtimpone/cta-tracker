@@ -42,7 +42,10 @@ class ArrivalCell: UITableViewCell {
         locationIcon.tintColor = Colors.darkGray
     }
 
-    func configure(for arrivals: StopArrivals, isLocationBased: Bool) {
+    func configure(for arrivals: StopArrivals, isLocationBased: Bool, theme: Theme) {
+        
+        destinationLabel.textColor = theme.cellTheme.titleLabelColor
+        emptyStateLabel.textColor = theme.cellTheme.detailLabelColor
         
         destinationLabel.text = arrivals.stop.name
         emptyStateLabel.isHidden = !arrivals.etas.isEmpty
@@ -60,7 +63,7 @@ class ArrivalCell: UITableViewCell {
                 view.isHidden = false
                 
                 let eta = etas[index]
-                view.configure(for: eta)
+                view.configure(for: eta, theme: theme)
                 
                 let isLastEtaAvailable = index == etas.count - 1
                 let isLastViewAvailable = index == arrivalViews.count - 1
@@ -88,7 +91,12 @@ class ArrivalView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var etaLabel: UILabel!
     
-    func configure(for eta: ETA) {
+    func configure(for eta: ETA, theme: Theme) {
+        
+        backgroundColor = theme.cellTheme.backgroundColor
+        destinationLabel.textColor = theme.cellTheme.detailLabelColor
+        etaLabel.textColor = theme.cellTheme.detailLabelColor
+        
         circleView.backgroundColor = eta.route.color
         circleView.isHidden = false
         destinationLabel.text = eta.destination
