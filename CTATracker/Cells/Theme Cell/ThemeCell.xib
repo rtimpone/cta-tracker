@@ -26,25 +26,38 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUQ-3K-O4g">
-                        <rect key="frame" x="25" y="14.5" width="103" height="21"/>
+                        <rect key="frame" x="20" y="14.5" width="103" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="63i-Yw-uRa">
+                        <rect key="frame" x="368" y="12" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="Bm9-i7-2Ym"/>
+                            <constraint firstAttribute="width" constant="26" id="DSl-64-d4S"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XUQ-3K-O4g" firstAttribute="centerY" secondItem="qac-Jo-Ug3" secondAttribute="centerY" id="Cua-78-NJm"/>
                     <constraint firstAttribute="bottom" secondItem="z9p-TR-ZoG" secondAttribute="bottom" id="XtJ-XP-KjN"/>
                     <constraint firstItem="z9p-TR-ZoG" firstAttribute="leading" secondItem="qac-Jo-Ug3" secondAttribute="leading" constant="15" id="ZHS-Np-TxU"/>
-                    <constraint firstItem="XUQ-3K-O4g" firstAttribute="leading" secondItem="qac-Jo-Ug3" secondAttribute="leading" constant="25" id="cga-Cp-wVB"/>
+                    <constraint firstItem="XUQ-3K-O4g" firstAttribute="leading" secondItem="qac-Jo-Ug3" secondAttribute="leading" constant="20" id="cga-Cp-wVB"/>
+                    <constraint firstItem="63i-Yw-uRa" firstAttribute="centerY" secondItem="qac-Jo-Ug3" secondAttribute="centerY" id="hNR-hJ-38Y"/>
                     <constraint firstAttribute="trailing" secondItem="z9p-TR-ZoG" secondAttribute="trailing" id="j2g-qM-Uca"/>
+                    <constraint firstAttribute="trailing" secondItem="63i-Yw-uRa" secondAttribute="trailing" constant="20" id="t0E-Vo-mxS"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkmarkImageView" destination="63i-Yw-uRa" id="56x-kL-Ww3"/>
                 <outlet property="nameLabel" destination="XUQ-3K-O4g" id="iPe-hJ-9Hs"/>
                 <outlet property="separatorView" destination="z9p-TR-ZoG" id="mKw-Uj-jfu"/>
             </connections>
-            <point key="canvasLocation" x="600" y="63.616071428571423"/>
+            <point key="canvasLocation" x="598.55072463768124" y="63.616071428571423"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" width="26" height="26"/>
+    </resources>
 </document>
