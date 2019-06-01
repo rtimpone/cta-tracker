@@ -103,13 +103,15 @@ struct LightThemeColors: ThemeColors {
 
 struct DarkThemeColors: ThemeColors {
     
+    static let almostBlack = #colorLiteral(red: 0.08679527789, green: 0.08720482141, blue: 0.08817806095, alpha: 1)
+    
     static let backgroundColor: UIColor = .black
     static let cellBackgroundColor: UIColor = .black
     static let cellTitleLabelColor: UIColor = .white
     static let cellDetailLabelColor: UIColor = .white
-    static let cellSeparatorColor: UIColor = .darkGray
-    static let navBarBackgroundColor: UIColor = .darkGray
-    static let navBarButtonColor: UIColor = .white
+    static let cellSeparatorColor: UIColor = almostBlack
+    static let navBarBackgroundColor: UIColor = almostBlack
+    static let navBarButtonColor: UIColor = .orange
     static let navBarTitleColor: UIColor = .white
     static let routeFilterBackgroundColor: UIColor = .black
     static let routeFilterSelectedBorderColor: UIColor = .white
@@ -117,9 +119,9 @@ struct DarkThemeColors: ThemeColors {
     static let searchBarBackgroundColor: UIColor = .green
     static let searchBarBarColor: UIColor = .red
     static let searchBarTextColor: UIColor = .yellow
-    static let sectionHeaderBackgroundColor: UIColor = .darkGray
-    static let sectionHeaderButtonColor: UIColor = .orange
-    static let sectionHeaderTextColor: UIColor = .orange
+    static let sectionHeaderBackgroundColor: UIColor = almostBlack
+    static let sectionHeaderButtonColor: UIColor = .lightGray
+    static let sectionHeaderTextColor: UIColor = .lightGray
     static let tableBackgroundColor: UIColor = .black
     static let tableSectionIndexColor: UIColor = .orange
 }
