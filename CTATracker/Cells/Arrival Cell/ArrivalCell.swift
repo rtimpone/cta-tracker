@@ -37,11 +37,6 @@ class ArrivalCell: UITableViewCell {
     
     var bottomConstraint: NSLayoutConstraint?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        locationIcon.tintColor = Colors.darkGray
-    }
-
     func configure(for arrivals: StopArrivals, isLocationBased: Bool, theme: Theme) {
         
         applyTheme(theme)
@@ -90,6 +85,7 @@ extension ArrivalCell: Themeable {
         contentView.backgroundColor = theme.cellTheme.backgroundColor
         destinationLabel.textColor = theme.cellTheme.titleLabelColor
         emptyStateLabel.textColor = theme.cellTheme.detailLabelColor
+        locationIcon.tintColor = theme.cellTheme.detailIconColor
     }
 }
 

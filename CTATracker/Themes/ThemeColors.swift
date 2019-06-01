@@ -17,6 +17,7 @@ protocol ThemeColors {
     static var cellPlaceholderLabelColor: UIColor { get }
     static var cellHighlightedLabelColor: UIColor { get }
     static var cellSeparatorColor: UIColor { get }
+    static var cellDetailIconColor: UIColor { get }
     static var cellSelectionIconColor: UIColor { get }
     static var navBarBackgroundColor: UIColor { get }
     static var navBarBackdropColor: UIColor { get }
@@ -48,6 +49,7 @@ extension ThemeColors {
                          placeholderLabelColor: cellPlaceholderLabelColor,
                          highlightedLabelColor: cellHighlightedLabelColor,
                          separatorColor: cellSeparatorColor,
+                         detailIconColor: cellDetailIconColor,
                          selectionIconColor: cellSelectionIconColor)
     }
     
@@ -81,11 +83,14 @@ extension ThemeColors {
     }
 }
 
+struct SharedColors {
+    static let customDarkGray = #colorLiteral(red: 0.4980392157, green: 0.4980392157, blue: 0.4980392157, alpha: 1)
+}
+
 struct LightThemeColors: ThemeColors {
     
     static let customLightBlue = #colorLiteral(red: 0.935859859, green: 0.9516758323, blue: 0.9594567418, alpha: 1)
     static let customLightGray = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
-    static let customDarkGray = #colorLiteral(red: 0.4980392157, green: 0.4980392157, blue: 0.4980392157, alpha: 1)
     static let customVeryDarkGray = #colorLiteral(red: 0.1450980392, green: 0.1450980392, blue: 0.1450980392, alpha: 1)
     
     static let backgroundColor: UIColor = customLightBlue
@@ -95,6 +100,7 @@ struct LightThemeColors: ThemeColors {
     static let cellPlaceholderLabelColor: UIColor = .lightGray
     static let cellHighlightedLabelColor: UIColor = .blue
     static let cellSeparatorColor: UIColor = customLightGray
+    static let cellDetailIconColor: UIColor = SharedColors.customDarkGray
     static let cellSelectionIconColor: UIColor = .black
     static let navBarBackgroundColor: UIColor = .white
     static let navBarBackdropColor: UIColor = .white
@@ -107,15 +113,16 @@ struct LightThemeColors: ThemeColors {
     static let searchBarBarColor: UIColor = .yellow
     static let searchBarTextColor: UIColor = .green
     static let sectionHeaderBackgroundColor: UIColor = customLightGray
-    static let sectionHeaderButtonColor: UIColor = customDarkGray
+    static let sectionHeaderButtonColor: UIColor = SharedColors.customDarkGray
     static let sectionHeaderTextColor: UIColor = customVeryDarkGray
     static let tableBackgroundColor: UIColor = .white
-    static let tableSectionIndexColor: UIColor = customDarkGray
+    static let tableSectionIndexColor: UIColor = SharedColors.customDarkGray
 }
 
 struct DarkThemeColors: ThemeColors {
     
     static let almostBlack = #colorLiteral(red: 0.08679527789, green: 0.08720482141, blue: 0.08817806095, alpha: 1)
+    static let customDarkGray = #colorLiteral(red: 0.4980392157, green: 0.4980392157, blue: 0.4980392157, alpha: 1)
     
     static let backgroundColor: UIColor = .black
     static let cellBackgroundColor: UIColor = .black
@@ -124,6 +131,7 @@ struct DarkThemeColors: ThemeColors {
     static let cellPlaceholderLabelColor: UIColor = .lightGray
     static let cellHighlightedLabelColor: UIColor = .orange
     static let cellSeparatorColor: UIColor = .darkGray
+    static let cellDetailIconColor: UIColor = SharedColors.customDarkGray
     static let cellSelectionIconColor: UIColor = .orange
     static let navBarBackgroundColor: UIColor = almostBlack
     static let navBarBackdropColor: UIColor = .black

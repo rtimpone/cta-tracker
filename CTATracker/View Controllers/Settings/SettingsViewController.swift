@@ -21,7 +21,6 @@ class SettingsViewController: UIViewController {
         let vc = SettingsViewController.instantiateFromStoryboard()
         vc.delegate = delegate
         let nvc = ThemeableNavigationViewController(rootViewController: vc)
-        nvc.navigationBar.tintColor = Colors.darkGray
         return nvc
     }
     

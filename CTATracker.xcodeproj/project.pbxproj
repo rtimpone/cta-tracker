@@ -43,7 +43,6 @@
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
-		FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA38BFF2299FF3F003EAEF8 /* Colors.swift */; };
 		FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */; };
 		FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */; };
 		FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */; };
@@ -198,7 +197,6 @@
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
-		FBA38BFF2299FF3F003EAEF8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 		FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesTableViewController.swift; sourceTree = "<group>"; };
@@ -444,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				FBE353AB222759C00062C428 /* Animator.swift */,
-				FBA38BFF2299FF3F003EAEF8 /* Colors.swift */,
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
@@ -1065,7 +1062,6 @@
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
-				FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */,
 				FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */,
 				FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */,
