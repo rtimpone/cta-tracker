@@ -12,11 +12,19 @@ import UIKit
 class SelectSingleStopViewController: UIViewController {
     
     var currentTheme: Theme!
+    var statusBarStyle: UIStatusBarStyle = .default
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        //have to explicitly give a status bar style here because definesPresentationContext is set to true
+        //not setting this will revert it back to the default when we pop back from the station vc
+        return statusBarStyle
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setting this to true prevents a weird bug where the nav bar is missing when the station vc is pushed onto the nav stack 
+        //setting this to true prevents a weird bug where the nav bar is missing when the station vc is pushed onto the nav stack
         definesPresentationContext = true
         
         applyCurrentTheme()
@@ -45,6 +53,11 @@ extension SelectSingleStopViewController: SelectStopsViewControllerDelegate {
     }
     
     func didSelectStop(_ stop: Stop) {
+        
+        if let searchBar = navigationItem.searchController?.searchBar {
+            searchBar.resignFirstResponder()
+        }
+        
         let svc = StationViewController.instance(for: stop)
         navigationController?.pushViewController(svc, animated: true)
     }
@@ -54,5 +67,7 @@ extension SelectSingleStopViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         currentTheme = theme
+        statusBarStyle = theme.statusBarTheme.style
+        setNeedsStatusBarAppearanceUpdate()
     }
 }
