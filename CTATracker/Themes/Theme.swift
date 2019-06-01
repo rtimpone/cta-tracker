@@ -86,10 +86,9 @@ class Theme {
         DarkTheme()
     ]
     
-    init(name: String, colors: ThemeColors.Type, navBarStyle: NavBarTheme.Style, statusBarTheme: StatusBarTheme) {
+    init(name: String, colors: ThemeColors.Type, navBarStyle: NavBarTheme.Style, statusBarStyle: UIStatusBarStyle) {
         
         self.name = name
-        self.statusBarTheme = statusBarTheme
         
         self.backgroundTheme = colors.backgroundTheme()
         self.cellTheme = colors.cellTheme()
@@ -97,6 +96,7 @@ class Theme {
         self.routeFilterTheme = colors.routeFilterTheme()
         self.searchBarTheme = colors.searchBarTheme()
         self.sectionHeaderTheme = colors.sectionHeaderTheme()
+        self.statusBarTheme = StatusBarTheme(style: statusBarStyle)
         self.tableTheme = colors.tableTheme()
     }
     
@@ -115,15 +115,13 @@ extension Theme: Equatable {
 class LightTheme: Theme {
     
     init() {
-        let statusBarTheme = StatusBarTheme(style: .default)
-        super.init(name: "Light", colors: LightThemeColors.self, navBarStyle: .translucentLight, statusBarTheme: statusBarTheme)
+        super.init(name: "Light", colors: LightThemeColors.self, navBarStyle: .translucentLight, statusBarStyle: .default)
     }
 }
 
 class DarkTheme: Theme {
     
     init() {
-        let statusBarTheme = StatusBarTheme(style: .lightContent)
-        super.init(name: "Dark", colors: DarkThemeColors.self, navBarStyle: .translucentDark, statusBarTheme: statusBarTheme)
+        super.init(name: "Dark", colors: DarkThemeColors.self, navBarStyle: .translucentDark, statusBarStyle: .lightContent)
     }
 }
