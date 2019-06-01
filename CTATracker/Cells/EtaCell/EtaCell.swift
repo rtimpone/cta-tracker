@@ -20,12 +20,14 @@ class EtaCell: UITableViewCell {
         Animator.animateTextColorChangingOnLabel(etaLabel, to: .blue, duration: 0.5)
     }
     
-    func configure(for eta: ETA) {
+    func configure(for eta: ETA, theme: Theme) {
+        
+        destinationLabel.textColor = theme.cellTheme.titleLabelColor
+        etaLabel.textColor = theme.cellTheme.detailLabelColor
         
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
         etaLabel.text = EtaDescriptionGenerator.stringForTrainArrivingInSeconds(eta.secondsUntilArrival)
-        etaLabel.textColor = .black
         
         switch eta.status {
         case .delayed:
@@ -33,10 +35,10 @@ class EtaCell: UITableViewCell {
             infoLabel.textColor = .red
         case .scheduled:
             infoLabel.text = "Scheduled"
-            infoLabel.textColor = .lightGray
+            infoLabel.textColor = theme.cellTheme.placeholderLabelColor
         case .approaching, .enRoute, .unavailable:
             infoLabel.text = ""
-            infoLabel.textColor = .black
+            infoLabel.textColor = theme.cellTheme.detailLabelColor
         }
     }
 }

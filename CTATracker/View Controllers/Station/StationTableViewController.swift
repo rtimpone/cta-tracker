@@ -51,7 +51,7 @@ class StationTableViewController: UITableViewController {
         
         let eta = etas[indexPath.row]
         let cell = tableView.dequeueReusableCell(ofType: EtaCell.self)
-        cell.configure(for: eta)
+        cell.configure(for: eta, theme: currentTheme)
         return cell
     }
     
@@ -59,7 +59,15 @@ class StationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeader(ofType: StationSectionHeader.self)
-        header.configure(withText: stop.name)
+        header.configure(withText: stop.name, theme: currentTheme)
         return header
+    }
+}
+
+extension StationTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        currentTheme = theme
+        tableView.reloadData()
     }
 }

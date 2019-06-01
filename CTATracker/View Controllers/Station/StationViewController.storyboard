@@ -18,9 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkp-So-JpQ">
+                                <rect key="frame" x="0.0" y="-16" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="TcH-eK-CVj"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynS-2L-1v1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="mQo-lZ-RrC" kind="embed" id="KhT-Zd-iwS"/>
                                 </connections>
@@ -30,13 +37,19 @@
                         <constraints>
                             <constraint firstItem="ynS-2L-1v1" firstAttribute="bottom" secondItem="sed-w7-fUk" secondAttribute="bottom" id="0jE-B0-niw"/>
                             <constraint firstItem="ynS-2L-1v1" firstAttribute="leading" secondItem="sed-w7-fUk" secondAttribute="leading" id="J1t-B6-CX6"/>
+                            <constraint firstItem="Vkp-So-JpQ" firstAttribute="leading" secondItem="sed-w7-fUk" secondAttribute="leading" id="KRl-KN-byd"/>
                             <constraint firstItem="ynS-2L-1v1" firstAttribute="top" secondItem="sed-w7-fUk" secondAttribute="top" id="RAj-eK-x2o"/>
                             <constraint firstItem="ynS-2L-1v1" firstAttribute="trailing" secondItem="sed-w7-fUk" secondAttribute="trailing" id="b7X-Ya-j62"/>
+                            <constraint firstItem="sed-w7-fUk" firstAttribute="top" secondItem="Vkp-So-JpQ" secondAttribute="bottom" id="rdr-sl-HVE"/>
+                            <constraint firstItem="sed-w7-fUk" firstAttribute="trailing" secondItem="Vkp-So-JpQ" secondAttribute="trailing" id="u9A-aB-yBn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sed-w7-fUk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Arrivals" id="Qx9-CG-Iug"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="navBarBackdropView" destination="Vkp-So-JpQ" id="Epy-FT-Pqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4e9-VD-IvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

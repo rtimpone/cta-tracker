@@ -19,6 +19,8 @@ class StationViewController: UIViewController {
     let timerManager = TimerManager()
     var secondsElapsed = 0
     
+    @IBOutlet weak var navBarBackdropView: UIView!
+    
     static func instance(for stop: Stop, withArrivals arrivals: StopArrivals? = nil) -> StationViewController {
         let vc = StationViewController.instantiateFromStoryboard()
         vc.stop = stop
@@ -28,6 +30,8 @@ class StationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentTheme()
+        
         let etas = arrivals?.etas ?? []
         tableViewController.setEtas(etas, for: stop)
         tableViewController.reloadEtas()
@@ -75,5 +79,14 @@ extension StationViewController: TimerManagerDelegate {
                 self.tableViewController.setEtas(arrivals.etas, for: arrivals.stop)
             }
         }
+    }
+}
+
+extension StationViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
+        tableViewController?.applyTheme(theme)
     }
 }
