@@ -37,9 +37,6 @@ class StationViewController: UIViewController {
         tableViewController.reloadEtas()
         timerManager.delegate = self
         requestUpdatedEtas()
-        
-        //need to set this explicity so nav bar will show when pushed from single stop search vc
-        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

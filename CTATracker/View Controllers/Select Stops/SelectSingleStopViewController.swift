@@ -15,6 +15,10 @@ class SelectSingleStopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //setting this to true prevents a weird bug where the nav bar is missing when the station vc is pushed onto the nav stack 
+        definesPresentationContext = true
+        
         applyCurrentTheme()
         let vc = SelectStopsViewController.instance(withDelegate: self)
         add(child: vc)
@@ -42,7 +46,7 @@ extension SelectSingleStopViewController: SelectStopsViewControllerDelegate {
     
     func didSelectStop(_ stop: Stop) {
         let svc = StationViewController.instance(for: stop)
-        self.navigationController?.pushViewController(svc, animated: true)
+        navigationController?.pushViewController(svc, animated: true)
     }
 }
 
