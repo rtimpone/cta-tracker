@@ -26,6 +26,18 @@ extension ThemeableNavigationViewController: Themeable {
         
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: theme.navBarTheme.titleColor]
         navigationBar.tintColor = theme.navBarTheme.buttonColor
-        navigationBar.barTintColor = theme.navBarTheme.backgroundColor
+        
+        switch theme.navBarTheme.style {
+        case .translucentLight:
+            navigationBar.barStyle = .default
+            navigationBar.isTranslucent = true
+            navigationBar.barTintColor = nil
+        case .translucentDark:
+            navigationBar.barStyle = .blackTranslucent
+            navigationBar.isTranslucent = true
+            navigationBar.barTintColor = nil
+        case .opaqueColored(let color):
+            navigationBar.barTintColor = color
+        }
     }
 }

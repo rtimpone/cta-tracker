@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     let arrivalsRequestHandler = ArrivalsRequestHandler()
     let statusRequestHandler = StatusRequestHandler()
     
+    @IBOutlet weak var navBarBackdropView: UIView!
     weak var tableViewController: HomeTableViewController!
     var currentDeviceCoordinate: Coordinate?
     

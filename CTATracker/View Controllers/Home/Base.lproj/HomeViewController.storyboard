@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cZ-aF-ztt" userLabel="Navigation Bar Backdrop View">
+                                <rect key="frame" x="0.0" y="-16" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="V5D-FU-9dQ"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diH-GX-de7">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="z0Z-XQ-qNP" kind="embed" id="IVj-Kd-yDN"/>
                                 </connections>
@@ -27,9 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3cZ-aF-ztt" firstAttribute="leading" secondItem="p8Y-pw-mue" secondAttribute="leading" id="QT1-X0-kaL"/>
+                            <constraint firstItem="p8Y-pw-mue" firstAttribute="top" secondItem="3cZ-aF-ztt" secondAttribute="bottom" id="SKF-JR-agh"/>
                             <constraint firstItem="p8Y-pw-mue" firstAttribute="trailing" secondItem="diH-GX-de7" secondAttribute="trailing" id="drd-rI-fBq"/>
                             <constraint firstItem="diH-GX-de7" firstAttribute="leading" secondItem="p8Y-pw-mue" secondAttribute="leading" id="fBQ-J0-BWe"/>
-                            <constraint firstItem="diH-GX-de7" firstAttribute="top" secondItem="p8Y-pw-mue" secondAttribute="top" id="fDf-zI-yFE"/>
+                            <constraint firstItem="diH-GX-de7" firstAttribute="top" secondItem="27I-PF-HIS" secondAttribute="top" id="fDf-zI-yFE"/>
+                            <constraint firstItem="p8Y-pw-mue" firstAttribute="trailing" secondItem="3cZ-aF-ztt" secondAttribute="trailing" id="uhK-Oo-7Pt"/>
                             <constraint firstAttribute="bottom" secondItem="diH-GX-de7" secondAttribute="bottom" id="zPt-tG-YVP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p8Y-pw-mue"/>
@@ -48,6 +58,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="navBarBackdropView" destination="3cZ-aF-ztt" id="tI8-Ef-lil"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ed-Lb-UWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +71,7 @@
             <objects>
                 <tableViewController id="z0Z-XQ-qNP" customClass="HomeTableViewController" customModule="CTA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="lVx-W0-Let">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>

@@ -20,8 +20,15 @@ struct CellTheme {
 }
 
 struct NavBarTheme {
-    let backgroundColor: UIColor
+    
+    enum Style {
+        case translucentLight
+        case translucentDark
+        case opaqueColored(UIColor)
+    }
+
     let buttonColor: UIColor
+    let style: Style
     let titleColor: UIColor
 }
 
@@ -79,14 +86,14 @@ class Theme {
         DarkTheme()
     ]
     
-    init(name: String, colors: ThemeColors.Type, statusBarTheme: StatusBarTheme) {
+    init(name: String, colors: ThemeColors.Type, navBarStyle: NavBarTheme.Style, statusBarTheme: StatusBarTheme) {
         
         self.name = name
         self.statusBarTheme = statusBarTheme
         
         self.backgroundTheme = colors.backgroundTheme()
         self.cellTheme = colors.cellTheme()
-        self.navBarTheme = colors.navBarTheme()
+        self.navBarTheme = colors.navBarTheme(style: navBarStyle)
         self.routeFilterTheme = colors.routeFilterTheme()
         self.searchBarTheme = colors.searchBarTheme()
         self.sectionHeaderTheme = colors.sectionHeaderTheme()
@@ -109,7 +116,7 @@ class LightTheme: Theme {
     
     init() {
         let statusBarTheme = StatusBarTheme(style: .default)
-        super.init(name: "Light", colors: LightThemeColors.self, statusBarTheme: statusBarTheme)
+        super.init(name: "Light", colors: LightThemeColors.self, navBarStyle: .translucentLight, statusBarTheme: statusBarTheme)
     }
 }
 
@@ -117,6 +124,6 @@ class DarkTheme: Theme {
     
     init() {
         let statusBarTheme = StatusBarTheme(style: .lightContent)
-        super.init(name: "Dark", colors: DarkThemeColors.self, statusBarTheme: statusBarTheme)
+        super.init(name: "Dark", colors: DarkThemeColors.self, navBarStyle: .translucentDark, statusBarTheme: statusBarTheme)
     }
 }

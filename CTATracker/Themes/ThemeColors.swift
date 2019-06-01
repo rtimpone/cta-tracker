@@ -44,9 +44,9 @@ extension ThemeColors {
                          separatorColor: cellSeparatorColor)
     }
     
-    static func navBarTheme() -> NavBarTheme {
-        return NavBarTheme(backgroundColor: navBarBackgroundColor,
-                           buttonColor: navBarButtonColor,
+    static func navBarTheme(style: NavBarTheme.Style) -> NavBarTheme {
+        return NavBarTheme(buttonColor: navBarButtonColor,
+                           style: style,
                            titleColor: navBarTitleColor)
     }
     
