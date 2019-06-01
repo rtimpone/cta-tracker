@@ -10,9 +10,12 @@ import UIKit
 
 class GenericMessageCell: UITableViewCell {
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var label: UILabel!
     
-    func configure(withText text: String) {
+    func configure(withText text: String, theme: Theme) {
+        containerView.backgroundColor = theme.cellTheme.backgroundColor
+        label.textColor = theme.cellTheme.placeholderLabelColor
         label.text = text
     }
 }

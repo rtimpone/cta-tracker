@@ -76,33 +76,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPZ-bg-Iqb">
-                        <rect key="frame" x="289" y="7.5" width="14.5" height="28"/>
-                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-Af-fJE">
+                        <rect key="frame" x="278" y="8.5" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="jbQ-yb-amN"/>
+                            <constraint firstAttribute="width" constant="26" id="mc1-Yp-AIR"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="g9d-YF-syA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="46" id="3DU-b1-RsG"/>
                     <constraint firstItem="H81-d5-CLJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Nzb-we-GOc"/>
-                    <constraint firstAttribute="trailing" secondItem="KPZ-bg-Iqb" secondAttribute="trailing" constant="16.5" id="PO7-pa-GnT"/>
-                    <constraint firstItem="KPZ-bg-Iqb" firstAttribute="centerY" secondItem="H81-d5-CLJ" secondAttribute="centerY" id="Yms-k8-Coi"/>
+                    <constraint firstItem="EcW-Af-fJE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H81-d5-CLJ" secondAttribute="trailing" constant="8" id="ZTV-sU-YVM"/>
                     <constraint firstAttribute="bottom" secondItem="H81-d5-CLJ" secondAttribute="bottom" constant="11" id="ajg-rF-Qff"/>
                     <constraint firstItem="H81-d5-CLJ" firstAttribute="leading" secondItem="g9d-YF-syA" secondAttribute="trailing" constant="12" id="fNy-qe-AeC"/>
+                    <constraint firstAttribute="trailing" secondItem="EcW-Af-fJE" secondAttribute="trailing" constant="16" id="ly3-jd-uvF"/>
                     <constraint firstAttribute="bottom" secondItem="g9d-YF-syA" secondAttribute="bottom" constant="11" id="npi-mQ-rxK"/>
                     <constraint firstItem="g9d-YF-syA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11.5" id="qCz-PI-iHh"/>
-                    <constraint firstItem="KPZ-bg-Iqb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H81-d5-CLJ" secondAttribute="trailing" constant="8" id="xzj-7h-eoz"/>
+                    <constraint firstItem="EcW-Af-fJE" firstAttribute="centerY" secondItem="H81-d5-CLJ" secondAttribute="centerY" id="wP5-kw-L6I"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="checkmarkImageView" destination="EcW-Af-fJE" id="5B3-bh-ZvV"/>
                 <outlet property="colorsView" destination="g9d-YF-syA" id="OJr-sy-cTz"/>
                 <outlet property="colorsViewWidthConstraint" destination="5gT-Gy-bem" id="9q1-ka-5ds"/>
                 <outlet property="nameLabel" destination="H81-d5-CLJ" id="eP7-6l-xdQ"/>
-                <outlet property="selectedLabel" destination="KPZ-bg-Iqb" id="0Cs-qD-j6M"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="178.56071964017991"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" width="26" height="26"/>
+    </resources>
 </document>

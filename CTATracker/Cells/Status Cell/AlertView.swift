@@ -31,6 +31,14 @@ class AlertView: UIView {
     }
 }
 
+extension AlertView: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        headlineLabel.textColor = theme.cellTheme.detailLabelColor
+        descriptionLabel.textColor = theme.cellTheme.detailLabelColor
+    }
+}
+
 private extension AlertView {
     
     func changeHeightConstraint(to newConstraint: NSLayoutConstraint) {

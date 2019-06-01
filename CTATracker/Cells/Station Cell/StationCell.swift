@@ -12,10 +12,21 @@ import UIKit
 class StationCell: UITableViewCell {
 
     @IBOutlet weak var stationTitleLabel: UILabel!
-    @IBOutlet weak var selectedLabel: UILabel!
-
-    func configure(for station: Station, isSelected: Bool) {
+    @IBOutlet weak var checkmarkImageView: UIImageView!
+    
+    func configure(for station: Station, isSelected: Bool, theme: Theme) {
+        applyTheme(theme)
         stationTitleLabel.text = station.name
-        selectedLabel.isHidden = !isSelected
+        checkmarkImageView.isHidden = !isSelected
+    }
+}
+
+extension StationCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        stationTitleLabel.textColor = theme.cellTheme.titleLabelColor
+        checkmarkImageView.tintColor = theme.cellTheme.selectionIconColor
     }
 }

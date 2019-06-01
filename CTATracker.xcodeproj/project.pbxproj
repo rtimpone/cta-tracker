@@ -16,9 +16,11 @@
 		FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */; };
 		FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */; };
 		FB1FC62C229B674E00EFD91E /* SelectSingleStopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */; };
+		FB1FFCC322A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */; };
 		FB2510FE226239D3001FDC15 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2510FD226239D3001FDC15 /* Images.swift */; };
 		FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58E65F223D5D2C008861BA /* RouteCell.swift */; };
 		FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58E660223D5D2C008861BA /* RouteCell.xib */; };
+		FB608D2722A2F1BE00DBBBE1 /* ThemeableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB6E4D952201F2E4002AC392 /* RouteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */; };
@@ -41,12 +43,18 @@
 		FB89463921D1A9450018E97B /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB89463821D1A9450018E97B /* Stop.swift */; };
 		FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */; };
 		FB98C5BD21E1A01E004D61B6 /* ArrivalsSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */; };
-		FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA38BFF2299FF3F003EAEF8 /* Colors.swift */; };
+		FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */; };
+		FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */; };
+		FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */; };
+		FBAEF103229CB8A800B5D102 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF102229CB8A800B5D102 /* Theme.swift */; };
+		FBAEF105229CB8BC00B5D102 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */; };
 		FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A1F224127AD00AC2320 /* StationCell.swift */; };
 		FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A20224127AD00AC2320 /* StationCell.xib */; };
 		FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB47A24224127C600AC2320 /* PlatformCell.swift */; };
 		FBB47A27224127C600AC2320 /* PlatformCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB47A25224127C600AC2320 /* PlatformCell.xib */; };
 		FBBE4AF621F577E500DAA0A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE4AF521F577E500DAA0A1 /* Route.swift */; };
+		FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */; };
+		FBC22F6B229D62F000AB9491 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC22F6A229D62F000AB9491 /* ThemeManager.swift */; };
 		FBCAA0E321C5625000681A6F /* CTAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBCAA0DA21C5625000681A6F /* CTAKit.framework */; };
 		FBCAA0EA21C5625000681A6F /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA0E921C5625000681A6F /* URLExtensionTests.swift */; };
 		FBCAA0EC21C5625000681A6F /* CTAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FBCAA0DC21C5625000681A6F /* CTAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -67,6 +75,11 @@
 		FBCAA11C21C5689600681A6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11B21C5689600681A6F /* Credentials.swift */; };
 		FBCAA11E21C5746100681A6F /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCAA11D21C5746100681A6F /* Locations.swift */; };
 		FBCB2BE221CD3DFC0057643A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */; };
+		FBD4CF14229C358800B1D6A4 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */; };
+		FBD4CF16229C35A400B1D6A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */; };
+		FBD4CF19229C42F500B1D6A4 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */; };
+		FBD4CF1B229C431D00B1D6A4 /* ThemesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */; };
+		FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */; };
 		FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */; };
 		FBDB8DA121C596F7008A1F32 /* ArrivalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */; };
 		FBDDCCCD2218655500D41793 /* StoryboardInstantiable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */; };
@@ -157,9 +170,11 @@
 		FB1FC627229B669600EFD91E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSingleStopViewController.swift; sourceTree = "<group>"; };
 		FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectSingleStopViewController.storyboard; sourceTree = "<group>"; };
+		FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableNavigationViewController.swift; sourceTree = "<group>"; };
 		FB2510FD226239D3001FDC15 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FB58E65F223D5D2C008861BA /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		FB58E660223D5D2C008861BA /* RouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteCell.xib; sourceTree = "<group>"; };
+		FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableTableViewController.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataFetcher.swift; sourceTree = "<group>"; };
@@ -182,12 +197,18 @@
 		FB89463821D1A9450018E97B /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		FB98C5B721E1964F004D61B6 /* ArrivalsSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsSorter.swift; sourceTree = "<group>"; };
 		FB98C5BC21E1A01E004D61B6 /* ArrivalsSorterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivalsSorterTests.swift; sourceTree = "<group>"; };
-		FBA38BFF2299FF3F003EAEF8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesTableViewController.swift; sourceTree = "<group>"; };
+		FBAEF102229CB8A800B5D102 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		FBB47A1F224127AD00AC2320 /* StationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 		FBB47A20224127AD00AC2320 /* StationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationCell.xib; sourceTree = "<group>"; };
 		FBB47A24224127C600AC2320 /* PlatformCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCell.swift; sourceTree = "<group>"; };
 		FBB47A25224127C600AC2320 /* PlatformCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformCell.xib; sourceTree = "<group>"; };
 		FBBE4AF521F577E500DAA0A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
+		FBC22F6A229D62F000AB9491 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FBCAA0DA21C5625000681A6F /* CTAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCAA0DC21C5625000681A6F /* CTAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAKit.h; sourceTree = "<group>"; };
 		FBCAA0DD21C5625000681A6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,6 +230,11 @@
 		FBCAA11B21C5689600681A6F /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		FBCAA11D21C5746100681A6F /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
+		FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThemesViewController.storyboard; sourceTree = "<group>"; };
+		FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FBDB8D9E21C596EB008A1F32 /* ArrivalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalCell.swift; sourceTree = "<group>"; };
 		FBDB8DA021C596F7008A1F32 /* ArrivalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArrivalCell.xib; sourceTree = "<group>"; };
 		FBDDCCCC2218655500D41793 /* StoryboardInstantiable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoryboardInstantiable.framework; path = Carthage/Build/iOS/StoryboardInstantiable.framework; sourceTree = "<group>"; };
@@ -292,27 +318,36 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		FB58E65A223D5C93008861BA /* Home View Controller */ = {
+		FB1FFCC122A0BECB00CF9BF4 /* Other Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */,
+				FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */,
+			);
+			path = "Other Controllers";
+			sourceTree = "<group>";
+		};
+		FB58E65A223D5C93008861BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				FBF17A2021C5607800BF232C /* HomeViewController.swift */,
 				FBE2E20821E1154F00D97D61 /* HomeTableViewController.swift */,
 				FBF17A0021C55FD900BF232C /* HomeViewController.storyboard */,
 			);
-			path = "Home View Controller";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		FB58E65B223D5CAC008861BA /* Station View Controller */ = {
+		FB58E65B223D5CAC008861BA /* Station */ = {
 			isa = PBXGroup;
 			children = (
 				FBDDCCD222186DDC00D41793 /* StationTableViewController.swift */,
 				FB71C57A221856AB00119AA2 /* StationViewController.swift */,
 				FBDDCCD02218672700D41793 /* StationViewController.storyboard */,
 			);
-			path = "Station View Controller";
+			path = Station;
 			sourceTree = "<group>";
 		};
-		FB58E65C223D5CBD008861BA /* Select Stops View Controller */ = {
+		FB58E65C223D5CBD008861BA /* Select Stops */ = {
 			isa = PBXGroup;
 			children = (
 				FB7EF69A22998EA9006FE97F /* RouteColorFilterViewController.swift */,
@@ -324,17 +359,17 @@
 				FB1FC629229B673B00EFD91E /* SelectSingleStopViewController.swift */,
 				FB1FC62B229B674E00EFD91E /* SelectSingleStopViewController.storyboard */,
 			);
-			path = "Select Stops View Controller";
+			path = "Select Stops";
 			sourceTree = "<group>";
 		};
-		FB58E65D223D5CC8008861BA /* Select Routes View Controller */ = {
+		FB58E65D223D5CC8008861BA /* Select Routes */ = {
 			isa = PBXGroup;
 			children = (
 				FBDDFCBE223BD3600082210F /* SelectRoutesViewController.swift */,
 				FBDDFCCA223BD3A70082210F /* SelectRoutesTableViewController.swift */,
 				FBDDFCC6223BD3940082210F /* SelectRoutesViewController.storyboard */,
 			);
-			path = "Select Routes View Controller";
+			path = "Select Routes";
 			sourceTree = "<group>";
 		};
 		FB58E65E223D5D0D008861BA /* Route Cell */ = {
@@ -344,15 +379,6 @@
 				FB58E660223D5D2C008861BA /* RouteCell.xib */,
 			);
 			path = "Route Cell";
-			sourceTree = "<group>";
-		};
-		FB84808821EA320E007F932E /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
-				FB2510FD226239D3001FDC15 /* Images.swift */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		FB86FAF222188099003FBB40 /* EtaCell */ = {
@@ -416,10 +442,11 @@
 			isa = PBXGroup;
 			children = (
 				FBE353AB222759C00062C428 /* Animator.swift */,
-				FBA38BFF2299FF3F003EAEF8 /* Colors.swift */,
 				FB10F2C7223B1D7100BE2B76 /* FavoritesManager.swift */,
 				FBE56C16229A00FE002AD904 /* HapticsManager.swift */,
 				FBE353A122274DF10062C428 /* TimerManager.swift */,
+				FBC22F6A229D62F000AB9491 /* ThemeManager.swift */,
+				FBC22F68229D626700AB9491 /* UserDefaultsClient.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -441,6 +468,33 @@
 				FBCAA0FF21C562CA00681A6F /* LocationHandler.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		FBADD69F229E214B00BDF743 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FBF17A0321C55FDB00BF232C /* Assets.xcassets */,
+				FB2510FD226239D3001FDC15 /* Images.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FBAEF0FA229CB28700B5D102 /* Theme Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEF0FB229CB2F500B5D102 /* ThemeCell.swift */,
+				FBAEF0FD229CB34600B5D102 /* ThemeCell.xib */,
+			);
+			path = "Theme Cell";
+			sourceTree = "<group>";
+		};
+		FBAEF101229CB89400B5D102 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEF102229CB8A800B5D102 /* Theme.swift */,
+				FBAEF104229CB8BC00B5D102 /* ThemeColors.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		FBB47A23224127B100AC2320 /* Station Cell */ = {
@@ -550,6 +604,7 @@
 				FB58E65E223D5D0D008861BA /* Route Cell */,
 				FBB47A23224127B100AC2320 /* Station Cell */,
 				FB87A31B21F3FEFA0002431F /* Status Cell */,
+				FBAEF0FA229CB28700B5D102 /* Theme Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -561,6 +616,26 @@
 				FBCB2BE121CD3DFC0057643A /* URL+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBD4CF12229C34AB00B1D6A4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FBD4CF1C229C470900B1D6A4 /* SettingsTableViewController.swift */,
+				FBD4CF15229C35A400B1D6A4 /* SettingsViewController.swift */,
+				FBD4CF13229C358800B1D6A4 /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FBD4CF17229C42E200B1D6A4 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEF0FF229CB86F00B5D102 /* ThemesTableViewController.swift */,
+				FBD4CF18229C42F500B1D6A4 /* ThemesViewController.swift */,
+				FBD4CF1A229C431D00B1D6A4 /* ThemesViewController.storyboard */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		FBDDCCCB2218655500D41793 /* Frameworks */ = {
@@ -619,16 +694,18 @@
 		FBF179FB21C55FD900BF232C /* CTATracker */ = {
 			isa = PBXGroup;
 			children = (
+				FBADD69F229E214B00BDF743 /* Assets */,
 				FBCAA11121C5647100681A6F /* Cells */,
 				FBCAA0F921C5629F00681A6F /* Custom Views */,
 				FB1FC626229B668600EFD91E /* Extensions */,
 				FBE2E21721E12D4200D97D61 /* Factories */,
 				FB86FAF7221882B4003FBB40 /* Formatters */,
-				FB84808821EA320E007F932E /* Images */,
 				FB98C5B621E1963A004D61B6 /* Location */,
+				FB1FFCC122A0BECB00CF9BF4 /* Other Controllers */,
 				FBE2E21A21E12FC900D97D61 /* Request Handlers */,
 				FBF17A1E21C5604900BF232C /* Resources */,
 				FB86FAFE221885B3003FBB40 /* Section Headers */,
+				FBAEF101229CB89400B5D102 /* Themes */,
 				FB87A31E21F3FF2F0002431F /* Utilities */,
 				FBF17A1F21C5606300BF232C /* View Controllers */,
 			);
@@ -660,10 +737,12 @@
 		FBF17A1F21C5606300BF232C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FB58E65A223D5C93008861BA /* Home View Controller */,
-				FB58E65D223D5CC8008861BA /* Select Routes View Controller */,
-				FB58E65C223D5CBD008861BA /* Select Stops View Controller */,
-				FB58E65B223D5CAC008861BA /* Station View Controller */,
+				FB58E65A223D5C93008861BA /* Home */,
+				FB58E65D223D5CC8008861BA /* Select Routes */,
+				FB58E65C223D5CBD008861BA /* Select Stops */,
+				FBD4CF12229C34AB00B1D6A4 /* Settings */,
+				FB58E65B223D5CAC008861BA /* Station */,
+				FBD4CF17229C42E200B1D6A4 /* Themes */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -833,6 +912,7 @@
 			files = (
 				FBB47A27224127C600AC2320 /* PlatformCell.xib in Resources */,
 				FBDDCCD12218672700D41793 /* StationViewController.storyboard in Resources */,
+				FBD4CF1B229C431D00B1D6A4 /* ThemesViewController.storyboard in Resources */,
 				FB86FAF6221880AF003FBB40 /* EtaCell.xib in Resources */,
 				FBDDFCC7223BD3940082210F /* SelectRoutesViewController.storyboard in Resources */,
 				FBE2E21621E1210500D97D61 /* HomeSectionHeader.xib in Resources */,
@@ -843,10 +923,12 @@
 				FBF17A0221C55FD900BF232C /* HomeViewController.storyboard in Resources */,
 				FB86FB0222188601003FBB40 /* StationSectionHeader.xib in Resources */,
 				FBE2E20D21E11DC900D97D61 /* GenericMessageCell.xib in Resources */,
+				FBAEF0FE229CB34600B5D102 /* ThemeCell.xib in Resources */,
 				FB1FC625229B5EDF00EFD91E /* SelectFavoriteStopsViewController.storyboard in Resources */,
 				FBCAA11521C5647F00681A6F /* StatusCell.xib in Resources */,
 				FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */,
 				FBB47A22224127AD00AC2320 /* StationCell.xib in Resources */,
+				FBD4CF14229C358800B1D6A4 /* SettingsViewController.storyboard in Resources */,
 				FBDDFCC9223BD39B0082210F /* SelectStopsViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -946,10 +1028,14 @@
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
 				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
+				FB608D2722A2F1BE00DBBBE1 /* ThemeableTableViewController.swift in Sources */,
+				FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,
 				FBB47A21224127AD00AC2320 /* StationCell.swift in Sources */,
+				FBD4CF19229C42F500B1D6A4 /* ThemesViewController.swift in Sources */,
 				FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */,
+				FBAEF103229CB8A800B5D102 /* Theme.swift in Sources */,
 				FB2510FE226239D3001FDC15 /* Images.swift in Sources */,
 				FBE2E20B21E11DC000D97D61 /* GenericMessageCell.swift in Sources */,
 				FBB47A26224127C600AC2320 /* PlatformCell.swift in Sources */,
@@ -967,22 +1053,28 @@
 				FB86FAFB221882FA003FBB40 /* EtaDescriptionGenerator.swift in Sources */,
 				FB71C57B221856AB00119AA2 /* StationViewController.swift in Sources */,
 				FB7EF69B22998EA9006FE97F /* RouteColorFilterViewController.swift in Sources */,
+				FBAEF105229CB8BC00B5D102 /* ThemeColors.swift in Sources */,
+				FB1FFCC322A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift in Sources */,
 				FBDDCCD322186DDC00D41793 /* StationTableViewController.swift in Sources */,
+				FBC22F69229D626700AB9491 /* UserDefaultsClient.swift in Sources */,
+				FBD4CF1D229C470900B1D6A4 /* SettingsTableViewController.swift in Sources */,
 				FBE56C1B229AE992002AD904 /* SectionIndexTitlesFactory.swift in Sources */,
 				FBE353A222274DF10062C428 /* TimerManager.swift in Sources */,
 				FBDDFCCB223BD3A70082210F /* SelectRoutesTableViewController.swift in Sources */,
 				FBCAA11321C5647800681A6F /* StatusCell.swift in Sources */,
-				FBA38C002299FF3F003EAEF8 /* Colors.swift in Sources */,
 				FB1FC62A229B673B00EFD91E /* SelectSingleStopViewController.swift in Sources */,
 				FB1FC628229B669600EFD91E /* UIViewController+Extensions.swift in Sources */,
 				FB10F2C8223B1D7100BE2B76 /* FavoritesManager.swift in Sources */,
+				FBD4CF16229C35A400B1D6A4 /* SettingsViewController.swift in Sources */,
 				FBFD187C222B0D4600D0EA9D /* DistanceCalculator.swift in Sources */,
 				FBF17A2121C5607800BF232C /* HomeViewController.swift in Sources */,
 				FB86FAF5221880AF003FBB40 /* EtaCell.swift in Sources */,
 				FB98C5B821E1964F004D61B6 /* ArrivalsSorter.swift in Sources */,
+				FBC22F6B229D62F000AB9491 /* ThemeManager.swift in Sources */,
 				FB87A31A21F3FEED0002431F /* AlertView.swift in Sources */,
 				FBE2E21421E120FF00D97D61 /* HomeSectionHeader.swift in Sources */,
 				FBF179FD21C55FD900BF232C /* AppDelegate.swift in Sources */,
+				FBAEF100229CB86F00B5D102 /* ThemesTableViewController.swift in Sources */,
 				FBE56C17229A00FE002AD904 /* HapticsManager.swift in Sources */,
 				FB87A32021F3FF400002431F /* ConstraintFactory.swift in Sources */,
 			);

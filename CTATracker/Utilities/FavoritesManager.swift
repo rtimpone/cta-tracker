@@ -102,14 +102,3 @@ struct FavoriteStopsManager: FavoritesManager {
         return [30131, 41320, 30019, 30021, 30211]
     }
 }
-
-struct UserDefaultsClient {
-    
-    static func setArray(_ array: [Any], forKey key: String) {
-        UserDefaults.standard.set(array, forKey: key)
-    }
-    
-    static func fetchArray(forKey key: String) -> [Any]? {
-        return UserDefaults.standard.array(forKey: key)
-    }
-}

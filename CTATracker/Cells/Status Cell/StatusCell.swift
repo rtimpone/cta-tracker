@@ -16,13 +16,18 @@ class StatusCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var alertView: AlertView!
     
-    func configure(for status: RouteStatus) {
+    func configure(for status: RouteStatus, theme: Theme) {
+        
+        applyTheme(theme)
         
         routeColorView.backgroundColor = status.route.color
         routeTitleLabel.text = status.route.title
+        routeTitleLabel.textColor = theme.cellTheme.titleLabelColor
 
         let severeAlerts = status.alerts.filter({ $0.isSevere })
         let mostSevereAlert = severeAlerts.sorted(by: { $0.severity > $1.severity }).first
+
+        alertView.applyTheme(theme)
         
         if let alert = mostSevereAlert {
             alertView.isHidden = false
@@ -34,8 +39,16 @@ class StatusCell: UITableViewCell {
         else {
             alertView.isHidden = true
             alertView.updateHeightConstraintForHidden()
-            statusLabel.textColor = .black
+            statusLabel.textColor = theme.cellTheme.detailLabelColor
             statusLabel.text = "Normal Service"
         }
+    }
+}
+
+extension StatusCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
     }
 }

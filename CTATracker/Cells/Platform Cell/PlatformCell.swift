@@ -12,16 +12,29 @@ import UIKit
 class PlatformCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var colorsView: RouteColorsView!
     @IBOutlet weak var colorsViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var checkmarkImageView: UIImageView!
     
-    func configure(for platform: Platform, isSelected: Bool) {
+    func configure(for platform: Platform, isSelected: Bool, theme: Theme) {
+        
+        applyTheme(theme)
+        colorsView.applyTheme(theme)
         
         nameLabel.text = platform.platformDescription
-        selectedLabel.isHidden = !isSelected
+        checkmarkImageView.isHidden = !isSelected
         colorsView.showColors(forRoutes: platform.routes)
         colorsViewWidthConstraint.constant = colorsView.widthForNumberOfRoutes(platform.routes.count)
+    }
+}
+
+extension PlatformCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        nameLabel.textColor = theme.cellTheme.titleLabelColor
+        checkmarkImageView.tintColor = theme.cellTheme.selectionIconColor
     }
 }
 
@@ -60,6 +73,13 @@ class RouteColorsView: UIView {
         
         let width = (numberOfColorViewsToShow * colorViewWidth) + (numberOfSpacers * spacingBetweenColorViewsWidth)
         return CGFloat(width)
+    }
+}
+
+extension RouteColorsView: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
     }
 }
 
