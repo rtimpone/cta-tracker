@@ -26,7 +26,7 @@ class StationTableViewController: UITableViewController {
         self.stop = stop
         for cell in tableView.visibleCells {
             if let etaCell = cell as? EtaCell {
-                etaCell.highlightEtaLabel()
+                etaCell.highlightEtaLabel(theme: currentTheme)
             }
         }
     }

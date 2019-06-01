@@ -85,7 +85,10 @@ extension StationViewController: TimerManagerDelegate {
 extension StationViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
-        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        
+        //on this particular screen, we want the background to blend in with the cells 
+        view.backgroundColor = theme.cellTheme.backgroundColor
+        
         navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
         tableViewController?.applyTheme(theme)
     }

@@ -15,6 +15,7 @@ protocol ThemeColors {
     static var cellTitleLabelColor: UIColor { get }
     static var cellDetailLabelColor: UIColor { get }
     static var cellPlaceholderLabelColor: UIColor { get }
+    static var cellHighlightedLabelColor: UIColor { get }
     static var cellSeparatorColor: UIColor { get }
     static var cellSelectionIconColor: UIColor { get }
     static var navBarBackgroundColor: UIColor { get }
@@ -45,6 +46,7 @@ extension ThemeColors {
                          titleLabelColor: cellTitleLabelColor,
                          detailLabelColor: cellDetailLabelColor,
                          placeholderLabelColor: cellPlaceholderLabelColor,
+                         highlightedLabelColor: cellHighlightedLabelColor,
                          separatorColor: cellSeparatorColor,
                          selectionIconColor: cellSelectionIconColor)
     }
@@ -91,6 +93,7 @@ struct LightThemeColors: ThemeColors {
     static let cellTitleLabelColor: UIColor = .black
     static let cellDetailLabelColor: UIColor = .black
     static let cellPlaceholderLabelColor: UIColor = .lightGray
+    static let cellHighlightedLabelColor: UIColor = .blue
     static let cellSeparatorColor: UIColor = customLightGray
     static let cellSelectionIconColor: UIColor = .black
     static let navBarBackgroundColor: UIColor = .white
@@ -119,6 +122,7 @@ struct DarkThemeColors: ThemeColors {
     static let cellTitleLabelColor: UIColor = .white
     static let cellDetailLabelColor: UIColor = .white
     static let cellPlaceholderLabelColor: UIColor = .lightGray
+    static let cellHighlightedLabelColor: UIColor = .orange
     static let cellSeparatorColor: UIColor = .darkGray
     static let cellSelectionIconColor: UIColor = .orange
     static let navBarBackgroundColor: UIColor = almostBlack

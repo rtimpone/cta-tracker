@@ -15,15 +15,18 @@ class EtaCell: UITableViewCell {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var etaLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
     
-    func highlightEtaLabel() {
-        Animator.animateTextColorChangingOnLabel(etaLabel, to: .blue, duration: 0.5)
+    func highlightEtaLabel(theme: Theme) {
+        Animator.animateTextColorChangingOnLabel(etaLabel, to: theme.cellTheme.highlightedLabelColor, duration: 0.5)
     }
     
     func configure(for eta: ETA, theme: Theme) {
         
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
         destinationLabel.textColor = theme.cellTheme.titleLabelColor
         etaLabel.textColor = theme.cellTheme.detailLabelColor
+        separatorView.backgroundColor = theme.cellTheme.separatorColor
         
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
