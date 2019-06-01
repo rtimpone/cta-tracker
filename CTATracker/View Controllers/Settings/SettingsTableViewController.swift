@@ -52,8 +52,6 @@ extension SettingsTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         
-        tableView.backgroundColor = theme.tableTheme.backgroundColor
-        
         let cellColor = theme.cellTheme.backgroundColor
         themesCell.backgroundColor = cellColor
         supportCell.backgroundColor = cellColor

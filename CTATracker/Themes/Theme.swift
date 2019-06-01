@@ -48,7 +48,6 @@ struct StatusBarTheme {
 }
 
 struct TableTheme {
-    let backgroundColor: UIColor
     let sectionIndexColor: UIColor
 }
 

@@ -195,7 +195,6 @@ extension HomeTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         currentTheme = theme
-        tableView.backgroundColor = theme.tableTheme.backgroundColor
         tableView.reloadData()
     }
 }

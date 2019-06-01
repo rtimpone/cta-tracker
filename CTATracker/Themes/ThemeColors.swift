@@ -69,8 +69,7 @@ extension ThemeColors {
     }
     
     static func tableTheme() -> TableTheme {
-        return TableTheme(backgroundColor: tableBackgroundColor,
-                          sectionIndexColor: tableSectionIndexColor)
+        return TableTheme(sectionIndexColor: tableSectionIndexColor)
     }
 }
 
