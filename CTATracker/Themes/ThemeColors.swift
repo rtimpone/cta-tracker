@@ -130,7 +130,7 @@ struct DarkThemeColors: ThemeColors {
     static let navBarButtonColor: UIColor = .orange
     static let navBarTitleColor: UIColor = .white
     static let routeFilterBackgroundColor: UIColor = .black
-    static let routeFilterSelectedBorderColor: UIColor = .white
+    static let routeFilterSelectedBorderColor: UIColor = .orange
     static let routeFilterUnselectedBorderColor: UIColor = .black
     static let searchBarBackgroundColor: UIColor = .green
     static let searchBarBarColor: UIColor = .red

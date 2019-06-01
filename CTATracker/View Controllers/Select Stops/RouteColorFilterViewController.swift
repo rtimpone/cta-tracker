@@ -17,6 +17,7 @@ class RouteColorFilterViewController: UIViewController {
     
     weak var delegate: RouteColorFilterViewControllerDelegate?
     var selectedRoutes: Set<Route> = []
+    @IBOutlet weak var separatorView: UIView!
     
     @IBOutlet weak var circleView1: RouteColorFilterView!
     @IBOutlet weak var circleView2: RouteColorFilterView!
@@ -54,6 +55,19 @@ class RouteColorFilterViewController: UIViewController {
     }
 }
 
+extension RouteColorFilterViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        separatorView.backgroundColor = theme.cellTheme.separatorColor
+        
+        for view in circleViews {
+            view?.applyTheme(theme)
+            view?.styleForUnselectedState()
+        }
+    }
+}
+
 private extension RouteColorFilterViewController {
     
     func update(for route: Route, sender: UIButton) {
@@ -77,14 +91,27 @@ private extension RouteColorFilterViewController {
 
 class RouteColorFilterView: CircleView {
     
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var button: UIButton!
     
+    var selectedColor: UIColor = .white
+    var unselectedColor: UIColor = .white
+    
     func styleForSelectedState() {
-        backgroundColor = .blue
+        backgroundColor = selectedColor
     }
     
     func styleForUnselectedState() {
-        backgroundColor = Colors.lightGray
+        backgroundColor = unselectedColor
+    }
+}
+
+extension RouteColorFilterView: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        selectedColor = theme.routeFilterTheme.selectedBorderColor
+        unselectedColor = theme.routeFilterTheme.unselectedBorderColor
+        outerView.backgroundColor = theme.routeFilterTheme.backgroundColor
     }
 }

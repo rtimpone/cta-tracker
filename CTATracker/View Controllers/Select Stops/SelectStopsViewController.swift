@@ -81,6 +81,7 @@ extension SelectStopsViewController: Themeable {
     func applyTheme(_ theme: Theme) {
         view.backgroundColor = theme.backgroundTheme.backgroundColor
         navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
+        filterViewController.applyTheme(theme)
         tableViewController?.applyTheme(theme)
     }
 }
