@@ -139,5 +139,5 @@ struct DarkThemeColors: ThemeColors {
     static let sectionHeaderButtonColor: UIColor = .darkGray
     static let sectionHeaderTextColor: UIColor = .lightGray
     static let tableBackgroundColor: UIColor = .black
-    static let tableSectionIndexColor: UIColor = .orange
+    static let tableSectionIndexColor: UIColor = .lightGray
 }
