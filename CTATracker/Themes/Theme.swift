@@ -44,9 +44,7 @@ struct RouteFilterTheme {
 }
 
 struct SearchBarTheme {
-    let backgroundColor: UIColor
-    let barColor: UIColor
-    let textColor: UIColor
+    let tintColor: UIColor
 }
 
 struct SectionHeaderTheme {

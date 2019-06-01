@@ -26,9 +26,7 @@ protocol ThemeColors {
     static var routeFilterBackgroundColor: UIColor { get }
     static var routeFilterSelectedBorderColor: UIColor { get }
     static var routeFilterUnselectedBorderColor: UIColor { get }
-    static var searchBarBackgroundColor: UIColor { get }
-    static var searchBarBarColor: UIColor { get }
-    static var searchBarTextColor: UIColor { get }
+    static var searchBarTintColor: UIColor { get }
     static var sectionHeaderBackgroundColor: UIColor { get }
     static var sectionHeaderButtonColor: UIColor { get }
     static var sectionHeaderTextColor: UIColor { get }
@@ -67,9 +65,7 @@ extension ThemeColors {
     }
     
     static func searchBarTheme() -> SearchBarTheme {
-        return SearchBarTheme(backgroundColor: searchBarBackgroundColor,
-                              barColor: searchBarBarColor,
-                              textColor: searchBarTextColor)
+        return SearchBarTheme(tintColor: searchBarTintColor)
     }
     
     static func sectionHeaderTheme() -> SectionHeaderTheme {
@@ -89,6 +85,7 @@ struct SharedColors {
 
 struct LightThemeColors: ThemeColors {
     
+    static let customBlue = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
     static let customLightBlue = #colorLiteral(red: 0.935859859, green: 0.9516758323, blue: 0.9594567418, alpha: 1)
     static let customLightGray = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
     static let customVeryDarkGray = #colorLiteral(red: 0.1450980392, green: 0.1450980392, blue: 0.1450980392, alpha: 1)
@@ -98,20 +95,18 @@ struct LightThemeColors: ThemeColors {
     static let cellTitleLabelColor: UIColor = .black
     static let cellDetailLabelColor: UIColor = .black
     static let cellPlaceholderLabelColor: UIColor = .lightGray
-    static let cellHighlightedLabelColor: UIColor = .blue
+    static let cellHighlightedLabelColor: UIColor = customBlue
     static let cellSeparatorColor: UIColor = customLightGray
     static let cellDetailIconColor: UIColor = SharedColors.customDarkGray
     static let cellSelectionIconColor: UIColor = .black
     static let navBarBackgroundColor: UIColor = .white
     static let navBarBackdropColor: UIColor = .white
-    static let navBarButtonColor: UIColor = .darkGray
+    static let navBarButtonColor: UIColor = SharedColors.customDarkGray
     static let navBarTitleColor: UIColor = .black
     static let routeFilterBackgroundColor: UIColor = .white
-    static let routeFilterSelectedBorderColor: UIColor = .blue
-    static let routeFilterUnselectedBorderColor: UIColor = .white
-    static let searchBarBackgroundColor: UIColor = .red
-    static let searchBarBarColor: UIColor = .yellow
-    static let searchBarTextColor: UIColor = .green
+    static let routeFilterSelectedBorderColor: UIColor = customBlue
+    static let routeFilterUnselectedBorderColor: UIColor = customLightGray
+    static let searchBarTintColor: UIColor = customBlue
     static let sectionHeaderBackgroundColor: UIColor = customLightGray
     static let sectionHeaderButtonColor: UIColor = SharedColors.customDarkGray
     static let sectionHeaderTextColor: UIColor = customVeryDarkGray
@@ -139,10 +134,8 @@ struct DarkThemeColors: ThemeColors {
     static let navBarTitleColor: UIColor = .white
     static let routeFilterBackgroundColor: UIColor = .black
     static let routeFilterSelectedBorderColor: UIColor = .orange
-    static let routeFilterUnselectedBorderColor: UIColor = .black
-    static let searchBarBackgroundColor: UIColor = .green
-    static let searchBarBarColor: UIColor = .red
-    static let searchBarTextColor: UIColor = .yellow
+    static let routeFilterUnselectedBorderColor: UIColor = customDarkGray
+    static let searchBarTintColor: UIColor = .orange
     static let sectionHeaderBackgroundColor: UIColor = almostBlack
     static let sectionHeaderButtonColor: UIColor = .darkGray
     static let sectionHeaderTextColor: UIColor = .lightGray

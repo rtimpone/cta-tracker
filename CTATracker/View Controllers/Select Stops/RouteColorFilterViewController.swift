@@ -58,7 +58,7 @@ class RouteColorFilterViewController: UIViewController {
 extension RouteColorFilterViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
-        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        view.backgroundColor = theme.routeFilterTheme.backgroundColor
         separatorView.backgroundColor = theme.cellTheme.separatorColor
         
         for view in circleViews {

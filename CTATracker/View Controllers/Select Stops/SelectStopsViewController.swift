@@ -23,6 +23,10 @@ class SelectStopsViewController: UIViewController {
     let allStations = StationDataFetcher.fetchAllStations()
     @IBOutlet weak var navBarBackdropView: UIView!
     
+    var searchBar: UISearchBar? {
+        return parent?.navigationItem.searchController?.searchBar
+    }
+    
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
         vc.delegate = delegate
@@ -31,9 +35,9 @@ class SelectStopsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchController()
         applyCurrentTheme()
         refreshStationsBeingShown()
-        setupSearchController()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,6 +85,7 @@ extension SelectStopsViewController: Themeable {
     func applyTheme(_ theme: Theme) {
         view.backgroundColor = theme.backgroundTheme.backgroundColor
         navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
+        searchBar?.tintColor = theme.searchBarTheme.tintColor
         filterViewController.applyTheme(theme)
         tableViewController?.applyTheme(theme)
     }
@@ -149,7 +154,7 @@ private extension SelectStopsViewController {
     }
     
     func textFromSearchBar() -> String {
-        return parent?.navigationItem.searchController?.searchBar.text ?? ""
+        return searchBar?.text ?? ""
     }
     
     func setSearchController(_ searchController: UISearchController) {
