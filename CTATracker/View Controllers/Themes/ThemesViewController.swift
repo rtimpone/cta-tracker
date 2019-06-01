@@ -34,12 +34,17 @@ class ThemesViewController: UIViewController {
 extension ThemesViewController: ThemesTableViewControllerDelegate {
     
     func didSelectTheme(_ theme: Theme) {
+
         guard theme != ThemeManager.currentTheme() else {
             return
         }
+        
         ThemeManager.setCurrentTheme(theme)
         delegate?.themeDidChange(to: theme)
-        applyTheme(theme)
+        
+        Animator.animateChangesInView(view, duration: 0.5) {
+            self.applyTheme(theme)
+        }
     }
 }
 

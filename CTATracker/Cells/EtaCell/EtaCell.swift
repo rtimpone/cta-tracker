@@ -18,7 +18,9 @@ class EtaCell: UITableViewCell {
     @IBOutlet weak var separatorView: UIView!
     
     func highlightEtaLabel(theme: Theme) {
-        Animator.animateTextColorChangingOnLabel(etaLabel, to: theme.cellTheme.highlightedLabelColor, duration: 0.5)
+        Animator.animateChangesInView(etaLabel, duration: 0.5) {
+            self.etaLabel.textColor = theme.cellTheme.highlightedLabelColor
+        }
     }
     
     func configure(for eta: ETA, theme: Theme) {

@@ -10,12 +10,12 @@ import UIKit
 
 class Animator {
     
-    static func animateTextColorChangingOnLabel(_ label: UILabel, to newTextColor: UIColor, duration: TimeInterval) {
-        UIView.transition(with: label,
+    static func animateChangesInView(_ rootView: UIView, duration: TimeInterval, changes: @escaping () -> Void) {
+        UIView.transition(with: rootView,
                           duration: 0.5,
                           options: .transitionCrossDissolve,
                           animations: {
-                            label.textColor = newTextColor
+                              changes()
                           },
                           completion: nil)
     }
