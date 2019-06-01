@@ -95,7 +95,7 @@ struct LightThemeColors: ThemeColors {
     static let cellTitleLabelColor: UIColor = .black
     static let cellDetailLabelColor: UIColor = .black
     static let cellPlaceholderLabelColor: UIColor = .lightGray
-    static let cellHighlightedLabelColor: UIColor = customBlue
+    static let cellHighlightedLabelColor: UIColor = .blue
     static let cellSeparatorColor: UIColor = customLightGray
     static let cellDetailIconColor: UIColor = SharedColors.customDarkGray
     static let cellSelectionIconColor: UIColor = .black
