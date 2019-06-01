@@ -12,14 +12,14 @@ import UIKit
 class PlatformCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var colorsView: RouteColorsView!
     @IBOutlet weak var colorsViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var checkmarkImageView: UIImageView!
     
     func configure(for platform: Platform, isSelected: Bool) {
         
         nameLabel.text = platform.platformDescription
-        selectedLabel.isHidden = !isSelected
+        checkmarkImageView.isHidden = !isSelected
         colorsView.showColors(forRoutes: platform.routes)
         colorsViewWidthConstraint.constant = colorsView.widthForNumberOfRoutes(platform.routes.count)
     }

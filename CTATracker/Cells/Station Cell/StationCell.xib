@@ -20,32 +20,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Belmont" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXE-YK-rU1">
-                        <rect key="frame" x="16" y="10" width="263.5" height="21"/>
+                        <rect key="frame" x="16" y="10" width="66.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-DQ-pqw">
-                        <rect key="frame" x="289.5" y="6.5" width="14.5" height="28"/>
-                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="zMv-9r-Cuv">
+                        <rect key="frame" x="278" y="7.5" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="8x0-HA-4cI"/>
+                            <constraint firstAttribute="width" constant="26" id="dWO-rk-oom"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fKW-DQ-pqw" secondAttribute="trailing" constant="16" id="Gfc-Ph-gu3"/>
-                    <constraint firstItem="fKW-DQ-pqw" firstAttribute="centerY" secondItem="YXE-YK-rU1" secondAttribute="centerY" id="Jfv-HJ-8r2"/>
+                    <constraint firstItem="zMv-9r-Cuv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AJy-gB-HOG"/>
                     <constraint firstItem="YXE-YK-rU1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MIL-xY-gah"/>
+                    <constraint firstAttribute="trailing" secondItem="zMv-9r-Cuv" secondAttribute="trailing" constant="16" id="MRn-or-Low"/>
                     <constraint firstAttribute="bottom" secondItem="YXE-YK-rU1" secondAttribute="bottom" constant="9.5" id="N1A-BZ-WxY"/>
+                    <constraint firstItem="zMv-9r-Cuv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YXE-YK-rU1" secondAttribute="trailing" constant="8" id="NHR-D2-SEk"/>
                     <constraint firstItem="YXE-YK-rU1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="d9Q-2e-6wd"/>
-                    <constraint firstItem="fKW-DQ-pqw" firstAttribute="leading" secondItem="YXE-YK-rU1" secondAttribute="trailing" constant="10" id="fnO-23-pHh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="selectedLabel" destination="fKW-DQ-pqw" id="XJO-E5-7Ih"/>
+                <outlet property="checkmarkImageView" destination="zMv-9r-Cuv" id="MTW-ah-9oZ"/>
                 <outlet property="stationTitleLabel" destination="YXE-YK-rU1" id="h7S-SR-2k5"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" width="26" height="26"/>
+    </resources>
 </document>

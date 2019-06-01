@@ -13,11 +13,11 @@ class RouteCell: UITableViewCell {
 
     @IBOutlet weak var routeColorView: UIView!
     @IBOutlet weak var routeTitleLabel: UILabel!
-    @IBOutlet weak var selectedLabel: UILabel!
+    @IBOutlet weak var checkmarkImageView: UIImageView!
     
     func configure(for route: Route, isSelected: Bool) {
         routeColorView.backgroundColor = route.color
         routeTitleLabel.text = route.title
-        selectedLabel.isHidden = !isSelected
+        checkmarkImageView.isHidden = !isSelected
     }
 }

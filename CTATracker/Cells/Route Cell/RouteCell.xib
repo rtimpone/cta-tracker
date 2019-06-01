@@ -28,7 +28,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Red Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cc-ic-rtc">
-                        <rect key="frame" x="46" y="9.5" width="244.5" height="21"/>
+                        <rect key="frame" x="46" y="9.5" width="71.5" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,35 +39,38 @@
                             <constraint firstAttribute="height" constant="1" id="HCq-Ov-bOj"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsV-TE-Mbb">
-                        <rect key="frame" x="290.5" y="6" width="13.5" height="29"/>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="ZQm-iq-aB5">
+                        <rect key="frame" x="278" y="7.5" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="KTg-OF-cbC"/>
+                            <constraint firstAttribute="width" constant="26" id="cSA-Um-mSq"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="6Cc-ic-rtc" firstAttribute="centerY" secondItem="254-4G-MWY" secondAttribute="centerY" id="4KY-gQ-jBr"/>
                     <constraint firstItem="254-4G-MWY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8po-iN-cVv"/>
-                    <constraint firstAttribute="trailing" secondItem="UsV-TE-Mbb" secondAttribute="trailing" constant="16" id="DWu-kU-F7x"/>
-                    <constraint firstItem="UsV-TE-Mbb" firstAttribute="leading" secondItem="6Cc-ic-rtc" secondAttribute="trailing" id="L70-lE-kmA"/>
+                    <constraint firstAttribute="trailing" secondItem="ZQm-iq-aB5" secondAttribute="trailing" constant="16" id="L57-X1-Qrc"/>
                     <constraint firstItem="254-4G-MWY" firstAttribute="width" secondItem="254-4G-MWY" secondAttribute="height" multiplier="1:1" id="O9B-vk-Olt"/>
+                    <constraint firstItem="ZQm-iq-aB5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XR7-3V-Gyf"/>
                     <constraint firstItem="254-4G-MWY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="a9M-7o-Wo5"/>
                     <constraint firstItem="h3Y-Vw-vnj" firstAttribute="top" secondItem="254-4G-MWY" secondAttribute="bottom" constant="9.5" id="c2B-pK-tGc"/>
                     <constraint firstItem="h3Y-Vw-vnj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="hqv-8R-Bph"/>
                     <constraint firstAttribute="bottom" secondItem="h3Y-Vw-vnj" secondAttribute="bottom" id="tYk-a5-BN3"/>
                     <constraint firstItem="6Cc-ic-rtc" firstAttribute="leading" secondItem="254-4G-MWY" secondAttribute="trailing" constant="10" id="vJ1-UH-VxP"/>
-                    <constraint firstItem="UsV-TE-Mbb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ybH-T4-z62"/>
                     <constraint firstAttribute="trailing" secondItem="h3Y-Vw-vnj" secondAttribute="trailing" id="zeS-lJ-9v3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="checkmarkImageView" destination="ZQm-iq-aB5" id="keC-qo-gd0"/>
                 <outlet property="routeColorView" destination="254-4G-MWY" id="Vpu-lC-S1b"/>
                 <outlet property="routeTitleLabel" destination="6Cc-ic-rtc" id="zNj-Uf-57k"/>
-                <outlet property="selectedLabel" destination="UsV-TE-Mbb" id="Ph2-eF-tvu"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="153.37331334332833"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="checkmark" width="26" height="26"/>
+    </resources>
 </document>
