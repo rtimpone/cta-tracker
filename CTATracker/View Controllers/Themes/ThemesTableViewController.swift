@@ -12,11 +12,10 @@ protocol ThemesTableViewControllerDelegate: class {
     func didSelectTheme(_ theme: Theme)
 }
 
-class ThemesTableViewController: UITableViewController {
+class ThemesTableViewController: ThemeableTableViewController {
     
     weak var delegate: ThemesTableViewControllerDelegate?
     let themes = Theme.allThemes
-    var currentTheme: Theme!
     
     // MARK: Table View Data Source
     
@@ -36,13 +35,5 @@ class ThemesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let theme = themes[indexPath.row]
         delegate?.didSelectTheme(theme)
-    }
-}
-
-extension ThemesTableViewController: Themeable {
-    
-    func applyTheme(_ theme: Theme) {
-        currentTheme = theme
-        tableView.reloadData()
     }
 }

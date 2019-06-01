@@ -14,7 +14,7 @@ protocol SelectStopsTableViewControllerDelegate: class {
     func didSelectStop(_ stop: Stop)
 }
 
-class SelectStopsTableViewController: UITableViewController {
+class SelectStopsTableViewController: ThemeableTableViewController {
     
     struct Section {
         var stops: [Stop]
@@ -80,13 +80,6 @@ class SelectStopsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let stop = stopAtIndexPath(indexPath)
         delegate.didSelectStop(stop)
-    }
-}
-
-extension SelectStopsTableViewController: Themeable {
-    
-    func applyTheme(_ theme: Theme) {
-        
     }
 }
 

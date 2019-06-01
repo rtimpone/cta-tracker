@@ -9,11 +9,10 @@
 import CTAKit
 import UIKit
 
-class StationTableViewController: UITableViewController {
+class StationTableViewController: ThemeableTableViewController {
     
     var stop: Stop!
     var etas: [ETA] = []
-    var currentTheme: Theme!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,13 +60,5 @@ class StationTableViewController: UITableViewController {
         let header = tableView.dequeueReusableHeader(ofType: StationSectionHeader.self)
         header.configure(withText: stop.name, theme: currentTheme)
         return header
-    }
-}
-
-extension StationTableViewController: Themeable {
-    
-    func applyTheme(_ theme: Theme) {
-        currentTheme = theme
-        tableView.reloadData()
     }
 }

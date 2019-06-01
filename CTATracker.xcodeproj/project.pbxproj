@@ -20,6 +20,7 @@
 		FB2510FE226239D3001FDC15 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2510FD226239D3001FDC15 /* Images.swift */; };
 		FB58E661223D5D2C008861BA /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB58E65F223D5D2C008861BA /* RouteCell.swift */; };
 		FB58E662223D5D2C008861BA /* RouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB58E660223D5D2C008861BA /* RouteCell.xib */; };
+		FB608D2722A2F1BE00DBBBE1 /* ThemeableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */; };
 		FB63DB9621F3F476001F048D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB63DB9521F3F476001F048D /* Alert.swift */; };
 		FB6E4D932201F169002AC392 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = FB6E4D922201F169002AC392 /* routes.json */; };
 		FB6E4D952201F2E4002AC392 /* RouteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */; };
@@ -174,6 +175,7 @@
 		FB2510FD226239D3001FDC15 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FB58E65F223D5D2C008861BA /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		FB58E660223D5D2C008861BA /* RouteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteCell.xib; sourceTree = "<group>"; };
+		FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableTableViewController.swift; sourceTree = "<group>"; };
 		FB63DB9521F3F476001F048D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FB6E4D922201F169002AC392 /* routes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
 		FB6E4D942201F2E4002AC392 /* RouteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDataFetcher.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1FFCC222A0BEE700CF9BF4 /* ThemeableNavigationViewController.swift */,
+				FB608D2622A2F1BE00DBBBE1 /* ThemeableTableViewController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 				FBCAA0FB21C562A700681A6F /* CircleView.swift in Sources */,
 				FB86FB00221885F9003FBB40 /* StationSectionHeader.swift in Sources */,
 				FBDDFCCD223BD3BA0082210F /* SelectStopsTableViewController.swift in Sources */,
+				FB608D2722A2F1BE00DBBBE1 /* ThemeableTableViewController.swift in Sources */,
 				FBAEF0FC229CB2F500B5D102 /* ThemeCell.swift in Sources */,
 				FBDB8D9F21C596EB008A1F32 /* ArrivalCell.swift in Sources */,
 				FBE353A4222752CE0062C428 /* RequestHandler.swift in Sources */,

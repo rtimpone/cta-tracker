@@ -14,11 +14,10 @@ protocol SelectRoutesTableViewControllerDelegate: class {
     func didSelectRoute(_ route: Route)
 }
 
-class SelectRoutesTableViewController: UITableViewController {
+class SelectRoutesTableViewController: ThemeableTableViewController {
     
     weak var delegate: SelectRoutesTableViewControllerDelegate?
     var routes: [Route] = []
-    var currentTheme: Theme!
     
     func displayRoutes(_ routes: [Route]) {
         self.routes = routes
@@ -48,13 +47,5 @@ class SelectRoutesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let route = routes[indexPath.row]
         delegate?.didSelectRoute(route)
-    }
-}
-
-extension SelectRoutesTableViewController: Themeable {
-    
-    func applyTheme(_ theme: Theme) {
-        currentTheme = theme
-        tableView.reloadData()
     }
 }

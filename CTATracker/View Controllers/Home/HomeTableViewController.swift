@@ -39,12 +39,11 @@ protocol HomeTableViewControllerDelegate: class {
     func didSelectEditStops()
 }
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: ThemeableTableViewController {
     
     weak var delegate: HomeTableViewControllerDelegate?
     private var arrivalsDataSource: DataSource<StopArrivals> = .initialState
     private var statusDataSource: DataSource<RouteStatus> = .initialState
-    var currentTheme: Theme!
     
     func displayRouteStatuses(_ statuses: [RouteStatus]) {
         setRoutesDataSource(to: statuses)
@@ -188,15 +187,6 @@ class HomeTableViewController: UITableViewController {
         default:
             break
         }
-    }
-}
-
-extension HomeTableViewController: Themeable {
-    
-    func applyTheme(_ theme: Theme) {
-        currentTheme = theme
-        tableView.separatorColor = theme.cellTheme.separatorColor
-        tableView.reloadData()
     }
 }
 
