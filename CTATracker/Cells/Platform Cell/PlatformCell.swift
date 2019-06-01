@@ -18,15 +18,22 @@ class PlatformCell: UITableViewCell {
     
     func configure(for platform: Platform, isSelected: Bool, theme: Theme) {
         
-        backgroundColor = theme.cellTheme.backgroundColor
-        contentView.backgroundColor = theme.cellTheme.backgroundColor
-        nameLabel.textColor = theme.cellTheme.titleLabelColor
-        checkmarkImageView.tintColor = theme.cellTheme.selectionIconColor
+        applyTheme(theme)
         
         nameLabel.text = platform.platformDescription
         checkmarkImageView.isHidden = !isSelected
         colorsView.showColors(forRoutes: platform.routes)
         colorsViewWidthConstraint.constant = colorsView.widthForNumberOfRoutes(platform.routes.count)
+    }
+}
+
+extension PlatformCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        nameLabel.textColor = theme.cellTheme.titleLabelColor
+        checkmarkImageView.tintColor = theme.cellTheme.selectionIconColor
     }
 }
 

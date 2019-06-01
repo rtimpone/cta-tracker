@@ -18,8 +18,7 @@ class StatusCell: UITableViewCell {
     
     func configure(for status: RouteStatus, theme: Theme) {
         
-        backgroundColor = theme.cellTheme.backgroundColor
-        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        applyTheme(theme)
         
         routeColorView.backgroundColor = status.route.color
         routeTitleLabel.text = status.route.title
@@ -43,5 +42,13 @@ class StatusCell: UITableViewCell {
             statusLabel.textColor = theme.cellTheme.detailLabelColor
             statusLabel.text = "Normal Service"
         }
+    }
+}
+
+extension StatusCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
     }
 }

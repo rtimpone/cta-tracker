@@ -44,10 +44,7 @@ class ArrivalCell: UITableViewCell {
 
     func configure(for arrivals: StopArrivals, isLocationBased: Bool, theme: Theme) {
         
-        backgroundColor = theme.cellTheme.backgroundColor
-        contentView.backgroundColor = theme.cellTheme.backgroundColor
-        destinationLabel.textColor = theme.cellTheme.titleLabelColor
-        emptyStateLabel.textColor = theme.cellTheme.detailLabelColor
+        applyTheme(theme)
         
         destinationLabel.text = arrivals.stop.name
         emptyStateLabel.isHidden = !arrivals.etas.isEmpty
@@ -83,6 +80,16 @@ class ArrivalCell: UITableViewCell {
     
     func constraintFromBottomOfCellContentView(toBottomOfView view: UIView) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 16.5)
+    }
+}
+
+extension ArrivalCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        destinationLabel.textColor = theme.cellTheme.titleLabelColor
+        emptyStateLabel.textColor = theme.cellTheme.detailLabelColor
     }
 }
 

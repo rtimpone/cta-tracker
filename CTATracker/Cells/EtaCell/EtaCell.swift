@@ -23,10 +23,7 @@ class EtaCell: UITableViewCell {
     
     func configure(for eta: ETA, theme: Theme) {
         
-        contentView.backgroundColor = theme.cellTheme.backgroundColor
-        destinationLabel.textColor = theme.cellTheme.titleLabelColor
-        etaLabel.textColor = theme.cellTheme.detailLabelColor
-        separatorView.backgroundColor = theme.cellTheme.separatorColor
+        applyTheme(theme)
         
         circleView.backgroundColor = eta.route.color
         destinationLabel.text = eta.destination
@@ -43,5 +40,15 @@ class EtaCell: UITableViewCell {
             infoLabel.text = ""
             infoLabel.textColor = theme.cellTheme.detailLabelColor
         }
+    }
+}
+
+extension EtaCell: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        destinationLabel.textColor = theme.cellTheme.titleLabelColor
+        etaLabel.textColor = theme.cellTheme.detailLabelColor
+        separatorView.backgroundColor = theme.cellTheme.separatorColor
     }
 }
