@@ -16,7 +16,12 @@ class PlatformCell: UITableViewCell {
     @IBOutlet weak var colorsViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var checkmarkImageView: UIImageView!
     
-    func configure(for platform: Platform, isSelected: Bool) {
+    func configure(for platform: Platform, isSelected: Bool, theme: Theme) {
+        
+        backgroundColor = theme.cellTheme.backgroundColor
+        contentView.backgroundColor = theme.cellTheme.backgroundColor
+        nameLabel.textColor = theme.cellTheme.titleLabelColor
+        checkmarkImageView.tintColor = theme.cellTheme.selectionIconColor
         
         nameLabel.text = platform.platformDescription
         checkmarkImageView.isHidden = !isSelected

@@ -89,22 +89,6 @@ private extension SelectStopsTableViewController {
         return sections[indexPath.section].stops[indexPath.row]
     }
     
-    func configuredCell(forStop stop: Stop, isSelected: Bool) -> UITableViewCell {
-        if let station = stop as? Station {
-            let cell = tableView.dequeueReusableCell(ofType: StationCell.self)
-            cell.configure(for: station, isSelected: isSelected)
-            return cell
-        }
-        else if let platform = stop as? Platform {
-            let cell = tableView.dequeueReusableCell(ofType: PlatformCell.self)
-            cell.configure(for: platform, isSelected: isSelected)
-            return cell
-        }
-        else {
-            fatalError("Stop found in data source is neither a station nor a platform: \(stop)")
-        }
-    }
-    
     func sortedPlatforms(for station: Station) -> [Platform] {
         return station.platforms.sorted(by: {
             guard let route0 = $0.routes.first, let route1 = $1.routes.first else {

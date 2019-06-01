@@ -17,6 +17,7 @@ extension ThemeableTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         currentTheme = theme
+        tableView.sectionIndexColor = theme.tableTheme.sectionIndexColor
         tableView.separatorColor = theme.cellTheme.separatorColor
         tableView.reloadData()
     }

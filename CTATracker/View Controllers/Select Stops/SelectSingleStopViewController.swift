@@ -11,8 +11,11 @@ import UIKit
 
 class SelectSingleStopViewController: UIViewController {
     
+    var currentTheme: Theme!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentTheme()
         let vc = SelectStopsViewController.instance(withDelegate: self)
         add(child: vc)
     }
@@ -24,12 +27,12 @@ extension SelectSingleStopViewController: SelectStopsViewControllerDelegate {
         let isSelected = false
         if let station = stop as? Station {
             let cell = tableView.dequeueReusableCell(ofType: StationCell.self)
-            cell.configure(for: station, isSelected: isSelected)
+            cell.configure(for: station, isSelected: isSelected, theme: currentTheme)
             return cell
         }
         else if let platform = stop as? Platform {
             let cell = tableView.dequeueReusableCell(ofType: PlatformCell.self)
-            cell.configure(for: platform, isSelected: isSelected)
+            cell.configure(for: platform, isSelected: isSelected, theme: currentTheme)
             return cell
         }
         else {
@@ -40,5 +43,12 @@ extension SelectSingleStopViewController: SelectStopsViewControllerDelegate {
     func didSelectStop(_ stop: Stop) {
         let svc = StationViewController.instance(for: stop)
         self.navigationController?.pushViewController(svc, animated: true)
+    }
+}
+
+extension SelectSingleStopViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        currentTheme = theme
     }
 }

@@ -18,6 +18,7 @@ class SelectFavoriteStopsViewController: UIViewController {
     
     weak var delegate: SelectFavoriteStopsViewControllerDelegate?
     let hapticsManager = HapticsManager()
+    var currentTheme: Theme!
     
     static func instance(withDelegate delegate: SelectFavoriteStopsViewControllerDelegate) -> SelectFavoriteStopsViewController {
         let vc = SelectFavoriteStopsViewController.instantiateFromStoryboard()
@@ -27,6 +28,7 @@ class SelectFavoriteStopsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentTheme()
         let vc = SelectStopsViewController.instance(withDelegate: self)
         add(child: vc)
     }
@@ -38,12 +40,12 @@ extension SelectFavoriteStopsViewController: SelectStopsViewControllerDelegate {
         let isSelected = FavoriteStopsManager.stopIsFavorite(stop)
         if let station = stop as? Station {
             let cell = tableView.dequeueReusableCell(ofType: StationCell.self)
-            cell.configure(for: station, isSelected: isSelected)
+            cell.configure(for: station, isSelected: isSelected, theme: currentTheme)
             return cell
         }
         else if let platform = stop as? Platform {
             let cell = tableView.dequeueReusableCell(ofType: PlatformCell.self)
-            cell.configure(for: platform, isSelected: isSelected)
+            cell.configure(for: platform, isSelected: isSelected, theme: currentTheme)
             return cell
         }
         else {
@@ -63,5 +65,12 @@ extension SelectFavoriteStopsViewController: SelectStopsViewControllerDelegate {
             FavoriteStopsManager.addStopToFavorites(stop)
             delegate?.didAddStopToFavorites(stop)
         }
+    }
+}
+
+extension SelectFavoriteStopsViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        currentTheme = theme
     }
 }

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,7 +74,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="537"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexColor" name="dark_gray"/>
                         <connections>
                             <outlet property="dataSource" destination="SAc-HM-q55" id="dFR-bo-5Au"/>
                             <outlet property="delegate" destination="SAc-HM-q55" id="Bop-ts-CUJ"/>
@@ -542,9 +540,4 @@
             <point key="canvasLocation" x="709.60000000000002" y="-121.4392803598201"/>
         </scene>
     </scenes>
-    <resources>
-        <namedColor name="dark_gray">
-            <color red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
