@@ -28,6 +28,7 @@ struct NavBarTheme {
     }
 
     let buttonColor: UIColor
+    let backdropColor: UIColor
     let style: Style
     let titleColor: UIColor
 }

@@ -121,6 +121,7 @@ extension HomeViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         view.backgroundColor = theme.backgroundTheme.backgroundColor
+        navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
         tableViewController?.applyTheme(theme)
         if let nvc = navigationController as? ThemeableNavigationViewController {
             nvc.applyTheme(theme)

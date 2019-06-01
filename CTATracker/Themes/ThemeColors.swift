@@ -16,6 +16,7 @@ protocol ThemeColors {
     static var cellDetailLabelColor: UIColor { get }
     static var cellSeparatorColor: UIColor { get }
     static var navBarBackgroundColor: UIColor { get }
+    static var navBarBackdropColor: UIColor { get }
     static var navBarButtonColor: UIColor { get }
     static var navBarTitleColor: UIColor { get }
     static var routeFilterBackgroundColor: UIColor { get }
@@ -46,6 +47,7 @@ extension ThemeColors {
     
     static func navBarTheme(style: NavBarTheme.Style) -> NavBarTheme {
         return NavBarTheme(buttonColor: navBarButtonColor,
+                           backdropColor: navBarBackdropColor,
                            style: style,
                            titleColor: navBarTitleColor)
     }
@@ -86,6 +88,7 @@ struct LightThemeColors: ThemeColors {
     static let cellDetailLabelColor: UIColor = .black
     static let cellSeparatorColor: UIColor = customLightGray
     static let navBarBackgroundColor: UIColor = .white
+    static let navBarBackdropColor: UIColor = .white
     static let navBarButtonColor: UIColor = .darkGray
     static let navBarTitleColor: UIColor = .black
     static let routeFilterBackgroundColor: UIColor = .white
@@ -111,6 +114,7 @@ struct DarkThemeColors: ThemeColors {
     static let cellDetailLabelColor: UIColor = .white
     static let cellSeparatorColor: UIColor = almostBlack
     static let navBarBackgroundColor: UIColor = almostBlack
+    static let navBarBackdropColor: UIColor = .black
     static let navBarButtonColor: UIColor = .orange
     static let navBarTitleColor: UIColor = .white
     static let routeFilterBackgroundColor: UIColor = .black
