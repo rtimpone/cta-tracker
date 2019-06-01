@@ -136,7 +136,7 @@ struct DarkThemeColors: ThemeColors {
     static let searchBarBarColor: UIColor = .red
     static let searchBarTextColor: UIColor = .yellow
     static let sectionHeaderBackgroundColor: UIColor = almostBlack
-    static let sectionHeaderButtonColor: UIColor = .lightGray
+    static let sectionHeaderButtonColor: UIColor = .darkGray
     static let sectionHeaderTextColor: UIColor = .lightGray
     static let tableBackgroundColor: UIColor = .black
     static let tableSectionIndexColor: UIColor = .orange
