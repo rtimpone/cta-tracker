@@ -83,6 +83,13 @@ class SelectStopsTableViewController: UITableViewController {
     }
 }
 
+extension SelectStopsTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        
+    }
+}
+
 private extension SelectStopsTableViewController {
     
     func stopAtIndexPath(_ indexPath: IndexPath) -> Stop {

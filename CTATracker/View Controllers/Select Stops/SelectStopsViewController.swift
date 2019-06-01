@@ -21,6 +21,7 @@ class SelectStopsViewController: UIViewController {
     weak var tableViewController: SelectStopsTableViewController!
     let hapticsManager = HapticsManager()
     let allStations = StationDataFetcher.fetchAllStations()
+    @IBOutlet weak var navBarBackdropView: UIView!
     
     static func instance(withDelegate delegate: SelectStopsViewControllerDelegate) -> SelectStopsViewController {
         let vc = SelectStopsViewController.instantiateFromStoryboard()
@@ -30,6 +31,7 @@ class SelectStopsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentTheme()
         refreshStationsBeingShown()
         setupSearchController()
     }
@@ -71,6 +73,15 @@ extension SelectStopsViewController: RouteColorFilterViewControllerDelegate {
     func didUpdateRouteFilters(_ routesToShow: Set<Route>) {
         hapticsManager.fireSelectionHaptic()
         refreshStationsBeingShown()
+    }
+}
+
+extension SelectStopsViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
+        tableViewController?.applyTheme(theme)
     }
 }
 
