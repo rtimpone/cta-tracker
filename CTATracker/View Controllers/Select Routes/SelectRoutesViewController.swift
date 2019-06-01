@@ -18,6 +18,7 @@ class SelectRoutesViewController: UIViewController {
 
     weak var tableViewController: SelectRoutesTableViewController!
     weak var delegate: SelectRoutesViewControllerDelegate?
+    @IBOutlet weak var navBarBackdropView: UIView!
     
     static func instance(withDelegate delegate: SelectRoutesViewControllerDelegate) -> SelectRoutesViewController {
         let vc = SelectRoutesViewController.instantiateFromStoryboard()
@@ -27,6 +28,7 @@ class SelectRoutesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyCurrentTheme()
         let routes = RouteDataFetcher.fetchAllRoutes()
         let sortedRoutes = routes.sorted(by: { $0.title < $1.title })
         tableViewController.displayRoutes(sortedRoutes)
@@ -59,5 +61,14 @@ extension SelectRoutesViewController: SelectRoutesTableViewControllerDelegate {
         }
         
         tableViewController.refreshRoutes()
+    }
+}
+
+extension SelectRoutesViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        view.backgroundColor = theme.backgroundTheme.backgroundColor
+        navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
+        tableViewController?.applyTheme(theme)
     }
 }

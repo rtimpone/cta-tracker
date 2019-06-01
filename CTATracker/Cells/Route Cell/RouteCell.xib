@@ -66,6 +66,7 @@
                 <outlet property="checkmarkImageView" destination="ZQm-iq-aB5" id="keC-qo-gd0"/>
                 <outlet property="routeColorView" destination="254-4G-MWY" id="Vpu-lC-S1b"/>
                 <outlet property="routeTitleLabel" destination="6Cc-ic-rtc" id="zNj-Uf-57k"/>
+                <outlet property="separatorView" destination="h3Y-Vw-vnj" id="bme-WK-Ub6"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="153.37331334332833"/>
         </tableViewCell>

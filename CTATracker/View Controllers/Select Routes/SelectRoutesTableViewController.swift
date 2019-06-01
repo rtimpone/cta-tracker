@@ -18,6 +18,7 @@ class SelectRoutesTableViewController: UITableViewController {
     
     weak var delegate: SelectRoutesTableViewControllerDelegate?
     var routes: [Route] = []
+    var currentTheme: Theme!
     
     func displayRoutes(_ routes: [Route]) {
         self.routes = routes
@@ -38,7 +39,7 @@ class SelectRoutesTableViewController: UITableViewController {
         let route = routes[indexPath.row]
         let cell = tableView.dequeueReusableCell(ofType: RouteCell.self)
         let isSelected = delegate?.routeIsSelected(route) ?? false
-        cell.configure(for: route, isSelected: isSelected)
+        cell.configure(for: route, isSelected: isSelected, theme: currentTheme)
         return cell
     }
     
@@ -47,5 +48,13 @@ class SelectRoutesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let route = routes[indexPath.row]
         delegate?.didSelectRoute(route)
+    }
+}
+
+extension SelectRoutesTableViewController: Themeable {
+    
+    func applyTheme(_ theme: Theme) {
+        currentTheme = theme
+        tableView.reloadData()
     }
 }

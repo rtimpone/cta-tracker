@@ -120,7 +120,7 @@ struct DarkThemeColors: ThemeColors {
     static let cellDetailLabelColor: UIColor = .white
     static let cellPlaceholderLabelColor: UIColor = .lightGray
     static let cellSeparatorColor: UIColor = .darkGray
-    static let cellSelectionIconColor: UIColor = .white
+    static let cellSelectionIconColor: UIColor = .orange
     static let navBarBackgroundColor: UIColor = almostBlack
     static let navBarBackdropColor: UIColor = .black
     static let navBarButtonColor: UIColor = .orange
