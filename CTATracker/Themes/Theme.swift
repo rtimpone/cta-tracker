@@ -16,6 +16,7 @@ struct CellTheme {
     let backgroundColor: UIColor
     let titleLabelColor: UIColor
     let detailLabelColor: UIColor
+    let placeholderLabelColor: UIColor
     let separatorColor: UIColor
 }
 

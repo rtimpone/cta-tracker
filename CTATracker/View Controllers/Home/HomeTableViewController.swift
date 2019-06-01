@@ -195,6 +195,7 @@ extension HomeTableViewController: Themeable {
     
     func applyTheme(_ theme: Theme) {
         currentTheme = theme
+        tableView.separatorColor = theme.cellTheme.separatorColor
         tableView.reloadData()
     }
 }

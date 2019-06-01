@@ -27,6 +27,8 @@ class StatusCell: UITableViewCell {
 
         let severeAlerts = status.alerts.filter({ $0.isSevere })
         let mostSevereAlert = severeAlerts.sorted(by: { $0.severity > $1.severity }).first
+
+        alertView.applyTheme(theme)
         
         if let alert = mostSevereAlert {
             alertView.isHidden = false
