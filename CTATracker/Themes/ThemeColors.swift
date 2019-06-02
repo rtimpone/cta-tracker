@@ -64,8 +64,9 @@ extension ThemeColors {
                                 unselectedBorderColor: routeFilterUnselectedBorderColor)
     }
     
-    static func searchBarTheme() -> SearchBarTheme {
-        return SearchBarTheme(tintColor: searchBarTintColor)
+    static func searchBarTheme(keyboardStyle: SearchBarTheme.KeyboardStyle) -> SearchBarTheme {
+        return SearchBarTheme(keyboardStyle: keyboardStyle,
+                              tintColor: searchBarTintColor)
     }
     
     static func sectionHeaderTheme() -> SectionHeaderTheme {

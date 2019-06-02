@@ -44,6 +44,13 @@ struct RouteFilterTheme {
 }
 
 struct SearchBarTheme {
+    
+    enum KeyboardStyle {
+        case light
+        case dark
+    }
+    
+    let keyboardStyle: KeyboardStyle
     let tintColor: UIColor
 }
 
@@ -89,7 +96,7 @@ class Theme {
         DarkTheme()
     ]
     
-    init(name: String, colors: ThemeColors.Type, navBarStyle: NavBarTheme.Style, statusBarStyle: UIStatusBarStyle) {
+    init(name: String, colors: ThemeColors.Type, navBarStyle: NavBarTheme.Style, statusBarStyle: UIStatusBarStyle, keyboardStyle: SearchBarTheme.KeyboardStyle) {
         
         self.name = name
         
@@ -97,7 +104,7 @@ class Theme {
         self.cellTheme = colors.cellTheme()
         self.navBarTheme = colors.navBarTheme(style: navBarStyle)
         self.routeFilterTheme = colors.routeFilterTheme()
-        self.searchBarTheme = colors.searchBarTheme()
+        self.searchBarTheme = colors.searchBarTheme(keyboardStyle: keyboardStyle)
         self.sectionHeaderTheme = colors.sectionHeaderTheme()
         self.statusBarTheme = StatusBarTheme(style: statusBarStyle)
         self.tableTheme = colors.tableTheme()
@@ -118,13 +125,21 @@ extension Theme: Equatable {
 class LightTheme: Theme {
     
     init() {
-        super.init(name: "Light", colors: LightThemeColors.self, navBarStyle: .translucentLight, statusBarStyle: .default)
+        super.init(name: "Light",
+                   colors: LightThemeColors.self,
+                   navBarStyle: .translucentLight,
+                   statusBarStyle: .default,
+                   keyboardStyle: .light)
     }
 }
 
 class DarkTheme: Theme {
     
     init() {
-        super.init(name: "Dark", colors: DarkThemeColors.self, navBarStyle: .translucentDark, statusBarStyle: .lightContent)
+        super.init(name: "Dark",
+                   colors: DarkThemeColors.self,
+                   navBarStyle: .translucentDark,
+                   statusBarStyle: .lightContent,
+                   keyboardStyle: .dark)
     }
 }

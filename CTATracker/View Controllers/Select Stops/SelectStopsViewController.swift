@@ -86,6 +86,14 @@ extension SelectStopsViewController: Themeable {
         view.backgroundColor = theme.backgroundTheme.backgroundColor
         navBarBackdropView.backgroundColor = theme.navBarTheme.backdropColor
         searchBar?.tintColor = theme.searchBarTheme.tintColor
+        
+        switch theme.searchBarTheme.keyboardStyle {
+        case .light:
+            searchBar?.keyboardAppearance = .light
+        case .dark:
+            searchBar?.keyboardAppearance = .dark
+        }
+        
         filterViewController.applyTheme(theme)
         tableViewController?.applyTheme(theme)
     }
